@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-08-31T22:48:00+09:00",
+  "articles": [
+    {
+      "article_id": "B001",
+      "slug": "first-disaster-preparedness",
+      "title": "防災は何から始める？家庭で最初に確認したい基本項目",
+      "category": "preparedness",
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": ["source_research_required", "manual_review_required"]
+    },
+    {
+      "article_id": "B002",
+      "slug": "emergency-bag-basics",
+      "title": "防災バッグには何を入れる？用途別に考える基本の備え",
+      "category": "preparedness",
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": true,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": ["source_research_required", "manual_review_required", "product_selection_required"]
+    },
+    {
+      "article_id": "B003",
+      "slug": "portable-toilet-stockpile",
+      "title": "断水に備える携帯トイレ｜必要数を考える前に確認したいこと",
+      "category": "water-outage",
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": true,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": ["official_source_required", "manual_review_required", "product_selection_required"]
+    },
+    {
+      "article_id": "B004",
+      "slug": "blackout-preparedness",
+      "title": "停電に備えて準備しておきたいもの｜照明・電源・情報収集を分けて考える",
+      "category": "blackout",
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": true,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": ["official_source_required", "manual_review_required", "product_selection_required"]
+    }
+  ]
+}
