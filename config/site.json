@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "site_name": "防災ブログ",
+  "content_language": "ja-JP",
+  "amazon_associate_tag": "yukitaka83-22",
+  "affiliate_disclosure_required": true,
+  "high_risk_manual_review_required": true,
+  "deployment": {
+    "method": "ftp",
+    "ftp_host": "ftp.homepage.shinobi.jp",
+    "credentials_storage": "environment_or_github_secrets",
+    "publish_directory": "public"
+  }
+}
