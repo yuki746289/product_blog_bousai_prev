@@ -40,3 +40,10 @@ python -m bousai_blog.freshness data/content_registry.json
 
 公開対象は原則として `READY_TO_PUBLISH` から生成・確認した静的ファイルのみとします。
 FTPユーザー名・パスワードはGitHub Secretsまたはローカル環境変数で管理し、平文でコミットしません。
+
+## サイト構成
+
+- `docs/SITE_STRUCTURE.md`: トップページ・カテゴリ・記事ページ構成
+- `docs/PICKUP_AND_DEEP_DIVE_POLICY.md`: ピックアップ記事・深掘り記事の運用
+- `config/navigation.json`: グローバルナビ・トップページセクション
+- `data/homepage_features.json`: ピックアップ候補と有効枠
