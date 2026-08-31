@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-08-31T22:48:00+09:00",
+  "updated_at": "2026-08-31T23:50:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -14,7 +14,10 @@
       "affiliate": false,
       "last_reviewed_at": null,
       "next_review_at": null,
-      "publish_blockers": ["source_research_required", "manual_review_required"]
+      "publish_blockers": [
+        "source_research_required",
+        "manual_review_required"
+      ]
     },
     {
       "article_id": "B002",
@@ -28,7 +31,11 @@
       "affiliate": true,
       "last_reviewed_at": null,
       "next_review_at": null,
-      "publish_blockers": ["source_research_required", "manual_review_required", "product_selection_required"]
+      "publish_blockers": [
+        "source_research_required",
+        "manual_review_required",
+        "product_selection_required"
+      ]
     },
     {
       "article_id": "B003",
@@ -42,7 +49,11 @@
       "affiliate": true,
       "last_reviewed_at": null,
       "next_review_at": null,
-      "publish_blockers": ["official_source_required", "manual_review_required", "product_selection_required"]
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required",
+        "product_selection_required"
+      ]
     },
     {
       "article_id": "B004",
@@ -56,7 +67,557 @@
       "affiliate": true,
       "last_reviewed_at": null,
       "next_review_at": null,
-      "publish_blockers": ["official_source_required", "manual_review_required", "product_selection_required"]
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required",
+        "product_selection_required"
+      ]
+    },
+    {
+      "article_id": "B005",
+      "slug": "flood-preparedness-basics",
+      "title": "大雨・水害にどう備える？まず知っておきたい基本",
+      "category": "flood",
+      "content_role": "pillar",
+      "priority": "highest",
+      "parent_article_id": null,
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B006",
+      "slug": "typhoon-preparation-checklist",
+      "title": "台風が来る前に何をする？家庭の事前チェック",
+      "category": "typhoon",
+      "content_role": "pillar",
+      "priority": "highest",
+      "parent_article_id": null,
+      "pickup_candidate": true,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B007",
+      "slug": "earthquake-preparedness-basics",
+      "title": "地震に備えて最初に確認したいこと",
+      "category": "earthquake",
+      "content_role": "pillar",
+      "priority": "high",
+      "parent_article_id": null,
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B008",
+      "slug": "car-flood-submersion",
+      "title": "車が冠水・水没しそうなときに知っておきたいこと",
+      "category": "vehicle",
+      "content_role": "detail",
+      "priority": "highest",
+      "parent_article_id": "B005",
+      "pickup_candidate": true,
+      "status": "PLANNED",
+      "risk_level": "high",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B009",
+      "slug": "driving-flooded-road-risk",
+      "title": "冠水した道路を車で走る危険｜避けるべき理由を整理",
+      "category": "vehicle",
+      "content_role": "detail",
+      "priority": "high",
+      "parent_article_id": "B008",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "high",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B010",
+      "slug": "underground-parking-heavy-rain",
+      "title": "地下駐車場・低い場所に車を置いている場合の大雨対策",
+      "category": "vehicle",
+      "content_role": "practical",
+      "priority": "high",
+      "parent_article_id": "B005",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B011",
+      "slug": "flooded-car-insurance",
+      "title": "台風・洪水で水没した車は車両保険の対象になる？",
+      "category": "insurance",
+      "content_role": "detail",
+      "priority": "highest",
+      "parent_article_id": "B019",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B012",
+      "slug": "home-flood-preparedness",
+      "title": "自宅の浸水にどう備える？住宅の水害対策入門",
+      "category": "home",
+      "content_role": "pillar",
+      "priority": "highest",
+      "parent_article_id": "B005",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B013",
+      "slug": "fire-insurance-water-damage",
+      "title": "火災保険の水災補償とは？住宅浸水との関係を整理",
+      "category": "insurance",
+      "content_role": "detail",
+      "priority": "highest",
+      "parent_article_id": "B019",
+      "pickup_candidate": true,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B014",
+      "slug": "household-goods-flood-insurance",
+      "title": "浸水した家財は保険の対象になる？確認ポイント",
+      "category": "insurance",
+      "content_role": "detail",
+      "priority": "high",
+      "parent_article_id": "B019",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B015",
+      "slug": "after-flood-record-evidence",
+      "title": "自宅が浸水した後、片付ける前に記録したいもの",
+      "category": "post-disaster",
+      "content_role": "practical",
+      "priority": "high",
+      "parent_article_id": "B012",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B016",
+      "slug": "typhoon-wind-damage-insurance",
+      "title": "台風の風災は火災保険でどう扱われる？",
+      "category": "insurance",
+      "content_role": "detail",
+      "priority": "high",
+      "parent_article_id": "B019",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B017",
+      "slug": "earthquake-insurance-basics",
+      "title": "地震保険の基本｜火災保険との違いを整理",
+      "category": "insurance",
+      "content_role": "pillar",
+      "priority": "high",
+      "parent_article_id": "B019",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B018",
+      "slug": "earthquake-car-insurance",
+      "title": "地震で車が壊れた場合、自動車保険はどう考える？",
+      "category": "insurance",
+      "content_role": "detail",
+      "priority": "medium",
+      "parent_article_id": "B019",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B019",
+      "slug": "disaster-insurance-overview",
+      "title": "水害・台風・地震で保険の扱いはどう違う？",
+      "category": "insurance",
+      "content_role": "pillar",
+      "priority": "high",
+      "parent_article_id": null,
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B020",
+      "slug": "home-heavy-rain-checklist",
+      "title": "大雨の前に自宅で確認すること｜浸水対策チェックリスト",
+      "category": "home",
+      "content_role": "practical",
+      "priority": "high",
+      "parent_article_id": "B012",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B021",
+      "slug": "typhoon-day-before-checklist",
+      "title": "台風前日に確認したいこと｜屋外・窓・停電への備え",
+      "category": "typhoon",
+      "content_role": "practical",
+      "priority": "high",
+      "parent_article_id": "B006",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B022",
+      "slug": "apartment-typhoon-flood",
+      "title": "マンションの台風・水害対策｜戸建てとの違い",
+      "category": "home",
+      "content_role": "detail",
+      "priority": "medium",
+      "parent_article_id": "B012",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B023",
+      "slug": "earthquake-furniture-safety",
+      "title": "地震の家具転倒対策｜まず優先したい場所",
+      "category": "earthquake",
+      "content_role": "practical",
+      "priority": "high",
+      "parent_article_id": "B007",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B024",
+      "slug": "earthquake-blackout-water-outage",
+      "title": "地震後の停電・断水にどう備える？",
+      "category": "earthquake",
+      "content_role": "detail",
+      "priority": "high",
+      "parent_article_id": "B007",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
+    },
+    {
+      "article_id": "B025",
+      "slug": "drinking-water-stockpile",
+      "title": "飲料水はどう備蓄する？家庭での考え方",
+      "category": "guide",
+      "content_role": "detail",
+      "priority": "high",
+      "parent_article_id": "B001",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "standard",
+      "manual_review_required": false,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "source_research_required"
+      ]
+    },
+    {
+      "article_id": "B026",
+      "slug": "emergency-food-stockpile",
+      "title": "非常食は何を備える？普段使いを含めた考え方",
+      "category": "guide",
+      "content_role": "detail",
+      "priority": "high",
+      "parent_article_id": "B001",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "standard",
+      "manual_review_required": false,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": true,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "source_research_required",
+        "product_selection_required"
+      ]
+    },
+    {
+      "article_id": "B027",
+      "slug": "emergency-radio-guide",
+      "title": "防災ラジオは必要？情報収集手段を比較する",
+      "category": "goods",
+      "content_role": "product",
+      "priority": "medium",
+      "parent_article_id": null,
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "standard",
+      "manual_review_required": false,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": true,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "source_research_required",
+        "product_selection_required"
+      ]
+    },
+    {
+      "article_id": "B028",
+      "slug": "portable-power-station-disaster",
+      "title": "ポータブル電源は防災に必要？用途と注意点",
+      "category": "goods",
+      "content_role": "product",
+      "priority": "high",
+      "parent_article_id": "B004",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": true,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required",
+        "product_selection_required"
+      ]
+    },
+    {
+      "article_id": "B029",
+      "slug": "car-emergency-kit",
+      "title": "車に積んでおきたい防災用品｜車載用に考える",
+      "category": "vehicle",
+      "content_role": "product",
+      "priority": "high",
+      "parent_article_id": null,
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "standard",
+      "manual_review_required": false,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": true,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "source_research_required",
+        "product_selection_required"
+      ]
+    },
+    {
+      "article_id": "B030",
+      "slug": "family-disaster-contact-plan",
+      "title": "家族で決めておきたい災害時の連絡・集合ルール",
+      "category": "guide",
+      "content_role": "practical",
+      "priority": "high",
+      "parent_article_id": "B001",
+      "pickup_candidate": false,
+      "status": "PLANNED",
+      "risk_level": "elevated",
+      "manual_review_required": true,
+      "manual_review_status": "NOT_REVIEWED",
+      "affiliate": false,
+      "last_reviewed_at": null,
+      "next_review_at": null,
+      "publish_blockers": [
+        "official_source_required",
+        "manual_review_required"
+      ]
     }
   ]
 }
