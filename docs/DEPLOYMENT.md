@@ -28,3 +28,14 @@ GitHub Actionsを使用する場合は以下のSecretsを使用する想定。
 - 公開前チェックでブロッカーなし
 
 公開後に `PUBLISHED` へ更新し、公開URLと公開日時を台帳へ記録する。
+
+
+## 5. Analytics公開チェック
+
+すべての公開HTMLについて以下を確認する。
+
+- Google Analyticsタグが `<head>` 内に存在する
+- Measurement IDが `G-XQVLD5HMNG` である
+- 同じGoogle Analyticsタグが重複していない
+
+Analyticsタグ欠落は公開前テストのエラーとして扱う。
