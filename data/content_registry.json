@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T14:25:00+09:00",
+  "updated_at": "2026-09-01T14:40:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -139,7 +139,9 @@
         "manual_review_required",
         "image_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "content_depth_review_required",
+        "image_dedup_required"
       ],
       "source_path": "content/articles/B005_flood_preparedness_basics.md",
       "preview_path": "preview/article_b005.html",
@@ -177,7 +179,9 @@
         "manual_review_required",
         "image_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "content_depth_review_required",
+        "image_dedup_required"
       ],
       "source_path": "content/articles/B006_typhoon_preparation_checklist.md",
       "preview_path": "preview/article_b006.html",
@@ -235,7 +239,9 @@
         "manual_review_required",
         "image_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "content_depth_review_required",
+        "image_dedup_required"
       ],
       "source_path": "content/articles/B008_car_flood_submersion.md",
       "preview_path": "preview/article_b008.html",
@@ -357,7 +363,9 @@
         "manual_review_required",
         "image_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "content_depth_review_required",
+        "image_dedup_required"
       ],
       "source_path": "content/articles/B013_fire_insurance_water_damage.md",
       "preview_path": "preview/article_b013.html",
