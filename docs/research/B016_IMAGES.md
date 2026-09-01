@@ -2,20 +2,14 @@
 
 確認日: 2026-09-01
 
-## IMG-B016-001
+## IMG-B016-001 Tornado damage to apartment in Tsukuba, May 2012.jpg
+- 用途: 記事冒頭の風災被害イメージ
+- 内容: 2012年5月6日の竜巻で被害を受けた茨城県つくば市の集合住宅
+- Author: On-chan
+- Source: Wikimedia Commons
+- License: CC0
+- 採用理由: 日本国内の実際の強風被害を示せる
+- 補償判断用途: 使用しない
 
-- 用途: 記事冒頭の補助画像
-- Source: https://commons.wikimedia.org/wiki/File:WindDamageRoof.jpg
-- Author: Infrogmation
-- License: CC BY-SA 2.5
-- 採用理由: 風災で生じる住宅被害のイメージを具体化する。保険対象かどうかは写真ではなく原因・契約条件で判断することを本文で説明する。
-- AI生成: なし
-- 安全判断用途: 使用しない
-
-## 視覚要素方針
-
-画像は被害・場面の理解補助に限定し、補償条件や安全判断は本文・公的情報・契約条件で説明する。
-
-## 重複確認
-
-既存記事の固有画像との重複なし。
+## 2026-09-01 日本文脈レビュー
+- 海外の屋根被害写真を日本国内の風災写真へ差し替え。
