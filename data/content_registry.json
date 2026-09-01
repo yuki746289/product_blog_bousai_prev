@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T11:40:00+09:00",
+  "updated_at": "2026-09-01T14:10:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -128,17 +128,34 @@
       "priority": "highest",
       "parent_article_id": null,
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
-      "last_reviewed_at": null,
-      "next_review_at": null,
+      "last_reviewed_at": "2026-09-01",
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B005_flood_preparedness_basics.md",
+      "preview_path": "preview/article_b005.html",
+      "planned_public_path": "flood/flood-preparedness-basics.html",
+      "source_ids": [
+        "F-B005-001",
+        "F-B005-002",
+        "F-B005-003",
+        "F-B005-004",
+        "F-B005-005"
+      ],
+      "source_count": 5,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 3,
+      "image_source_path": "docs/research/B005_IMAGES.md"
     },
     {
       "article_id": "B006",
@@ -149,17 +166,33 @@
       "priority": "highest",
       "parent_article_id": null,
       "pickup_candidate": true,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
-      "last_reviewed_at": null,
-      "next_review_at": null,
+      "last_reviewed_at": "2026-09-01",
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B006_typhoon_preparation_checklist.md",
+      "preview_path": "preview/article_b006.html",
+      "planned_public_path": "typhoon/typhoon-preparation-checklist.html",
+      "source_ids": [
+        "F-B006-001",
+        "F-B006-002",
+        "F-B006-003",
+        "F-B006-004"
+      ],
+      "source_count": 4,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 4,
+      "image_source_path": "docs/research/B006_IMAGES.md"
     },
     {
       "article_id": "B007",
@@ -191,17 +224,34 @@
       "priority": "highest",
       "parent_article_id": "B005",
       "pickup_candidate": true,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "high",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
-      "last_reviewed_at": null,
-      "next_review_at": null,
+      "last_reviewed_at": "2026-09-01",
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B008_car_flood_submersion.md",
+      "preview_path": "preview/article_b008.html",
+      "planned_public_path": "vehicle/car-flood-submersion.html",
+      "source_ids": [
+        "F-B008-001",
+        "F-B008-002",
+        "F-B008-003",
+        "F-B008-004",
+        "F-B008-005"
+      ],
+      "source_count": 5,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 2,
+      "image_source_path": "docs/research/B008_IMAGES.md"
     },
     {
       "article_id": "B009",
@@ -296,17 +346,34 @@
       "priority": "highest",
       "parent_article_id": "B019",
       "pickup_candidate": true,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
-      "last_reviewed_at": null,
-      "next_review_at": null,
+      "last_reviewed_at": "2026-09-01",
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B013_fire_insurance_water_damage.md",
+      "preview_path": "preview/article_b013.html",
+      "planned_public_path": "insurance/fire-insurance-water-damage.html",
+      "source_ids": [
+        "F-B013-001",
+        "F-B013-002",
+        "F-B013-003",
+        "F-B013-004",
+        "F-B013-005"
+      ],
+      "source_count": 5,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 2,
+      "image_source_path": "docs/research/B013_IMAGES.md"
     },
     {
       "article_id": "B014",
