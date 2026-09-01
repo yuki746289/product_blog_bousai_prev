@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T09:35:00+09:00",
+  "updated_at": "2026-09-01T09:48:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -16,9 +16,9 @@
       "next_review_at": "2027-03-01",
       "publish_blockers": [
         "manual_review_required",
-        "image_asset_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "image_review_required"
       ],
       "content_role": "pillar",
       "priority": "high",
@@ -35,7 +35,9 @@
       ],
       "source_count": 4,
       "source_checked_at": "2026-09-01",
-      "image_status": "PENDING"
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 3,
+      "image_source_path": "docs/research/B001_IMAGES.md"
     },
     {
       "article_id": "B002",
