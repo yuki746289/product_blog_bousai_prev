@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T15:35:00+09:00",
+  "updated_at": "2026-09-01T15:45:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -160,7 +160,8 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B006",
@@ -202,7 +203,8 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B007",
@@ -267,7 +269,8 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B009",
