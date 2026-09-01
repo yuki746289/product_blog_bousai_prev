@@ -620,3 +620,42 @@ th {
   margin: 0 auto;
   object-fit: contain;
 }
+
+
+/* Added: 2026-09-01 11:27 JST / informational article -> product guide routing */
+.product-guide-link {
+  margin: 16px 0 24px;
+}
+
+.product-guide-link a,
+.product-guide-links a {
+  display: block;
+  padding: 13px 15px;
+  background: var(--primary-soft);
+  border: 1px solid #bdd9d7;
+  border-radius: 10px;
+  color: var(--primary-dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.product-guide-link a:hover,
+.product-guide-links a:hover {
+  text-decoration: underline;
+}
+
+.product-guide-links {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 24px;
+}
+
+.product-guide-links--summary {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 620px) {
+  .product-guide-links--summary {
+    grid-template-columns: 1fr;
+  }
+}
