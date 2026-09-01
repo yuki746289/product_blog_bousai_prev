@@ -700,3 +700,47 @@ th {
     max-height: 360px;
   }
 }
+
+
+/* Added: 2026-09-01 13:19 JST / reusable visual rhythm blocks */
+.visual-break {
+  margin-top: 22px;
+  margin-bottom: 30px;
+}
+
+.visual-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 22px 0 30px;
+}
+
+.visual-card {
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.visual-card h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.visual-card ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.visual-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+@media (max-width: 620px) {
+  .visual-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
