@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T11:27:00+09:00",
+  "updated_at": "2026-09-01T11:40:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -73,7 +73,7 @@
       "source_count": 5,
       "source_checked_at": "2026-09-01",
       "image_status": "SELECTED_REVIEW_REQUIRED",
-      "image_source_count": 2,
+      "image_source_count": 5,
       "image_source_path": "docs/research/B002_IMAGES.md",
       "product_link_policy": "internal_product_guide_only",
       "product_guide_paths": [
