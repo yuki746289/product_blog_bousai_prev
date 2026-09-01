@@ -10,5 +10,11 @@
     "ftp_host": "ftp.homepage.shinobi.jp",
     "credentials_storage": "environment_or_github_secrets",
     "publish_directory": "public"
+  },
+  "analytics": {
+    "provider": "google_analytics",
+    "measurement_id": "G-XQVLD5HMNG",
+    "enabled": true,
+    "required_on_all_public_pages": true
   }
 }
