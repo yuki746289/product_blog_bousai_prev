@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T10:26:00+09:00",
+  "updated_at": "2026-09-01T10:45:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -41,19 +41,40 @@
       "article_id": "B002",
       "slug": "emergency-bag-basics",
       "title": "防災バッグには何を入れる？用途別に考える基本の備え",
-      "category": "preparedness",
-      "status": "PLANNED",
+      "category": "guide",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": true,
-      "last_reviewed_at": null,
-      "next_review_at": null,
+      "last_reviewed_at": "2026-09-01",
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "source_research_required",
         "manual_review_required",
-        "product_selection_required"
-      ]
+        "image_review_required",
+        "product_selection_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "content_role": "practical",
+      "priority": "high",
+      "parent_article_id": "B001",
+      "pickup_candidate": false,
+      "source_path": "content/articles/B002_emergency_bag_basics.md",
+      "preview_path": "preview/article_b002.html",
+      "planned_public_path": "guide/emergency-bag-basics.html",
+      "source_ids": [
+        "F-B002-001",
+        "F-B002-002",
+        "F-B002-003",
+        "F-B002-004",
+        "F-B002-005"
+      ],
+      "source_count": 5,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 2,
+      "image_source_path": "docs/research/B002_IMAGES.md"
     },
     {
       "article_id": "B003",
