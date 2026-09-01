@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T15:45:00+09:00",
+  "updated_at": "2026-09-01T16:40:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -281,17 +281,38 @@
       "priority": "high",
       "parent_article_id": "B008",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "high",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B009_driving_flooded_road_risk.md",
+      "preview_path": "preview/article_b009.html",
+      "planned_public_path": "vehicle/driving-flooded-road-risk.html",
+      "source_ids": [
+        "F-B009-001",
+        "F-B009-002",
+        "F-B009-003"
+      ],
+      "source_count": 3,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "image_source_path": "docs/research/B009_IMAGES.md",
+      "body_char_count_approx": 3108,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B010",
@@ -302,17 +323,39 @@
       "priority": "high",
       "parent_article_id": "B005",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B010_underground_parking_heavy_rain.md",
+      "preview_path": "preview/article_b010.html",
+      "planned_public_path": "vehicle/underground-parking-heavy-rain.html",
+      "source_ids": [
+        "F-B010-001",
+        "F-B010-002",
+        "F-B010-003",
+        "F-B010-004"
+      ],
+      "source_count": 4,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "image_source_path": "docs/research/B010_IMAGES.md",
+      "body_char_count_approx": 2776,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B011",
@@ -323,17 +366,35 @@
       "priority": "highest",
       "parent_article_id": "B019",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B011_flooded_car_insurance.md",
+      "preview_path": "preview/article_b011.html",
+      "planned_public_path": "insurance/flooded-car-insurance.html",
+      "source_ids": [
+        "F-B011-001",
+        "F-B011-002"
+      ],
+      "source_count": 2,
+      "source_checked_at": "2026-09-01",
+      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
+      "image_source_count": 0,
+      "image_source_path": "docs/research/B011_IMAGES.md",
+      "body_char_count_approx": 2535,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B012",
@@ -344,17 +405,37 @@
       "priority": "highest",
       "parent_article_id": "B005",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B012_home_flood_preparedness.md",
+      "preview_path": "preview/article_b012.html",
+      "planned_public_path": "home/home-flood-preparedness.html",
+      "source_ids": [
+        "F-B012-001",
+        "F-B012-002",
+        "F-B012-003"
+      ],
+      "source_count": 3,
+      "source_checked_at": "2026-09-01",
+      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
+      "image_source_count": 0,
+      "image_source_path": "docs/research/B012_IMAGES.md",
+      "body_char_count_approx": 3154,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B013",
@@ -409,17 +490,36 @@
       "priority": "high",
       "parent_article_id": "B019",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B014_household_goods_flood_insurance.md",
+      "preview_path": "preview/article_b014.html",
+      "planned_public_path": "insurance/household-goods-flood-insurance.html",
+      "source_ids": [
+        "F-B014-001",
+        "F-B014-002",
+        "F-B014-003"
+      ],
+      "source_count": 3,
+      "source_checked_at": "2026-09-01",
+      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
+      "image_source_count": 0,
+      "image_source_path": "docs/research/B014_IMAGES.md",
+      "body_char_count_approx": 2677,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B015",
@@ -430,17 +530,35 @@
       "priority": "high",
       "parent_article_id": "B012",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B015_after_flood_record_evidence.md",
+      "preview_path": "preview/article_b015.html",
+      "planned_public_path": "post-disaster/after-flood-record-evidence.html",
+      "source_ids": [
+        "F-B015-001",
+        "F-B015-002"
+      ],
+      "source_count": 2,
+      "source_checked_at": "2026-09-01",
+      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
+      "image_source_count": 0,
+      "image_source_path": "docs/research/B015_IMAGES.md",
+      "body_char_count_approx": 2634,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B016",
@@ -493,17 +611,37 @@
       "priority": "medium",
       "parent_article_id": "B019",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B018_earthquake_car_insurance.md",
+      "preview_path": "preview/article_b018.html",
+      "planned_public_path": "insurance/earthquake-car-insurance.html",
+      "source_ids": [
+        "F-B018-001",
+        "F-B018-002",
+        "F-B018-003",
+        "F-B018-004"
+      ],
+      "source_count": 4,
+      "source_checked_at": "2026-09-01",
+      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
+      "image_source_count": 0,
+      "image_source_path": "docs/research/B018_IMAGES.md",
+      "body_char_count_approx": 2698,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B019",
@@ -535,17 +673,37 @@
       "priority": "high",
       "parent_article_id": "B012",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B020_home_heavy_rain_checklist.md",
+      "preview_path": "preview/article_b020.html",
+      "planned_public_path": "home/home-heavy-rain-checklist.html",
+      "source_ids": [
+        "F-B020-001",
+        "F-B020-002",
+        "F-B020-003"
+      ],
+      "source_count": 3,
+      "source_checked_at": "2026-09-01",
+      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
+      "image_source_count": 0,
+      "image_source_path": "docs/research/B020_IMAGES.md",
+      "body_char_count_approx": 2547,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B021",
@@ -577,17 +735,37 @@
       "priority": "medium",
       "parent_article_id": "B012",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B022_apartment_typhoon_flood.md",
+      "preview_path": "preview/article_b022.html",
+      "planned_public_path": "home/apartment-typhoon-flood.html",
+      "source_ids": [
+        "F-B022-001",
+        "F-B022-002",
+        "F-B022-003"
+      ],
+      "source_count": 3,
+      "source_checked_at": "2026-09-01",
+      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
+      "image_source_count": 0,
+      "image_source_path": "docs/research/B022_IMAGES.md",
+      "body_char_count_approx": 2785,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B023",
