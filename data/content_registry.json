@@ -7,7 +7,7 @@
       "content_role": "pillar",
       "image_source_count": 2,
       "image_source_path": "docs/research/B001_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": "2026-09-01",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
@@ -153,7 +153,7 @@
       "image_dedup_status": "PASS",
       "image_source_count": 1,
       "image_source_path": "docs/research/B004_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": null,
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
@@ -165,7 +165,6 @@
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [
         "manual_review_required",
-        "image_review_required",
         "internal_links_pending",
         "production_page_required"
       ],
@@ -396,7 +395,7 @@
       "image_dedup_status": "PASS",
       "image_source_count": 2,
       "image_source_path": "docs/research/B009_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": null,
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
@@ -409,7 +408,6 @@
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [
         "manual_review_required",
-        "image_review_required",
         "internal_links_pending",
         "production_page_required"
       ],
@@ -445,7 +443,7 @@
       "image_dedup_status": "PASS",
       "image_source_count": 1,
       "image_source_path": "docs/research/B010_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": null,
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
@@ -458,7 +456,6 @@
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [
         "manual_review_required",
-        "image_review_required",
         "internal_links_pending",
         "production_page_required"
       ],
@@ -495,7 +492,7 @@
       "image_dedup_status": "PASS",
       "image_source_count": 1,
       "image_source_path": "docs/research/B011_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": null,
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
@@ -508,8 +505,7 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "image_review_required"
+        "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-01",
       "review_checklist_path": "docs/reviews/B011_CHECKLIST.md",
@@ -542,7 +538,7 @@
       "image_dedup_status": "PASS",
       "image_source_count": 1,
       "image_source_path": "docs/research/B012_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": null,
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
@@ -556,8 +552,7 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "image_review_required"
+        "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-01",
       "review_checklist_path": "docs/reviews/B012_CHECKLIST.md",
@@ -653,8 +648,7 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "image_review_required"
+        "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-01",
       "review_checklist_path": "docs/reviews/B014_CHECKLIST.md",
@@ -701,8 +695,7 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "image_review_required"
+        "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-01",
       "review_checklist_path": "docs/reviews/B015_CHECKLIST.md",
@@ -735,7 +728,7 @@
       "image_dedup_status": "PASS",
       "image_source_count": 1,
       "image_source_path": "docs/research/B016_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": null,
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
@@ -886,7 +879,6 @@
       "priority": "high",
       "publish_blockers": [
         "manual_review_required",
-        "image_review_required",
         "content_depth_review_required",
         "internal_links_pending",
         "production_page_required"
@@ -925,7 +917,7 @@
       "image_dedup_status": "PASS",
       "image_source_count": 1,
       "image_source_path": "docs/research/B020_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": null,
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
@@ -939,8 +931,7 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "image_review_required"
+        "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-01",
       "review_checklist_path": "docs/reviews/B020_CHECKLIST.md",
@@ -1434,5 +1425,5 @@
     }
   ],
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T23:35:00+09:00"
+  "updated_at": "2026-09-01T23:40:00+09:00"
 }
