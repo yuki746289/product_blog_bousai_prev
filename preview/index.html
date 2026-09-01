@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Created: 2026-09-01 09:05 JST / layout prototype -->
+<!-- Updated: 2026-09-01 / category-first site layout -->
 <html lang="ja">
 <head>
   <meta charset="utf-8">
@@ -15,12 +15,18 @@
       <a class="site-brand" href="index.html">防災くらしガイド<small>知る・備える・困ったときに確認する</small></a>
     </div>
     <nav class="site-nav" aria-label="メインナビゲーション">
-      <a href="#">防災入門</a><a href="#">台風</a><a href="#">大雨・水害</a><a href="#">地震</a>
-      <a href="#">車と災害</a><a href="#">住宅と災害</a><a href="#">保険・お金</a><a href="#">防災グッズ</a>
+      <a href="category_guide.html">防災入門</a>
+      <a href="category_typhoon.html">台風</a>
+      <a href="category_flood.html">大雨・水害</a>
+      <a href="category_earthquake.html">地震</a>
+      <a href="category_vehicle.html">車と災害</a>
+      <a href="category_home.html">住宅と災害</a>
+      <a href="category_insurance.html">保険・お金</a>
+      <a href="category_goods.html">防災グッズ</a>
     </nav>
   </div>
 </header>
-<div class="official-bar"><div class="official-bar__inner">緊急時は、気象庁・自治体などの<a href="#">最新の公的情報</a>を確認してください。</div></div>
+<div class="official-bar"><div class="official-bar__inner">緊急時は、気象庁・自治体などの<a href="https://www.bousai.go.jp/" target="_blank" rel="noopener noreferrer">最新の公的情報</a>を確認してください。</div></div>
 
 <main class="page-shell">
   <section class="hero">
@@ -34,9 +40,10 @@
       <ul>
         <li><a href="article_sample.html">防災は何から始める？</a></li>
         <li><a href="article_b002.html">防災バッグの基本</a></li>
-        <li><a href="#">水・食料・トイレの備え</a></li>
-        <li><a href="#">家族で決めておくこと</a></li>
+        <li><a href="category_guide.html">水・食料・トイレの備え</a></li>
+        <li><a href="category_guide.html">家族で決めておくこと</a></li>
       </ul>
+      <p class="hero-quick__more"><a href="category_guide.html">防災入門の記事をすべて見る →</a></p>
     </aside>
   </section>
 
@@ -45,51 +52,116 @@
     <div class="pickup-grid">
       <article class="pickup-card pickup-card--hero">
         <div class="pickup-card__visual">メイン画像予定<br><small>車の冠水・水没イメージ</small></div>
-        <div class="pickup-card__body"><span class="label">車と水害</span><h3>車が冠水・水没しそうなときに知っておきたいこと</h3><p>冠水路を避ける考え方から、万一水没の危険が迫った場合まで、知っておきたいポイントを整理します。</p><a class="card-link" href="article_b008.html">詳しく読む →</a></div>
+        <div class="pickup-card__body">
+          <span class="label">車と水害</span>
+          <h3><a class="title-link" href="article_b008.html">車が冠水・水没しそうなときに知っておきたいこと</a></h3>
+          <p>冠水路を避ける考え方から、万一水没の危険が迫った場合まで、知っておきたいポイントを整理します。</p>
+          <a class="card-link" href="article_b008.html">詳しく読む →</a>
+        </div>
       </article>
       <div class="pickup-secondary">
-        <article class="pickup-card"><div class="pickup-card__body"><span class="label">保険</span><h3>火災保険の「水災補償」とは？</h3><p>住宅浸水との関係を分かりやすく整理。</p><a class="card-link" href="article_b013.html">詳しく読む →</a></div></article>
-        <article class="pickup-card"><div class="pickup-card__body"><span class="label">台風</span><h3>台風が来る前に何を確認する？</h3><p>屋外・窓・停電など、事前にできる備えを確認。</p><a class="card-link" href="article_b006.html">詳しく読む →</a></div></article>
-        <article class="pickup-card"><div class="pickup-card__body"><span class="label">防災入門</span><h3>防災は何から始める？</h3><p>最初から全部そろえず、優先順位から考えます。</p><a class="card-link" href="article_sample.html">詳しく読む →</a></div></article>
+        <article class="pickup-card"><div class="pickup-card__body"><span class="label">保険</span><h3><a class="title-link" href="article_b013.html">火災保険の「水災補償」とは？</a></h3><p>住宅浸水との関係を分かりやすく整理。</p><a class="card-link" href="article_b013.html">詳しく読む →</a></div></article>
+        <article class="pickup-card"><div class="pickup-card__body"><span class="label">台風</span><h3><a class="title-link" href="article_b006.html">台風が来る前に何を確認する？</a></h3><p>屋外・窓・停電など、事前にできる備えを確認。</p><a class="card-link" href="article_b006.html">詳しく読む →</a></div></article>
+        <article class="pickup-card"><div class="pickup-card__body"><span class="label">防災入門</span><h3><a class="title-link" href="article_sample.html">防災は何から始める？</a></h3><p>最初から全部そろえず、優先順位から考えます。</p><a class="card-link" href="article_sample.html">詳しく読む →</a></div></article>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-heading"><div><h2>はじめての防災</h2><p>まずは家庭で無理なく始められる基本から。</p></div></div>
+    <div class="section-heading"><div><h2>はじめての防災</h2><p>まずは家庭で無理なく始められる基本から。</p></div><a class="text-link" href="category_guide.html">防災入門をすべて見る →</a></div>
     <div class="card-grid">
-      <article class="content-card"><div class="card-body"><span class="label">入門</span><h3>防災は何から始める？</h3><p>自宅・家族・備蓄・避難先の4つから優先順位を整理します。</p><a class="card-link" href="article_sample.html">記事を読む →</a></div></article>
-      <article class="content-card"><div class="card-body"><span class="label">備え</span><h3>防災バッグの基本</h3><p>持ち出すものと、自宅に備蓄するものを分けて考えます。</p><a class="card-link" href="article_b002.html">記事を読む →</a></div></article>
-      <article class="content-card"><div class="card-body"><span class="label">備蓄</span><h3>水・食料・トイレ</h3><p>量だけでなく、保管・入れ替え・使い方まで考えます。</p><a class="card-link" href="#">記事を読む →</a></div></article>
+      <article class="content-card"><div class="card-body"><span class="label">入門</span><h3><a class="title-link" href="article_sample.html">防災は何から始める？</a></h3><p>自宅・家族・備蓄・避難先の4つから優先順位を整理します。</p><a class="card-link" href="article_sample.html">記事を読む →</a></div></article>
+      <article class="content-card"><div class="card-body"><span class="label">備え</span><h3><a class="title-link" href="article_b002.html">防災バッグの基本</a></h3><p>持ち出すものと、自宅に備蓄するものを分けて考えます。</p><a class="card-link" href="article_b002.html">記事を読む →</a></div></article>
+      <article class="content-card"><div class="card-body"><span class="label">備蓄</span><h3><a class="title-link title-link--planned" href="#" data-article-id="B003">断水に備える携帯トイレ</a></h3><p>必要数、保管場所、使い方を確認してから備えます。</p><a class="card-link" href="category_outage.html">関連する記事を見る →</a></div></article>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-heading"><div><h2>災害別に備える</h2><p>災害の種類から、必要な備えや関連情報を探せます。</p></div></div>
-    <div class="category-grid">
-      <a class="category-card" href="#"><strong>台風</strong><p>強風・停電・大雨への事前準備。</p></a>
-      <a class="category-card" href="article_b005.html"><strong>大雨・水害</strong><p>洪水、内水氾濫、浸水への備え。</p></a>
-      <a class="category-card" href="#"><strong>地震</strong><p>家具、停電、断水、避難の基本。</p></a>
-      <a class="category-card" href="#"><strong>停電・断水</strong><p>電気・水・トイレをどう備えるか。</p></a>
+    <div class="section-heading"><div><h2>災害別に備える</h2><p>カテゴリから入ることも、代表記事へ直接進むこともできます。</p></div></div>
+    <div class="topic-grid">
+      <article class="topic-card">
+        <h3><a href="category_typhoon.html">台風</a></h3><p>強風・停電・大雨への事前準備。</p>
+        <div class="topic-card__articles">
+          <a href="article_b006.html">台風が来る前に何をする？</a>
+          <a href="#" data-article-id="B021">台風前日に確認したいこと</a>
+        </div>
+        <a class="topic-card__more" href="category_typhoon.html">台風の記事をすべて見る →</a>
+      </article>
+      <article class="topic-card">
+        <h3><a href="category_flood.html">大雨・水害</a></h3><p>洪水、内水氾濫、浸水への備え。</p>
+        <div class="topic-card__articles">
+          <a href="article_b005.html">大雨・水害にどう備える？</a>
+          <a href="article_b008.html">車が冠水・水没しそうなとき</a>
+          <a href="article_b013.html">火災保険の水災補償とは？</a>
+        </div>
+        <a class="topic-card__more" href="category_flood.html">大雨・水害の記事をすべて見る →</a>
+      </article>
+      <article class="topic-card">
+        <h3><a href="category_earthquake.html">地震</a></h3><p>家具、停電、断水、避難の基本。</p>
+        <div class="topic-card__articles">
+          <a href="#" data-article-id="B007">地震に備えて最初に確認したいこと</a>
+          <a href="#" data-article-id="B023">地震の家具転倒対策</a>
+        </div>
+        <a class="topic-card__more" href="category_earthquake.html">地震の記事をすべて見る →</a>
+      </article>
+      <article class="topic-card">
+        <h3><a href="category_outage.html">停電・断水</a></h3><p>電気・水・トイレをどう備えるか。</p>
+        <div class="topic-card__articles">
+          <a href="#" data-article-id="B004">停電に備えて準備しておきたいもの</a>
+          <a href="#" data-article-id="B003">断水に備える携帯トイレ</a>
+        </div>
+        <a class="topic-card__more" href="category_outage.html">停電・断水の記事をすべて見る →</a>
+      </article>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-heading"><div><h2>困りごとから探す</h2><p>災害名ではなく、実際に困りそうなことから探せます。</p></div></div>
-    <div class="problem-grid">
-      <a class="problem-link" href="#">車が水没・冠水したら</a>
-      <a class="problem-link" href="#">家が浸水したら</a>
-      <a class="problem-link" href="#">保険は使える？</a>
-      <a class="problem-link" href="#">被災後に何をする？</a>
+    <div class="section-heading"><div><h2>困りごとから探す</h2><p>「車」「住宅」「保険」など、実際の困りごとから複数の記事を探せます。</p></div></div>
+    <div class="topic-grid">
+      <article class="topic-card">
+        <h3><a href="category_vehicle.html">車と災害</a></h3><p>冠水・駐車場所・保険・車載用品。</p>
+        <div class="topic-card__articles">
+          <a href="article_b008.html">車が冠水・水没しそうなとき</a>
+          <a href="#" data-article-id="B009">冠水した道路を車で走る危険</a>
+          <a href="#" data-article-id="B010">地下駐車場の大雨対策</a>
+        </div>
+        <a class="topic-card__more" href="category_vehicle.html">車と災害の記事をすべて見る →</a>
+      </article>
+      <article class="topic-card">
+        <h3><a href="category_home.html">住宅と災害</a></h3><p>浸水・台風・家具転倒など住宅の備え。</p>
+        <div class="topic-card__articles">
+          <a href="#" data-article-id="B012">自宅の浸水にどう備える？</a>
+          <a href="#" data-article-id="B020">大雨前の浸水対策チェック</a>
+          <a href="#" data-article-id="B022">マンションの台風・水害対策</a>
+        </div>
+        <a class="topic-card__more" href="category_home.html">住宅と災害の記事をすべて見る →</a>
+      </article>
+      <article class="topic-card">
+        <h3><a href="category_insurance.html">保険・お金</a></h3><p>水災・風災・地震・車両損害。</p>
+        <div class="topic-card__articles">
+          <a href="article_b013.html">火災保険の水災補償とは？</a>
+          <a href="#" data-article-id="B011">水没した車は車両保険の対象？</a>
+          <a href="#" data-article-id="B017">地震保険の基本</a>
+        </div>
+        <a class="topic-card__more" href="category_insurance.html">保険・お金の記事をすべて見る →</a>
+      </article>
+      <article class="topic-card">
+        <h3><a href="category_post_disaster.html">被災後の手続き</a></h3><p>安全確保、記録、保険連絡など。</p>
+        <div class="topic-card__articles">
+          <a href="#" data-article-id="B015">片付ける前に記録したいもの</a>
+          <a href="article_b013.html">火災保険の水災補償を確認する</a>
+        </div>
+        <a class="topic-card__more" href="category_post_disaster.html">被災後の記事をすべて見る →</a>
+      </article>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-heading"><div><h2>防災グッズ</h2><p>「何を買うか」より先に、「何に備えるためか」から選びます。</p></div></div>
+    <div class="section-heading"><div><h2>防災グッズ</h2><p>「何を買うか」より先に、「何に備えるためか」から選びます。</p></div><a class="text-link" href="category_goods.html">防災グッズをすべて見る →</a></div>
     <div class="card-grid">
-      <article class="goods-card"><div class="card-body"><span class="label">断水</span><h3>携帯トイレ</h3><p>必要数、保管場所、使い方を確認してから選びます。</p><a class="card-link" href="#">選び方を見る →</a></div></article>
-      <article class="goods-card"><div class="card-body"><span class="label">停電</span><h3>ライト・ラジオ</h3><p>照明と情報収集を分けて考えます。</p><a class="card-link" href="#">選び方を見る →</a></div></article>
-      <article class="goods-card"><div class="card-body"><span class="label">電源</span><h3>ポータブル電源</h3><p>容量だけでなく、用途と安全上の注意も確認。</p><a class="card-link" href="#">選び方を見る →</a></div></article>
+      <article class="goods-card"><div class="card-body"><span class="label">断水</span><h3><a class="title-link title-link--planned" href="#" data-article-id="B003">携帯トイレ</a></h3><p>必要数、保管場所、使い方を確認してから選びます。</p><a class="card-link" href="category_goods.html">選び方を見る →</a></div></article>
+      <article class="goods-card"><div class="card-body"><span class="label">情報</span><h3><a class="title-link title-link--planned" href="#" data-article-id="B027">ライト・ラジオ</a></h3><p>照明と情報収集を分けて考えます。</p><a class="card-link" href="category_goods.html">選び方を見る →</a></div></article>
+      <article class="goods-card"><div class="card-body"><span class="label">電源</span><h3><a class="title-link title-link--planned" href="#" data-article-id="B028">ポータブル電源</a></h3><p>容量だけでなく、用途と安全上の注意も確認。</p><a class="card-link" href="category_goods.html">選び方を見る →</a></div></article>
     </div>
   </section>
 
