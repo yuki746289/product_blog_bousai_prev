@@ -3,32 +3,45 @@
 確認日: 2026-09-01
 次回確認予定: 2027-03-01
 
-## F-B008-001 冠水路の車両影響
+## F-B008-001 冠水時の車両影響・脱出
+出典: 国土交通省「水深が床面を超えたら、もう危険！」
+URL: https://www.mlit.go.jp/jidosha/carinf/rcl/carsafety_sub/carsafety033.html
+確認:
+- 車両は深い水を走るよう設計されていない
+- 床面を超える浸水で電気装置、エンジン・モーター等に影響
+- 流れで車両が移動、タイヤ完全水没で浮くおそれ
+- ドアは水圧で開けにくくなる
+- 窓、脱出用ハンマー、内外水位差が小さくなった場合のドア脱出を案内
+- フロントガラスと一部ドアガラスは合わせガラスでハンマー破砕不可
+- 水が引いた後も始動せず点検
+
+## F-B008-002 水没車両からの脱出手順
 出典: 国土交通省
-URL: https://renrakuda.mlit.go.jp/renrakuda/carsafety033.html
-確認: 床面超の浸水で電気装置故障・停止等のおそれ。床面以下でも速度による巻き上げ水で影響。冠水路へ安易に進入しない。
+URL: https://www.mlit.go.jp/report/press/jidosha08_hh_003793.html
+確認: 冠水路で停止・脱出困難になる危険、速やかな脱出、破砕可能な窓の事前確認。
 
-## F-B008-002 冠水路テスト
-出典: JAF
-URL: https://jaf.or.jp/common/safety-drive/car-learning/user-test/disaster/flood-driving
-確認: 車種・速度で結果が異なる。実道路では水深・路面が見えず、進入を避け迂回。
+## F-B008-003 脱出用ハンマー
+出典: 国土交通省
+URL: https://www.mlit.go.jp/jidosha/carinf/rcl/carsafety_sub/carsafety023.html
+確認: 手の届く位置への固定、使用方法の事前確認、側面・後面ガラス、前面合わせガラスへの注意。
 
-## F-B008-003 水没時脱出
-出典: JAF
+## F-B008-004 脱出用ハンマーの選択
+出典: 国土交通省
+URL: https://www.mlit.go.jp/jidosha/carinf/rcl/carsafety_sub/carsafety040.html
+確認: 豪雨時は道路冠水前の早めの避難が重要。専用ハンマーの性能確認を案内。
+
+## F-B008-005 JAF 水没時の対処
 URL: https://jaf.or.jp/common/kuruma-qa/category-trouble/subcategory-support/faq270
-確認: シートベルトを外す、窓、脱出ハンマー。合わせガラスは割れない場合がある。
+確認: シートベルト、窓、パワーウインドウ故障、水圧、緊急脱出用ハンマー、一部ドアの合わせガラス。
 
-## F-B008-004 冠水車の再始動
-出典: JAF
-URL: https://jaf.or.jp/common/car-trouble-qa/strange-inside-car/leakage/faq118
-確認: 点検までエンジンを始動しない。
-
-## F-B008-005 冠水想定箇所
-出典: 国土交通省
-URL: https://www.cbr.mlit.go.jp/road/kansuimap/
-確認: アンダーパス等、局地的大雨で冠水する可能性がある場所を案内。
+## F-B008-006 JAF冠水・破砕テスト
+出典: JAFユーザーテスト
+確認: 冠水路の結果は車種・速度等で異なる。身近な物でのガラス破砕を当てにしない。テスト結果を普遍的な安全基準にはしない。
 
 ## 断定しない事項
+
 - 「水深○cmなら走れる」という安全基準
-- すべての車で同一の脱出方法が成功するという表現
-- すべてのガラスが脱出ハンマーで割れるという表現
+- SUV等なら冠水路を安全に走れるという表現
+- すべての車で同一の脱出方法が必ず成功するという表現
+- すべての側面・後面ガラスがハンマーで割れるという表現
+- JAFテスト条件を実道路へそのまま適用する表現
