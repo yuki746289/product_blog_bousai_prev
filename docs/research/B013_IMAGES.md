@@ -2,32 +2,39 @@
 
 確認日: 2026-09-01
 
-## IMG-B013-001 2018 Japan Floods (4).jpg
-用途: 住宅・地域の水害被害イメージ。
-Source: Wikimedia Commons
-Author: 内閣官房内閣広報室
-License: CC BY 4.0
-Source page: https://commons.wikimedia.org/wiki/File:2018_Japan_Floods_(4).jpg
+## IMG-B013-001 2018 Western Japan flood damage Hiroshima prefecture P7096759
 
-## IMG-B013-002 2018.07.13 Japan Floods.jpg
-用途: 水害被災地の実例。
-Source: Wikimedia Commons
-Author: 内閣官房内閣広報室
-License: CC BY 4.0
-Source page: https://commons.wikimedia.org/wiki/File:2018.07.13_Japan_Floods.jpg
+用途: 記事冒頭。住宅・地域の水害損害を示す実例。
+- Date: 2018-07-09
+- Author: khws4v1
+- Source: Wikimedia Commons
+- License: CC BY-SA 2.0
+- Source page: https://commons.wikimedia.org/wiki/File:2018_Western_Japan_flood_damage_Hiroshima_prefecture_P7096759_(42392964415).jpg
+- 採用理由: B005/B006/B008で未使用の写真であり、水害による損害の導入に適する
 
-## IMG-B013-003 Kurashiki 2018 Flood.jpg
-用途: 水害後の被害・片付けのイメージ。
-Source: Wikimedia Commons
-Author: 内閣官房内閣広報室
-License: Government of Japan Standard Terms / Commons掲載
-Source page: https://commons.wikimedia.org/wiki/File:Kurashiki_2018_Flood.jpg
+## IMG-B013-002 2018 Western Japan flood damage Hiroshima prefecture (43914434395)
 
-## IMG-B013-004 Hazard Map Portal banner
-用途: 自宅の水災リスク確認。
-Source: 国土地理院・国土交通省
-Reuse note: バナーページで活用可と明記。
-Source page: https://disaportal.gsi.go.jp/hazardmap/banner/banner.html
+用途: 被害後の住宅周辺・構造物損害の補助。
+- Date: 2018-09-21
+- Author: Kazuhisa OTSUBO
+- Source: Wikimedia Commons
+- License: CC BY 2.0
+- Source page: https://commons.wikimedia.org/wiki/File:2018_Western_Japan_flood_damage_Hiroshima_prefecture_(43914434395).jpg
+- 内容: 呉市小屋浦。豪雨から2か月以上経過後、歩道の土台が流され宙に浮いた状態
+
+## IMG-B013-003 ハザードマップポータル公式バナー
+
+用途: 自宅の水災リスクと契約内容を照らし合わせる節。
+- Source: 国土地理院・国土交通省
+- Source page: https://disaportal.gsi.go.jp/hazardmap/banner/banner.html
+- 再利用理由: 記事固有写真ではなく、公的サービスそのものへの導線として使用する公式バナーのため
+
+## 重複確認
+
+- B005/B006/B008の固有写真とは重複させない。
+- B005と同じ公的ハザードマップバナーのみ、同じ公式リスク確認サービスへの導線という必然性があるため再利用する。
 
 ## 方針
-保険会社の商品図・ロゴは使用しない。記事後半は表・Q&Aカードで視覚的に整理する。
+
+写真2点＋公的バナー＋「建物/家財」「契約チェック」「よくある誤解」の表・カードを使用する。
+保険会社の商品画像・ロゴは使用しない。
