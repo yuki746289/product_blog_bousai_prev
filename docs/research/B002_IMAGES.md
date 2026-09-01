@@ -28,6 +28,48 @@
 - 内容: 水、食品、携帯トイレ袋、保温シート等とチェックリスト
 - 注意: 写真内の内容を政府推奨リストとして扱わない
 
+## IMG-B002-003 日本の避難用品セット
+
+用途: 「自宅備蓄と防災バッグを分ける」節の補助
+
+- File: 避難用品セット (8439158672).jpg
+- Author: Masahiko OHKUBO
+- Source: Wikimedia Commons
+- License: CC BY 2.0
+- Source page: https://commons.wikimedia.org/wiki/File:%E9%81%BF%E9%9B%A3%E7%94%A8%E5%93%81%E3%82%BB%E3%83%83%E3%83%88_(8439158672).jpg
+- 内容: リュック、水、カロリーメイト、電池パックをまとめた日本の避難用品セット
+- 採用理由: 日本の家庭向け記事で「持ち出す用品」のイメージが直感的に伝わる
+
+## IMG-B002-004 点灯した懐中電灯
+
+用途: 「明かり・情報・連絡」節
+
+- File: Powered on flashlight.jpg
+- Author: Jiří Sedláček
+- Source: Wikimedia Commons
+- License: CC BY-SA 4.0
+- Source page: https://commons.wikimedia.org/wiki/File:Powered_on_flashlight.jpg
+- 内容: 点灯中のLED懐中電灯
+- 採用理由: 防災専用品ではないが、「停電時の照明」という用途が一目で分かる
+
+## IMG-B002-005 モバイルバッテリー
+
+用途: 「明かり・情報・連絡」節
+
+- File: Power Bank.jpg
+- Author: Esthee2010
+- Source: Wikimedia Commons
+- License: CC BY-SA 4.0
+- Source page: https://commons.wikimedia.org/wiki/File:Power_Bank.jpg
+- 内容: スマートフォン充電用のモバイルバッテリー
+- 採用理由: スマートフォンの予備電源という用途を直接イメージできる
+
+## 不採用候補
+
+- 携帯トイレ単体: 記事の文脈に自然に合い、商用利用条件を明確に確認できる画像が弱かったため今回は追加しない。
+- 海外の非常持ち出し啓発ポスター: 日本の読者に直感的に伝わりにくいため不採用。
+- 倉庫・配布拠点の備蓄写真: 家庭の防災バッグと用途が異なるため不採用。
+
 ## 方針
 
 B001で決めた通り、章ごとに無理に画像を置かない。
