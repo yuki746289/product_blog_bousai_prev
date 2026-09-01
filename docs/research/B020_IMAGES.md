@@ -2,20 +2,14 @@
 
 確認日: 2026-09-01
 
-## IMG-B020-001
+## IMG-B020-001 昭和58年7月豪雨.jpg
+- 用途: 記事冒頭の住宅水害リスクイメージ
+- 内容: 昭和58年7月島根豪雨による益田市内の浸水状況
+- Source: 国土交通省 / Wikimedia Commons
+- License: Government of Japan Standard Terms of Use Ver.2.0 / CC BY 4.0互換
+- 採用理由: 日本国内の住宅地浸水を示し、大雨前の自宅確認という記事テーマに合う
+- 対策効果判断用途: 使用しない
 
-- 用途: 記事冒頭の補助画像
-- Source: https://commons.wikimedia.org/wiki/File:Airmen_help_prepare_for_possible_flood_DVIDS413986.jpg
-- Author: Spc. Sarah Lupescu / U.S. Army
-- License: Public Domain（U.S. federal government work）
-- 採用理由: 大雨前に行う住宅浸水対策の準備場面を具体的にイメージしやすくする。土のう作業は早い段階で行い、危険が高まった後は避難を優先する本文と組み合わせる。
-- AI生成: なし
-- 安全判断用途: 使用しない
-
-## 視覚要素方針
-
-画像は場面想像・章理解の補助に限定する。住宅や建物ごとの実際の災害リスクは、公的資料・ハザード情報・管理者情報で確認する。
-
-## 重複確認
-
-既存記事の固有画像との重複なし。
+## 2026-09-01 日本文脈レビュー
+- U.S. Armyの土のう作業写真を削除し、日本国内の浸水状況へ差し替え。
+- 具体的な止水・避難判断は本文と公的情報で説明する。
