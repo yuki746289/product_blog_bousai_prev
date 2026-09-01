@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T19:45:00+09:00",
+  "updated_at": "2026-09-02T00:30:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -692,12 +692,9 @@
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": "2027-03-01",
+      "next_review_at": "2027-03-02",
       "publish_blockers": [
         "manual_review_required",
-        "image_review_required",
-        "content_depth_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
       "source_path": "content/articles/B016_typhoon_wind_damage_insurance.md",
@@ -706,21 +703,22 @@
       "source_ids": [
         "F-B016-001",
         "F-B016-002",
-        "F-B016-003"
+        "F-B016-003",
+        "F-B016-004"
       ],
-      "source_count": 3,
-      "source_checked_at": "2026-09-01",
+      "source_count": 4,
+      "source_checked_at": "2026-09-02",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "image_source_count": 1,
       "image_source_path": "docs/research/B016_IMAGES.md",
-      "body_char_count_approx": 2394,
+      "body_char_count_approx": 3608,
       "image_dedup_status": "PASS",
-      "image_dedup_checked_at": "2026-09-01",
-      "content_depth_status": "NEEDS_REVIEW_SHORT",
-      "content_depth_checked_at": "2026-09-01",
+      "image_dedup_checked_at": "2026-09-02",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B016_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
-      "review_checklist_last_checked_at": "2026-09-01"
+      "review_checklist_last_checked_at": "2026-09-02"
     },
     {
       "article_id": "B017",
@@ -737,12 +735,9 @@
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": "2027-03-01",
+      "next_review_at": "2027-03-02",
       "publish_blockers": [
         "manual_review_required",
-        "image_review_required",
-        "content_depth_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
       "source_path": "content/articles/B017_earthquake_insurance_basics.md",
@@ -751,21 +746,22 @@
       "source_ids": [
         "F-B017-001",
         "F-B017-002",
-        "F-B017-003"
+        "F-B017-003",
+        "F-B017-004"
       ],
-      "source_count": 3,
-      "source_checked_at": "2026-09-01",
+      "source_count": 4,
+      "source_checked_at": "2026-09-02",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "image_source_count": 1,
       "image_source_path": "docs/research/B017_IMAGES.md",
-      "body_char_count_approx": 1807,
+      "body_char_count_approx": 3740,
       "image_dedup_status": "PASS",
-      "image_dedup_checked_at": "2026-09-01",
-      "content_depth_status": "NEEDS_EXPANSION",
-      "content_depth_checked_at": "2026-09-01",
+      "image_dedup_checked_at": "2026-09-02",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B017_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
-      "review_checklist_last_checked_at": "2026-09-01"
+      "review_checklist_last_checked_at": "2026-09-02"
     },
     {
       "article_id": "B018",
@@ -919,12 +915,9 @@
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": "2027-03-01",
+      "next_review_at": "2027-03-02",
       "publish_blockers": [
         "manual_review_required",
-        "image_review_required",
-        "content_depth_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
       "source_path": "content/articles/B021_typhoon_day_before_checklist.md",
@@ -936,19 +929,19 @@
         "F-B021-003"
       ],
       "source_count": 3,
-      "source_checked_at": "2026-09-01",
+      "source_checked_at": "2026-09-02",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "image_source_count": 1,
       "image_source_path": "docs/research/B021_IMAGES.md",
-      "body_char_count_approx": 1592,
+      "body_char_count_approx": 3284,
       "image_dedup_status": "PASS",
-      "image_dedup_checked_at": "2026-09-01",
-      "content_depth_status": "NEEDS_EXPANSION",
-      "content_depth_checked_at": "2026-09-01",
+      "image_dedup_checked_at": "2026-09-02",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-02",
       "product_link_policy": "internal_product_guide_when_relevant",
       "review_checklist_path": "docs/reviews/B021_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
-      "review_checklist_last_checked_at": "2026-09-01"
+      "review_checklist_last_checked_at": "2026-09-02"
     },
     {
       "article_id": "B022",
@@ -1004,20 +997,38 @@
       "priority": "high",
       "parent_article_id": "B007",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-02",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
+        "manual_review_required",
+        "production_page_required"
       ],
       "review_checklist_path": "docs/reviews/B023_CHECKLIST.md",
-      "review_checklist_status": "NOT_STARTED",
-      "review_checklist_last_checked_at": "2026-09-01"
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-02",
+      "source_count": 3,
+      "source_checked_at": "2026-09-02",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "body_char_count_approx": 3020,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-02",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-02",
+      "source_path": "content/articles/B023_earthquake_furniture_safety.md",
+      "preview_path": "preview/article_b023.html",
+      "planned_public_path": "earthquake/earthquake-furniture-safety.html",
+      "source_ids": [
+        "F-B023-001",
+        "F-B023-002",
+        "F-B023-003"
+      ],
+      "image_source_path": "docs/research/B023_IMAGES.md"
     },
     {
       "article_id": "B024",
@@ -1028,20 +1039,39 @@
       "priority": "high",
       "parent_article_id": "B007",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-02",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
+        "manual_review_required",
+        "production_page_required"
       ],
       "review_checklist_path": "docs/reviews/B024_CHECKLIST.md",
-      "review_checklist_status": "NOT_STARTED",
-      "review_checklist_last_checked_at": "2026-09-01"
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-02",
+      "source_count": 4,
+      "source_checked_at": "2026-09-02",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "body_char_count_approx": 3590,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-02",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-02",
+      "source_path": "content/articles/B024_earthquake_blackout_water_outage.md",
+      "preview_path": "preview/article_b024.html",
+      "planned_public_path": "earthquake/earthquake-blackout-water-outage.html",
+      "source_ids": [
+        "F-B024-001",
+        "F-B024-002",
+        "F-B024-003",
+        "F-B024-004"
+      ],
+      "image_source_path": "docs/research/B024_IMAGES.md"
     },
     {
       "article_id": "B025",

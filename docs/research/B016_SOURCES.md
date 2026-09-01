@@ -1,6 +1,6 @@
 # B016 出典確認メモ
 
-確認日: 2026-09-01
+確認日: 2026-09-02
 
 ## F-B016-001 日本損害保険協会「風水雪災等による損害を補償する損害保険」
 
@@ -16,3 +16,7 @@
 
 - URL: https://www.data.jma.go.jp/fukuoka/yoho/kisyousaigai_sonae_typhoon.html
 - 用途: 強風前の屋外・窓対策
+
+## F-B016-004 国民生活センター
+- URL: https://www.kokusen.go.jp/news/data/n-20210610_1.html
+- 用途: 保険金前提の住宅修理勧誘・契約トラブル

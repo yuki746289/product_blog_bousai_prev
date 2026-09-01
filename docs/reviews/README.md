@@ -32,8 +32,8 @@
 | B020 | 大雨の前に自宅で確認すること｜浸水対策チェックリスト | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B020_CHECKLIST.md) |
 | B021 | 台風前日に確認したいこと｜屋外・窓・停電への備え | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B021_CHECKLIST.md) |
 | B022 | マンションの台風・水害対策｜戸建てとの違い | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B022_CHECKLIST.md) |
-| B023 | 地震の家具転倒対策｜まず優先したい場所 | PLANNED | NOT_STARTED | [checklist](./B023_CHECKLIST.md) |
-| B024 | 地震後の停電・断水にどう備える？ | PLANNED | NOT_STARTED | [checklist](./B024_CHECKLIST.md) |
+| B023 | 地震の家具転倒対策｜まず優先したい場所 | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B023_CHECKLIST.md) |
+| B024 | 地震後の停電・断水にどう備える？ | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B024_CHECKLIST.md) |
 | B025 | 飲料水はどう備蓄する？家庭での考え方 | PLANNED | NOT_STARTED | [checklist](./B025_CHECKLIST.md) |
 | B026 | 非常食は何を備える？普段使いを含めた考え方 | PLANNED | NOT_STARTED | [checklist](./B026_CHECKLIST.md) |
 | B027 | 防災ラジオは必要？情報収集手段を比較する | PLANNED | NOT_STARTED | [checklist](./B027_CHECKLIST.md) |

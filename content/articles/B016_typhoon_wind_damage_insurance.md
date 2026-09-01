@@ -6,7 +6,7 @@ category: insurance
 content_role: detail
 risk_level: elevated
 status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+source_checked_at: 2026-09-02
 next_review_at: 2027-03-01
 affiliate: false
 ---
@@ -131,6 +131,12 @@ affiliate: false
 
 家族が手続きする可能性も考え、**保険会社名と代理店連絡先だけでも共有**しておくと初動が早くなります。
 
+## 保険請求には期限があるため放置しない
+
+損害を見つけたら、契約上の請求期限や必要書類を確認し、早めに契約先へ連絡します。時間がたつほど、台風による突発的な損害なのか、後から進んだ劣化なのかを整理しにくくなることがあります。
+
+一方で、期限を理由に危険な屋根へ上がったり、保険会社の案内前に高額契約を急いだりする必要はありません。**安全確保、事故連絡、必要資料の確認、修理契約**の順で進めます。
+
 ## 関連記事
 
 - [火災保険の水災補償](article_b013.html)
@@ -142,3 +148,4 @@ affiliate: false
 - 日本損害保険協会「風水雪災等による損害を補償する損害保険」: https://www.sonpo.or.jp/insurance/shizen/index.html
 - 日本損害保険協会「問51 火災保険」: https://soudanguide.sonpo.or.jp/home/q051.html
 - 福岡管区気象台「台風への備え」: https://www.data.jma.go.jp/fukuoka/yoho/kisyousaigai_sonae_typhoon.html
+- 国民生活センター「保険金で住宅修理ができると勧誘する事業者に注意」: https://www.kokusen.go.jp/news/data/n-20210610_1.html
