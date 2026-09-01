@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T14:40:00+09:00",
+  "updated_at": "2026-09-01T15:35:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -139,9 +139,7 @@
         "manual_review_required",
         "image_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "content_depth_review_required",
-        "image_dedup_required"
+        "production_page_required"
       ],
       "source_path": "content/articles/B005_flood_preparedness_basics.md",
       "preview_path": "preview/article_b005.html",
@@ -157,7 +155,12 @@
       "source_checked_at": "2026-09-01",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "image_source_count": 4,
-      "image_source_path": "docs/research/B005_IMAGES.md"
+      "image_source_path": "docs/research/B005_IMAGES.md",
+      "body_char_count_approx": 3162,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B006",
@@ -179,9 +182,7 @@
         "manual_review_required",
         "image_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "content_depth_review_required",
-        "image_dedup_required"
+        "production_page_required"
       ],
       "source_path": "content/articles/B006_typhoon_preparation_checklist.md",
       "preview_path": "preview/article_b006.html",
@@ -195,8 +196,13 @@
       "source_count": 4,
       "source_checked_at": "2026-09-01",
       "image_status": "SELECTED_REVIEW_REQUIRED",
-      "image_source_count": 4,
-      "image_source_path": "docs/research/B006_IMAGES.md"
+      "image_source_count": 3,
+      "image_source_path": "docs/research/B006_IMAGES.md",
+      "body_char_count_approx": 3112,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B007",
@@ -239,9 +245,7 @@
         "manual_review_required",
         "image_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "content_depth_review_required",
-        "image_dedup_required"
+        "production_page_required"
       ],
       "source_path": "content/articles/B008_car_flood_submersion.md",
       "preview_path": "preview/article_b008.html",
@@ -251,13 +255,19 @@
         "F-B008-002",
         "F-B008-003",
         "F-B008-004",
-        "F-B008-005"
+        "F-B008-005",
+        "F-B008-006"
       ],
-      "source_count": 5,
+      "source_count": 6,
       "source_checked_at": "2026-09-01",
       "image_status": "SELECTED_REVIEW_REQUIRED",
-      "image_source_count": 2,
-      "image_source_path": "docs/research/B008_IMAGES.md"
+      "image_source_count": 3,
+      "image_source_path": "docs/research/B008_IMAGES.md",
+      "body_char_count_approx": 3734,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B009",
@@ -363,9 +373,7 @@
         "manual_review_required",
         "image_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "content_depth_review_required",
-        "image_dedup_required"
+        "production_page_required"
       ],
       "source_path": "content/articles/B013_fire_insurance_water_damage.md",
       "preview_path": "preview/article_b013.html",
@@ -375,13 +383,19 @@
         "F-B013-002",
         "F-B013-003",
         "F-B013-004",
-        "F-B013-005"
+        "F-B013-005",
+        "F-B013-006"
       ],
-      "source_count": 5,
+      "source_count": 6,
       "source_checked_at": "2026-09-01",
       "image_status": "SELECTED_REVIEW_REQUIRED",
-      "image_source_count": 4,
-      "image_source_path": "docs/research/B013_IMAGES.md"
+      "image_source_count": 3,
+      "image_source_path": "docs/research/B013_IMAGES.md",
+      "body_char_count_approx": 2972,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B014",
