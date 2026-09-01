@@ -612,3 +612,11 @@ th {
     max-height: 360px;
   }
 }
+
+
+/* Added: 2026-09-01 10:05 JST / narrow documentary image */
+.article-inline-image--narrow img {
+  width: min(100%, 520px);
+  margin: 0 auto;
+  object-fit: contain;
+}
