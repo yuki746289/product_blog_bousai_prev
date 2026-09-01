@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T16:40:00+09:00",
+  "updated_at": "2026-09-01T18:20:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -88,36 +88,82 @@
       "slug": "portable-toilet-stockpile",
       "title": "断水に備える携帯トイレ｜必要数を考える前に確認したいこと",
       "category": "water-outage",
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
-      "affiliate": true,
+      "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
         "manual_review_required",
-        "product_selection_required"
-      ]
+        "image_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "content_role": "detail",
+      "priority": "high",
+      "parent_article_id": "B001",
+      "source_path": "content/articles/B003_portable_toilet_stockpile.md",
+      "preview_path": "preview/article_b003.html",
+      "planned_public_path": "water-outage/portable-toilet-stockpile.html",
+      "source_ids": [
+        "F-B003-001",
+        "F-B003-002",
+        "F-B003-003"
+      ],
+      "source_count": 3,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "image_source_path": "docs/research/B003_IMAGES.md",
+      "body_char_count_approx": 2535,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B004",
       "slug": "blackout-preparedness",
       "title": "停電に備えて準備しておきたいもの｜照明・電源・情報収集を分けて考える",
       "category": "blackout",
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
-      "affiliate": true,
+      "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
         "manual_review_required",
-        "product_selection_required"
-      ]
+        "image_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "content_role": "pillar",
+      "priority": "high",
+      "parent_article_id": null,
+      "source_path": "content/articles/B004_blackout_preparedness.md",
+      "preview_path": "preview/article_b004.html",
+      "planned_public_path": "blackout/blackout-preparedness.html",
+      "source_ids": [
+        "F-B004-001",
+        "F-B004-002",
+        "F-B004-003"
+      ],
+      "source_count": 3,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "image_source_path": "docs/research/B004_IMAGES.md",
+      "body_char_count_approx": 3039,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B005",
@@ -215,17 +261,39 @@
       "priority": "high",
       "parent_article_id": null,
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B007_earthquake_preparedness_basics.md",
+      "preview_path": "preview/article_b007.html",
+      "planned_public_path": "earthquake/earthquake-preparedness-basics.html",
+      "source_ids": [
+        "F-B007-001",
+        "F-B007-002",
+        "F-B007-003",
+        "F-B007-004",
+        "F-B007-005"
+      ],
+      "source_count": 5,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "image_source_path": "docs/research/B007_IMAGES.md",
+      "body_char_count_approx": 3010,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "PASS",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B008",
@@ -376,7 +444,8 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "image_review_required"
       ],
       "source_path": "content/articles/B011_flooded_car_insurance.md",
       "preview_path": "preview/article_b011.html",
@@ -387,8 +456,8 @@
       ],
       "source_count": 2,
       "source_checked_at": "2026-09-01",
-      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
-      "image_source_count": 0,
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
       "image_source_path": "docs/research/B011_IMAGES.md",
       "body_char_count_approx": 2535,
       "image_dedup_status": "PASS",
@@ -415,7 +484,8 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "image_review_required"
       ],
       "source_path": "content/articles/B012_home_flood_preparedness.md",
       "preview_path": "preview/article_b012.html",
@@ -427,8 +497,8 @@
       ],
       "source_count": 3,
       "source_checked_at": "2026-09-01",
-      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
-      "image_source_count": 0,
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
       "image_source_path": "docs/research/B012_IMAGES.md",
       "body_char_count_approx": 3154,
       "image_dedup_status": "PASS",
@@ -500,7 +570,8 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "image_review_required"
       ],
       "source_path": "content/articles/B014_household_goods_flood_insurance.md",
       "preview_path": "preview/article_b014.html",
@@ -512,8 +583,8 @@
       ],
       "source_count": 3,
       "source_checked_at": "2026-09-01",
-      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
-      "image_source_count": 0,
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
       "image_source_path": "docs/research/B014_IMAGES.md",
       "body_char_count_approx": 2677,
       "image_dedup_status": "PASS",
@@ -540,7 +611,8 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "image_review_required"
       ],
       "source_path": "content/articles/B015_after_flood_record_evidence.md",
       "preview_path": "preview/article_b015.html",
@@ -551,8 +623,8 @@
       ],
       "source_count": 2,
       "source_checked_at": "2026-09-01",
-      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
-      "image_source_count": 0,
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
       "image_source_path": "docs/research/B015_IMAGES.md",
       "body_char_count_approx": 2634,
       "image_dedup_status": "PASS",
@@ -569,17 +641,38 @@
       "priority": "high",
       "parent_article_id": "B019",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "content_depth_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B016_typhoon_wind_damage_insurance.md",
+      "preview_path": "preview/article_b016.html",
+      "planned_public_path": "insurance/typhoon-wind-damage-insurance.html",
+      "source_ids": [
+        "F-B016-001",
+        "F-B016-002",
+        "F-B016-003"
+      ],
+      "source_count": 3,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "image_source_path": "docs/research/B016_IMAGES.md",
+      "body_char_count_approx": 2394,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "NEEDS_REVIEW_SHORT",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B017",
@@ -590,17 +683,38 @@
       "priority": "high",
       "parent_article_id": "B019",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "content_depth_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B017_earthquake_insurance_basics.md",
+      "preview_path": "preview/article_b017.html",
+      "planned_public_path": "insurance/earthquake-insurance-basics.html",
+      "source_ids": [
+        "F-B017-001",
+        "F-B017-002",
+        "F-B017-003"
+      ],
+      "source_count": 3,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "image_source_path": "docs/research/B017_IMAGES.md",
+      "body_char_count_approx": 1807,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "NEEDS_EXPANSION",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B018",
@@ -621,7 +735,8 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "image_review_required"
       ],
       "source_path": "content/articles/B018_earthquake_car_insurance.md",
       "preview_path": "preview/article_b018.html",
@@ -634,8 +749,8 @@
       ],
       "source_count": 4,
       "source_checked_at": "2026-09-01",
-      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
-      "image_source_count": 0,
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
       "image_source_path": "docs/research/B018_IMAGES.md",
       "body_char_count_approx": 2698,
       "image_dedup_status": "PASS",
@@ -652,17 +767,40 @@
       "priority": "high",
       "parent_article_id": null,
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "content_depth_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B019_disaster_insurance_overview.md",
+      "preview_path": "preview/article_b019.html",
+      "planned_public_path": "insurance/disaster-insurance-overview.html",
+      "source_ids": [
+        "F-B019-001",
+        "F-B019-002",
+        "F-B019-003",
+        "F-B019-004",
+        "F-B019-005"
+      ],
+      "source_count": 5,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "image_source_path": "docs/research/B019_IMAGES.md",
+      "body_char_count_approx": 1760,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "NEEDS_EXPANSION",
+      "content_depth_checked_at": "2026-09-01"
     },
     {
       "article_id": "B020",
@@ -683,7 +821,8 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "image_review_required"
       ],
       "source_path": "content/articles/B020_home_heavy_rain_checklist.md",
       "preview_path": "preview/article_b020.html",
@@ -695,8 +834,8 @@
       ],
       "source_count": 3,
       "source_checked_at": "2026-09-01",
-      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
-      "image_source_count": 0,
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
       "image_source_path": "docs/research/B020_IMAGES.md",
       "body_char_count_approx": 2547,
       "image_dedup_status": "PASS",
@@ -714,17 +853,39 @@
       "priority": "high",
       "parent_article_id": "B006",
       "pickup_candidate": false,
-      "status": "PLANNED",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
       "last_reviewed_at": null,
-      "next_review_at": null,
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "official_source_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_review_required",
+        "content_depth_review_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "source_path": "content/articles/B021_typhoon_day_before_checklist.md",
+      "preview_path": "preview/article_b021.html",
+      "planned_public_path": "typhoon/typhoon-day-before-checklist.html",
+      "source_ids": [
+        "F-B021-001",
+        "F-B021-002",
+        "F-B021-003"
+      ],
+      "source_count": 3,
+      "source_checked_at": "2026-09-01",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
+      "image_source_path": "docs/research/B021_IMAGES.md",
+      "body_char_count_approx": 1592,
+      "image_dedup_status": "PASS",
+      "image_dedup_checked_at": "2026-09-01",
+      "content_depth_status": "NEEDS_EXPANSION",
+      "content_depth_checked_at": "2026-09-01",
+      "product_link_policy": "internal_product_guide_when_relevant"
     },
     {
       "article_id": "B022",
@@ -745,7 +906,8 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "image_review_required"
       ],
       "source_path": "content/articles/B022_apartment_typhoon_flood.md",
       "preview_path": "preview/article_b022.html",
@@ -757,8 +919,8 @@
       ],
       "source_count": 3,
       "source_checked_at": "2026-09-01",
-      "image_status": "NO_PHOTO_REQUIRED_VISUALS_ONLY",
-      "image_source_count": 0,
+      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_source_count": 1,
       "image_source_path": "docs/research/B022_IMAGES.md",
       "body_char_count_approx": 2785,
       "image_dedup_status": "PASS",
