@@ -22,5 +22,12 @@ Author: 内閣官房内閣広報室
 License: CC BY 4.0
 Source page: https://commons.wikimedia.org/wiki/File:2018_Japan_Floods_(1).png
 
+## IMG-B005-004 Kurashiki 2018 Flood.jpg
+用途: 後半。水害後の道路・片付けの実例。
+Source: Wikimedia Commons
+Author: 内閣官房内閣広報室
+License: Government of Japan Standard Terms / Commons掲載
+Source page: https://commons.wikimedia.org/wiki/File:Kurashiki_2018_Flood.jpg
+
 ## 方針
-画像3枚＋表・チェックリスト・注意ボックスで前半/中盤/後半の視覚密度を調整。
+画像4枚＋表・チェックリスト・注意ボックスで前半/中盤/後半の視覚密度を調整。
