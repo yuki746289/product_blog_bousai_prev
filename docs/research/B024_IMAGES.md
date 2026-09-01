@@ -15,7 +15,7 @@
 
 ## AI生成補助画像（2026-09-02追加）
 
-- ファイル: `preview/assets/images/ai_b024_outage_supplies_20260902.png`
+- ファイル: `preview/assets/images/ai_b024_outage_supplies_20260902.webp`
 - 用途: 本文中盤の場面理解・文章区切り
 - 内容: 停電・断水用の備蓄を確認する家庭
 - AI生成: あり

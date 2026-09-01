@@ -15,7 +15,7 @@
 
 ## AI生成補助画像（2026-09-02追加）
 
-- ファイル: `preview/assets/images/ai_b023_furniture_check_20260902.png`
+- ファイル: `preview/assets/images/ai_b023_furniture_check_20260902.webp`
 - 用途: 本文中盤の場面理解・文章区切り
 - 内容: 寝室で家具固定と配置を確認する家庭
 - AI生成: あり
