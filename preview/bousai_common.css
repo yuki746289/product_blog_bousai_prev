@@ -1073,3 +1073,53 @@ th {
     padding-right: 48px;
   }
 }
+
+
+/* Added: 2026-09-01 / homepage thumbnails */
+.card-thumb,
+.topic-card__thumb,
+.pickup-card__visual--image {
+  display: block;
+  overflow: hidden;
+  background: #eaf1f2;
+}
+
+.card-thumb {
+  aspect-ratio: 16 / 9;
+}
+
+.topic-card__thumb {
+  margin: -22px -22px 17px;
+  aspect-ratio: 16 / 7;
+  border-bottom: 1px solid var(--line);
+}
+
+.card-thumb img,
+.topic-card__thumb img,
+.pickup-card__visual--image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pickup-card__visual--image {
+  padding: 0;
+}
+
+.pickup-card__visual--image img {
+  min-height: 310px;
+}
+
+.pickup-secondary .card-thumb {
+  aspect-ratio: 16 / 6;
+}
+
+@media (max-width: 720px) {
+  .topic-card__thumb {
+    aspect-ratio: 16 / 8;
+  }
+  .pickup-secondary .card-thumb {
+    aspect-ratio: 16 / 8;
+  }
+}
