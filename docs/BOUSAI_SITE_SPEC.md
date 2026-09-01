@@ -35,3 +35,13 @@
 - ピックアップは最大4件とし、公開済み・鮮度確認済みの記事のみ表示する。
 
 詳細は `docs/SITE_STRUCTURE.md` と `docs/PICKUP_AND_DEEP_DIVE_POLICY.md` を参照する。
+
+
+## 6. アクセス解析
+
+- Google Analyticsを全公開ページで使用する。
+- Measurement IDは `G-XQVLD5HMNG` とする。
+- タグは共通テンプレート `templates/partials/google_analytics.html` から `<head>` 内へ挿入する。
+- ページ単位の手書きコピーは避け、重複挿入を防止する。
+- 人気記事、流入、カテゴリ別アクセス、ピックアップ記事の評価に利用する。
+- 詳細は `docs/ANALYTICS.md` を参照する。
