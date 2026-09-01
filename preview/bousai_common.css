@@ -557,3 +557,58 @@ th {
   .article-header,
   .article-body { border-radius: 13px; }
 }
+
+
+/* Added: 2026-09-01 09:48 JST / B001 article imagery */
+.article-feature-image,
+.article-inline-image {
+  margin: 0 0 24px;
+}
+
+.article-inline-image {
+  margin: 28px 0 34px;
+}
+
+.article-feature-image img,
+.article-inline-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  background: #edf1f2;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.article-feature-image figcaption,
+.article-inline-image figcaption,
+.official-link-visual p {
+  margin: 8px 2px 0;
+  color: var(--muted);
+  font-size: .74rem;
+  line-height: 1.55;
+}
+
+.official-link-visual {
+  margin: 22px 0 28px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.official-link-visual img {
+  display: block;
+  width: min(100%, 400px);
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (max-width: 620px) {
+  .article-feature-image img,
+  .article-inline-image img {
+    max-height: 360px;
+  }
+}
