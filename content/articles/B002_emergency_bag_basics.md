@@ -8,7 +8,7 @@ risk_level: elevated
 status: REVIEW_REQUIRED
 source_checked_at: 2026-09-01
 next_review_at: 2027-03-01
-affiliate: true
+affiliate: false
 ---
 
 # 防災バッグには何を入れる？用途別に考える基本の備え
@@ -56,6 +56,8 @@ affiliate: true
 
 自宅備蓄の数日分すべてをリュックに入れる必要はありません。重量とのバランスを見ます。
 
+→ [水・非常食の選び方と商品紹介](/goods/water-food.html)
+
 ### B. 明かり・情報・連絡
 
 - 懐中電灯・ヘッドライト
@@ -66,6 +68,9 @@ affiliate: true
 - 家族の連絡先を書いたメモ
 
 停電や通信障害を想定し、スマートフォンだけに依存しない準備も検討します。
+
+→ [防災用ライト・ラジオの商品紹介](/goods/light-information.html)  
+→ [モバイルバッテリー・電源の商品紹介](/goods/power-charging.html)
 
 ### C. 衛生・生活用品
 
@@ -79,6 +84,8 @@ affiliate: true
 - 雨具
 
 季節や避難環境によって優先順位は変わります。
+
+→ [携帯トイレ・衛生用品の商品紹介](/goods/toilet-hygiene.html)
 
 ### D. 健康・応急用品
 
@@ -214,6 +221,13 @@ affiliate: true
 は個別に確認する必要があります。
 
 「セットを買ったから準備完了」ではなく、購入後に中身を入れ替える前提で考えると使いやすくなります。
+
+具体的な商品は本記事へ直接並べず、用途別の商品紹介ページで比較・選定します。本記事や他の防災記事から、必要な商品紹介ページへ内部リンクする構成にします。
+
+- [水・非常食](/goods/water-food.html)
+- [トイレ・衛生](/goods/toilet-hygiene.html)
+- [ライト・情報](/goods/light-information.html)
+- [電源・充電](/goods/power-charging.html)
 
 ## まとめ
 
