@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T14:10:00+09:00",
+  "updated_at": "2026-09-01T14:25:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -154,7 +154,7 @@
       "source_count": 5,
       "source_checked_at": "2026-09-01",
       "image_status": "SELECTED_REVIEW_REQUIRED",
-      "image_source_count": 3,
+      "image_source_count": 4,
       "image_source_path": "docs/research/B005_IMAGES.md"
     },
     {
@@ -372,7 +372,7 @@
       "source_count": 5,
       "source_checked_at": "2026-09-01",
       "image_status": "SELECTED_REVIEW_REQUIRED",
-      "image_source_count": 2,
+      "image_source_count": 4,
       "image_source_path": "docs/research/B013_IMAGES.md"
     },
     {
