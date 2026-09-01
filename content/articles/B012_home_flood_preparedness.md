@@ -157,6 +157,13 @@ affiliate: false
 - [マンションの台風・水害対策](article_b022.html)
 - [火災保険の水災補償](article_b013.html)
 
+## 関連する商品紹介
+
+- [水・非常食の商品紹介](goods_water_food.html)
+- [トイレ・衛生用品の商品紹介](goods_toilet_hygiene.html)
+- [ライト・ラジオの商品紹介](goods_light_information.html)
+- [電源・充電の商品紹介](goods_power_charging.html)
+
 ## 公的・業界情報
 
 - ハザードマップポータルサイト: https://disaportal.gsi.go.jp/
