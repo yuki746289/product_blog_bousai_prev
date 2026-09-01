@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T18:20:00+09:00",
+  "updated_at": "2026-09-01T19:45:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -35,7 +35,10 @@
       "source_checked_at": "2026-09-01",
       "image_status": "APPROVED",
       "image_source_count": 4,
-      "image_source_path": "docs/research/B001_IMAGES.md"
+      "image_source_path": "docs/research/B001_IMAGES.md",
+      "review_checklist_path": "docs/reviews/B001_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B002",
@@ -81,7 +84,10 @@
         "goods/toilet-hygiene.html",
         "goods/light-information.html",
         "goods/power-charging.html"
-      ]
+      ],
+      "review_checklist_path": "docs/reviews/B002_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B003",
@@ -122,7 +128,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B003_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B004",
@@ -163,7 +172,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B004_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B005",
@@ -207,7 +219,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B005_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B006",
@@ -250,7 +265,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B006_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B007",
@@ -293,7 +311,10 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "review_checklist_path": "docs/reviews/B007_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B008",
@@ -338,7 +359,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B008_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B009",
@@ -380,7 +404,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B009_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B010",
@@ -423,7 +450,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B010_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B011",
@@ -463,7 +493,10 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "review_checklist_path": "docs/reviews/B011_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B012",
@@ -505,7 +538,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B012_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B013",
@@ -549,7 +585,10 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "review_checklist_path": "docs/reviews/B013_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B014",
@@ -590,7 +629,10 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "review_checklist_path": "docs/reviews/B014_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B015",
@@ -630,7 +672,10 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "review_checklist_path": "docs/reviews/B015_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B016",
@@ -672,7 +717,10 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "NEEDS_REVIEW_SHORT",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "review_checklist_path": "docs/reviews/B016_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B017",
@@ -714,7 +762,10 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "NEEDS_EXPANSION",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "review_checklist_path": "docs/reviews/B017_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B018",
@@ -756,7 +807,10 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "review_checklist_path": "docs/reviews/B018_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B019",
@@ -800,7 +854,10 @@
       "image_dedup_status": "PASS",
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "NEEDS_EXPANSION",
-      "content_depth_checked_at": "2026-09-01"
+      "content_depth_checked_at": "2026-09-01",
+      "review_checklist_path": "docs/reviews/B019_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B020",
@@ -842,7 +899,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B020_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B021",
@@ -885,7 +945,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "NEEDS_EXPANSION",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B021_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B022",
@@ -927,7 +990,10 @@
       "image_dedup_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_depth_checked_at": "2026-09-01",
-      "product_link_policy": "internal_product_guide_when_relevant"
+      "product_link_policy": "internal_product_guide_when_relevant",
+      "review_checklist_path": "docs/reviews/B022_CHECKLIST.md",
+      "review_checklist_status": "IN_PROGRESS",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B023",
@@ -948,7 +1014,10 @@
       "publish_blockers": [
         "official_source_required",
         "manual_review_required"
-      ]
+      ],
+      "review_checklist_path": "docs/reviews/B023_CHECKLIST.md",
+      "review_checklist_status": "NOT_STARTED",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B024",
@@ -969,7 +1038,10 @@
       "publish_blockers": [
         "official_source_required",
         "manual_review_required"
-      ]
+      ],
+      "review_checklist_path": "docs/reviews/B024_CHECKLIST.md",
+      "review_checklist_status": "NOT_STARTED",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B025",
@@ -989,7 +1061,10 @@
       "next_review_at": null,
       "publish_blockers": [
         "source_research_required"
-      ]
+      ],
+      "review_checklist_path": "docs/reviews/B025_CHECKLIST.md",
+      "review_checklist_status": "NOT_STARTED",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B026",
@@ -1010,7 +1085,10 @@
       "publish_blockers": [
         "source_research_required",
         "product_selection_required"
-      ]
+      ],
+      "review_checklist_path": "docs/reviews/B026_CHECKLIST.md",
+      "review_checklist_status": "NOT_STARTED",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B027",
@@ -1031,7 +1109,10 @@
       "publish_blockers": [
         "source_research_required",
         "product_selection_required"
-      ]
+      ],
+      "review_checklist_path": "docs/reviews/B027_CHECKLIST.md",
+      "review_checklist_status": "NOT_STARTED",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B028",
@@ -1053,7 +1134,10 @@
         "official_source_required",
         "manual_review_required",
         "product_selection_required"
-      ]
+      ],
+      "review_checklist_path": "docs/reviews/B028_CHECKLIST.md",
+      "review_checklist_status": "NOT_STARTED",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B029",
@@ -1074,7 +1158,10 @@
       "publish_blockers": [
         "source_research_required",
         "product_selection_required"
-      ]
+      ],
+      "review_checklist_path": "docs/reviews/B029_CHECKLIST.md",
+      "review_checklist_status": "NOT_STARTED",
+      "review_checklist_last_checked_at": "2026-09-01"
     },
     {
       "article_id": "B030",
@@ -1095,7 +1182,10 @@
       "publish_blockers": [
         "official_source_required",
         "manual_review_required"
-      ]
+      ],
+      "review_checklist_path": "docs/reviews/B030_CHECKLIST.md",
+      "review_checklist_status": "NOT_STARTED",
+      "review_checklist_last_checked_at": "2026-09-01"
     }
   ]
 }
