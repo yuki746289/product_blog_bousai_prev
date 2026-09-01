@@ -142,6 +142,10 @@ JAF等のテスト結果は一定条件での実験です。実道路では条�
 - [地下駐車場・低い場所の大雨対策](article_b010.html)
 - [大雨・水害の基本](article_b005.html)
 
+## 関連する商品紹介
+
+- 車に積んでおきたい防災用品｜車載用に考える（B029・準備中）
+
 ## 公的・専門情報
 
 - 国土交通省「水深が床面を超えたら、もう危険！」: https://www.mlit.go.jp/jidosha/carinf/rcl/carsafety_sub/carsafety033.html
