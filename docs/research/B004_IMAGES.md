@@ -2,20 +2,15 @@
 
 確認日: 2026-09-01
 
-## IMG-B004-001
-
-- 用途: 記事冒頭の補助画像
-- Source: https://commons.wikimedia.org/wiki/File:Working_By_Emergency_Light_(4252388319).jpg
-- Author: Alan Levine（cogdogblog）
+## IMG-B004-001 Emergency light.jpg
+- 用途: 記事冒頭の停電・照明イメージ
+- Source: https://commons.wikimedia.org/wiki/File:Emergency_light.jpg
+- Author: Angie
+- 撮影地: 千葉県佐原
 - License: CC BY 2.0
-- 採用理由: 停電時の照明確保という記事の中心テーマを直感的に伝えられる。実在商品の性能紹介ではなく、停電時の一般的な照明イメージとして使用。
+- 採用理由: 日本国内で撮影された非常用ライトの写真で、停電時の照明という記事テーマと合う
 - AI生成: なし
 - 安全判断用途: 使用しない
 
-## 視覚要素方針
-
-本文の表・チェックリスト・注意ボックスと組み合わせ、写真だけで安全判断をさせない。画像は記事内容をイメージしやすくする補助として使用する。
-
-## 重複確認
-
-既存記事の固有画像との重複なし。
+## 2026-09-01 日本文脈レビュー
+- 海外の停電作業写真「Working By Emergency Light」を差し替え。
