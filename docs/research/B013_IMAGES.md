@@ -23,5 +23,11 @@ Author: 内閣官房内閣広報室
 License: Government of Japan Standard Terms / Commons掲載
 Source page: https://commons.wikimedia.org/wiki/File:Kurashiki_2018_Flood.jpg
 
+## IMG-B013-004 Hazard Map Portal banner
+用途: 自宅の水災リスク確認。
+Source: 国土地理院・国土交通省
+Reuse note: バナーページで活用可と明記。
+Source page: https://disaportal.gsi.go.jp/hazardmap/banner/banner.html
+
 ## 方針
 保険会社の商品図・ロゴは使用しない。記事後半は表・Q&Aカードで視覚的に整理する。
