@@ -13,6 +13,18 @@
 - 内容: 2018年7月豪雨後、倉敷市の道路で災害ごみを撤去する状況
 - 採用理由: 水害時の道路は通常時と同じ状態ではないことを直感的に示せる。B005/B008等の既存固有写真と重複しない。
 
+## IMG-B009-002 Flooded Road.jpg
+
+- 用途: 冠水路を見つけた際の危険イメージを補助する本文内画像
+- Date: 2023-03-23
+- Author: Rudian kd
+- Source: Wikimedia Commons
+- License: CC BY-SA 4.0
+- Source page: https://commons.wikimedia.org/wiki/File:Flooded_Road.jpg
+- 採用理由: 道路上の水は見た目だけでは深さや流れを判断しにくいことを視覚的に補助する。走行可否や安全水深の根拠には使用しない。
+- AI生成: なし
+- 安全判断用途: 使用しない
+
 ## 視覚要素
 
 - 水深だけで判断できない理由: HTMLカード
