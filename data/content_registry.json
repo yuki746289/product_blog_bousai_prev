@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T10:45:00+09:00",
+  "updated_at": "2026-09-01T11:27:00+09:00",
   "articles": [
     {
       "article_id": "B001",
@@ -46,15 +46,15 @@
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
-      "affiliate": true,
+      "affiliate": false,
       "last_reviewed_at": "2026-09-01",
       "next_review_at": "2027-03-01",
       "publish_blockers": [
         "manual_review_required",
         "image_review_required",
-        "product_selection_required",
         "internal_links_pending",
-        "production_page_required"
+        "production_page_required",
+        "product_guide_pages_pending"
       ],
       "content_role": "practical",
       "priority": "high",
@@ -74,7 +74,14 @@
       "source_checked_at": "2026-09-01",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "image_source_count": 2,
-      "image_source_path": "docs/research/B002_IMAGES.md"
+      "image_source_path": "docs/research/B002_IMAGES.md",
+      "product_link_policy": "internal_product_guide_only",
+      "product_guide_paths": [
+        "goods/water-food.html",
+        "goods/toilet-hygiene.html",
+        "goods/light-information.html",
+        "goods/power-charging.html"
+      ]
     },
     {
       "article_id": "B003",
