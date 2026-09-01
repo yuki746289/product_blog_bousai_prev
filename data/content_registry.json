@@ -1,23 +1,41 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-08-31T23:50:00+09:00",
+  "updated_at": "2026-09-01T09:35:00+09:00",
   "articles": [
     {
       "article_id": "B001",
       "slug": "first-disaster-preparedness",
       "title": "防災は何から始める？家庭で最初に確認したい基本項目",
-      "category": "preparedness",
-      "status": "PLANNED",
+      "category": "guide",
+      "status": "REVIEW_REQUIRED",
       "risk_level": "elevated",
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
       "affiliate": false,
-      "last_reviewed_at": null,
-      "next_review_at": null,
+      "last_reviewed_at": "2026-09-01",
+      "next_review_at": "2027-03-01",
       "publish_blockers": [
-        "source_research_required",
-        "manual_review_required"
-      ]
+        "manual_review_required",
+        "image_asset_required",
+        "internal_links_pending",
+        "production_page_required"
+      ],
+      "content_role": "pillar",
+      "priority": "high",
+      "parent_article_id": null,
+      "pickup_candidate": true,
+      "source_path": "content/articles/B001_first_disaster_preparedness.md",
+      "preview_path": "preview/article_sample.html",
+      "planned_public_path": "guide/first-disaster-preparedness.html",
+      "source_ids": [
+        "F-B001-001",
+        "F-B001-002",
+        "F-B001-003",
+        "F-B001-004"
+      ],
+      "source_count": 4,
+      "source_checked_at": "2026-09-01",
+      "image_status": "PENDING"
     },
     {
       "article_id": "B002",
