@@ -32,7 +32,7 @@ Amazonの現在価格はリンク先で確認してもらう。
 | BAL No.636 | https://www.amazon.co.jp/dp/B0BVR39BHB/ref=nosim?tag=yukitaka83-22 | ASIN確認済み |
 | エーモン 6920 PURPLE SAVER | https://www.amazon.co.jp/dp/B0F3D1NHLV/ref=nosim?tag=yukitaka83-22 | ASIN確認済み |
 | ケンユー ベンリー袋G 30回分 | https://www.amazon.co.jp/dp/B0DY77TXXD/ref=nosim?tag=yukitaka83-22 | ASIN確認済み |
-| 尾西食品 車載用防災ボックス | https://www.amazon.co.jp/dp/B0CW5M7J4X/ref=nosim?tag=yukitaka83-22 | ASIN B0CW5M7J4X を商品名一致で確認 |
+| 尾西食品 車載用防災ミニボックス | https://www.amazon.co.jp/dp/B0CW5ZS4QR/ref=nosim?tag=yukitaka83-22 | ASIN B0CW5ZS4QR を商品名一致で確認 |
 
 ## 商品画像
 
@@ -40,5 +40,5 @@ Amazonの現在価格はリンク先で確認してもらう。
 - BAL No.636: Amazon商品画像（ASIN一致）
 - PURPLE SAVER 6920: 型番一致の製品写真
 - ベンリー袋G 30回分: Amazon商品画像（ASIN一致）
-- 車載用防災ボックス: Amazon商品画像（ASIN B0CW5M7J4X一致）
+- 車載用防災ミニボックス: 尾西食品の公式プレス画像（@Press配信）
 - 商品画像は性能・安全性の根拠には使わず、商品識別のために表示する。
