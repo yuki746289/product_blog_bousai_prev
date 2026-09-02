@@ -121,11 +121,12 @@ affiliate: false
 
 自宅で使う備蓄と、避難時に持つ防災バッグは役割を分けます。**重い備蓄を全部持ち出そうとしない**よう、あらかじめ整理しておきます。
 
-関連する商品紹介:
-- [水・非常食の選び方と商品紹介](/goods/water-food.html)
-- [携帯トイレ・衛生用品の商品紹介](/goods/toilet-hygiene.html)
-- [防災用ライト・ラジオの商品紹介](/goods/light-information.html)
-- [モバイルバッテリー・電源の商品紹介](/goods/power-charging.html)
+ここまでの備えを具体的な商品で確認したい場合は、用途ごとに比較できます。
+
+- [水・非常食の備蓄商品を比較する](/goods/water-food.html)
+- [携帯トイレ・衛生用品を比較する](/goods/toilet-hygiene.html)
+- [停電用ライト・ラジオを比較する](/goods/light-information.html)
+- [モバイルバッテリー・電源を比較する](/goods/power-charging.html)
 
 ## 8. 家族によって「避難開始の余裕」が違う
 
