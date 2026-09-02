@@ -22,6 +22,18 @@
 - 採用理由: 何を車内へ固定しておくのかを具体的に理解できる
 - 安全判断用途: 特定商品の性能保証には使用しない
 
+## IMG-B029-003
+
+- 用途: 停止表示器材の説明補助
+- Source: https://commons.wikimedia.org/wiki/File:%E4%B8%89%E8%A7%92%E8%A1%A8%E7%A4%BA%E6%9D%BF.jpg
+- Image: https://commons.wikimedia.org/wiki/Special:Redirect/file/%E4%B8%89%E8%A7%92%E8%A1%A8%E7%A4%BA%E6%9D%BF.jpg?width=1280
+- 内容: 日本で撮影された三角表示板
+- Author: tanohei
+- License: CC BY 3.0 / GFDL
+- 採用理由: 高速道路等での停止表示器材という記事固有の論点を、日本で撮影された一般的な器材写真で補助できる
+- 注意: 記事で候補にしているPURPLE SAVERとは別形式。法令適合性・性能の根拠には使用しない
+- 安全判断用途: 使用しない。停止時の安全行動は本文と公的情報を優先する
+
 ## 重複確認
 
 B001〜B030の他記事固有画像とは別。海外画像は使用しない。
