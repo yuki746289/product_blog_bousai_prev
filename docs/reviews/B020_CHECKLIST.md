@@ -71,7 +71,11 @@
 | 関連記事リンクが自然 | TODO | |
 | 未作成リンクが公開時に404にならない | TODO | |
 | 商品購入を記事の結論にしていない | TODO | |
-| 関連商品がある場合、商品紹介ページ導線を検討した | TODO | internal_product_guide_when_relevant |
+| 関連商品がある場合、商品紹介ページ導線を検討した | PASS | 前日の備蓄説明直後に4カテゴリへの導線を配置 |
+| 商品説明直後など自然な位置に商品記事リンクがある | PASS | 水・食品・トイレ・ライト・充電の説明直後 |
+| 商品記事リンクを記事末尾だけに依存していない | PASS | 本文中に主導線を追加 |
+| 商品記事リンク文言で遷移先が分かる | PASS | 各商品群を明記 |
+| 同一商品記事への過剰な重複リンクがない | PASS | 本文は1回、末尾は補助導線 |
 | 高リスク記事で購買導線が安全情報より前に出ていない | TODO | |
 
 ## 6. 公開前最終確認
@@ -81,7 +85,7 @@
 | タイトルと本文が一致 | TODO | |
 | 同時作成記事との文章・画像の過度な類似なし | TODO | |
 | 台帳の出典数・画像数・レビュー状態と一致 | TODO | |
-| publish_blockers が空 | FAIL | manual_review_required, internal_links_pending, production_page_required |
+| publish_blockers が空 | FAIL | manual_review_required, production_page_required |
 | HTMLリンク・画像・alt・構造を確認 | TODO | |
 | 本番ページに必要なGAタグあり | N/A | 本番化時に確認 |
 
@@ -96,7 +100,6 @@
 ## 8. 残課題
 
 - manual_review_required
-- internal_links_pending
 - production_page_required
 ## 9. 最終判定
 
