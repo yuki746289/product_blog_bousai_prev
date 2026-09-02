@@ -17,7 +17,7 @@
 | 画像重複 | PASS | B028専用画像として選定し、既存記事との重複を避けた |
 | プレビュー | PASS | preview/article_b028.html |
 | 商品候補 | PASS | 2026-09-02にメーカー公式のAmazon販売導線・販売案内を再確認 |
-| 記事台帳整合 | TODO | image_source_count / image_status の同期が必要 |
+| 記事台帳整合 | PASS | image_source_count=4 / image_status=SELECTED_REVIEW_REQUIRED に同期済み |
 
 ## 1. 内容・情報量
 
@@ -84,7 +84,7 @@
 |---|---|---|
 | タイトルと本文一致 | PASS | |
 | 同時作成記事との過度な類似なし | PASS | 役割別構成 |
-| 台帳との整合 | TODO | 画像数・画像状態を同期後にPASS化 |
+| 台帳との整合 | PASS | 画像数・画像状態を2026-09-02に同期済み |
 | HTMLリンク・画像・alt・構造 | PASS | 4画像のsrc・alt・キャプションを確認 |
 | publish_blockers が空 | FAIL | manual_review_required, amazon_affiliate_links_pending, production_page_required |
 | 本番ページ・GA | TODO | preview段階 |
@@ -94,10 +94,9 @@
 - manual_review_required
 - amazon_affiliate_links_pending
 - production_page_required
-- data/content_registry.json の画像数・画像状態同期
 
 ## 8. 最終判定
 
 - review_status: `IN_PROGRESS`
 - READY_TO_PUBLISH: `NO`
-- 判定理由: 本文・公的安全情報・用途別商品候補・Amazon販売状況・本文画像4点・プレビュー作成済み。記事台帳同期、人による安全確認、正式Amazonアソシエイトリンク、本番化が未完了。
+- 判定理由: 本文・公的安全情報・用途別商品候補・Amazon販売状況・本文画像4点・プレビュー作成済み。人による安全確認、正式Amazonアソシエイトリンク、本番化が未完了。
