@@ -38,3 +38,18 @@
 - タイトル画像を除く本文画像を0点から2点へ追加。
 - 表・手順・注意ボックスは維持し、画像を代替ではなく補助として併用。
 - 追加画像はB001〜B030の既存登録ファイル名との重複なしを確認。
+
+
+## 2026-09-02 推奨画像数追加対応
+
+### IMG-B010-004 Fukuoka Chūō Parking Lot the information board Tenjin 2-chōme Chūō-ku Fukuoka 20241014.jpg
+- 用途: 「月極・商業施設・自宅地下では連絡先が違う」付近
+- 内容: 福岡市中央区・福岡中央自動車駐車場の案内図
+- Author: Hirho
+- Source: Wikimedia Commons
+- Source page: https://commons.wikimedia.org/wiki/File:Fukuoka_Ch%C5%AB%C5%8D_Parking_Lot_the_information_board_Tenjin_2-ch%C5%8Dme_Ch%C5%AB%C5%8D-ku_Fukuoka_20241014.jpg
+- License: CC BY-SA 4.0
+- 採用理由: 地下駐車場では施設ごとに出入口・接続先・管理情報を平常時に把握するという本文を、既存の入口写真とは異なる「案内情報」の視点で補助できる
+- 安全判断用途: 使用しない
+- 配置後の本文画像数: 3点（推奨達成）
+
