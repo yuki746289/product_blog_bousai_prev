@@ -68,6 +68,8 @@
 
 ## 7. 最終判定
 
-- READY_TO_UPLOAD: `YES`
-- READY_TO_PUBLISH: `PENDING_POST_UPLOAD_SMOKE_TEST`
-- 理由: 静的HTML/CSS/JS・画像フォールバック・内部構成はPASS。本番URLへアップロード後、画像・リンク・PC/スマホ表示・GA/noindexを最終確認する
+- READY_TO_UPLOAD: `YES / 完了`
+- READY_TO_PUBLISH: `YES`
+- DEPLOYMENT_STATUS: `PUBLISHED`
+- PUBLIC_URL: `https://bousaikun.ashigaru.jp/`
+- 本番HTTPスモークテスト: PASS
