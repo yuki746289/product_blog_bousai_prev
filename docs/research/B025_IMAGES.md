@@ -22,6 +22,17 @@
 - 採用理由: 日本国内で実際に保管されている備蓄水を示し、収納・保管の話を補助できる
 - 安全判断用途: 使用しない
 
+## IMG-B025-003
+
+- 用途: 「2Lと500mLは役割が違う」の章
+- Source: https://commons.wikimedia.org/wiki/File:Petbottle.jpg
+- Image: https://commons.wikimedia.org/wiki/Special:Redirect/file/Petbottle.jpg?width=960
+- 内容: 日本で撮影されたPETボトル
+- Author: Hykw-a4
+- License: CC BY-SA 3.0 / GFDL
+- 採用理由: 水の容量・容器サイズによる用途の違いを説明する章の視覚補助として使える。特定ブランドや性能を示さない一般的な容器画像である
+- 安全判断用途: 使用しない
+
 ## 重複確認
 
-B001〜B024の既存固有画像とは別ファイル。日本文脈を優先して選定。
+B001〜B030の既存固有画像とは別ファイル。日本文脈を優先して選定。
