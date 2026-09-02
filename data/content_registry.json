@@ -773,9 +773,9 @@
       "content_role": "pillar",
       "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 1,
+      "image_source_count": 4,
       "image_source_path": "docs/research/B017_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": null,
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
@@ -806,7 +806,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "地震保険の基本｜火災保険との違いを整理",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_context_review_status": "PASS",
+      "image_context_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1425,5 +1427,5 @@
     }
   ],
   "schema_version": "1.0",
-  "updated_at": "2026-09-02T11:05:00+09:00"
+  "updated_at": "2026-09-02T11:12:00+09:00"
 }
