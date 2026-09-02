@@ -69,7 +69,11 @@
 | 関連記事リンクが自然 | TODO | |
 | 未作成リンクが公開時に404にならない | TODO | |
 | 商品購入を記事の結論にしていない | TODO | |
-| 関連商品がある場合、商品紹介ページ導線を検討した | TODO | internal_product_guide_when_relevant |
+| 関連商品がある場合、商品紹介ページ導線を検討した | PASS | 本文は駐車場の安全判断が中心で具体商品説明はないため本文内リンクは追加せず、末尾にB029を補助導線として配置 |
+| 商品説明直後など自然な位置に商品記事リンクがある | N/A | 本文に具体的な商品説明がないため無理に挿入しない |
+| 商品記事リンクを記事末尾だけに依存していない | N/A | 本文中商品説明がないため末尾補助導線のみで妥当 |
+| 商品記事リンク文言で遷移先が分かる | PASS | 車載防災用品の記事名を明示 |
+| 高リスク記事で購買導線が安全情報より前に出ていない | PASS | 商品導線は記事末尾のみ |
 | 高リスク記事で購買導線が安全情報より前に出ていない | TODO | |
 
 ## 6. 公開前最終確認
@@ -79,7 +83,7 @@
 | タイトルと本文が一致 | TODO | |
 | 同時作成記事との文章・画像の過度な類似なし | TODO | |
 | 台帳の出典数・画像数・レビュー状態と一致 | TODO | |
-| publish_blockers が空 | FAIL | manual_review_required, internal_links_pending, production_page_required |
+| publish_blockers が空 | FAIL | manual_review_required, production_page_required |
 | HTMLリンク・画像・alt・構造を確認 | TODO | |
 | 本番ページに必要なGAタグあり | N/A | 本番化時に確認 |
 
@@ -94,7 +98,6 @@
 ## 8. 残課題
 
 - manual_review_required
-- internal_links_pending
 - production_page_required
 
 ## 9. 最終判定
