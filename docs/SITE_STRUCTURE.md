@@ -153,7 +153,6 @@ Q&Aは数を限定せず、読者の具体的な疑問がある限り追加し�
 - [免責事項](../preview/disclaimer.html)
 - [プライバシーポリシー](../preview/privacy.html)
 - [広告について](../preview/advertising.html)
-- [お問い合わせ](../preview/contact.html)
 - Amazonアソシエイト参加表示
 - 公的情報へのリンク
 
@@ -275,6 +274,6 @@ Q&Aページは、読者の自然な質問文を入口として詳細記事へ�
 | 免責事項 | `preview/disclaimer.html` | 情報利用上の前提・責任範囲 |
 | プライバシーポリシー | `preview/privacy.html` | Analytics・Cookie・外部サービス等 |
 | 広告について | `preview/advertising.html` | Amazonアソシエイト・広告方針 |
-| お問い合わせ | `preview/contact.html` | 問い合わせ対象・受付状態・緊急用途外の明示 |
+| お問い合わせ | `preview/contact.html` | 受付窓口を公開するときのみ表示。受付停止中は `noindex` のまま非表示 |
 
 記事本数を増やすことより、必要な固定ページ・カテゴリ・Q&A・共通導線が不足していないことを優先する。
