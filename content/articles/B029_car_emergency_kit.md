@@ -160,6 +160,15 @@ affiliate: true
 
 Amazonでは、**同名・同型番を確認してから選び、安価な類似品へ置き換えません。**
 
+### Amazonで確認する
+
+- [BAL No.635 ブレイクハンマーをAmazonで探す](https://www.amazon.co.jp/s?k=%E5%A4%A7%E6%A9%8B%E7%94%A3%E6%A5%AD%20BAL%20No.635%20%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF%E3%83%8F%E3%83%B3%E3%83%9E%E3%83%BC&tag=yukitaka83-22)
+- [エーモン 6920 PURPLE SAVER](https://www.amazon.co.jp/dp/B0F3D1NHLV/ref=nosim?tag=yukitaka83-22)
+- [ケンユー ベンリー袋G 防臭袋プラス 30回分をAmazonで探す](https://www.amazon.co.jp/s?k=%E3%82%B1%E3%83%B3%E3%83%A6%E3%83%BC%20%E3%83%99%E3%83%B3%E3%83%AA%E3%83%BC%E8%A2%8BG%20%E9%98%B2%E8%87%AD%E8%A2%8B%E3%83%97%E3%83%A9%E3%82%B9%2030%E5%9B%9E%E5%88%86&tag=yukitaka83-22)
+- [尾西食品 車載用防災ミニボックスをAmazonで探す](https://www.amazon.co.jp/s?k=%E5%B0%BE%E8%A5%BF%E9%A3%9F%E5%93%81%20%E8%BB%8A%E8%BC%89%E7%94%A8%E9%98%B2%E7%81%BD%E3%83%9F%E3%83%8B%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9&tag=yukitaka83-22)
+
+> 上記はAmazonアソシエイトリンクです。検索リンクは、確認できていないASINへ誤って直リンクしないために使用しています。
+
 ## やってはいけないこと
 
 - 無名の脱出用ハンマーを価格だけで選ぶ
