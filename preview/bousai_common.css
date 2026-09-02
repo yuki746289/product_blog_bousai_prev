@@ -1178,3 +1178,36 @@ th {
   color: var(--navy);
   font-weight: 650;
 }
+
+
+/* Added: 2026-09-02 / Amazon affiliate product actions */
+.product-card-actions {
+  margin: 14px 0 2px;
+}
+.amazon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 15px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 9px;
+  background: var(--primary-dark);
+  color: #fff;
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration: none;
+}
+.amazon-link:hover,
+.amazon-link:focus-visible {
+  text-decoration: underline;
+}
+.amazon-link-note {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: .75rem;
+  line-height: 1.5;
+}
+.product-card-actions--block .amazon-link {
+  width: 100%;
+}
