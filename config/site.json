@@ -16,5 +16,6 @@
     "measurement_id": "G-XQVLD5HMNG",
     "enabled": true,
     "required_on_all_public_pages": true
-  }
+  },
+  "public_base_url": "https://bousaikun.ashigaru.jp/"
 }
