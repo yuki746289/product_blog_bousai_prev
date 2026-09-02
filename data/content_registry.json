@@ -724,9 +724,9 @@
       "content_depth_checked_at": "2026-09-02",
       "content_depth_status": "PASS",
       "content_role": "detail",
-      "image_dedup_checked_at": "2026-09-01",
+      "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 1,
+      "image_source_count": 4,
       "image_source_path": "docs/research/B016_IMAGES.md",
       "image_status": "APPROVED",
       "last_reviewed_at": null,
@@ -761,7 +761,7 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-01"
+      "image_context_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1425,5 +1425,5 @@
     }
   ],
   "schema_version": "1.0",
-  "updated_at": "2026-09-02T10:55:00+09:00"
+  "updated_at": "2026-09-02T11:05:00+09:00"
 }
