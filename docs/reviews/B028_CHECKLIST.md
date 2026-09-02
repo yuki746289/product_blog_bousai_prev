@@ -117,14 +117,15 @@
 ## 7. 残課題
 
 - manual_review_required
-- amazon_affiliate_links_pending
+- product_image_rights_review
+- mobile_visual_review
 - production_page_required
 
 ## 8. 最終判定
 
 - review_status: `IN_PROGRESS`
 - READY_TO_PUBLISH: `NO`
-- 判定理由: 本文・公的安全情報・用途別商品候補・Amazon販売状況・本文画像4点・プレビュー作成済み。Amazonアソシエイトリンク実装済み。人による安全確認と本番化が未完了。
+- 判定理由: 本文・公的安全情報・商品導線・価格・Amazonリンク・メーカー公式商品画像への置換を再確認済み。人による安全確認、商品画像の公開利用条件、スマートフォン実画面、本番化が未完了。
 
 ## 13. 画像関連性再レビュー（2026-09-02）
 
