@@ -71,6 +71,7 @@
 | 掲載商品が記事本文の用途・課題・想定読者に適合 | PASS | 用途別選定 |
 | 売れ筋・高評価だけで選んでいない | PASS | 記事役割を優先 |
 | 向く人・強み・注意点・主要仕様を説明できる | PASS | 商品メモあり |
+| Amazonアソシエイトリンク | PASS | RF-P155 / ICF-B300はASIN直リンク、RF-TJ20は型番固定検索リンク |
 | 安全性に関わる仕様を公式情報で確認 | PASS | メーカー公式・公的情報を確認 |
 | 高リスク記事で購買導線が安全情報より前に出ない | N/A | 安全説明を優先 |
 
@@ -82,7 +83,7 @@
 | 同時作成記事との過度な類似なし | PASS | 役割別構成 |
 | 台帳との整合 | PASS | 本更新で同期 |
 | HTMLリンク・画像・alt・構造 | PASS | preview静的確認 |
-| publish_blockers が空 | FAIL | amazon_affiliate_links_pending, production_page_required |
+| publish_blockers が空 | FAIL | production_page_required |
 | 本番ページ・GA | TODO | preview段階 |
 
 ## 7. 残課題
@@ -94,4 +95,4 @@
 
 - review_status: `IN_PROGRESS`
 - READY_TO_PUBLISH: `NO`
-- 判定理由: 本文・出典・用途別商品候補・国内自治体画像・プレビュー作成済み。正式Amazonリンクと本番化が未完了。
+- 判定理由: 本文・出典・用途別商品候補・国内自治体画像・プレビュー作成済み。Amazonアソシエイトリンク実装済み。本番化が未完了。
