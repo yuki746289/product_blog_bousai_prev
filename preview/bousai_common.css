@@ -18,6 +18,23 @@
   --danger-soft: #fff0ef;
   --info: #326891;
   --info-soft: #edf5fb;
+
+  /* Semantic UI roles: do not reuse section-heading colors for actions. */
+  --role-section-accent: #176b68;
+  --role-section-soft: #e3f1f0;
+  --role-summary-accent: #2f756a;
+  --role-summary-soft: #eef7f4;
+  --role-summary-line: #bfdcd5;
+  --role-product-accent: #6a4b9b;
+  --role-product-dark: #4d3477;
+  --role-product-soft: #f2edf9;
+  --role-product-line: #d4c7e6;
+  --role-purchase: #294f63;
+  --role-purchase-dark: #1f3d4d;
+  --role-table-soft: #edf3f7;
+  --role-table-text: #304e61;
+  --role-related-soft: #f8fafb;
+  --role-related-line: #d7e0e4;
   --max-width: 1120px;
   --article-width: 820px;
   --radius: 16px;
@@ -406,8 +423,8 @@ a:hover, a:focus-visible { text-decoration-thickness: 2px; }
 }
 
 .key-points {
-  background: var(--primary-soft);
-  border: 1px solid #bdd9d7;
+  background: var(--role-summary-soft);
+  border: 1px solid var(--role-summary-line);
 }
 
 .key-points h2,
@@ -444,7 +461,7 @@ a:hover, a:focus-visible { text-decoration-thickness: 2px; }
 .article-body h2 {
   margin: 46px 0 14px;
   padding-bottom: 9px;
-  border-bottom: 3px solid var(--primary-soft);
+  border-bottom: 3px solid var(--role-section-soft);
   color: var(--navy);
   font-size: 1.45rem;
 }
@@ -511,8 +528,8 @@ th, td {
 }
 
 th {
-  background: var(--primary-soft);
-  color: var(--primary-dark);
+  background: var(--role-table-soft);
+  color: var(--role-table-text);
 }
 
 .related-grid {
@@ -524,8 +541,8 @@ th {
 .related-link {
   display: block;
   padding: 14px;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--role-related-soft);
+  border: 1px solid var(--role-related-line);
   border-radius: 10px;
   text-decoration: none;
 }
@@ -631,16 +648,21 @@ th {
 .product-guide-links a {
   display: block;
   padding: 13px 15px;
-  background: var(--primary-soft);
-  border: 1px solid #bdd9d7;
+  background: var(--role-product-soft);
+  border: 1px solid var(--role-product-line);
+  border-left: 5px solid var(--role-product-accent);
   border-radius: 10px;
-  color: var(--primary-dark);
+  color: var(--role-product-dark);
   font-weight: 800;
   text-decoration: none;
 }
 
 .product-guide-link a:hover,
-.product-guide-links a:hover {
+.product-guide-link a:focus-visible,
+.product-guide-links a:hover,
+.product-guide-links a:focus-visible {
+  background: #ebe3f6;
+  border-color: var(--role-product-accent);
   text-decoration: underline;
 }
 
@@ -1136,10 +1158,10 @@ th {
 
 .article-body > h2 {
   padding: 12px 14px 10px;
-  border-left: 5px solid var(--primary);
+  border-left: 5px solid var(--role-section-accent);
   border-bottom: 0;
   border-radius: 8px;
-  background: linear-gradient(90deg, var(--primary-soft), rgba(235, 246, 245, .2));
+  background: linear-gradient(90deg, var(--role-section-soft), rgba(235, 246, 245, .2));
 }
 
 .article-body > h2:nth-of-type(3n + 1) + p {
@@ -1157,9 +1179,9 @@ th {
 .visual-summary {
   margin: 28px 0 34px;
   padding: 18px 20px;
-  border: 1px solid #c7ddd9;
+  border: 1px solid var(--role-summary-line);
   border-radius: 13px;
-  background: #f1f8f7;
+  background: var(--role-summary-soft);
 }
 
 .visual-summary__label {
@@ -1167,7 +1189,7 @@ th {
   margin-bottom: 8px;
   padding: 3px 9px;
   border-radius: 999px;
-  background: var(--primary);
+  background: var(--role-summary-accent);
   color: #fff;
   font-size: .76rem;
   font-weight: 700;
@@ -1190,9 +1212,9 @@ th {
   justify-content: center;
   min-height: 42px;
   padding: 10px 15px;
-  border: 1px solid var(--primary-dark);
+  border: 1px solid var(--role-purchase-dark);
   border-radius: 9px;
-  background: var(--primary-dark);
+  background: var(--role-purchase);
   color: #fff;
   font-weight: 800;
   line-height: 1.35;
