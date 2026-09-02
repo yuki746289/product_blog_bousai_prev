@@ -1297,3 +1297,22 @@ th {
     max-height: 230px;
   }
 }
+
+
+/* Added: 2026-09-02 / product-image load fallback */
+.product-recommendation__image.is-image-error {
+  min-height: 150px;
+  padding: 18px;
+  border: 1px dashed var(--line);
+  background: var(--surface-soft, #f7f8f8);
+  color: var(--muted);
+  text-align: center;
+  font-size: .78rem;
+  line-height: 1.6;
+}
+.product-recommendation__image.is-image-error::after {
+  content: "商品画像を読み込めません。商品画像はリンク先でご確認ください。";
+}
+.product-recommendation__image.is-image-error img {
+  display: none;
+}
