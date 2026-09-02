@@ -138,11 +138,6 @@ affiliate: false
 備蓄内容を具体化する場合は、[水・非常食の備蓄商品を比較する](/goods/water-food.html)、
 [携帯トイレ・衛生用品を比較する](/goods/toilet-hygiene.html)へ進めます。
 
-関連する商品紹介:
-- [水・非常食の選び方と商品紹介](/goods/water-food.html)
-- [携帯トイレ・衛生用品の商品紹介](/goods/toilet-hygiene.html)
-- [防災用ライト・ラジオの商品紹介](/goods/light-information.html)
-- [モバイルバッテリー・電源の商品紹介](/goods/power-charging.html)
 
 ## 7. 車は「移動させるか」より先に駐車場所のリスクを知る
 
