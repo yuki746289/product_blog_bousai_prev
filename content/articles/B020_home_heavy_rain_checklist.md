@@ -194,7 +194,8 @@ affiliate: false
 
 - [水・非常食の商品紹介](goods_water_food.html)
 - [トイレ・衛生用品の商品紹介](goods_toilet_hygiene.html)
-- [ライト・電源の商品紹介](goods_light_information.html)
+- [ライト・ラジオの商品紹介](goods_light_information.html)
+- [電源・充電の商品紹介](goods_power_charging.html)
 
 ## 公的情報
 
