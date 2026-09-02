@@ -18,10 +18,9 @@
       "preview_path": "preview/article_sample.html",
       "priority": "high",
       "publish_blockers": [
-        "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B001_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -71,10 +70,9 @@
       "publish_blockers": [
         "manual_review_required",
         "image_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B002_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -122,10 +120,9 @@
       "publish_blockers": [
         "manual_review_required",
         "image_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B003_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -169,10 +166,9 @@
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [
         "manual_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B004_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -218,10 +214,9 @@
       "publish_blockers": [
         "manual_review_required",
         "image_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B005_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -269,10 +264,9 @@
       "publish_blockers": [
         "manual_review_required",
         "image_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B006_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -318,10 +312,9 @@
       "publish_blockers": [
         "manual_review_required",
         "image_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B007_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -369,10 +362,9 @@
       "publish_blockers": [
         "manual_review_required",
         "image_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B008_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "high",
@@ -420,10 +412,9 @@
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [
         "manual_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B009_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "high",
@@ -468,7 +459,6 @@
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [
         "manual_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-02",
@@ -563,7 +553,6 @@
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [
         "manual_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-02",
@@ -960,7 +949,6 @@
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [
         "manual_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-02",
@@ -1059,7 +1047,6 @@
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [
         "manual_review_required",
-        "internal_links_pending",
         "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-02",
