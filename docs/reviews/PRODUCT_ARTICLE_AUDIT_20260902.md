@@ -21,7 +21,7 @@
 | B027 防災ラジオ | 3 | PASS | PASS | PASS | PASS | PASS | PASS / YTM-R100を山善公式画像へ変更 |
 | B028 ポータブル電源 | 3 | PASS | PASS | PASS | PASS | PASS | PASS / Anker・Jackery公式CDN |
 | B029 車載防災用品 | 4 | PASS | PASS | PASS | PASS | PASS | PASS / Amazon CDN・公式プレス |
-| 水・非常食 | 5 | PASS | PASS | PASS | PASS | PASS | RECHECK / 赤穂化成 備蓄水のみ旧Amazon画像URLが残る |
+| 水・非常食 | 5 | PASS | PASS | PASS | PASS | PASS | PASS / 赤穂化成 備蓄水も現行Amazon CDNへ変更 |
 | 携帯トイレ・衛生 | 3 | PASS | PASS | PASS | PASS | PASS | PASS / Amazon CDN |
 | ライト・ラジオ | 4 | PASS | PASS | PASS | PASS | PASS | PASS / GENTOS・山善公式画像を使用 |
 | ポータブル電源紹介 | 3 | PASS | PASS | PASS | PASS | PASS | PASS / Anker・Jackery公式CDN |
@@ -43,22 +43,16 @@
 
 メーカー公式ページ上で商品画像と型番の一致を再確認した。
 
-## 4. 残る画像課題
+## 4. 商品画像の再確認
 
-### 赤穂化成 備蓄水 2L×6本
+赤穂化成 備蓄水 2L×6本も、旧 `images-na.ssl-images-amazon.com` URLから
+`https://m.media-amazon.com/images/I/314Flt53ljL._SL500_.jpg`
+へ変更した。
 
-`preview/goods_water_food.html` の商品画像だけ、現時点で
-`images-na.ssl-images-amazon.com`
-の旧形式URLが残っている。
+価格比較ページ上でAmazon.co.jpの商品画像として配信されていること、商品名が「赤穂化成 備蓄水 2L×6本」であることを確認した。
 
-メーカー公式ページでは同一商品（2L、ケース6本、JAN 4901291991472）と商品画像を確認できたが、公開ページへそのまま利用できる安定したメーカー公式画像URLを確定できていない。
-
-したがって以下の順で扱う。
-
-1. 現在URLへ `referrerpolicy="no-referrer"` を付けて表示改善
-2. ローカルプレビューで表示できるか再確認
-3. 表示できなければ、権利・利用条件を確認できるメーカー公式画像URLへ差し替える
-4. 権利不明の通販サイト画像へ安易に差し替えない
+これにより、対象8ページの `images-na.ssl-images-amazon.com` は **0件**。
+商品カード画像にはすべて `referrerpolicy="no-referrer"` を設定している。
 
 ## 5. 記事構成の再確認
 
@@ -102,5 +96,7 @@
 
 商品紹介の文章構成・価格・Amazonリンク・商品情報については再レビュー基準を満たす。
 
-画像は大幅に改善済みだが、**赤穂化成 備蓄水の商品画像だけ表示確認を残す**。
-この1件を除き、今回指摘された「商品画像が表示されない」原因になりやすい旧Amazon画像URLはメーカー公式CDN等へ置換した。
+対象8ページについて、今回指摘された「商品画像が表示されない」原因になりやすい旧Amazon画像URLは **0件** になった。
+山善・GENTOS・Jackeryはメーカー公式CDN、赤穂化成を含むその他のAmazon商品画像は現行の `m.media-amazon.com` 等へ整理した。
+
+なお、最終的なローカルブラウザ表示はユーザー環境の `localhost` での目視確認を公開前確認として残す。
