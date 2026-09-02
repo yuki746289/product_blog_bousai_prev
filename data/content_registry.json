@@ -1012,11 +1012,11 @@
       "content_depth_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_role": "detail",
-      "image_dedup_checked_at": "2026-09-01",
+      "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 1,
+      "image_source_count": 5,
       "image_source_path": "docs/research/B022_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": null,
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
@@ -1030,10 +1030,9 @@
       "publish_blockers": [
         "manual_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "image_review_required"
+        "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B022_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -1049,7 +1048,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "マンションの台風・水害対策｜戸建てとの違い",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_context_review_status": "PASS",
+      "image_context_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1431,5 +1432,5 @@
     }
   ],
   "schema_version": "1.0",
-  "updated_at": "2026-09-02T11:50:00+09:00"
+  "updated_at": "2026-09-02T12:00:00+09:00"
 }
