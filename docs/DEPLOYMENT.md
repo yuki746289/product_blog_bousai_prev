@@ -39,3 +39,45 @@ GitHub Actionsを使用する場合は以下のSecretsを使用する想定。
 - 同じGoogle Analyticsタグが重複していない
 
 Analyticsタグ欠落は公開前テストのエラーとして扱う。
+
+## 6. 本番ファイル生成
+
+本番HTMLは `preview/` を直接FTP送信せず、次のコマンドで `public/` を生成する。
+
+```bash
+python scripts/build_public.py
+```
+
+生成時に以下を行う。
+
+- `data/content_registry.json` の `planned_public_path` に従って記事をカテゴリ配下へ配置
+- preview用 `noindex` を削除
+- 制作管理ラベル（記事ID・要目視確認等）を公開HTMLから削除
+- Google Analytics `G-XQVLD5HMNG` を各HTMLへ1回だけ挿入
+- previewの内部リンクを本番URL構造へ相対変換
+- `bousai_common.css` / `bousai_common.js` / ローカル画像をコピー
+- 受付停止中の `contact.html` は本番生成対象から除外
+- 生成後に内部リンク・GA・noindex等を検証
+
+## 7. GitHub Actions FTP公開
+
+`.github/workflows/deploy-production.yml` で次を実施する。
+
+1. テスト
+2. `public/` 生成
+3. FTPS Explicit（port 21）でFTP接続直下へ同期
+
+必要なGitHub Secrets:
+
+- `FTP_USERNAME`
+- `FTP_PASSWORD`
+
+FTPホストは `config/site.json` の `ftp.homepage.shinobi.jp` を使用する。
+
+忍者ホームページでは転送先フォルダは空欄（FTP接続直下）とする。
+
+## 8. 公開URL
+
+公開URLは忍者ホームページ側の「サイトURL（アカウント + 選択ドメイン）」で決まる。
+FTPホストから公開URLは一意に逆算できないため、公開URLは取得後に `config/site.json` の `public_base_url` へ記録する。
+
