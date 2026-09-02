@@ -1,0 +1,65 @@
+name: Deploy production site
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "preview/**"
+      - "content/**"
+      - "data/content_registry.json"
+      - "config/site.json"
+      - "templates/**"
+      - "scripts/build_public.py"
+      - "tests/**"
+      - ".github/workflows/deploy-production.yml"
+
+concurrency:
+  group: production-ftp-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: pip install -e .
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Build production files
+        run: python scripts/build_public.py
+
+      - name: Show production manifest
+        run: |
+          echo "HTML files: $(find public -type f -name '*.html' | wc -l)"
+          echo "Total files: $(find public -type f | wc -l)"
+          find public -type f | sort
+
+      - name: Deploy to Ninja Homepage via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ftp.homepage.shinobi.jp
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./public/
+          server-dir: ./
+          dangerous-clean-slate: false
+          log-level: standard
+          security: strict
+          timeout: 60000
