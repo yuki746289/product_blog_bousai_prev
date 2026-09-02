@@ -1144,7 +1144,7 @@
       "publish_blockers": [
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B025_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "standard",
@@ -1162,7 +1162,7 @@
         "F-B025-003"
       ],
       "source_path": "content/articles/B025_drinking_water_stockpile.md",
-      "image_source_count": 2,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B025_IMAGES.md",
       "image_dedup_checked_at": "2026-09-01",
       "image_dedup_status": "PASS",
@@ -1188,7 +1188,7 @@
         "amazon_affiliate_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B026_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "standard",
@@ -1207,7 +1207,7 @@
         "F-B026-004"
       ],
       "source_path": "content/articles/B026_emergency_food_stockpile.md",
-      "image_source_count": 2,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B026_IMAGES.md",
       "image_dedup_checked_at": "2026-09-01",
       "image_dedup_status": "PASS",
@@ -1237,7 +1237,7 @@
         "amazon_affiliate_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B027_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "standard",
@@ -1257,7 +1257,7 @@
         "F-B027-005"
       ],
       "source_path": "content/articles/B027_emergency_radio_guide.md",
-      "image_source_count": 1,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B027_IMAGES.md",
       "image_dedup_checked_at": "2026-09-01",
       "image_dedup_status": "PASS",
@@ -1288,7 +1288,7 @@
         "amazon_affiliate_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B028_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -1309,11 +1309,11 @@
         "F-B028-006"
       ],
       "source_path": "content/articles/B028_portable_power_station_disaster.md",
-      "image_source_count": 0,
+      "image_source_count": 4,
       "image_source_path": "docs/research/B028_IMAGES.md",
       "image_dedup_checked_at": "2026-09-01",
       "image_dedup_status": "PASS",
-      "image_status": "HTML_VISUALS_ONLY",
+      "image_status": "SELECTED_REVIEW_REQUIRED",
       "preview_path": "preview/article_b028.html",
       "planned_public_path": "goods/portable-power-station-disaster.html",
       "readability_review_status": "PASS",
@@ -1339,7 +1339,7 @@
         "amazon_affiliate_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B029_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "standard",
@@ -1358,7 +1358,7 @@
         "F-B029-004"
       ],
       "source_path": "content/articles/B029_car_emergency_kit.md",
-      "image_source_count": 2,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B029_IMAGES.md",
       "image_dedup_checked_at": "2026-09-01",
       "image_dedup_status": "PASS",
@@ -1388,7 +1388,7 @@
         "manual_review_required",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B030_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -1408,7 +1408,7 @@
         "F-B030-005"
       ],
       "source_path": "content/articles/B030_family_disaster_contact_plan.md",
-      "image_source_count": 2,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B030_IMAGES.md",
       "image_dedup_checked_at": "2026-09-01",
       "image_dedup_status": "PASS",
@@ -1420,5 +1420,5 @@
     }
   ],
   "schema_version": "1.0",
-  "updated_at": "2026-09-02T11:59:00+09:00"
+  "updated_at": "2026-09-02T12:56:00+09:00"
 }
