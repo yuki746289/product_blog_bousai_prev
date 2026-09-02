@@ -20,5 +20,19 @@
 - 採用候補: 上記3製品を維持する。
 - 単純ランキングは行わない。
 - 価格は本文へ固定記載しない。
-- 正式AmazonリンクはStoreID / トラッキングID設定後に、型番・販売元・リコールを再確認して生成する。
+- Amazonアソシエイトタグ `yukitaka83-22` で正式リンクを実装する。リンク追加時点で型番を再確認済み。公開直前には販売元・リコールを再確認する。
 - 商品写真はAmazon正式商品表示を実装する段階で掲載し、メーカー画像をヒーロー画像として無断ホットリンクしない。
+
+## Amazonアソシエイトリンク（2026-09-02）
+
+使用タグ: `yukitaka83-22`
+
+| 商品 | Amazonリンク | 方式 |
+|---|---|---|
+| Anker Solix C300 Portable Power Station | https://www.amazon.co.jp/dp/B0D5XGP6CW/ref=nosim?tag=yukitaka83-22 | ASIN確認済み |
+| Jackery ポータブル電源 600 New | https://www.amazon.co.jp/dp/B0FW3VJC6L/ref=nosim?tag=yukitaka83-22 | ASIN確認済み |
+| Jackery ポータブル電源 1000 New V3 | https://www.amazon.co.jp/dp/B0H6FNJFJJ/ref=nosim?tag=yukitaka83-22 | ASIN確認済み |
+
+- 直接リンクは商品名・型番とASINの一致を確認したものだけに使用する。
+- 検索リンクは、類似商品への誤リンクを避けるため商品名・型番を固定している。
+- 価格・在庫は記事本文へ固定表示しない。
