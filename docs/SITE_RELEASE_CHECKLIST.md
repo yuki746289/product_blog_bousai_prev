@@ -68,5 +68,6 @@
 
 ## 7. 最終判定
 
-- READY_TO_PUBLISH: `NO`
-- 理由: ローカルブラウザでの最終表示確認、本番ページ化・GA等の公開実装確認が未完了
+- READY_TO_UPLOAD: `YES`
+- READY_TO_PUBLISH: `PENDING_POST_UPLOAD_SMOKE_TEST`
+- 理由: 静的HTML/CSS/JS・画像フォールバック・内部構成はPASS。本番URLへアップロード後、画像・リンク・PC/スマホ表示・GA/noindexを最終確認する
