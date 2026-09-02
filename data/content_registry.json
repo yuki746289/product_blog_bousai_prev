@@ -439,9 +439,9 @@
       "content_depth_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_role": "practical",
-      "image_dedup_checked_at": "2026-09-01",
+      "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 1,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B010_IMAGES.md",
       "image_status": "APPROVED",
       "last_reviewed_at": null,
@@ -459,7 +459,7 @@
         "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B010_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -478,7 +478,7 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-01"
+      "image_context_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -488,9 +488,9 @@
       "content_depth_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_role": "detail",
-      "image_dedup_checked_at": "2026-09-01",
+      "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 1,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B011_IMAGES.md",
       "image_status": "APPROVED",
       "last_reviewed_at": null,
@@ -507,7 +507,7 @@
         "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B011_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -524,7 +524,7 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-01"
+      "image_context_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -534,9 +534,9 @@
       "content_depth_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
       "content_role": "pillar",
-      "image_dedup_checked_at": "2026-09-01",
+      "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 1,
+      "image_source_count": 4,
       "image_source_path": "docs/research/B012_IMAGES.md",
       "image_status": "APPROVED",
       "last_reviewed_at": null,
@@ -554,7 +554,7 @@
         "internal_links_pending",
         "production_page_required"
       ],
-      "review_checklist_last_checked_at": "2026-09-01",
+      "review_checklist_last_checked_at": "2026-09-02",
       "review_checklist_path": "docs/reviews/B012_CHECKLIST.md",
       "review_checklist_status": "IN_PROGRESS",
       "risk_level": "elevated",
@@ -572,7 +572,7 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-01"
+      "image_context_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1425,5 +1425,5 @@
     }
   ],
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T23:40:00+09:00"
+  "updated_at": "2026-09-02T10:30:00+09:00"
 }
