@@ -72,8 +72,7 @@
         "manual_review_required",
         "image_review_required",
         "internal_links_pending",
-        "production_page_required",
-        "product_guide_pages_pending"
+        "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-01",
       "review_checklist_path": "docs/reviews/B002_CHECKLIST.md",
@@ -95,7 +94,8 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
-      "image_relevance_reviewed_at": "2026-09-02"
+      "image_relevance_reviewed_at": "2026-09-02",
+      "product_guide_status": "IMPLEMENTED"
     },
     {
       "affiliate": false,
@@ -1235,7 +1235,6 @@
       "pickup_candidate": false,
       "priority": "high",
       "publish_blockers": [
-        "amazon_affiliate_links_pending",
         "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-02",
@@ -1271,7 +1270,10 @@
       "product_selection_path": "docs/research/B026_PRODUCTS.md",
       "product_link_policy": "article_aligned_amazon_selection",
       "image_relevance_review_status": "PASS",
-      "image_relevance_reviewed_at": "2026-09-02"
+      "image_relevance_reviewed_at": "2026-09-02",
+      "amazon_affiliate_status": "IMPLEMENTED",
+      "amazon_affiliate_tag": "yukitaka83-22",
+      "amazon_links_checked_at": "2026-09-02"
     },
     {
       "affiliate": true,
@@ -1286,7 +1288,6 @@
       "pickup_candidate": false,
       "priority": "medium",
       "publish_blockers": [
-        "amazon_affiliate_links_pending",
         "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-02",
@@ -1323,7 +1324,10 @@
       "product_selection_path": "docs/research/B027_PRODUCTS.md",
       "product_link_policy": "article_aligned_amazon_selection",
       "image_relevance_review_status": "PASS",
-      "image_relevance_reviewed_at": "2026-09-02"
+      "image_relevance_reviewed_at": "2026-09-02",
+      "amazon_affiliate_status": "IMPLEMENTED",
+      "amazon_affiliate_tag": "yukitaka83-22",
+      "amazon_links_checked_at": "2026-09-02"
     },
     {
       "affiliate": true,
@@ -1339,7 +1343,6 @@
       "priority": "high",
       "publish_blockers": [
         "manual_review_required",
-        "amazon_affiliate_links_pending",
         "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-02",
@@ -1377,7 +1380,10 @@
       "product_selection_path": "docs/research/B028_PRODUCTS.md",
       "product_link_policy": "article_aligned_amazon_selection",
       "image_relevance_review_status": "PASS",
-      "image_relevance_reviewed_at": "2026-09-02"
+      "image_relevance_reviewed_at": "2026-09-02",
+      "amazon_affiliate_status": "IMPLEMENTED",
+      "amazon_affiliate_tag": "yukitaka83-22",
+      "amazon_links_checked_at": "2026-09-02"
     },
     {
       "affiliate": true,
@@ -1392,7 +1398,6 @@
       "pickup_candidate": false,
       "priority": "high",
       "publish_blockers": [
-        "amazon_affiliate_links_pending",
         "production_page_required"
       ],
       "review_checklist_last_checked_at": "2026-09-02",
@@ -1428,7 +1433,10 @@
       "product_selection_path": "docs/research/B029_PRODUCTS.md",
       "product_link_policy": "article_aligned_amazon_selection",
       "image_relevance_review_status": "PASS",
-      "image_relevance_reviewed_at": "2026-09-02"
+      "image_relevance_reviewed_at": "2026-09-02",
+      "amazon_affiliate_status": "IMPLEMENTED",
+      "amazon_affiliate_tag": "yukitaka83-22",
+      "amazon_links_checked_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1480,5 +1488,5 @@
     }
   ],
   "schema_version": "1.0",
-  "updated_at": "2026-09-02T13:00:00+09:00"
+  "updated_at": "2026-09-02T14:12:00+09:00"
 }
