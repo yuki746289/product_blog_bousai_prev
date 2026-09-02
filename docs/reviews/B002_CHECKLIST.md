@@ -69,7 +69,7 @@
 | 関連記事リンクが自然 | TODO | |
 | 未作成リンクが公開時に404にならない | TODO | |
 | 商品購入を記事の結論にしていない | TODO | |
-| 関連商品がある場合、商品紹介ページ導線を検討した | TODO | internal_product_guide_only |
+| 関連商品がある場合、商品紹介ページ導線を検討した | PASS | 水・非常食 / 携帯トイレ / ライト・ラジオ / 電源の商品紹介ページを実装済み |
 | 高リスク記事で購買導線が安全情報より前に出ていない | TODO | |
 
 ## 6. 公開前最終確認
@@ -79,7 +79,7 @@
 | タイトルと本文が一致 | TODO | |
 | 同時作成記事との文章・画像の過度な類似なし | TODO | |
 | 台帳の出典数・画像数・レビュー状態と一致 | TODO | |
-| publish_blockers が空 | FAIL | manual_review_required, image_review_required, internal_links_pending, production_page_required, product_guide_pages_pending |
+| publish_blockers が空 | FAIL | manual_review_required, image_review_required, internal_links_pending, production_page_required |
 | HTMLリンク・画像・alt・構造を確認 | TODO | |
 | 本番ページに必要なGAタグあり | N/A | 本番化時に確認 |
 
@@ -97,7 +97,6 @@
 - image_review_required
 - internal_links_pending
 - production_page_required
-- product_guide_pages_pending
 
 ## 9. 最終判定
 
