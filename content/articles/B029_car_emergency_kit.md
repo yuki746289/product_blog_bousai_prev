@@ -84,7 +84,7 @@ affiliate: true
 - 重量: 約1.3kg
 - 賞味期間: 3年4か月
 - 参考実売価格: 7,020〜7,300円前後（2026-09-02国内通販確認）
-- Amazon検索: https://www.amazon.co.jp/s?k=%E5%B0%BE%E8%A5%BF%E9%A3%9F%E5%93%81+%E8%BB%8A%E8%BC%89%E7%94%A8%E9%98%B2%E7%81%BD%E3%83%9F%E3%83%8B%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9&tag=yukitaka83-22
+- Amazon: https://www.amazon.co.jp/dp/B0CW5M7J4X/ref=nosim?tag=yukitaka83-22
 
 これ1箱で車載防災が完成するわけではありません。脱出用品、停止表示器材、ライト、防寒・暑熱対策等は別に必要です。
 
