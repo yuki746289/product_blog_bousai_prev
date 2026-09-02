@@ -145,6 +145,14 @@ RF-TJ20は、
 
 Amazonでは**型番まで一致する商品**を選び、無名の多機能ラジオを「機能数が多い」だけで上位にしません。
 
+### Amazonで確認する
+
+- [Panasonic RF-P155](https://www.amazon.co.jp/dp/B01M9ET1JS/ref=nosim?tag=yukitaka83-22)
+- [Sony ICF-B300](https://www.amazon.co.jp/dp/B0B8DJ5R6Z/ref=nosim?tag=yukitaka83-22)
+- [Panasonic RF-TJ20をAmazonで探す](https://www.amazon.co.jp/s?k=Panasonic%20RF-TJ20&tag=yukitaka83-22)
+
+> 上記はAmazonアソシエイトリンクです。価格・在庫はAmazonで確認してください。
+
 ## 10. 防水・防滴は表示を確認する
 
 「防災用」と書かれていても、防水性能があるとは限りません。
