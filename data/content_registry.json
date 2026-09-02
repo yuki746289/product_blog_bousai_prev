@@ -40,7 +40,9 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_dedup_checked_at": "2026-09-02",
-      "image_dedup_status": "PASS"
+      "image_dedup_status": "PASS",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -91,7 +93,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "防災バッグには何を入れる？用途別に考える基本の備え",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -137,7 +141,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "断水に備える携帯トイレ｜必要数を考える前に確認したいこと",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -182,7 +188,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "停電に備えて準備しておきたいもの｜照明・電源・情報収集を分けて考える",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -194,7 +202,7 @@
       "content_role": "pillar",
       "image_dedup_checked_at": "2026-09-01",
       "image_dedup_status": "PASS",
-      "image_source_count": 4,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B005_IMAGES.md",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "last_reviewed_at": "2026-09-01",
@@ -231,7 +239,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "大雨・水害にどう備える？まず知っておきたい基本",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -279,7 +289,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "台風が来る前に何をする？家庭の事前チェック",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -291,7 +303,7 @@
       "content_role": "pillar",
       "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 4,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B007_IMAGES.md",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "last_reviewed_at": null,
@@ -327,7 +339,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "地震に備えて最初に確認したいこと",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -339,7 +353,7 @@
       "content_role": "detail",
       "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 4,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B008_IMAGES.md",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "last_reviewed_at": "2026-09-01",
@@ -377,7 +391,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "車が冠水・水没しそうなときに知っておきたいこと",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -423,7 +439,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "冠水した道路を車で走る危険｜避けるべき理由を整理",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -470,7 +488,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "地下駐車場・低い場所に車を置いている場合の大雨対策",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -514,7 +534,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "台風・洪水で水没した車は車両保険の対象になる？",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -560,7 +582,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "自宅の浸水にどう備える？住宅の水害対策入門",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -572,7 +596,7 @@
       "content_role": "detail",
       "image_dedup_checked_at": "2026-09-01",
       "image_dedup_status": "PASS",
-      "image_source_count": 3,
+      "image_source_count": 2,
       "image_source_path": "docs/research/B013_IMAGES.md",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "last_reviewed_at": "2026-09-01",
@@ -609,7 +633,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "火災保険の水災補償とは？住宅浸水との関係を整理",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -621,7 +647,7 @@
       "content_role": "detail",
       "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 3,
+      "image_source_count": 0,
       "image_source_path": "docs/research/B014_IMAGES.md",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "last_reviewed_at": null,
@@ -656,7 +682,9 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-02"
+      "image_context_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -668,7 +696,7 @@
       "content_role": "practical",
       "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 4,
+      "image_source_count": 0,
       "image_source_path": "docs/research/B015_IMAGES.md",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "last_reviewed_at": null,
@@ -702,7 +730,9 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-02"
+      "image_context_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -749,7 +779,9 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-02"
+      "image_context_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -761,7 +793,7 @@
       "content_role": "pillar",
       "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 4,
+      "image_source_count": 1,
       "image_source_path": "docs/research/B017_IMAGES.md",
       "image_status": "APPROVED",
       "last_reviewed_at": null,
@@ -796,7 +828,9 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-02"
+      "image_context_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -845,7 +879,9 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-02"
+      "image_context_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -895,7 +931,9 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-02"
+      "image_context_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -907,7 +945,7 @@
       "content_role": "practical",
       "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 5,
+      "image_source_count": 2,
       "image_source_path": "docs/research/B020_IMAGES.md",
       "image_status": "APPROVED",
       "last_reviewed_at": null,
@@ -943,7 +981,9 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-02"
+      "image_context_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -990,7 +1030,9 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-02"
+      "image_context_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1038,7 +1080,9 @@
       "readability_review_status": "PASS",
       "readability_reviewed_at": "2026-09-02",
       "image_context_review_status": "PASS",
-      "image_context_reviewed_at": "2026-09-02"
+      "image_context_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1082,7 +1126,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "地震の家具転倒対策｜まず優先したい場所",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1094,7 +1140,7 @@
       "content_role": "detail",
       "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 4,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B024_IMAGES.md",
       "image_status": "SELECTED_REVIEW_REQUIRED",
       "last_reviewed_at": null,
@@ -1127,7 +1173,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "地震後の停電・断水にどう備える？",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1170,7 +1218,9 @@
       "preview_path": "preview/article_b025.html",
       "planned_public_path": "guide/drinking-water-stockpile.html",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-01"
+      "readability_reviewed_at": "2026-09-01",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": true,
@@ -1219,7 +1269,9 @@
       "product_selection_status": "PASS",
       "product_selection_checked_at": "2026-09-01",
       "product_selection_path": "docs/research/B026_PRODUCTS.md",
-      "product_link_policy": "article_aligned_amazon_selection"
+      "product_link_policy": "article_aligned_amazon_selection",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": true,
@@ -1269,7 +1321,9 @@
       "product_selection_status": "PASS",
       "product_selection_checked_at": "2026-09-01",
       "product_selection_path": "docs/research/B027_PRODUCTS.md",
-      "product_link_policy": "article_aligned_amazon_selection"
+      "product_link_policy": "article_aligned_amazon_selection",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": true,
@@ -1309,7 +1363,7 @@
         "F-B028-006"
       ],
       "source_path": "content/articles/B028_portable_power_station_disaster.md",
-      "image_source_count": 4,
+      "image_source_count": 3,
       "image_source_path": "docs/research/B028_IMAGES.md",
       "image_dedup_checked_at": "2026-09-01",
       "image_dedup_status": "PASS",
@@ -1321,7 +1375,9 @@
       "product_selection_status": "PASS",
       "product_selection_checked_at": "2026-09-01",
       "product_selection_path": "docs/research/B028_PRODUCTS.md",
-      "product_link_policy": "article_aligned_amazon_selection"
+      "product_link_policy": "article_aligned_amazon_selection",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": true,
@@ -1358,7 +1414,7 @@
         "F-B029-004"
       ],
       "source_path": "content/articles/B029_car_emergency_kit.md",
-      "image_source_count": 3,
+      "image_source_count": 2,
       "image_source_path": "docs/research/B029_IMAGES.md",
       "image_dedup_checked_at": "2026-09-01",
       "image_dedup_status": "PASS",
@@ -1370,7 +1426,9 @@
       "product_selection_status": "PASS",
       "product_selection_checked_at": "2026-09-01",
       "product_selection_path": "docs/research/B029_PRODUCTS.md",
-      "product_link_policy": "article_aligned_amazon_selection"
+      "product_link_policy": "article_aligned_amazon_selection",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1416,9 +1474,11 @@
       "preview_path": "preview/article_b030.html",
       "planned_public_path": "guide/family-disaster-contact-plan.html",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-01"
+      "readability_reviewed_at": "2026-09-01",
+      "image_relevance_review_status": "PASS",
+      "image_relevance_reviewed_at": "2026-09-02"
     }
   ],
   "schema_version": "1.0",
-  "updated_at": "2026-09-02T12:56:00+09:00"
+  "updated_at": "2026-09-02T13:00:00+09:00"
 }
