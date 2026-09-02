@@ -110,11 +110,12 @@
 
 ## 7. 残課題
 
-- amazon_affiliate_links_pending
+- product_image_rights_review
+- mobile_visual_review
 - production_page_required
 
 ## 8. 最終判定
 
 - review_status: `IN_PROGRESS`
 - READY_TO_PUBLISH: `NO`
-- 判定理由: 本文・出典・用途別商品・国内自治体画像・プレビュー作成済み。Amazonアソシエイトリンク実装済み。本番化が未完了。
+- 判定理由: 本文・出典・商品導線・現行商品・価格・Amazonリンク・画像表示対策を再確認済み。RF-TJ20はYTM-R100へ差し替え済み。商品画像の公開利用条件とスマートフォン実画面、本番化が未完了。
