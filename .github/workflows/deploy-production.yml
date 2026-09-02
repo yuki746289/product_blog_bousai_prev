@@ -63,3 +63,40 @@ jobs:
           log-level: standard
           security: strict
           timeout: 60000
+
+      - name: Smoke test public site
+        run: |
+          BASE_URL="$(python - <<'PY'
+          import json
+          with open("config/site.json", encoding="utf-8") as f:
+              print(json.load(f)["public_base_url"].rstrip("/") + "/")
+          PY
+          )"
+          echo "Testing ${BASE_URL}"
+
+          check_page() {
+            path="$1"
+            tmp="$(mktemp)"
+            curl --fail --silent --show-error --location \
+              --retry 4 --retry-delay 5 --retry-all-errors \
+              "${BASE_URL}${path}" -o "${tmp}"
+            grep -q "防災くらしガイド" "${tmp}"
+            rm -f "${tmp}"
+          }
+
+          check_asset() {
+            path="$1"
+            curl --fail --silent --show-error --location \
+              --retry 4 --retry-delay 5 --retry-all-errors \
+              "${BASE_URL}${path}" -o /dev/null
+          }
+
+          check_page ""
+          check_page "qa.html"
+          check_page "guide/first-disaster-preparedness.html"
+          check_page "vehicle/car-flood-submersion.html"
+          check_page "goods/portable-power-station-disaster.html"
+          check_asset "bousai_common.css"
+          check_asset "bousai_common.js"
+
+          echo "Public smoke test passed."
