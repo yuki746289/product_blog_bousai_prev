@@ -120,38 +120,41 @@ affiliate: true
 
 **ライト・ラジオ・非常用充電を一体化したい家庭**に向きますが、一部スマートフォンは充電非対応のためメーカー条件を確認します。
 
-## 8. 小型手回し型ならPanasonic RF-TJ20
+## 8. 長期保管しやすい手回し型なら山善 YTM-R100
 
-RF-TJ20は、
+**山善 YTM-R100**は、
 
-- FM/AM
-- 単4乾電池3本
-- 内蔵ニッケル水素電池
-- 手回し
-- ライト
-- サイレン
+- AM/FM・ワイドFM
+- 単3形乾電池2本
+- 手回し充電
+- USB A出力
+- 約220g
+- 10年保管可能なコンデンサー
 
-を備え、約288gです。
+を備えています。
 
-手回し機能はありますが、公式仕様でも短時間の手回しで得られる内蔵電池のラジオ運転時間は限定的です。**「手回しさえあれば電池不要」と考えません。**
+**持ち出しやすさと、長期間しまっておきやすいことを重視する家庭**に向きます。10年保管可能というメーカー説明はコンデンサーに関するもので、非常時に初めて使うのではなく、平常時に受信・給電・端子の状態を確認します。
 
-## 9. 商品は用途別に選ぶ
+## 9. 必要な機能と持ち運びやすさで比べる
 
-| 向く人 | 候補 | 理由 |
+| 向く人 | 選択肢 | 理由 |
 |---|---|---|
 | 乾電池で単純に長く聞きたい | Panasonic RF-P155 | 単純・軽量・長時間 |
 | 1台へ停電機能をまとめたい | Sony ICF-B300 | 手回し・ライト・充電 |
-| 小型手回しを持ちたい | Panasonic RF-TJ20 | 小型・手回し・ライト |
+| 長期保管しやすい手回し式がよい | 山善 YTM-R100 | 約220g・手回し・USB給電 |
 
-Amazonでは**型番まで一致する商品**を選び、無名の多機能ラジオを「機能数が多い」だけで上位にしません。
+防災ラジオは機能数だけでなく、**乾電池での受信時間、手回しの必要性、重量、給電機能**を比べます。Amazonでは型番まで一致する商品を確認します。
 
-### Amazonで確認する
+### 価格とAmazonリンク
 
-- [Panasonic RF-P155](https://www.amazon.co.jp/dp/B01M9ET1JS/ref=nosim?tag=yukitaka83-22)
-- [Sony ICF-B300](https://www.amazon.co.jp/dp/B0B8DJ5R6Z/ref=nosim?tag=yukitaka83-22)
-- [Panasonic RF-TJ20をAmazonで探す](https://www.amazon.co.jp/s?k=Panasonic%20RF-TJ20&tag=yukitaka83-22)
+- **Panasonic RF-P155**：参考実売価格2,351円前後（2026-09-02、ビックカメラ.com確認。メーカー希望小売価格はオープン）
+  - [AmazonでRF-P155を見る](https://www.amazon.co.jp/dp/B01M9ET1JS/ref=nosim?tag=yukitaka83-22)
+- **Sony ICF-B300**：ソニーストア価格19,800円（税込、2026-09-02確認）
+  - [AmazonでICF-B300を見る](https://www.amazon.co.jp/dp/B0B8DJ5R6Z/ref=nosim?tag=yukitaka83-22)
+- **山善 YTM-R100**：山善公式通販価格7,680円（税込、2026-09-02確認）
+  - [AmazonでYTM-R100を見る](https://www.amazon.co.jp/dp/B07R7YFGGN/ref=nosim?tag=yukitaka83-22)
 
-> 上記はAmazonアソシエイトリンクです。価格・在庫はAmazonで確認してください。
+> 上記はAmazonアソシエイトリンクです。掲載価格はメーカー公式通販またはAmazon以外の国内通販で確認した参考値です。Amazonの現在価格・在庫はリンク先で確認してください。
 
 ## 10. 防水・防滴は表示を確認する
 
@@ -217,4 +220,4 @@ Amazonでは**型番まで一致する商品**を選び、無名の多機能ラ�
 - 水戸市「防災ラジオについて」: https://www.city.mito.lg.jp/site/saigaiinfo/5586.html
 - Sony ICF-B300: https://www.sony.jp/radio/products/ICF-B300/
 - Panasonic RF-P155: https://panasonic.jp/radio/products/RF-P155/spec.html
-- Panasonic RF-TJ20: https://panasonic.jp/radio/products/RF-TJ20/spec.html
+- 山善 YTM-R100: https://book.yamazen.co.jp/product/detail/I00004012
