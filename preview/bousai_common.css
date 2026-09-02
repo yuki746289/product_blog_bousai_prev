@@ -1348,3 +1348,211 @@ th {
 .product-recommendation__image.is-image-error img {
   display: none;
 }
+
+/* Added: 2026-09-02 / semantic shapes, not color-only distinctions */
+
+/* Section headings are structural: no filled card background. */
+.article-body > h2 {
+  position: relative;
+  margin-top: 48px;
+  padding: 0 0 10px 20px;
+  border: 0;
+  border-bottom: 1px solid #d7e1e4;
+  border-radius: 0;
+  background: transparent;
+}
+.article-body > h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .2em;
+  width: 6px;
+  height: 1.25em;
+  border-radius: 999px;
+  background: var(--role-section-accent);
+}
+
+/* Periodic key paragraph: callout panel with a point badge. */
+.article-body > h2:nth-of-type(3n + 1) + p {
+  position: relative;
+  margin-top: 12px;
+  padding: 16px 18px 16px 58px;
+  border: 1px solid #efd4ae;
+  border-left: 1px solid #efd4ae;
+  border-radius: 14px;
+  background: var(--warning-soft);
+  box-shadow: 0 4px 14px rgba(120, 78, 32, .05);
+}
+.article-body > h2:nth-of-type(3n + 1) + p::before {
+  content: "!";
+  position: absolute;
+  left: 17px;
+  top: 16px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--warning);
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 900;
+}
+
+/* Notice and safety are warning panels, not section-like bands. */
+.notice,
+.safety-box {
+  position: relative;
+  padding: 22px 22px 22px 66px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(31,42,48,.04);
+}
+.notice {
+  border: 1px solid #efcfaa;
+  border-top: 4px solid var(--warning);
+}
+.safety-box {
+  border: 1px solid #e5bfbc;
+  border-top: 4px solid var(--danger);
+}
+.notice::before,
+.safety-box::before {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.notice::before {
+  content: "!";
+  background: var(--warning);
+}
+.safety-box::before {
+  content: "!";
+  background: var(--danger);
+}
+
+/* Product-guide CTA is a raised action card, not a heading band. */
+.product-guide-link a,
+.product-guide-links a {
+  position: relative;
+  display: block;
+  padding: 16px 48px 16px 66px;
+  background: #fff;
+  border: 1px solid var(--role-product-line);
+  border-left: 1px solid var(--role-product-line);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(77, 52, 119, .08);
+  color: var(--role-product-dark);
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.product-guide-link a::before,
+.product-guide-links a::before {
+  content: "商品";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  background: var(--role-product-accent);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .02em;
+}
+.product-guide-link a::after,
+.product-guide-links a::after {
+  content: "›";
+  position: absolute;
+  right: 17px;
+  top: 50%;
+  transform: translateY(-53%);
+  color: var(--role-product-accent);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.product-guide-link a:hover,
+.product-guide-link a:focus-visible,
+.product-guide-links a:hover,
+.product-guide-links a:focus-visible {
+  transform: translateY(-1px);
+  background: #fff;
+  border-color: var(--role-product-accent);
+  box-shadow: 0 8px 22px rgba(77, 52, 119, .13);
+  text-decoration: none;
+}
+
+/* Contextual Q&A route: speech-card style, deliberately distinct from product CTA. */
+.qa-guide-link {
+  margin: 16px 0 26px;
+}
+.qa-guide-link a {
+  position: relative;
+  display: block;
+  padding: 13px 42px 13px 52px;
+  background: linear-gradient(90deg, #f7fbff, #fff);
+  border: 1px dashed #a9c5df;
+  border-radius: 999px;
+  color: #315f83;
+  font-size: .9rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+.qa-guide-link a::before {
+  content: "Q";
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: var(--info);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 900;
+}
+.qa-guide-link a::after {
+  content: "→";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--info);
+}
+.qa-guide-link a:hover,
+.qa-guide-link a:focus-visible {
+  background: var(--info-soft);
+  border-style: solid;
+  text-decoration: underline;
+}
+
+@media (max-width: 620px) {
+  .product-guide-link a,
+  .product-guide-links a {
+    padding: 15px 42px 15px 58px;
+  }
+  .product-guide-link a::before,
+  .product-guide-links a::before {
+    left: 12px;
+    width: 34px;
+    height: 34px;
+  }
+  .qa-guide-link a {
+    border-radius: 14px;
+  }
+}
