@@ -967,9 +967,9 @@
       "content_role": "practical",
       "image_dedup_checked_at": "2026-09-02",
       "image_dedup_status": "PASS",
-      "image_source_count": 1,
+      "image_source_count": 4,
       "image_source_path": "docs/research/B021_IMAGES.md",
-      "image_status": "SELECTED_REVIEW_REQUIRED",
+      "image_status": "APPROVED",
       "last_reviewed_at": null,
       "manual_review_required": true,
       "manual_review_status": "NOT_REVIEWED",
@@ -1000,7 +1000,9 @@
       "status": "REVIEW_REQUIRED",
       "title": "台風前日に確認したいこと｜屋外・窓・停電への備え",
       "readability_review_status": "PASS",
-      "readability_reviewed_at": "2026-09-02"
+      "readability_reviewed_at": "2026-09-02",
+      "image_context_review_status": "PASS",
+      "image_context_reviewed_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1429,5 +1431,5 @@
     }
   ],
   "schema_version": "1.0",
-  "updated_at": "2026-09-02T11:40:00+09:00"
+  "updated_at": "2026-09-02T11:50:00+09:00"
 }
