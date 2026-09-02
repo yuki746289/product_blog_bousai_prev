@@ -15,5 +15,20 @@
 - 採用候補: 上記4商品
 - 単純ランキング: 行わない
 - 商品導線: 安全・備蓄方法の説明後に置く
-- Amazonアソシエイトリンク: StoreID / トラッキングID設定後に正式生成する
+- Amazonアソシエイトリンク: `config/site.json` のタグ `yukitaka83-22` で実装済み。ASIN確認済み商品は直接リンク、未確認商品は完全一致に近い商品名検索リンクを使用する
 - 価格は変動するため記事本文へ固定値として記載しない
+
+## Amazonアソシエイトリンク（2026-09-02）
+
+使用タグ: `yukitaka83-22`
+
+| 商品 | Amazonリンク | 方式 |
+|---|---|---|
+| 尾西食品 アルファ米12種類セット | https://www.amazon.co.jp/dp/B06XZM1RGH/ref=nosim?tag=yukitaka83-22 | ASIN確認済み |
+| カゴメ 野菜の保存食セット YH-A | https://www.amazon.co.jp/s?k=%E3%82%AB%E3%82%B4%E3%83%A1%20%E9%87%8E%E8%8F%9C%E3%81%AE%E4%BF%9D%E5%AD%98%E9%A3%9F%E3%82%BB%E3%83%83%E3%83%88%20YH-A&tag=yukitaka83-22 | ASIN未確定のため検索リンク |
+| 井村屋 えいようかん | https://www.amazon.co.jp/dp/B07ZJRK1MM/ref=nosim?tag=yukitaka83-22 | ASIN確認済み |
+| はごろもフーズ シーチキンLフレーク 70g×9缶 | https://www.amazon.co.jp/s?k=%E3%81%AF%E3%81%94%E3%82%8D%E3%82%82%E3%83%95%E3%83%BC%E3%82%BA%20%E3%82%B7%E3%83%BC%E3%83%81%E3%82%AD%E3%83%B3L%E3%83%95%E3%83%AC%E3%83%BC%E3%82%AF%2070g%209%E7%BC%B6&tag=yukitaka83-22 | ASIN未確定のため検索リンク |
+
+- 直接リンクは商品名・型番とASINの一致を確認したものだけに使用する。
+- 検索リンクは、類似商品への誤リンクを避けるため商品名・型番を固定している。
+- 価格・在庫は記事本文へ固定表示しない。
