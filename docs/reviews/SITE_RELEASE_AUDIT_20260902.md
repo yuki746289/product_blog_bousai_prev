@@ -224,3 +224,30 @@ B029「尾西の車載用防災ミニボックス」は、検索で確認でき�
 - お問い合わせ非表示: **PASS**
 - **READY_TO_UPLOAD: YES**
 - READY_TO_PUBLISH: アップロード後に本番URLで画像・リンク・PC/スマホ表示をスモークテストして最終確定
+
+## 12. 本番アップロード・公開後スモークテスト（2026-09-03）
+
+GitHub Actions `Deploy production site` から忍者ホームページへFTPSアップロードを実施。
+
+- 本番生成: PASS
+- 単体・公開ビルドテスト: PASS
+- FTPSアップロード: PASS
+- 公開URL HTTPスモークテスト: PASS
+- 公開URL: `https://bousaikun.ashigaru.jp/`
+
+公開後に取得確認した対象:
+
+- トップページ
+- `qa.html`
+- `guide/first-disaster-preparedness.html`
+- `vehicle/car-flood-submersion.html`
+- `goods/portable-power-station-disaster.html`
+- `bousai_common.css`
+- `bousai_common.js`
+
+最終判定:
+
+- READY_TO_UPLOAD: **YES / 完了**
+- READY_TO_PUBLISH: **YES**
+- DEPLOYMENT_STATUS: **PUBLISHED**
+
