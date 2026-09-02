@@ -19,3 +19,35 @@
 ## 重複確認
 
 既存記事の固有画像との重複なし。
+
+## IMG-B017-002 House damaged by the 2016 Kumamoto earthquake.jpg
+- 用途: 損害区分・損害認定の説明付近
+- 内容: 2016年熊本地震で被害を受けた住宅
+- Author: hanonimas
+- Source: Wikimedia Commons
+- License: CC BY-SA 3.0
+- 採用理由: 日本国内の地震住宅被害を具体的に示せる
+- 損害区分・保険金額判断用途: 使用しない
+
+## IMG-B017-003 R6 noto earthquake uchinada miyasaka-area 2024-02-15 1.jpg
+- 用途: 被害後の連絡・記録の章
+- 内容: 2024年能登半島地震で被害を受けた石川県内灘町宮坂の住宅
+- Author: Hurohukidaikon
+- Source: Wikimedia Commons
+- License: CC BY 4.0
+- 採用理由: 既存タイトル画像とは別カットで、日本の住宅地震被害の場面理解を補助できる
+- 損害認定用途: 使用しない
+
+## IMG-B017-004 Reconstruction on house damaged by the 2016 Kumamoto earthquake.jpg
+- 用途: 片付け・復旧前に記録を残す章
+- 内容: 2016年熊本地震で被害を受けた住宅の復旧工事
+- Author: hanonimas
+- Source: Wikimedia Commons
+- License: CC BY-SA 3.0
+- 採用理由: 被災後の復旧段階を具体的に示し、記録を残す説明を補助できる
+- 工事妥当性・保険金判断用途: 使用しない
+
+## 2026-09-02 本文画像補完
+- タイトル画像1点は本文画像数に含めない。
+- 本文画像を0点から3点へ追加し、推奨3点を満たした。
+- 画像は損害区分・保険金額の根拠にせず、場面理解に限定。
