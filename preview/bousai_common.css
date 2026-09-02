@@ -359,6 +359,16 @@ a:hover, a:focus-visible { text-decoration-thickness: 2px; }
 
 .site-footer a { color: #fff; }
 
+.footer-note {
+  color: #b9c7cf;
+  font-size: .78rem;
+  line-height: 1.6;
+}
+
+.policy-page .article-body > h2:first-child {
+  margin-top: 0;
+}
+
 /* Article */
 
 .article-shell {
