@@ -91,6 +91,8 @@ affiliate: true
 
 **Anker Solix C300 Portable Power Station**は、容量288Wh、定格300W、約4.1kgです。
 
+[AmazonでAnker Solix C300を見る](https://www.amazon.co.jp/dp/B0D5XGP6CW/ref=nosim?tag=yukitaka83-22)
+
 向く用途:
 - スマートフォン
 - ノートPC
@@ -104,6 +106,8 @@ affiliate: true
 
 **Jackery ポータブル電源 600 New**は、容量640Wh、定格500W、約6.4kgです。
 
+[AmazonでJackery 600 Newを見る](https://www.amazon.co.jp/dp/B0FW3VJC6L/ref=nosim?tag=yukitaka83-22)
+
 向く用途:
 - スマートフォン・PC
 - 照明
@@ -115,6 +119,8 @@ affiliate: true
 ## 8. 1kWh級：家庭用家電まで考える
 
 **Jackery ポータブル電源 1000 New V3**は、容量1024Wh、定格1500W、約10.6kgです。
+
+[AmazonでJackery 1000 New V3を見る](https://www.amazon.co.jp/dp/B0H6FNJFJJ/ref=nosim?tag=yukitaka83-22)
 
 電子レンジ等を含む比較的高出力の家電まで候補になりますが、重量・価格・保管スペースも増えます。
 
@@ -129,6 +135,8 @@ affiliate: true
 | 家庭用家電まで | Jackery 1000 New V3 | 1024Wh | 1500W | 約10.6kg | 重量・価格・保管場所を確認 |
 
 商品は**売れ筋順ではなく、記事で説明した用途差**で選びます。
+
+> 上記の商品リンクはAmazonアソシエイトリンクです。価格・在庫はAmazonで確認してください。購入前には商品名・型番と最新のリコール情報も確認します。
 
 ## 10. リチウムイオン電池製品には火災リスクがある
 
