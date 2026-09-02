@@ -14,4 +14,18 @@
 - 単純ランキングは行わない。
 - 「多機能だから上位」としない。乾電池ラジオの単純さ・長時間運用を明確な利点として残す。
 - Amazon評価100件未満でも、現行メーカー製品として仕様が追跡でき、記事の用途差を説明できる場合は例外採用する。
-- 正式AmazonリンクはStoreID / トラッキングID設定後に型番一致を再確認して生成する。
+- Amazonアソシエイトタグ `yukitaka83-22` を使用してリンクを実装する。ASIN確認済みは直接リンク、RF-TJ20は型番固定の検索リンクとする。
+
+## Amazonアソシエイトリンク（2026-09-02）
+
+使用タグ: `yukitaka83-22`
+
+| 商品 | Amazonリンク | 方式 |
+|---|---|---|
+| Panasonic RF-P155 | https://www.amazon.co.jp/dp/B01M9ET1JS/ref=nosim?tag=yukitaka83-22 | ASIN確認済み |
+| Sony ICF-B300 | https://www.amazon.co.jp/dp/B0B8DJ5R6Z/ref=nosim?tag=yukitaka83-22 | ASIN確認済み |
+| Panasonic RF-TJ20 | https://www.amazon.co.jp/s?k=Panasonic%20RF-TJ20&tag=yukitaka83-22 | 日本AmazonのASIN未確定のため検索リンク |
+
+- 直接リンクは商品名・型番とASINの一致を確認したものだけに使用する。
+- 検索リンクは、類似商品への誤リンクを避けるため商品名・型番を固定している。
+- 価格・在庫は記事本文へ固定表示しない。
