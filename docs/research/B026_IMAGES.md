@@ -22,6 +22,17 @@
 - 権利: Commonsファイルページの表示条件に従い、公開前に個別ライセンスを再確認
 - 安全判断用途: 使用しない
 
+## IMG-B026-003
+
+- 用途: 「缶詰・レトルトは『そのまま食べられるか』を確認」の章
+- Source: https://commons.wikimedia.org/wiki/File:Canned_food_on_shelves_in_Naha_2015.jpg
+- Image: https://commons.wikimedia.org/wiki/Special:Redirect/file/Canned%20food%20on%20shelves%20in%20Naha%202015.jpg?width=1280
+- 内容: 沖縄県那覇市の店舗に並ぶ缶詰食品
+- Author: Dquai
+- License: CC BY-SA 4.0
+- 採用理由: 日本国内で日常的に購入できる缶詰を示し、ローリングストック・加熱不要食品の説明を具体化できる
+- 安全判断用途: 使用しない
+
 ## 重複確認
 
-B001〜B025の固有画像とは別ファイル。海外災害風景は使用しない。
+B001〜B030の固有画像とは別ファイル。海外災害風景は使用しない。
