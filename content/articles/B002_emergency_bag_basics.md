@@ -138,6 +138,9 @@ affiliate: false
 
 目安重量より軽くても、体力や移動環境によって負担になることがあります。
 
+
+> **Q&A:** [防災バッグは何kgまでなら大丈夫ですか？](qa.html#qa-bag-weight)
+
 ## 5. リュック型を基本に考える
 
 内閣府や消防庁では、非常持ち出し品をリュック等へ入れて準備する例が示されています。
@@ -227,6 +230,9 @@ affiliate: false
 - [トイレ・衛生](/goods/toilet-hygiene.html)
 - [ライト・情報](/goods/light-information.html)
 - [電源・充電](/goods/power-charging.html)
+
+
+> **Q&A:** [防災用品は最初に一式セットを買った方がいいですか？](qa.html#qa-buy-all)
 
 ## まとめ
 

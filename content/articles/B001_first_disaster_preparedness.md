@@ -112,6 +112,9 @@ affiliate: false
 - [停電用ライト・ラジオの商品紹介](/goods/light-information.html)
 - [モバイルバッテリー・電源の商品紹介](/goods/power-charging.html)
 
+
+> **Q&A:** [飲料水は何日分くらい備蓄すればいいですか？](qa.html#qa-water-days)
+
 ## 5. 自宅備蓄と非常持ち出し品を分ける
 
 「防災用品」を全部ひとつのバッグへ入れる必要はありません。
