@@ -149,12 +149,12 @@ def reduce_listing_commons_width(html: str) -> str:
 
 def add_accessibility_scaffolding(html: str) -> str:
     """Add production-safe skip navigation without depending on JavaScript."""
-    if not re.search(r"<main\\b", html, flags=re.IGNORECASE):
+    if not re.search(r"<main\b", html, flags=re.IGNORECASE):
         return html
 
-    if not re.search(r'<main\\b[^>]*\\bid=["\\\']main-content["\\\']', html, flags=re.IGNORECASE):
+    if not re.search(r"<main\b[^>]*\bid=[\"']main-content[\"']", html, flags=re.IGNORECASE):
         html = re.sub(
-            r"<main\\b",
+            r"<main\b",
             '<main id="main-content"',
             html,
             count=1,
@@ -163,8 +163,8 @@ def add_accessibility_scaffolding(html: str) -> str:
 
     if "skip-link" not in html:
         html = re.sub(
-            r"(<body\\b[^>]*>)",
-            r'\\1\\n<a class="skip-link" href="#main-content">本文へ移動</a>',
+            r"(<body\b[^>]*>)",
+            r'\1\n<a class="skip-link" href="#main-content">本文へ移動</a>',
             html,
             count=1,
             flags=re.IGNORECASE,
