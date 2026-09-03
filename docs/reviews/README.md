@@ -1,42 +1,65 @@
-# 記事別レビュー一覧
+# 記事別レビュー運用
 
-各記事のレビュー状態を追跡する。
+更新日: 2026-09-03
 
-- マスター項目: `../ARTICLE_REVIEW_CHECKLIST.md`
-- 雛形: `ARTICLE_CHECKLIST_TEMPLATE.md`
-- 判定値: `PASS / FAIL / TODO / N/A`
-- 記事作成・修正時は、同じ作業内で対応するチェックリストも更新する。
-- `READY_TO_PUBLISH` へ進める前に、必須項目の `FAIL / TODO` を解消する。
+## 1. 正本
 
-| ID | 記事 | 記事状態 | レビュー状態 | 個別チェック |
-|---|---|---|---|---|
-| B001 | 防災は何から始める？家庭で最初に確認したい基本項目 | DRAFTED | IN_PROGRESS | [checklist](./B001_CHECKLIST.md) |
-| B002 | 防災バッグには何を入れる？用途別に考える基本の備え | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B002_CHECKLIST.md) |
-| B003 | 断水に備える携帯トイレ｜必要数を考える前に確認したいこと | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B003_CHECKLIST.md) |
-| B004 | 停電に備えて準備しておきたいもの｜照明・電源・情報収集を分けて考える | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B004_CHECKLIST.md) |
-| B005 | 大雨・水害にどう備える？まず知っておきたい基本 | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B005_CHECKLIST.md) |
-| B006 | 台風が来る前に何をする？家庭の事前チェック | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B006_CHECKLIST.md) |
-| B007 | 地震に備えて最初に確認したいこと | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B007_CHECKLIST.md) |
-| B008 | 車が冠水・水没しそうなときに知っておきたいこと | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B008_CHECKLIST.md) |
-| B009 | 冠水した道路を車で走る危険｜避けるべき理由を整理 | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B009_CHECKLIST.md) |
-| B010 | 地下駐車場・低い場所に車を置いている場合の大雨対策 | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B010_CHECKLIST.md) |
-| B011 | 台風・洪水で水没した車は車両保険の対象になる？ | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B011_CHECKLIST.md) |
-| B012 | 自宅の浸水にどう備える？住宅の水害対策入門 | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B012_CHECKLIST.md) |
-| B013 | 火災保険の水災補償とは？住宅浸水との関係を整理 | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B013_CHECKLIST.md) |
-| B014 | 浸水した家財は保険の対象になる？確認ポイント | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B014_CHECKLIST.md) |
-| B015 | 自宅が浸水した後、片付ける前に記録したいもの | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B015_CHECKLIST.md) |
-| B016 | 台風の風災は火災保険でどう扱われる？ | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B016_CHECKLIST.md) |
-| B017 | 地震保険の基本｜火災保険との違いを整理 | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B017_CHECKLIST.md) |
-| B018 | 地震で車が壊れた場合、自動車保険はどう考える？ | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B018_CHECKLIST.md) |
-| B019 | 水害・台風・地震で保険の扱いはどう違う？ | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B019_CHECKLIST.md) |
-| B020 | 大雨の前に自宅で確認すること｜浸水対策チェックリスト | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B020_CHECKLIST.md) |
-| B021 | 台風前日に確認したいこと｜屋外・窓・停電への備え | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B021_CHECKLIST.md) |
-| B022 | マンションの台風・水害対策｜戸建てとの違い | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B022_CHECKLIST.md) |
-| B023 | 地震の家具転倒対策｜まず優先したい場所 | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B023_CHECKLIST.md) |
-| B024 | 地震後の停電・断水にどう備える？ | REVIEW_REQUIRED | IN_PROGRESS | [checklist](./B024_CHECKLIST.md) |
-| B025 | 飲料水はどう備蓄する？家庭での考え方 | PLANNED | NOT_STARTED | [checklist](./B025_CHECKLIST.md) |
-| B026 | 非常食は何を備える？普段使いを含めた考え方 | PLANNED | NOT_STARTED | [checklist](./B026_CHECKLIST.md) |
-| B027 | 防災ラジオは必要？情報収集手段を比較する | PLANNED | NOT_STARTED | [checklist](./B027_CHECKLIST.md) |
-| B028 | ポータブル電源は防災に必要？用途と注意点 | PLANNED | NOT_STARTED | [checklist](./B028_CHECKLIST.md) |
-| B029 | 車に積んでおきたい防災用品｜車載用に考える | PLANNED | NOT_STARTED | [checklist](./B029_CHECKLIST.md) |
-| B030 | 家族で決めておきたい災害時の連絡・集合ルール | PLANNED | NOT_STARTED | [checklist](./B030_CHECKLIST.md) |
+- 共通記事作成ルール: `../CONTENT_CREATION_RULES.md`
+- 共通チェックリスト: `../ARTICLE_REVIEW_CHECKLIST.md`
+- 記事別テンプレート: `ARTICLE_CHECKLIST_TEMPLATE.md`
+- 正式な記事状態: `../../data/content_registry.json`
+
+判定値: `PASS / FAIL / TODO / N/A`
+
+## 2. 記事別ファイルの役割
+
+`Bxxx_CHECKLIST.md` は、**共通ルールを保存する場所ではなく、その記事のレビュー結果・証跡・固有事項を保存する場所**とする。
+
+今後は共通チェック項目の全文を記事ごとに複製しない。
+
+記録例:
+
+| 共通チェック | 状態 | 根拠 |
+|---|---|---|
+| C01 内容・情報量 | PASS | 本文量・構成確認 |
+| C02 出典・安全性 | PASS | SOURCES.md |
+| C03 画像 | PASS | IMAGES.md |
+| C04 UI | PASS | PC/スマホ確認 |
+| C05 内部リンク | PASS | リンク監査 |
+| C06 商品 | N/A | |
+| C07 Q&A | PASS | 個別アンカー確認 |
+| C08 同期 | PASS | registry同期 |
+
+## 3. 既存B001〜B030について
+
+2026-09-02以前に作成したB001〜B030のチェックリストには、作業の経緯を残すため詳細な共通チェック項目や追加監査章が含まれている。
+
+これらは**監査履歴として削除しない**。
+
+ただし、以下の追加章は現在すべて共通ルール・共通チェックへ吸収済みであり、今後は記事別ファイルへ同じ章を追加しない。
+
+| 旧個別章 | 共通化先 |
+|---|---|
+| 強調表示・視覚的な読みやすさ | CR-04 / C04 |
+| 日本文脈画像レビュー | CR-03C / C03 |
+| 推奨本文画像数・本文画像追加レビュー | CR-03 / CR-04 / C03-C04 |
+| 画像関連性再レビュー | CR-03A / C03 |
+| 商品記事導線再レビュー | CR-05B / C06 |
+| UI役割・旧準備中リンク監査 | CR-04C / CR-05 / C04-C05 |
+| Q&A文脈導線監査 | CR-07B / C07 |
+
+## 4. 共通ルールへ昇格する条件
+
+記事固有チェックとして追加した内容が、別の記事でも繰り返し必要になった場合は次を行う。
+
+1. 共通化できるか確認
+2. 共通化できる場合は `CONTENT_CREATION_RULES.md` へ追加
+3. `ARTICLE_REVIEW_CHECKLIST.md` にチェックIDを追加
+4. 個別テンプレートにはルール本文を追加しない
+5. 必要なら既存記事を横断監査する
+
+原則として**2記事以上で同じ追加ルールが必要になった時点で共通化を検討**する。
+
+## 5. サイト全体の確認
+
+共通CSS・JS・フッター・固定ページ・本番ビルド等を変更した場合は、記事別チェックではなく `../SITE_RELEASE_CHECKLIST.md` も実行する。
