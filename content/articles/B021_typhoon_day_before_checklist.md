@@ -167,6 +167,6 @@ affiliate: false
 
 ## 公的情報
 
-- 福岡管区気象台「台風への備え」: https://www.data.jma.go.jp/fukuoka/yoho/kisyousaigai_sonae_typhoon.html
-- 気象庁「自分で行う災害への備え」: https://www.jma.go.jp/jma/kishou/know/ame_chuui/ame_chuui_p10.html
-- 内閣府「自然災害への備えは万全ですか？」: https://www.bousai.go.jp/kyoiku/hokenkyousai/check.html
+- [福岡管区気象台「台風への備え」](https://www.data.jma.go.jp/fukuoka/yoho/kisyousaigai_sonae_typhoon.html)
+- [気象庁「自分で行う災害への備え」](https://www.jma.go.jp/jma/kishou/know/ame_chuui/ame_chuui_p10.html)
+- [内閣府「自然災害への備えは万全ですか？」](https://www.bousai.go.jp/kyoiku/hokenkyousai/check.html)
