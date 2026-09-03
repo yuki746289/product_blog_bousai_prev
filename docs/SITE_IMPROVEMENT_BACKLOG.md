@@ -32,9 +32,9 @@ Geminiレビュー、現サイト監査、SEO運用上の改善点を統合し�
 | 5 | B | Google Keyword Plannerで検索需要を補足 | PLANNED | 共同 | Google Ads管理画面で検索ボリューム等をユーザーが取得し、こちらで候補評価へ反映。必須ではない |
 | 6 | A | 既存30記事・Q&A・商品記事との重複/カニバリ確認 | DONE | ChatGPT | キーワードクラスタを「既存記事強化 / 新規記事 / Q&A / 商品導線 / 見送り」に分類 |
 | 7 | A | title・meta description横断監査 | DONE | ChatGPT | 全公開ページの重複、内容一致、検索意図との整合、過度な類似を監査・修正 |
-| 8 | A | 公開日・最終更新日・情報確認日の明示 | TODO | ChatGPT | 日付の役割を分離し、記事表示・台帳・構造化データで整合させる |
-| 9 | A | Article/BlogPosting + BreadcrumbList構造化データ | TODO | ChatGPT | JSON-LDを共通生成し、記事情報・パンくずを明示。FAQリッチリザルト目的にはしない |
-| 10 | A | 構造化データ検証 | TODO | 共同 | こちらでコード検証。Google Rich Results Test等の外部検証が必要な場合は結果確認を共同実施 |
+| 8 | A | 公開日・最終更新日・情報確認日の明示 | DONE | ChatGPT | `published_at` / `modified_at` / `source_checked_at` を台帳で分離し、本番記事へ共通生成 |
+| 9 | A | Article/BlogPosting + BreadcrumbList構造化データ | DONE | ChatGPT | 本番ビルドでBlogPosting + BreadcrumbListを台帳からJSON-LD共通生成 |
+| 10 | A | 構造化データ検証 | IN_PROGRESS | 共同 | Python/CIでJSON-LD構文・型・日付・パンくずを自動検証。Google Rich Results Test等の外部検証が残る |
 | 11 | A | PageSpeed / Core Web Vitals監査 | TODO | 共同 | 公開URLをPageSpeed Insights等で確認し、LCP・INP・CLSと原因を分析。取得可能な公開結果はChatGPT側で調査可 |
 | 12 | A | 外部画像依存の縮小・WebP等の画像最適化 | TODO | ChatGPT | ライセンス確認後、再配布可能な画像をローカル化・WebP化。外部画像依存と表示負荷を削減 |
 | 13 | A | モバイル実機レビュー | TODO | ユーザー | 実スマホで横スクロールナビ、Q&A、表、商品CTA、文字サイズ、タップ領域を確認。指摘後の修正はChatGPT |
@@ -122,3 +122,23 @@ Search Console + GA4で実績検証
 | B032 | 防災リュックの容量・何L | DONE |
 
 親記事B026/B002および防災入門カテゴリから内部リンクを追加し、カニバリを避けて役割分離した。
+
+
+## 日付・構造化データ実装（2026-09-03）
+
+記事の日付は用途を分離した。
+
+- `published_at`: 本番で初めて公開された日
+- `modified_at`: 記事内容の最終更新日
+- `source_checked_at`: 公的・一次情報等を最後に確認した日
+- `last_reviewed_at`: 内部レビュー日。公開上の「最終更新日」には流用しない
+
+B001〜B030の公開日は、現行GitHub Actionsで確認できる最初の本番デプロイ（2026-09-02）を基準に固定した。B031/B032は追加・本番デプロイ日の2026-09-03。
+
+本番ビルドでは `scripts/article_metadata.py` が記事台帳を正本として、次を共通生成する。
+
+- 公開日 / 最終更新日 / 情報確認日の表示
+- `BlogPosting` JSON-LD
+- `BreadcrumbList` JSON-LD
+
+JSON-LDを記事HTMLへ個別に手書きしない。構文、記事タイトル、`datePublished`、`dateModified`、パンくず3階層はビルド/テストで自動確認する。
