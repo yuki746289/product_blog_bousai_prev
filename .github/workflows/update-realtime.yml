@@ -1,5 +1,7 @@
 name: Update realtime disaster data
 
+# Realtime data is deployed independently from the static site.
+
 on:
   workflow_dispatch:
   push:
