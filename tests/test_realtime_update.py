@@ -10,7 +10,7 @@ from scripts.update_realtime import (
 )
 
 
-ATOM = b"""<?xml version="1.0" encoding="UTF-8"?>
+ATOM = """<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <entry>
     <title>震源・震度情報</title>
