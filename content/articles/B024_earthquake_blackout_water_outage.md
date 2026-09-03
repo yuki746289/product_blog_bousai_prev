@@ -160,7 +160,7 @@ affiliate: false
 
 ## 公的情報
 
-- 内閣府「知って・備えて・行動する」: https://www.bousai.go.jp/kyoiku/kyouzai/pdf/otona.pdf
-- 総務省消防庁「備蓄品を備える」: https://www.fdma.go.jp/relocation/bousai_manual/pre/preparation081.html
-- 経済産業省「災害時における電気の安全」: https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/detail/saigai.html
-- 消費者庁「携帯発電機やポータブル電源等の事故に注意」: https://www.caa.go.jp/policies/policy/consumer_safety/caution/caution_067/
+- [内閣府「知って・備えて・行動する」](https://www.bousai.go.jp/kyoiku/kyouzai/pdf/otona.pdf)
+- [総務省消防庁「備蓄品を備える」](https://www.fdma.go.jp/relocation/bousai_manual/pre/preparation081.html)
+- [経済産業省「災害時における電気の安全」](https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/detail/saigai.html)
+- [消費者庁「携帯発電機やポータブル電源等の事故に注意」](https://www.caa.go.jp/policies/policy/consumer_safety/caution/caution_067/)
