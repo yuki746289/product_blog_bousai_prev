@@ -87,6 +87,8 @@ briefへ次を記録する。
 - slug / planned public path
 - content_role
 - parent / related articles
+- target reader / usage context / reader goal
+- page job / entry path / next action
 - primary search intent
 - keyword cluster
 - included intent
@@ -155,7 +157,9 @@ CR-02に従う。
 
 ## 12. Step 10: レビュー
 
-`docs/ARTICLE_REVIEW_CHECKLIST.md` を実行する。
+`docs/ARTICLE_REVIEW_CHECKLIST.md` と `docs/EXPERT_REVIEW_FRAMEWORK.md` を実行する。
+
+専門家視点レビューでは、最低でも編集・防災/ファクト・SEO・UX/UI・マーケティング・アクセシビリティ・技術品質を確認する。商品・計測を伴う場合は条件付き視点も追加する。
 
 必須:
 
