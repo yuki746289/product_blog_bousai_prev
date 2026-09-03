@@ -41,7 +41,7 @@ scripts/update_realtime.py
        ↓
 realtime.json
        ↓
-FTPSで /realtime/realtime.json のみ更新
+IPv4/PASV固定のFTPSで /realtime/realtime.json のみ更新
        ↓
 トップページJSが表示
 ```
@@ -98,7 +98,7 @@ FTPSで /realtime/realtime.json のみ更新
 
 リアルタイム更新は軽量な `ubuntu-slim` を使用し、タイムアウトを3分に制限する。
 
-10分間隔では理論上1日144回のworkflow実行になるため、GitHub ActionsのUsageは定期的に確認する。
+10分間隔では理論上1日144回、30日で4,320回のworkflow実行になる。GitHubは1分未満のジョブも1分単位に切り上げるため、現在の約20秒ジョブでも最大4,320請求分（分）/30日相当になる。ubuntu-slimの超過単価は2026-09-03確認時点で$0.002/分。private repoの付属枠（Free 2,000分/月、Pro 3,000分/月等）と他workflowの利用量を含めてUsageを定期確認する。
 
 必要に応じて、
 - 15分
@@ -116,3 +116,36 @@ FTPSで /realtime/realtime.json のみ更新
 - `preview/bousai_common.js`
 - `preview/bousai_common.css`
 - `tests/test_realtime_update.py`
+
+
+## 通常サイトデプロイとの分離
+
+通常のproduction deployでは `realtime/**` をFTPS対象から除外する。
+
+理由:
+- `preview/realtime/realtime.json` はローカルプレビュー・初期ビルド用のplaceholder
+- 通常デプロイでplaceholderを本番へ上書きすると、次の定期更新まで「初期化中」に戻る
+- 本番の `/realtime/realtime.json` は `update-realtime.yml` だけが更新する
+
+リアルタイム更新のFTPSは軽量runnerで安定させるため、GitHub Actionラッパーではなくcurlを使い、
+- IPv4
+- explicit FTPS
+- passive mode
+- EPSV無効
+- 最大3回リトライ
+
+で1ファイルだけ転送する。
+
+## 実運用確認
+
+2026-09-03 18:58 JSTの実行で以下を確認した。
+
+- status: ok
+- warning_count: 5
+- typhoon_count: 2
+- earthquake: 取得あり
+- errors: 0
+- JSON生成: PASS
+- FTPS upload: PASS
+- 本番JSON smoke: PASS
+- 通常production deploy後も `realtime/**` を保持: PASS
