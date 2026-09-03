@@ -35,8 +35,8 @@ Geminiレビュー、現サイト監査、SEO運用上の改善点を統合し�
 | 8 | A | 公開日・最終更新日・情報確認日の明示 | DONE | ChatGPT | `published_at` / `modified_at` / `source_checked_at` を台帳で分離し、本番記事へ共通生成 |
 | 9 | A | Article/BlogPosting + BreadcrumbList構造化データ | DONE | ChatGPT | 本番ビルドでBlogPosting + BreadcrumbListを台帳からJSON-LD共通生成 |
 | 10 | A | 構造化データ検証 | IN_PROGRESS | 共同 | Python/CIでJSON-LD構文・型・日付・パンくずを自動検証。Google Rich Results Test等の外部検証が残る |
-| 11 | A | PageSpeed / Core Web Vitals監査 | TODO | 共同 | 公開URLをPageSpeed Insights等で確認し、LCP・INP・CLSと原因を分析。取得可能な公開結果はChatGPT側で調査可 |
-| 12 | A | 外部画像依存の縮小・WebP等の画像最適化 | TODO | ChatGPT | ライセンス確認後、再配布可能な画像をローカル化・WebP化。外部画像依存と表示負荷を削減 |
+| 11 | A | PageSpeed / Core Web Vitals監査 | IN_PROGRESS | 共同 | 公開URLをPageSpeed Insights等で確認し、LCP・INP・CLSと原因を分析。画像最適化などコード側の先行改善は実施済み |
+| 12 | A | 外部画像依存の縮小・WebP等の画像最適化 | DONE | ChatGPT | Wikimedia Commonsの帰属確認済み記事画像を本番ビルドでローカルWebP化し、width/height・feature imageのfetchpriorityも付与。商品/メーカー画像は外部参照を維持 |
 | 13 | A | モバイル実機レビュー | TODO | ユーザー | 実スマホで横スクロールナビ、Q&A、表、商品CTA、文字サイズ、タップ領域を確認。指摘後の修正はChatGPT |
 | 14 | B | 出典リンク表示名の統一 | TODO | ChatGPT | 生URL表示を減らし「機関名『資料名』」形式へ統一 |
 | 15 | B | 実用チェックリストの横断強化 | TODO | ChatGPT | practical記事等で、保存・スクリーンショットしやすい簡潔なチェック表を必要箇所へ追加 |
@@ -142,3 +142,15 @@ B001〜B030の公開日は、現行GitHub Actionsで確認できる最初の本�
 - `BreadcrumbList` JSON-LD
 
 JSON-LDを記事HTMLへ個別に手書きしない。構文、記事タイトル、`datePublished`、`dateModified`、パンくず3階層はビルド/テストで自動確認する。
+
+
+## 画像最適化実装（2026-09-03）
+
+- 対象: 記事本文内でWikimedia Commons帰属が明示されている画像
+- 本番ビルド後に取得し、最大幅1280px・WebPへ変換して `assets/images/commons/` からローカル配信
+- 画像へ `width` / `height` / `decoding="async"` を付与
+- `loading="eager"` の記事メイン画像には `fetchpriority="high"` を付与
+- 元画像ページへのWikimedia Commonsリンクをfigcaptionへ補完
+- Amazon・メーカーの商品画像は権利・更新性を考慮しローカルコピーしない
+- 取得失敗時は元の外部画像URLを残してページ公開を継続
+- GitHub Actionsのproduction deployとHTTP smoke testで検証済み
