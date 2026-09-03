@@ -2,6 +2,13 @@ name: Update realtime disaster data
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/update_realtime.py"
+      - "preview/realtime/realtime.json"
+      - ".github/workflows/update-realtime.yml"
   schedule:
     - cron: "*/10 * * * *"
 
