@@ -9,6 +9,7 @@ Behavior:
 - downloads allow-listed Commons image URLs;
 - follows only Commons -> upload.wikimedia.org redirects;
 - converts to WebP and caps width at 1280 px;
+- generates a 720 px responsive variant for mobile article images;
 - writes stable hashed assets under public/assets/images/commons/;
 - adds intrinsic width/height to reduce layout shift;
 - gives eager feature images high fetch priority;
@@ -118,13 +119,13 @@ def download_image(source_url: str, retries: int = 3) -> tuple[bytes, str]:
     raise last_error
 
 
-def optimize_webp(data: bytes, destination: Path) -> tuple[int, int, int]:
+def optimize_webp(data: bytes, destination: Path, max_width: int = 1280) -> tuple[int, int, int]:
     destination.parent.mkdir(parents=True, exist_ok=True)
     with Image.open(io.BytesIO(data)) as original:
         image = ImageOps.exif_transpose(original)
-        if image.width > 1280:
-            height = round(image.height * 1280 / image.width)
-            image = image.resize((1280, height), Image.Resampling.LANCZOS)
+        if image.width > max_width:
+            height = round(image.height * max_width / image.width)
+            image = image.resize((max_width, height), Image.Resampling.LANCZOS)
 
         if image.mode not in ("RGB", "RGBA"):
             image = image.convert("RGBA" if "transparency" in image.info else "RGB")
@@ -143,6 +144,24 @@ def add_image_attributes(tag: str, width: int, height: int, feature: bool) -> st
     if feature and 'loading="eager"' in tag and not re.search(r"\bfetchpriority=", tag, re.IGNORECASE):
         tag = tag[:-1] + ' fetchpriority="high">'
     return tag
+
+
+def add_responsive_attributes(
+    tag: str,
+    mobile_url: str | None,
+    mobile_width: int | None,
+    full_url: str,
+    full_width: int,
+) -> str:
+    if not mobile_url or not mobile_width or mobile_width >= full_width:
+        return tag
+    if re.search(r"\bsrcset=", tag, re.IGNORECASE):
+        return tag
+    return (
+        tag[:-1]
+        + f' srcset="{mobile_url} {mobile_width}w, {full_url} {full_width}w"'
+        + ' sizes="(max-width: 760px) calc(100vw - 32px), 900px">'
+    )
 
 
 def ensure_source_link(body: str, source_url: str) -> str:
@@ -195,14 +214,31 @@ def localize_html_file(path: Path, cache: dict[str, dict]) -> tuple[int, int]:
             try:
                 raw, final_url = download_image(source_url)
                 width, height, optimized_bytes = optimize_webp(raw, destination)
+
+                mobile_path = None
+                mobile_width = None
+                mobile_height = None
+                mobile_bytes = 0
+                if width > 720:
+                    mobile_name = asset_name.replace(".webp", "_720.webp")
+                    mobile_destination = ASSET_DIR / mobile_name
+                    mobile_width, mobile_height, mobile_bytes = optimize_webp(
+                        raw, mobile_destination, max_width=720
+                    )
+                    mobile_path = f"assets/images/commons/{mobile_name}"
+
                 entry = {
                     "source_url": html.unescape(source_url),
                     "final_url": final_url,
                     "local_path": f"assets/images/commons/{asset_name}",
                     "width": width,
                     "height": height,
+                    "mobile_path": mobile_path,
+                    "mobile_width": mobile_width,
+                    "mobile_height": mobile_height,
                     "source_bytes": len(raw),
                     "optimized_bytes": optimized_bytes,
+                    "mobile_bytes": mobile_bytes,
                     "status": "localized",
                 }
             except Exception as exc:
@@ -226,6 +262,18 @@ def localize_html_file(path: Path, cache: dict[str, dict]) -> tuple[int, int]:
         )
         feature = "article-feature-image" in attrs
         new_tag = add_image_attributes(new_tag, entry["width"], entry["height"], feature)
+        mobile_url = None
+        if entry.get("mobile_path"):
+            mobile_url = posixpath.relpath(
+                entry["mobile_path"], posixpath.dirname(page_rel) or "."
+            )
+        new_tag = add_responsive_attributes(
+            new_tag,
+            mobile_url,
+            entry.get("mobile_width"),
+            local_url,
+            entry["width"],
+        )
         new_body = body[: img_match.start()] + new_tag + body[img_match.end() :]
         new_body = ensure_source_link(new_body, source_url)
         localized_count += 1
@@ -265,6 +313,7 @@ def run(min_localized: int = 0) -> dict:
     unique_failed = sum(1 for item in assets if item["status"] == "failed")
     source_bytes = sum(item.get("source_bytes", 0) for item in assets)
     optimized_bytes = sum(item.get("optimized_bytes", 0) for item in assets)
+    responsive_variant_bytes = sum(item.get("mobile_bytes", 0) for item in assets)
 
     manifest = {
         "generated_by": "scripts/localize_commons_images.py",
@@ -275,6 +324,7 @@ def run(min_localized: int = 0) -> dict:
         "unique_images_failed": unique_failed,
         "source_bytes": source_bytes,
         "optimized_bytes": optimized_bytes,
+        "responsive_variant_bytes": responsive_variant_bytes,
         "saved_bytes": max(0, source_bytes - optimized_bytes),
         "pages": page_results,
         "assets": assets,
