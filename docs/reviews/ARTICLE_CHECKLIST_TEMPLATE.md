@@ -27,6 +27,12 @@
 | C06 商品導線・商品記事 | N/A | |
 | C07 Q&A | N/A | |
 | C08 同期・公開前 | TODO | |
+| C09 日付・構造化データ | TODO | |
+| C10 デザイン・UX | TODO | |
+| C11 読者・マーケティング | TODO | |
+| C12 アクセシビリティ | TODO | |
+| C13 技術品質・信頼性 | TODO | |
+| C14 計測・グロース | N/A | |
 
 ## 2. 条件付き詳細確認
 
@@ -40,6 +46,7 @@
 | pillar/detail構造: `docs/PICKUP_AND_DEEP_DIVE_POLICY.md` | N/A | |
 | キーワード調査・検索意図: `docs/KEYWORD_RESEARCH_POLICY.md` | N/A | |
 | サイト共通UI変更: `docs/SITE_RELEASE_CHECKLIST.md` | N/A | |
+| 専門家視点横断レビュー: `docs/EXPERT_REVIEW_FRAMEWORK.md` | TODO | |
 
 ## 3. 記事固有チェック
 
@@ -52,6 +59,15 @@
 
 ## 4. 証跡
 
+- target_reader:
+- usage_context:
+- reader_goal:
+- page_job:
+- next_action:
+- design_review:
+- accessibility_review:
+- technical_review:
+- analytics_review:
 - sources:
 - images:
 - products:
