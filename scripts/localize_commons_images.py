@@ -119,7 +119,7 @@ def stable_asset_name(source_url: str) -> str:
 
 def resolve_download_url(source_url: str) -> str:
     parsed = urlparse(html.unescape(source_url))
-    if parsed.hostname == "upload.wikimedia.org":
+    if parsed.hostname == "upload.wikimedia.org" and "/thumb/" not in parsed.path:
         return html.unescape(source_url)
 
     filename = commons_filename(source_url)
