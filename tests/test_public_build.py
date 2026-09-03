@@ -218,6 +218,10 @@ class PublicBuildTests(unittest.TestCase):
         self.assertIn('href="goods/power-charging.html">ポータブル電源</a>', home)
         self.assertIn('href="guide/portable-toilet-stockpile.html">携帯トイレの備え方を読む', home)
 
+        goods_index = (PUBLIC / "goods" / "index.html").read_text(encoding="utf-8")
+        self.assertEqual(4, goods_index.count("category-product-link"))
+        self.assertEqual(4, goods_index.count("<small>商品比較</small>"))
+
     def test_product_pages_have_navigation_safety_context_and_product_role(self):
         pages = [
             PUBLIC / "goods" / "water-food.html",
@@ -239,6 +243,20 @@ class PublicBuildTests(unittest.TestCase):
             self.assertEqual(1, len(re.findall(r"<main\b", html, flags=re.IGNORECASE)), page)
             self.assertIn('class="skip-link"', html, page)
             self.assertIn('id="main-content"', html, page)
+
+            headings = [
+                int(level)
+                for level in re.findall(r"<h([1-6])\b", html, flags=re.IGNORECASE)
+            ]
+            for previous, current in zip(headings, headings[1:]):
+                self.assertLessEqual(current - previous, 1, page)
+
+            generic_link = re.compile(
+                r">\s*(?:詳しく読む|記事を読む|続きを読む|こちら|詳しく|もっと見る|"
+                r"関連する記事を見る|選び方を見る|すべて見る)\s*→?\s*</a>",
+                re.IGNORECASE,
+            )
+            self.assertIsNone(generic_link.search(html), page)
 
             for tag in re.findall(r"<img\b[^>]*>", html, flags=re.IGNORECASE):
                 self.assertRegex(tag, r"\balt=[\"'][^\"']*[\"']", page)
