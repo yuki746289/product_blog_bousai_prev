@@ -27,9 +27,10 @@ import json
 import posixpath
 import re
 import time
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from urllib.parse import quote, unquote, urlparse
+from urllib.parse import quote, unquote, urlencode, urlparse
 from urllib.request import Request, urlopen
 
 from PIL import Image, ImageOps
@@ -87,25 +88,26 @@ def extract_eligible_source(attrs: str, body: str) -> str | None:
     return src_match.group("src")
 
 
-def commons_description_url(source_url: str) -> str | None:
+def commons_filename(source_url: str) -> str | None:
     parsed = urlparse(html.unescape(source_url))
     path = unquote(parsed.path)
-
     marker = "/wiki/Special:Redirect/file/"
     if marker in path:
-        filename = path.split(marker, 1)[1]
-        return "https://commons.wikimedia.org/wiki/File:" + quote(
-            filename, safe="()_,-.%"
-        )
-
+        return path.split(marker, 1)[1]
     if parsed.hostname == "upload.wikimedia.org":
         parts = [part for part in path.split("/") if part]
         if len(parts) >= 2:
-            candidate = parts[-2] if "/thumb/" in path else parts[-1]
-            return "https://commons.wikimedia.org/wiki/File:" + quote(
-                candidate, safe="()_,-.%"
-            )
+            return parts[-2] if "/thumb/" in path else parts[-1]
     return None
+
+
+def commons_description_url(source_url: str) -> str | None:
+    filename = commons_filename(source_url)
+    if not filename:
+        return None
+    return "https://commons.wikimedia.org/wiki/File:" + quote(
+        filename, safe="()_,-.%"
+    )
 
 
 def stable_asset_name(source_url: str) -> str:
@@ -115,30 +117,72 @@ def stable_asset_name(source_url: str) -> str:
     return f"commons_{digest}.webp"
 
 
+def resolve_download_url(source_url: str) -> str:
+    parsed = urlparse(html.unescape(source_url))
+    if parsed.hostname == "upload.wikimedia.org":
+        return html.unescape(source_url)
+
+    filename = commons_filename(source_url)
+    if not filename:
+        return html.unescape(source_url)
+
+    query = urlencode({
+        "action": "query",
+        "format": "json",
+        "formatversion": "2",
+        "prop": "imageinfo",
+        "iiprop": "url",
+        "iiurlwidth": str(MAIN_MAX_WIDTH),
+        "titles": f"File:{filename}",
+    })
+    request = Request(
+        f"https://commons.wikimedia.org/w/api.php?{query}",
+        headers={"User-Agent": "bousai-kurashi-guide-image-localizer/1.2 (+https://bousaikun.ashigaru.jp/)"},
+    )
+    with urlopen(request, timeout=30) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+    pages = payload.get("query", {}).get("pages", [])
+    if not pages:
+        raise ValueError("Commons API returned no pages")
+    imageinfo = pages[0].get("imageinfo") or []
+    if not imageinfo:
+        raise ValueError(f"Commons API image not found: {filename}")
+    info = imageinfo[0]
+    return info.get("thumburl") or info["url"]
+
+
 def download_image(source_url: str, retries: int = 3) -> tuple[bytes, str]:
     last_error: Exception | None = None
-    for attempt in range(retries):
-        try:
-            request = Request(
-                html.unescape(source_url),
-                headers={
-                    "User-Agent": (
-                        "bousai-kurashi-guide-image-localizer/1.1 "
-                        "(+https://bousaikun.ashigaru.jp/)"
-                    )
-                },
-            )
-            with urlopen(request, timeout=40) as response:
-                final_url = response.geturl()
-                host = (urlparse(final_url).hostname or "").lower()
-                if host not in ALLOWED_FINAL_HOSTS:
-                    raise ValueError(f"unexpected redirect host: {host}")
-                return response.read(), final_url
-        except Exception as exc:
-            last_error = exc
-            if attempt + 1 < retries:
-                time.sleep(1.25 * (attempt + 1))
+    resolved_url: str | None = None
+    try:
+        resolved_url = resolve_download_url(source_url)
+    except Exception as exc:
+        last_error = exc
 
+    candidates: list[str] = []
+    if resolved_url:
+        candidates.append(resolved_url)
+    original_url = html.unescape(source_url)
+    if original_url not in candidates:
+        candidates.append(original_url)
+
+    for candidate in candidates:
+        for attempt in range(retries):
+            try:
+                request = Request(
+                    candidate,
+                    headers={"User-Agent": "bousai-kurashi-guide-image-localizer/1.2 (+https://bousaikun.ashigaru.jp/)"},
+                )
+                with urlopen(request, timeout=35) as response:
+                    final_url = response.geturl()
+                    host = (urlparse(final_url).hostname or "").lower()
+                    if host not in ALLOWED_FINAL_HOSTS:
+                        raise ValueError(f"unexpected redirect host: {host}")
+                    return response.read(), final_url
+            except Exception as exc:
+                last_error = exc
+                if attempt + 1 < retries:
+                    time.sleep(1.0 * (attempt + 1))
     assert last_error is not None
     raise last_error
 
@@ -429,6 +473,11 @@ def run(min_localized: int = 0) -> dict:
     responsive_variant_bytes = sum(
         item.get("mobile_bytes", 0) for item in assets
     )
+    failure_reasons = Counter(
+        item.get("error", "unknown").split(":", 1)[0]
+        for item in assets
+        if item["status"] == "failed"
+    )
 
     manifest = {
         "generated_by": "scripts/localize_commons_images.py",
@@ -440,6 +489,7 @@ def run(min_localized: int = 0) -> dict:
         "image_occurrences_failed": total_failed,
         "unique_images_localized": unique_localized,
         "unique_images_failed": unique_failed,
+        "failure_reasons": dict(failure_reasons),
         "source_bytes": source_bytes,
         "optimized_bytes": optimized_bytes,
         "responsive_variant_bytes": responsive_variant_bytes,
