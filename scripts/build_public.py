@@ -17,12 +17,14 @@ import re
 import shutil
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
+from xml.sax.saxutils import escape as xml_escape
 
 ROOT = Path(__file__).resolve().parents[1]
 PREVIEW = ROOT / "preview"
 PUBLIC = ROOT / "public"
 REGISTRY = ROOT / "data" / "content_registry.json"
 GA_PARTIAL = ROOT / "templates" / "partials" / "google_analytics.html"
+SITE_CONFIG = ROOT / "config" / "site.json"
 
 STATIC_HTML_MAP = {
     "index.html": "index.html",
@@ -134,6 +136,40 @@ def transform_html(source_name: str, output_path: str, html: str, html_map: dict
     return html
 
 
+def write_search_engine_files(html_map: dict[str, str]) -> None:
+    """Generate sitemap.xml and robots.txt from the production route map."""
+    site_config = json.loads(SITE_CONFIG.read_text(encoding="utf-8"))
+    base_url = site_config["public_base_url"].rstrip("/")
+
+    urls: list[str] = []
+    for output_path in sorted(set(html_map.values())):
+        if output_path == "index.html":
+            loc = base_url + "/"
+        else:
+            loc = f"{base_url}/{output_path}"
+        urls.append(loc)
+
+    sitemap_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+    for loc in urls:
+        sitemap_lines.extend([
+            "  <url>",
+            f"    <loc>{xml_escape(loc)}</loc>",
+            "  </url>",
+        ])
+    sitemap_lines.append("</urlset>")
+    (PUBLIC / "sitemap.xml").write_text("\n".join(sitemap_lines) + "\n", encoding="utf-8")
+
+    robots = (
+        "User-agent: *\n"
+        "Allow: /\n"
+        f"Sitemap: {base_url}/sitemap.xml\n"
+    )
+    (PUBLIC / "robots.txt").write_text(robots, encoding="utf-8")
+
+
 def validate_public(html_map: dict[str, str]) -> None:
     html_files = sorted(PUBLIC.rglob("*.html"))
     if len(html_files) < 50:
@@ -178,6 +214,17 @@ def validate_public(html_map: dict[str, str]) -> None:
         errors.append("bousai_common.css missing")
     if not (PUBLIC / "bousai_common.js").exists():
         errors.append("bousai_common.js missing")
+    if not (PUBLIC / "sitemap.xml").exists():
+        errors.append("sitemap.xml missing")
+    if not (PUBLIC / "robots.txt").exists():
+        errors.append("robots.txt missing")
+
+    if (PUBLIC / "sitemap.xml").exists():
+        sitemap = (PUBLIC / "sitemap.xml").read_text(encoding="utf-8")
+        if sitemap.count("<url>") != len(set(html_map.values())):
+            errors.append("sitemap.xml URL count mismatch")
+        if "contact.html" in sitemap:
+            errors.append("sitemap.xml contains contact.html")
 
     if errors:
         raise ValueError("Public validation failed:\n" + "\n".join(errors))
@@ -211,6 +258,7 @@ def build() -> None:
     if src_assets.exists():
         shutil.copytree(src_assets, PUBLIC / "assets")
 
+    write_search_engine_files(html_map)
     validate_public(html_map)
 
 

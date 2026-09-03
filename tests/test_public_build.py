@@ -40,6 +40,22 @@ class PublicBuildTests(unittest.TestCase):
         self.assertTrue((PUBLIC / "assets" / "images" / "ai_b023_furniture_check_20260902.webp").exists())
         self.assertTrue((PUBLIC / "assets" / "images" / "ai_b024_outage_supplies_20260902.webp").exists())
 
+    def test_sitemap_and_robots_exist_and_cover_public_html(self):
+        sitemap_path = PUBLIC / "sitemap.xml"
+        robots_path = PUBLIC / "robots.txt"
+        self.assertTrue(sitemap_path.exists())
+        self.assertTrue(robots_path.exists())
+
+        sitemap = sitemap_path.read_text(encoding="utf-8")
+        robots = robots_path.read_text(encoding="utf-8")
+        self.assertEqual(50, sitemap.count("<url>"))
+        self.assertIn("https://bousaikun.ashigaru.jp/", sitemap)
+        self.assertIn("https://bousaikun.ashigaru.jp/goods/portable-power-station-disaster.html", sitemap)
+        self.assertNotIn("contact.html", sitemap)
+        self.assertIn("User-agent: *", robots)
+        self.assertIn("Allow: /", robots)
+        self.assertIn("Sitemap: https://bousaikun.ashigaru.jp/sitemap.xml", robots)
+
 
 if __name__ == "__main__":
     unittest.main()
