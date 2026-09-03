@@ -38,7 +38,7 @@ Geminiレビュー、現サイト監査、SEO運用上の改善点を統合し�
 | 11 | A | PageSpeed / Core Web Vitals監査 | IN_PROGRESS | 共同 | 公開URLをPageSpeed Insights等で確認し、LCP・INP・CLSと原因を分析。画像最適化などコード側の先行改善は実施済み |
 | 12 | A | 外部画像依存の縮小・WebP等の画像最適化 | DONE | ChatGPT | Wikimedia Commonsの帰属確認済み記事画像を本番ビルドでローカルWebP化し、width/height・feature imageのfetchpriorityも付与。商品/メーカー画像は外部参照を維持 |
 | 13 | A | モバイル実機レビュー | TODO | ユーザー | 実スマホで横スクロールナビ、Q&A、表、商品CTA、文字サイズ、タップ領域を確認。指摘後の修正はChatGPT |
-| 14 | B | 出典リンク表示名の統一 | TODO | ChatGPT | 生URL表示を減らし「機関名『資料名』」形式へ統一 |
+| 14 | B | 出典リンク表示名の統一 | DONE | ChatGPT | 全32記事・商品/固定ページを監査し、生URL表示が残っていたB016/B017/B021/B023/B024を「機関名『資料名』」リンクへ統一 |
 | 15 | B | 実用チェックリストの横断強化 | TODO | ChatGPT | practical記事等で、保存・スクリーンショットしやすい簡潔なチェック表を必要箇所へ追加 |
 | 16 | B | 商品記事へ数量・容量・稼働時間等の概算例を追加 | TODO | ChatGPT | 非常食・携帯トイレ・電源等に条件付き計算例を追加。保証表現にしない |
 | 17 | B | GA4でAmazonリンククリック計測を実装 | TODO | 共同 | ChatGPTが `amazon_click` 等のイベント送信を実装。GA4管理画面での受信確認はユーザー |
