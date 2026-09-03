@@ -67,6 +67,8 @@ jobs:
           log-level: standard
           security: strict
           timeout: 60000
+          exclude: |
+            realtime/**
 
       - name: Smoke test public site
         run: |
