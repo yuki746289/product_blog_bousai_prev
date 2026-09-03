@@ -15,6 +15,7 @@
    - 商品・Amazon: `docs/AFFILIATE_POLICY.md`
    - 情報鮮度: `docs/FRESHNESS_POLICY.md`
    - pillar/detail等: `docs/PICKUP_AND_DEEP_DIVE_POLICY.md`
+   - キーワード調査・記事企画: `docs/KEYWORD_RESEARCH_POLICY.md`
 3. サイト実装固有: `docs/BOUSAI_SITE_SPEC.md`
 4. 記事固有の確認事項: `docs/reviews/Bxxx_CHECKLIST.md`
 
@@ -275,3 +276,20 @@ Amazon
 - リンクが生きていることと、内容が現在も正しいことを分けて確認する。
 - 商品記事は終売・型番変更・仕様変更・後継品を定期確認する。
 - 詳細は `docs/FRESHNESS_POLICY.md` を参照する。
+
+---
+
+## CR-11 キーワード調査・記事企画
+
+- 新規記事群を追加する前に、ラッコキーワード等の調査ツールやSearch Console等を使い、実際の検索需要・具体的な疑問を確認する。
+- 1キーワードにつき1記事を作るのではなく、検索意図でクラスタリングする。
+- 既存記事・Q&A・商品記事と照合し、次のいずれかへ振り分ける。
+  - 既存記事の強化
+  - 新規detail/practical記事
+  - Q&A追加
+  - 商品記事・商品導線の強化
+  - 見送り
+- 新規記事は、既存記事では十分に答えられない独立した検索意図があり、十分な内容・根拠・内部リンク構造を持てる場合だけ作成する。
+- 検索ボリュームだけで決めず、読者価値、安全性、サイト適合度、既存記事との差、季節性を併せて評価する。
+- 詳細は `docs/KEYWORD_RESEARCH_POLICY.md` を正とする。
+
