@@ -109,4 +109,11 @@ jobs:
           grep -q "${BASE_URL}goods/portable-power-station-disaster.html" "${tmp_sitemap}"
           rm -f "${tmp_sitemap}"
 
+          googlebot_status="$(curl --silent --show-error --location \
+            --user-agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" \
+            --output /dev/null --write-out "%{http_code}" \
+            "${BASE_URL}sitemap.xml")"
+          echo "Googlebot sitemap HTTP status: ${googlebot_status}"
+          test "${googlebot_status}" = "200"
+
           echo "Public smoke test passed."
