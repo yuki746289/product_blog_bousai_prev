@@ -69,7 +69,7 @@ class PublicBuildTests(unittest.TestCase):
     def test_article_dates_and_structured_data(self):
         registry = json.loads((ROOT / "data" / "content_registry.json").read_text(encoding="utf-8"))
         articles = registry["articles"]
-        self.assertEqual(32, len([a for a in articles if a.get("article_id", "").startswith("B")]))
+        self.assertEqual(33, len([a for a in articles if a.get("article_id", "").startswith("B")]))
 
         for article in articles:
             output = PUBLIC / article["planned_public_path"]
