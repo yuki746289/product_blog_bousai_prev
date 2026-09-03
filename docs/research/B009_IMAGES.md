@@ -5,7 +5,7 @@
 ## IMG-B009-001 Kurashiki 2018 Flood.jpg
 - 用途: 記事冒頭
 - 内容: 2018年7月豪雨後、倉敷市の道路で災害ごみを撤去する状況
-- Author: 内閣官房内閣広報室
+- Author: 松岡明芳
 - Source: Wikimedia Commons / kantei.go.jp
 - License: Government of Japan Standard Terms of Use Ver.2.0 / CC BY 4.0互換
 
