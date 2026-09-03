@@ -130,6 +130,15 @@ CR-02に従う。
 - `docs/reviews/Bxxx_CHECKLIST.md`
 - `data/content_registry.json`
 
+記事台帳の日付は役割を分ける。
+
+- `published_at`: 初回本番公開時に確定し、その後は原則変更しない
+- `modified_at`: 記事本文を更新した日に更新
+- `source_checked_at`: 本文根拠を再確認した日に更新
+- `last_reviewed_at`: 内部レビューを実施した日に更新
+
+レビューのみで本文を変更していない場合、`modified_at` は更新しない。
+
 商品記事の場合は `docs/AFFILIATE_POLICY.md` を追加適用する。
 
 ## 11. Step 9: 内部リンク
@@ -170,7 +179,9 @@ CR-02に従う。
 5. GA
 6. sitemap
 7. robots
-8. HTTPスモークテスト
+8. 公開日・最終更新日・情報確認日の表示
+9. BlogPosting / BreadcrumbList JSON-LD
+10. HTTPスモークテスト
 
 をPASSさせる。
 
