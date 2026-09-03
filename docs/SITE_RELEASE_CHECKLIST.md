@@ -66,6 +66,14 @@
 - [ ] 商品画像の実表示をブラウザで確認
 - [ ] ホバー・フォーカス・リンク色を目視確認
 
+## 6.1 検索エンジン向け公開ファイル
+
+- [ ] `sitemap.xml` が存在し、公開対象HTMLを列挙している
+- [ ] `sitemap.xml` に非公開の `contact.html` が含まれていない
+- [ ] `robots.txt` が存在する
+- [ ] `robots.txt` に本番 `sitemap.xml` のURLが記載されている
+- [ ] 本番URLから `sitemap.xml` と `robots.txt` をHTTP取得できる
+
 ## 7. 最終判定
 
 - READY_TO_UPLOAD: `YES / 完了`
