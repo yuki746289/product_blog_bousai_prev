@@ -19,6 +19,8 @@ from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 from xml.sax.saxutils import escape as xml_escape
 
+from article_metadata import apply_article_metadata, validate_article_output
+
 ROOT = Path(__file__).resolve().parents[1]
 PREVIEW = ROOT / "preview"
 PUBLIC = ROOT / "public"
@@ -67,15 +69,26 @@ NOINDEX_RE = re.compile(
 ATTR_RE = re.compile(r'(?P<attr>href|src)=["\'](?P<url>[^"\']+)["\']', re.IGNORECASE)
 
 
-def load_html_map() -> dict[str, str]:
+def load_registry() -> dict:
+    return json.loads(REGISTRY.read_text(encoding="utf-8"))
+
+
+def load_html_map(registry: dict) -> dict[str, str]:
     mapping = dict(STATIC_HTML_MAP)
-    registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     for article in registry["articles"]:
         preview_path = article.get("preview_path")
         public_path = article.get("planned_public_path")
         if preview_path and public_path:
             mapping[Path(preview_path).name] = public_path.lstrip("/")
     return mapping
+
+
+def load_article_map(registry: dict) -> dict[str, dict]:
+    return {
+        Path(article["preview_path"]).name: article
+        for article in registry["articles"]
+        if article.get("preview_path") and article.get("planned_public_path")
+    }
 
 
 def relative_target(current_output: str, target: str) -> str:
@@ -117,7 +130,15 @@ def rewrite_url(url: str, current_output: str, html_map: dict[str, str]) -> str:
     return urlunsplit(("", "", rewritten, parts.query, parts.fragment))
 
 
-def transform_html(source_name: str, output_path: str, html: str, html_map: dict[str, str], ga: str) -> str:
+def transform_html(
+    source_name: str,
+    output_path: str,
+    html: str,
+    html_map: dict[str, str],
+    ga: str,
+    article: dict | None = None,
+    site_config: dict | None = None,
+) -> str:
     html = NOINDEX_RE.sub("", html)
     html = WORKFLOW_LABEL_RE.sub("", html)
 
@@ -132,6 +153,11 @@ def transform_html(source_name: str, output_path: str, html: str, html_map: dict
         if "</head>" not in html:
             raise ValueError(f"Missing </head>: {source_name}")
         html = html.replace("</head>", ga.rstrip() + "\n</head>", 1)
+
+    if article is not None:
+        if site_config is None:
+            raise ValueError("site_config is required for article metadata generation")
+        html = apply_article_metadata(html, article, output_path, site_config)
 
     return html
 
@@ -170,8 +196,16 @@ def write_search_engine_files(html_map: dict[str, str]) -> None:
     (PUBLIC / "robots.txt").write_text(robots, encoding="utf-8")
 
 
-def validate_public(html_map: dict[str, str]) -> None:
+def validate_public(
+    html_map: dict[str, str],
+    article_map: dict[str, dict],
+    site_config: dict,
+) -> None:
     html_files = sorted(PUBLIC.rglob("*.html"))
+    article_by_output = {
+        article["planned_public_path"].lstrip("/"): article
+        for article in article_map.values()
+    }
     if len(html_files) < 50:
         raise ValueError(f"Too few production HTML files: {len(html_files)}")
 
@@ -220,6 +254,10 @@ def validate_public(html_map: dict[str, str]) -> None:
         if "準備中" in text:
             errors.append(f"{rel}: 準備中 remains")
 
+        article = article_by_output.get(rel)
+        if article is not None:
+            errors.extend(validate_article_output(text, article, rel, site_config))
+
         for match in ATTR_RE.finditer(text):
             url = match.group("url")
             parts = urlsplit(url)
@@ -258,7 +296,10 @@ def validate_public(html_map: dict[str, str]) -> None:
 
 
 def build() -> None:
-    html_map = load_html_map()
+    registry = load_registry()
+    html_map = load_html_map(registry)
+    article_map = load_article_map(registry)
+    site_config = json.loads(SITE_CONFIG.read_text(encoding="utf-8"))
     ga = GA_PARTIAL.read_text(encoding="utf-8")
 
     if PUBLIC.exists():
@@ -273,7 +314,15 @@ def build() -> None:
             continue
 
         html = source.read_text(encoding="utf-8")
-        transformed = transform_html(source_name, output_path, html, html_map, ga)
+        transformed = transform_html(
+            source_name,
+            output_path,
+            html,
+            html_map,
+            ga,
+            article=article_map.get(source_name),
+            site_config=site_config,
+        )
         destination = PUBLIC / output_path
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(transformed, encoding="utf-8")
@@ -286,7 +335,7 @@ def build() -> None:
         shutil.copytree(src_assets, PUBLIC / "assets")
 
     write_search_engine_files(html_map)
-    validate_public(html_map)
+    validate_public(html_map, article_map, site_config)
 
 
 if __name__ == "__main__":
