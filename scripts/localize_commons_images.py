@@ -1,8 +1,8 @@
 # Created: 2026-09-03
-"""Localize redistributable Wikimedia Commons article images for production.
+"""Localize redistributable Wikimedia Commons images for production.
 
-This script runs after scripts/build_public.py. It only rewrites images inside
-article figure blocks that explicitly attribute Wikimedia Commons. Product and
+This script runs after scripts/build_public.py. It rewrites Wikimedia Commons
+images used in article figures and site listing/card images. Product and
 manufacturer images are intentionally excluded.
 
 Behavior:
@@ -59,6 +59,11 @@ FIGCAPTION_RE = re.compile(
 )
 
 
+def is_commons_source(source_url: str) -> bool:
+    host = (urlparse(html.unescape(source_url)).hostname or "").lower()
+    return host in ALLOWED_SOURCE_HOSTS
+
+
 def is_eligible_figure(attrs: str, body: str) -> bool:
     class_match = re.search(r'class="([^"]+)"', attrs, re.IGNORECASE)
     classes = set(class_match.group(1).split()) if class_match else set()
@@ -74,8 +79,7 @@ def is_eligible_figure(attrs: str, body: str) -> bool:
     if not src_match:
         return False
 
-    host = (urlparse(html.unescape(src_match.group("src"))).hostname or "").lower()
-    return host in ALLOWED_SOURCE_HOSTS
+    return is_commons_source(src_match.group("src"))
 
 
 def extract_eligible_source(attrs: str, body: str) -> str | None:
@@ -257,12 +261,12 @@ def discover_sources() -> list[str]:
     sources: set[str] = set()
     for page in sorted(PUBLIC.rglob("*.html")):
         text = page.read_text(encoding="utf-8")
-        for match in FIGURE_RE.finditer(text):
-            source = extract_eligible_source(
-                match.group("attrs"),
-                match.group("body"),
-            )
-            if source:
+        for match in IMG_RE.finditer(text):
+            src_match = SRC_RE.search(match.group(0))
+            if not src_match:
+                continue
+            source = src_match.group("src")
+            if is_commons_source(source):
                 sources.add(source)
     return sorted(sources)
 
@@ -378,7 +382,6 @@ def localize_html_file(
             cache[source_url] = entry
 
         if entry["status"] != "localized":
-            failed_count += 1
             return match.group(0)
 
         page_rel = path.relative_to(PUBLIC).as_posix()
@@ -421,6 +424,66 @@ def localize_html_file(
         return match.group("open") + new_body + match.group("close")
 
     rewritten = FIGURE_RE.sub(replace_figure, original_html)
+
+    def replace_remaining_img(match: re.Match[str]) -> str:
+        nonlocal localized_count, failed_count
+        tag = match.group(0)
+        src_match = SRC_RE.search(tag)
+        if not src_match:
+            return tag
+
+        source_url = src_match.group("src")
+        if not is_commons_source(source_url):
+            return tag
+
+        entry = cache.get(source_url)
+        if entry is None:
+            entry = prepare_entry(source_url)
+            cache[source_url] = entry
+
+        if entry["status"] != "localized":
+            failed_count += 1
+            return tag
+
+        page_rel = path.relative_to(PUBLIC).as_posix()
+        page_dir = posixpath.dirname(page_rel) or "."
+        local_url = posixpath.relpath(entry["local_path"], page_dir)
+
+        new_tag = SRC_RE.sub(
+            lambda _m: f'src="{local_url}"',
+            tag,
+            count=1,
+        )
+        new_tag = add_image_attributes(
+            new_tag,
+            entry["width"],
+            entry["height"],
+            feature=False,
+        )
+
+        mobile_url = None
+        if entry.get("mobile_path"):
+            mobile_url = posixpath.relpath(entry["mobile_path"], page_dir)
+        new_tag = add_responsive_attributes(
+            new_tag,
+            mobile_url,
+            entry.get("mobile_width"),
+            local_url,
+            entry["width"],
+        )
+
+        if not re.search(r"\bdata-commons-source=", new_tag, re.IGNORECASE):
+            source_page = commons_description_url(source_url)
+            if source_page:
+                new_tag = new_tag[:-1] + (
+                    ' data-commons-source="' + html.escape(source_page, quote=True) + '">'
+                )
+
+        localized_count += 1
+        return new_tag
+
+    rewritten = IMG_RE.sub(replace_remaining_img, rewritten)
+
     if rewritten != original_html:
         path.write_text(rewritten, encoding="utf-8")
 
