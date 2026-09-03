@@ -1,5 +1,30 @@
 /* Created: 2026-09-03 / homepage realtime behavior */
+/* Updated: 2026-09-03 / direct JMA refresh with cached fallback */
 (function () {
+  var JMA = {
+    quake: "https://www.jma.go.jp/bosai/quake/data/list.json",
+    warning: "https://www.jma.go.jp/bosai/warning/data/r8/map.json",
+    area: "https://www.jma.go.jp/bosai/common/const/area.json",
+    typhoon: "https://www.jma.go.jp/bosai/typhoon/data/targetTc.json"
+  };
+
+  var WARNING_CODE_NAMES = {
+    "02": "暴風雪警報",
+    "03": "大雨警報",
+    "04": "洪水警報",
+    "05": "暴風警報",
+    "06": "大雪警報",
+    "07": "波浪警報",
+    "08": "高潮警報",
+    "32": "暴風雪特別警報",
+    "33": "大雨特別警報",
+    "35": "暴風特別警報",
+    "36": "大雪特別警報",
+    "37": "波浪特別警報",
+    "38": "高潮特別警報",
+    "43": "大雨危険警報"
+  };
+
   function formatRealtimeDate(value) {
     if (!value) return "";
     var date = new Date(value);
@@ -17,6 +42,123 @@
     var date = new Date(value);
     if (Number.isNaN(date.getTime())) return true;
     return Date.now() - date.getTime() > 30 * 60 * 1000;
+  }
+
+  function normalizeIntensity(value) {
+    var labels = {
+      "5-": "5弱",
+      "5+": "5強",
+      "6-": "6弱",
+      "6+": "6強"
+    };
+    return labels[value] || value;
+  }
+
+  function fetchJson(url) {
+    return fetch(url + (url.indexOf("?") >= 0 ? "&" : "?") + "t=" + Date.now(), {
+      cache: "no-store",
+      mode: "cors"
+    }).then(function (response) {
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      return response.json();
+    });
+  }
+
+  function parseDirectEarthquake(reports) {
+    if (!Array.isArray(reports)) return null;
+    var report = reports.find(function (item) {
+      return item && item.anm && item.maxi;
+    }) || reports.find(function (item) {
+      return item && item.anm;
+    });
+    if (!report) return null;
+    return {
+      title: report.ttl || "地震情報",
+      time: report.at || report.rdt || null,
+      area: report.anm || null,
+      magnitude: report.mag || null,
+      max_intensity: report.maxi ? normalizeIntensity(report.maxi) : null,
+      headline: null,
+      official_url: "https://www.jma.go.jp/bosai/map.html#contents=earthquake_map"
+    };
+  }
+
+  function parseDirectWarnings(documents, areaData) {
+    var class10s = areaData && areaData.class10s ? areaData.class10s : {};
+    var state = {};
+    if (!Array.isArray(documents)) {
+      throw new Error("warning data is not an array");
+    }
+
+    documents.slice().sort(function (a, b) {
+      var aa = a.reportDatetime || a.controlDatetime || "";
+      var bb = b.reportDatetime || b.controlDatetime || "";
+      return aa.localeCompare(bb);
+    }).forEach(function (document) {
+      var items = document && document.warning && Array.isArray(document.warning.class10Items)
+        ? document.warning.class10Items
+        : [];
+
+      items.forEach(function (item) {
+        var areaCode = String(item.areaCode || "");
+        var areaName = class10s[areaCode] && class10s[areaCode].name
+          ? class10s[areaCode].name
+          : areaCode;
+
+        (item.kinds || []).forEach(function (kind) {
+          var code = String(kind.code || "");
+          if (!WARNING_CODE_NAMES[code]) return;
+
+          var key = areaName + "|" + code;
+          var status = String(kind.status || "");
+          if (
+            status.indexOf("解除") >= 0 ||
+            status.indexOf("取消") >= 0 ||
+            status.indexOf("なし") >= 0
+          ) {
+            delete state[key];
+            return;
+          }
+          state[key] = {
+            area: areaName,
+            kind: WARNING_CODE_NAMES[code]
+          };
+        });
+      });
+    });
+
+    var grouped = {};
+    Object.keys(state).forEach(function (key) {
+      var item = state[key];
+      if (!grouped[item.kind]) grouped[item.kind] = [];
+      if (grouped[item.kind].indexOf(item.area) < 0) {
+        grouped[item.kind].push(item.area);
+      }
+    });
+
+    var groups = Object.keys(grouped).sort().map(function (kind) {
+      var areas = grouped[kind].sort();
+      return { kind: kind, areas: areas, count: areas.length };
+    });
+
+    return {
+      active_count: Object.keys(state).length,
+      groups: groups.slice(0, 8),
+      official_url: "https://www.jma.go.jp/bosai/map.html#contents=warning"
+    };
+  }
+
+  function parseDirectTyphoons(targetTcs) {
+    if (!Array.isArray(targetTcs)) return [];
+    return targetTcs.map(function (item) {
+      return {
+        event_id: item.tropicalCyclone || item.typhoonNumber || "",
+        time: item.issue || null,
+        title: item.typhoonNumber ? "台風等 " + item.typhoonNumber : "台風情報",
+        active: true,
+        official_url: "https://www.jma.go.jp/bosai/map.html#contents=typhoon"
+      };
+    });
   }
 
   function renderRealtimeEarthquake(root, data) {
@@ -124,14 +266,67 @@
     }
   }
 
+  function refreshDirectFromJma(root, cached) {
+    var quakeRequest = fetchJson(JMA.quake).then(parseDirectEarthquake);
+    var warningRequest = Promise.all([
+      fetchJson(JMA.warning),
+      fetchJson(JMA.area)
+    ]).then(function (values) {
+      return parseDirectWarnings(values[0], values[1]);
+    });
+    var typhoonRequest = fetchJson(JMA.typhoon).then(parseDirectTyphoons);
+
+    return Promise.allSettled([
+      quakeRequest,
+      warningRequest,
+      typhoonRequest
+    ]).then(function (results) {
+      var data = Object.assign({}, cached || {});
+      var successCount = 0;
+
+      if (results[0].status === "fulfilled") {
+        data.earthquake = results[0].value;
+        successCount += 1;
+      }
+      if (results[1].status === "fulfilled") {
+        data.warnings = results[1].value;
+        successCount += 1;
+      }
+      if (results[2].status === "fulfilled") {
+        data.typhoons = results[2].value;
+        successCount += 1;
+      }
+
+      if (successCount === 0) return cached;
+
+      data.checked_at = new Date().toISOString();
+      data.status = successCount === 3 ? "ok" : "partial";
+      data.note = "気象庁の公開データを直接確認しています。表示には遅延する場合があるため、避難判断には気象庁・自治体などの最新情報を確認してください。";
+      return data;
+    });
+  }
+
   function loadRealtimePanel(root) {
     fetch("realtime/realtime.json?t=" + Date.now(), { cache: "no-store" })
       .then(function (response) {
         if (!response.ok) throw new Error("HTTP " + response.status);
         return response.json();
       })
-      .then(function (data) {
-        renderRealtimePanel(root, data);
+      .catch(function () {
+        return {
+          status: "degraded",
+          checked_at: null,
+          earthquake: null,
+          warnings: { active_count: 0, groups: [] },
+          typhoons: []
+        };
+      })
+      .then(function (cached) {
+        renderRealtimePanel(root, cached);
+        return refreshDirectFromJma(root, cached);
+      })
+      .then(function (fresh) {
+        if (fresh) renderRealtimePanel(root, fresh);
       })
       .catch(function () {
         var updated = root.querySelector("[data-realtime-updated]");
@@ -152,7 +347,6 @@
       loadRealtimePanel(root);
     }, 5 * 60 * 1000);
   }
-
 
   function init() {
     initRealtimePanel();
