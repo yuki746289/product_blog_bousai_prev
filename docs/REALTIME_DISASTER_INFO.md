@@ -194,3 +194,29 @@ cronは毎時3/13/23/33/43/53分に設定する。GitHub Actionsのscheduleは�
 - モバイルでは縦積みにする
 
 最終取得時刻は `checked_at` を表示し、30分以上古い場合は遅延警告へ切り替える。
+
+
+## ブラウザからの直接取得
+
+2026-09-03以降、トップページの最新表示はGitHub Actionsのscheduleだけに依存しない。
+
+ページ表示時:
+1. サイト内の `realtime/realtime.json` を先に読み、即座に表示する
+2. 続けてブラウザから気象庁の公開JSONを直接取得する
+3. 直接取得に成功した項目だけ最新値へ置き換える
+4. 全項目成功時は `status=ok`、一部成功時は `partial`
+5. 開いたままの場合は10分ごとに同じ処理を行う
+
+直接取得対象:
+- 地震: `https://www.jma.go.jp/bosai/quake/data/list.json`
+- 警報: `https://www.jma.go.jp/bosai/warning/data/r8/map.json`
+- 地域名: `https://www.jma.go.jp/bosai/common/const/area.json`
+- 台風: `https://www.jma.go.jp/bosai/typhoon/data/targetTc.json`
+
+GitHub Actionsの定期更新は、本番JSONのバックアップキャッシュを更新する補助経路とする。
+
+### 理由
+
+GitHub Actionsの `schedule` はbest-effortであり、GitHub公式も高負荷時の遅延・ジョブ欠落可能性を明記している。実際、2026-09-03の初期運用ではpushイベントは成功した一方、scheduleイベントが予定時刻に生成されない状態を確認した。
+
+そのため「約10分おきにサーバー側で必ず更新される」という前提を置かず、閲覧時の直接取得を主経路とする。
