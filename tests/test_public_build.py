@@ -125,6 +125,15 @@ class PublicBuildTests(unittest.TestCase):
             self.assertIn("概算例：", html, page)
             self.assertRegex(html, r"仮定|目安|個人差|調整", page)
 
+    def test_listing_commons_images_request_reduced_width(self):
+        pages = [PUBLIC / "index.html", *sorted(PUBLIC.glob("*/index.html"))]
+        for page in pages:
+            if not page.exists():
+                continue
+            html = page.read_text(encoding="utf-8")
+            self.assertNotRegex(html, r'commons\.wikimedia\.org/[^"\']+\?width=(?:960|1280)', page)
+            self.assertNotRegex(html, r'upload\.wikimedia\.org/[^"\']+/960px-', page)
+
     def test_common_assets_exist(self):
         self.assertTrue((PUBLIC / "bousai_common.css").exists())
         self.assertTrue((PUBLIC / "bousai_common.js").exists())
