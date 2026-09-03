@@ -7,6 +7,7 @@ from scripts.update_realtime import (
     parse_earthquake,
     parse_typhoon_update,
     parse_warning_json,
+    process_extra,
     parse_warning_updates,
 )
 
@@ -84,6 +85,18 @@ AREA_MAP = """{
   }
 }""".encode()
 
+TYPHOON_ACTIVE = """<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://xml.kishou.go.jp/jmaxml1/">
+  <Head xmlns="http://xml.kishou.go.jp/jmaxml1/informationBasis1/">
+    <Title>台風解析・予報情報（5日予報）（H30）</Title>
+    <ReportDateTime>2026-09-03T09:10:00+09:00</ReportDateTime>
+    <TargetDateTime>2026-09-03T09:00:00+09:00</TargetDateTime>
+    <EventID>TY202623</EventID>
+    <Headline><Text></Text></Headline>
+  </Head>
+</Report>
+""".encode()
+
 TYPHOON_END = """<?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://xml.kishou.go.jp/jmaxml1/">
   <Head xmlns="http://xml.kishou.go.jp/jmaxml1/informationBasis1/">
@@ -130,6 +143,26 @@ class RealtimeJmaTests(unittest.TestCase):
         self.assertIn(("佐賀県", "大雨警報"), state)
         apply_warning_updates(state, parse_warning_updates(WARNING_CANCEL))
         self.assertNotIn(("佐賀県", "大雨警報"), state)
+
+    def test_typhoon_probability_product_is_not_counted(self):
+        entries = [
+            {
+                "title": "台風解析・予報情報（5日予報）（H30）",
+                "link": "https://example.test/analysis.xml",
+            },
+            {
+                "title": "台風の暴風域に入る確率",
+                "link": "https://example.test/probability.xml",
+            },
+        ]
+
+        def fetcher(url):
+            self.assertEqual("https://example.test/analysis.xml", url)
+            return TYPHOON_ACTIVE
+
+        state = {}
+        process_extra(entries, state, fetcher)
+        self.assertEqual(["TY202623"], list(state))
 
     def test_typhoon_end_is_inactive(self):
         result = parse_typhoon_update(TYPHOON_END)
