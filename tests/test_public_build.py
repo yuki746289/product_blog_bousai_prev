@@ -188,6 +188,66 @@ class PublicBuildTests(unittest.TestCase):
         self.assertIn("data-realtime-updated", home)
         self.assertIn('class="realtime-item"', home)
 
+
+    def test_expert_review_accessibility_and_navigation_guards(self):
+        common_js = (PUBLIC / "bousai_common.js").read_text(encoding="utf-8")
+        common_css = (PUBLIC / "bousai_common.css").read_text(encoding="utf-8")
+
+        self.assertIn("enhanceAccessibility", common_js)
+        self.assertIn("本文へ移動", common_js)
+        self.assertIn('aria-current', common_js)
+        self.assertIn('setAttribute("tabindex", "0")', common_js)
+        self.assertIn('setAttribute("aria-label", "パンくず")', common_js)
+
+        self.assertIn(".skip-link", common_css)
+        self.assertIn("a:focus-visible", common_css)
+        self.assertIn("prefers-reduced-motion", common_css)
+        self.assertNotIn("h2:nth-of-type(3n + 1) + p", common_css)
+
+    def test_homepage_links_are_self_descriptive_and_consistent(self):
+        home = (PUBLIC / "index.html").read_text(encoding="utf-8")
+        generic = re.compile(
+            r">\s*(?:詳しく読む|記事を読む|続きを読む|こちら|詳しく|もっと見る|"
+            r"関連する記事を見る|選び方を見る|すべて見る)\s*→?\s*</a>",
+            re.IGNORECASE,
+        )
+        self.assertIsNone(generic.search(home))
+
+        self.assertIn('href="goods/toilet-hygiene.html">携帯トイレ</a>', home)
+        self.assertIn('href="goods/light-information.html">ライト・ラジオ</a>', home)
+        self.assertIn('href="goods/power-charging.html">ポータブル電源</a>', home)
+        self.assertIn('href="guide/portable-toilet-stockpile.html">携帯トイレの備え方を読む', home)
+
+    def test_product_pages_have_navigation_safety_context_and_product_role(self):
+        pages = [
+            PUBLIC / "goods" / "water-food.html",
+            PUBLIC / "goods" / "toilet-hygiene.html",
+            PUBLIC / "goods" / "light-information.html",
+            PUBLIC / "goods" / "power-charging.html",
+        ]
+        for page in pages:
+            html = page.read_text(encoding="utf-8")
+            self.assertIn('class="site-nav"', html, page)
+            self.assertIn('class="official-bar"', html, page)
+            self.assertIn('class="article-shell product-page"', html, page)
+            self.assertIn("商品情報より", html, page)
+
+    def test_basic_semantics_across_public_pages(self):
+        for page in sorted(PUBLIC.rglob("*.html")):
+            html = page.read_text(encoding="utf-8")
+            self.assertEqual(1, len(re.findall(r"<h1\\b", html, flags=re.IGNORECASE)), page)
+            self.assertEqual(1, len(re.findall(r"<main\\b", html, flags=re.IGNORECASE)), page)
+
+            for tag in re.findall(r"<img\\b[^>]*>", html, flags=re.IGNORECASE):
+                self.assertRegex(tag, r'\\balt=["\\'][^"\\']*["\\']', page)
+
+            for tag in re.findall(
+                r'<a\\b[^>]*target=["\\']_blank["\\'][^>]*>',
+                html,
+                flags=re.IGNORECASE,
+            ):
+                self.assertRegex(tag, r'rel=["\\'][^"\\']*noopener', page)
+
     def test_sitemap_and_robots_exist_and_cover_public_html(self):
         sitemap_path = PUBLIC / "sitemap.xml"
         robots_path = PUBLIC / "robots.txt"
