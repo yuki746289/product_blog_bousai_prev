@@ -181,6 +181,13 @@ class PublicBuildTests(unittest.TestCase):
         self.assertNotIn(".realtime-section", common_css)
         self.assertIn(".realtime-section", home_css)
 
+    def test_realtime_panel_avoids_scheduler_ui_copy(self):
+        home = (PUBLIC / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("自動更新", home)
+        self.assertNotIn("約10分間隔", home)
+        self.assertIn("data-realtime-updated", home)
+        self.assertIn('class="realtime-item"', home)
+
     def test_sitemap_and_robots_exist_and_cover_public_html(self):
         sitemap_path = PUBLIC / "sitemap.xml"
         robots_path = PUBLIC / "robots.txt"
