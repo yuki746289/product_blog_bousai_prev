@@ -102,8 +102,8 @@
 
     if (updated) {
       updated.textContent = checkedAt
-        ? "気象庁データ確認 " + formatRealtimeDate(checkedAt)
-        : "更新時刻を確認できません";
+        ? "最終取得 " + formatRealtimeDate(checkedAt)
+        : "最終取得を確認できません";
     }
 
     renderRealtimeEarthquake(root, data);
