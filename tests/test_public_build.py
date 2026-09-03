@@ -235,20 +235,20 @@ class PublicBuildTests(unittest.TestCase):
     def test_basic_semantics_across_public_pages(self):
         for page in sorted(PUBLIC.rglob("*.html")):
             html = page.read_text(encoding="utf-8")
-            self.assertEqual(1, len(re.findall(r"<h1\\b", html, flags=re.IGNORECASE)), page)
-            self.assertEqual(1, len(re.findall(r"<main\\b", html, flags=re.IGNORECASE)), page)
+            self.assertEqual(1, len(re.findall(r"<h1\b", html, flags=re.IGNORECASE)), page)
+            self.assertEqual(1, len(re.findall(r"<main\b", html, flags=re.IGNORECASE)), page)
             self.assertIn('class="skip-link"', html, page)
             self.assertIn('id="main-content"', html, page)
 
-            for tag in re.findall(r"<img\\b[^>]*>", html, flags=re.IGNORECASE):
-                self.assertRegex(tag, r'\\balt=["\\'][^"\\']*["\\']', page)
+            for tag in re.findall(r"<img\b[^>]*>", html, flags=re.IGNORECASE):
+                self.assertRegex(tag, r"\balt=[\"'][^\"']*[\"']", page)
 
             for tag in re.findall(
-                r'<a\\b[^>]*target=["\\']_blank["\\'][^>]*>',
+                r"<a\b[^>]*target=[\"']_blank[\"'][^>]*>",
                 html,
                 flags=re.IGNORECASE,
             ):
-                self.assertRegex(tag, r'rel=["\\'][^"\\']*noopener', page)
+                self.assertRegex(tag, r"rel=[\"'][^\"']*noopener", page)
 
     def test_sitemap_and_robots_exist_and_cover_public_html(self):
         sitemap_path = PUBLIC / "sitemap.xml"
