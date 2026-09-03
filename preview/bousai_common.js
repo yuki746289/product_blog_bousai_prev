@@ -27,6 +27,29 @@
     }
   }
 
+
+  function enhanceAccessibility() {
+    var main = document.querySelector("main");
+    if (main) {
+      if (!main.id) main.id = "main-content";
+      if (!document.querySelector(".skip-link")) {
+        var skip = document.createElement("a");
+        skip.className = "skip-link";
+        skip.href = "#" + main.id;
+        skip.textContent = "本文へ移動";
+        document.body.insertBefore(skip, document.body.firstChild);
+      }
+    }
+
+    var currentFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+    document.querySelectorAll(".site-nav a[href]").forEach(function (link) {
+      var href = (link.getAttribute("href") || "").split("#")[0].split("?")[0].toLowerCase();
+      if (href === currentFile) {
+        link.setAttribute("aria-current", "page");
+      }
+    });
+  }
+
   function bindImageFallbacks() {
     document.querySelectorAll("img").forEach(function (img) {
       img.addEventListener("error", function () {
@@ -93,6 +116,7 @@
 
 
   function init() {
+    enhanceAccessibility();
     bindImageFallbacks();
     bindTrackedLinks();
   }
