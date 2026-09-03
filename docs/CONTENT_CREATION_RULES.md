@@ -265,6 +265,7 @@ Amazon
 - 共通CSS、共通JS、ヘッダー、フッター、固定ページ、ビルド処理を変更した場合は、記事単体チェックだけでなく `docs/SITE_RELEASE_CHECKLIST.md` を実行する。
 - 本番ではGA、noindex、内部リンク、画像、CSS/JSの取得を確認する。
 - 公開後は主要ページをHTTPスモークテストする。
+- 新規サイト公開、URL構造変更、sitemap/robots変更時は `docs/SEARCH_CONSOLE_INDEXING.md` も実行する。
 
 ---
 

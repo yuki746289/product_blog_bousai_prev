@@ -93,3 +93,19 @@ FTPホストから公開URLは一意に逆算できないため、公開URLは�
 
 記事追加・URL変更時は `scripts/build_public.py` の本番ルートから自動反映されるため、手動でURL一覧を編集しない。
 
+## 10. Google Search Console・インデックス運用
+
+新規サイト公開、URL構造変更、サイトマップ・robots変更時は `docs/SEARCH_CONSOLE_INDEXING.md` を実行する。
+
+最低確認:
+
+1. 本番 `sitemap.xml` がHTTP 200
+2. 本番 `robots.txt` がHTTP 200
+3. Googlebot相当User-Agentでも `sitemap.xml` がHTTP 200
+4. Search Consoleプロパティと本番URLが一致
+5. Search Consoleへ `sitemap.xml` を送信
+6. サイトマップの取得成功を確認
+7. インデックス状況は別途「ページのインデックス登録」・URL検査で確認
+
+Search Consoleに404等の過去エラーが残っていても、本番側で現在200を確認できる場合は、まず前回取得時刻・プロパティURL・再取得状況を確認する。
+

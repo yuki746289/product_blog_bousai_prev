@@ -1,6 +1,6 @@
 # 防災ブログ サイト公開チェックリスト
 
-更新日: 2026-09-02
+更新日: 2026-09-03
 
 記事単位のレビューとは別に、サイト全体を公開可能と判断する前に確認する。
 
@@ -73,6 +73,19 @@
 - [ ] `robots.txt` が存在する
 - [ ] `robots.txt` に本番 `sitemap.xml` のURLが記載されている
 - [ ] 本番URLから `sitemap.xml` と `robots.txt` をHTTP取得できる
+
+## 6.2 Search Console・インデックス確認
+
+初回公開、URL構造変更、sitemap/robots変更時に実施する。
+
+- [ ] Search ConsoleのプロパティURLが本番URLと一致している
+- [ ] `sitemap.xml` が通常アクセスでHTTP 200
+- [ ] `sitemap.xml` がGooglebot相当User-AgentでもHTTP 200
+- [ ] Search Consoleへ `sitemap.xml` を送信した
+- [ ] サイトマップの取得ステータスが成功している
+- [ ] 404 / 取得失敗時は `docs/SEARCH_CONSOLE_INDEXING.md` の順序で切り分けた
+- [ ] サイトマップ成功とページのインデックス登録完了を混同していない
+- [ ] 必要に応じてトップ・主要pillar記事をURL検査した
 
 ## 7. 最終判定
 

@@ -148,3 +148,12 @@
 - 公開後スモークテストがPASS
 
 最終サイト判定は `docs/SITE_RELEASE_CHECKLIST.md` を正とする。
+
+## 12. 検索エンジン・インデックス運用
+
+- `sitemap.xml` と `robots.txt` は本番ビルドで自動生成する。
+- Search Consoleの初回登録・サイトマップ送信・エラー切り分けは `docs/SEARCH_CONSOLE_INDEXING.md` を正とする。
+- サイトマップは公開URLの発見支援であり、クロール・インデックス登録の保証として扱わない。
+- Search Consoleの表示と現在の本番HTTP状態が食い違う場合は、本番URLを通常アクセスとGooglebot相当アクセスの両方で検証してから修正判断する。
+- URL一覧を手動でサイトマップへ二重管理しない。
+
