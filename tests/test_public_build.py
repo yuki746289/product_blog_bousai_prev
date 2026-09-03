@@ -237,6 +237,8 @@ class PublicBuildTests(unittest.TestCase):
             html = page.read_text(encoding="utf-8")
             self.assertEqual(1, len(re.findall(r"<h1\\b", html, flags=re.IGNORECASE)), page)
             self.assertEqual(1, len(re.findall(r"<main\\b", html, flags=re.IGNORECASE)), page)
+            self.assertIn('class="skip-link"', html, page)
+            self.assertIn('id="main-content"', html, page)
 
             for tag in re.findall(r"<img\\b[^>]*>", html, flags=re.IGNORECASE):
                 self.assertRegex(tag, r'\\balt=["\\'][^"\\']*["\\']', page)
