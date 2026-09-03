@@ -82,14 +82,11 @@ class PublicBuildTests(unittest.TestCase):
             self.assertIn(f'最終更新日: <time datetime="{modified}">', html, output)
             self.assertIn(f'情報確認日: <time datetime="{checked}">', html, output)
 
-            scripts = re.findall(
-                r'<script\s+type=["\\\']application/ld\+json["\\\']\s+'
-                r'data-generated=["\\\']article-structured-data["\\\']>(.*?)</script>',
-                html,
-                flags=re.IGNORECASE | re.DOTALL,
-            )
-            self.assertEqual(1, len(scripts), output)
-            payload = json.loads(scripts[0])
+            marker = '<script type="application/ld+json" data-generated="article-structured-data">'
+            self.assertEqual(1, html.count(marker), output)
+            json_start = html.index(marker) + len(marker)
+            json_end = html.index("</script>", json_start)
+            payload = json.loads(html[json_start:json_end])
             graph = payload["@graph"]
             posting = next(node for node in graph if node["@type"] == "BlogPosting")
             breadcrumb = next(node for node in graph if node["@type"] == "BreadcrumbList")
