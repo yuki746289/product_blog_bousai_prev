@@ -83,7 +83,7 @@ class PublicBuildTests(unittest.TestCase):
             self.assertIn(f'情報確認日: <time datetime="{checked}">', html, output)
 
             scripts = re.findall(
-                r'<script\\s+type=["\\\']application/ld\\+json["\\\']\\s+'
+                r'<script\s+type=["\\\']application/ld\+json["\\\']\s+'
                 r'data-generated=["\\\']article-structured-data["\\\']>(.*?)</script>',
                 html,
                 flags=re.IGNORECASE | re.DOTALL,
