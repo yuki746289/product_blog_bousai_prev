@@ -93,3 +93,26 @@ LCPはH1テキストで、LCP 4.87sの約87%がrender delay。
 - トップ・カテゴリのCommonsサムネイルを640px要求へ縮小
 - Anker / Jackeryの商品画像を480px要求へ縮小
 - ホスティング注入広告JSはサイトリポジトリでは制御不能として切り分け
+
+
+## 再計測（Run 33734028796）
+
+Lighthouse 12.8.2 / mobile emulation。
+
+| URL | Performance | FCP | LCP | CLS | TBT | Speed Index |
+|---|---:|---:|---:|---:|---:|---:|
+| トップ | 53 | 3.2s | 5.6s | 0 | 560ms | 6.7s |
+| B001 防災入門 | 71 | 3.5s | 5.1s | 0 | 150ms | 4.2s |
+| B028 ポータブル電源 | 74 | 3.6s | 4.7s | 0 | 70ms | 3.8s |
+
+### 解釈
+
+- B001は初回 score 56 → 71、LCP 7.2s → 5.1sへ改善。
+- B028は初回 score 68 → 74、TBT 220ms → 70msへ改善。
+- B001の画像最適化余地は約67KiB → 約13KiBへ縮小。
+- B028で初回に出ていた約1.18MBの商品画像削減指摘は解消。
+- preconnect指摘は解消。
+- CLSは全3ページで0を維持。
+- トップは計測変動と第三者広告JavaScriptの影響が大きく、単発scoreだけで悪化判定しない。
+- `cnobi.jp` / `amoad.com` はリポジトリ内参照がなく、ホスティング側注入と切り分け済み。
+- 実ユーザーINP/LCP/CLSはSearch Console / CrUXの75パーセンタイルで別途判断する。
