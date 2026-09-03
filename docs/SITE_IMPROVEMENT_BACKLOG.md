@@ -34,7 +34,7 @@ Geminiレビュー、現サイト監査、SEO運用上の改善点を統合し�
 | 7 | A | title・meta description横断監査 | DONE | ChatGPT | 全公開ページの重複、内容一致、検索意図との整合、過度な類似を監査・修正 |
 | 8 | A | 公開日・最終更新日・情報確認日の明示 | DONE | ChatGPT | `published_at` / `modified_at` / `source_checked_at` を台帳で分離し、本番記事へ共通生成 |
 | 9 | A | Article/BlogPosting + BreadcrumbList構造化データ | DONE | ChatGPT | 本番ビルドでBlogPosting + BreadcrumbListを台帳からJSON-LD共通生成 |
-| 10 | A | 構造化データ検証 | IN_PROGRESS | 共同 | Python/CIでJSON-LD構文・型・日付・パンくずを自動検証。Google Rich Results Test等の外部検証が残る |
+| 10 | A | 構造化データ検証 | IN_PROGRESS | 共同 | Python/CIのJSON-LD構文・型・日付・パンくず検証に加え、本番配信HTMLでBlogPosting/BreadcrumbListをデプロイ後に自動確認。Google Rich Results Test等の外部Google検証のみ残る |
 | 11 | A | PageSpeed / Core Web Vitals監査 | IN_PROGRESS | 共同 | Lighthouse mobileでトップ/B001/B028を実測。Baseline score 70/56/68、CLSは全て0。LCP遅延・過大画像・GA接続・ホスティング注入広告JSを切り分け、コード側追加改善を反映中。実ユーザーINP等はSearch Console/CrUX待ち |
 | 12 | A | 外部画像依存の縮小・WebP等の画像最適化 | DONE | ChatGPT | Wikimedia Commonsの帰属確認済み記事画像を本番ビルドでローカルWebP化し、width/height・feature imageのfetchpriorityも付与。商品/メーカー画像は外部参照を維持 |
 | 13 | A | モバイル実機レビュー | TODO | ユーザー | 実スマホで横スクロールナビ、Q&A、表、商品CTA、文字サイズ、タップ領域を確認。指摘後の修正はChatGPT |
