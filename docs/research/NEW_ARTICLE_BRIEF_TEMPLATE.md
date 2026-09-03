@@ -16,15 +16,28 @@
 - related_articles:
 - risk_level:
 
-## 2. 検索意図
+## 2. 読者・マーケティング設計
+
+- target_reader:
+- usage_context:
+- knowledge_level: `beginner / basic / experienced / mixed`
+- urgency_level: `normal / preparing / imminent / post-disaster`
+- reader_problem:
+- reader_goal:
+- page_job:
+- entry_path:
+- next_action:
+- conversion_path:
+- design_priority:
+
+## 3. 検索意図
 
 - base_keyword:
 - primary_search_intent:
 - representative_keywords:
-- reader_problem:
 - expected_answer:
 
-## 3. カニバリ確認
+## 4. カニバリ確認
 
 | 既存ページ | 重複度 | 役割の違い | 判定 |
 |---|---|---|---|
@@ -34,7 +47,7 @@
 - excluded_intent:
 - why_new_article_is_needed:
 
-## 4. SERP確認
+## 5. SERP確認
 
 - checked_at:
 - result_types:
@@ -42,20 +55,20 @@
 - product_pages_present:
 - observations:
 
-## 5. 記事構成案
+## 6. 記事構成案
 
 1.
 2.
 3.
 
-## 6. 出典計画
+## 7. 出典計画
 
 - public_primary_sources:
 - manufacturer_sources:
 - facts_requiring_verification:
 - prohibited_unverified_claims:
 
-## 7. 画像計画
+## 8. 画像計画
 
 - hero:
 - body_images:
@@ -63,7 +76,7 @@
 - Japan_context:
 - rights_notes:
 
-## 8. 導線
+## 9. 導線
 
 - parent_to_article:
 - article_to_parent:
@@ -72,7 +85,7 @@
 - product_guide:
 - Amazon_direct: `yes / no`
 
-## 9. 公開条件
+## 10. 公開条件
 
 - manual_review_required:
 - source_review:
@@ -80,3 +93,8 @@
 - product_review:
 - cannibalization_review:
 - SEO_metadata_review:
+- design_review:
+- accessibility_review:
+- marketing_review:
+- technical_review:
+- analytics_review: `required / N/A`
