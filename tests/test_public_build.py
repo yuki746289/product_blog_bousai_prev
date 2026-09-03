@@ -96,6 +96,23 @@ class PublicBuildTests(unittest.TestCase):
             self.assertEqual(3, len(breadcrumb["itemListElement"]), output)
             self.assertEqual(article["title"], breadcrumb["itemListElement"][-1]["name"], output)
 
+
+    def test_practical_articles_have_saveable_action_check(self):
+        registry = json.loads((ROOT / "data" / "content_registry.json").read_text(encoding="utf-8"))
+        practical = [a for a in registry["articles"] if a.get("content_role") == "practical"]
+        self.assertGreater(len(practical), 0)
+
+        for article in practical:
+            output = PUBLIC / article["planned_public_path"]
+            html = output.read_text(encoding="utf-8")
+            headings = " ".join(re.findall(r"<h2>(.*?)</h2>", html, flags=re.IGNORECASE | re.DOTALL))
+            headings = re.sub(r"<[^>]+>", "", headings)
+            self.assertRegex(headings, r"チェック|項目|行動", output)
+            self.assertTrue(
+                'class="checklist"' in html or "<table>" in html or "<ol>" in html,
+                output,
+            )
+
     def test_common_assets_exist(self):
         self.assertTrue((PUBLIC / "bousai_common.css").exists())
         self.assertTrue((PUBLIC / "bousai_common.js").exists())
