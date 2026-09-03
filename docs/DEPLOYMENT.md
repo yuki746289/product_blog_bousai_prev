@@ -81,3 +81,15 @@ FTPホストは `config/site.json` の `ftp.homepage.shinobi.jp` を使用する
 公開URLは忍者ホームページ側の「サイトURL（アカウント + 選択ドメイン）」で決まる。
 FTPホストから公開URLは一意に逆算できないため、公開URLは取得後に `config/site.json` の `public_base_url` へ記録する。
 
+## 9. 検索エンジン向けファイル
+
+本番ビルド時に以下を自動生成する。
+
+- `public/sitemap.xml`
+- `public/robots.txt`
+
+`sitemap.xml` は本番HTMLルート一覧から生成し、受付停止中の `contact.html` は含めない。
+`robots.txt` は全公開ページのクロールを許可し、`https://bousaikun.ashigaru.jp/sitemap.xml` をサイトマップとして指定する。
+
+記事追加・URL変更時は `scripts/build_public.py` の本番ルートから自動反映されるため、手動でURL一覧を編集しない。
+
