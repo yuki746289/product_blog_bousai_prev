@@ -6,6 +6,7 @@ from scripts.update_realtime import (
     parse_atom,
     parse_earthquake,
     parse_typhoon_update,
+    parse_warning_json,
     parse_warning_updates,
 )
 
@@ -60,6 +61,29 @@ WARNING = """<?xml version="1.0" encoding="UTF-8"?>
 
 WARNING_CANCEL = WARNING.replace(b"<Status>\xe7\x99\xba\xe8\xa1\xa8</Status>", b"<Status>\xe8\xa7\xa3\xe9\x99\xa4</Status>", 1)
 
+WARNING_MAP = """[
+  {
+    "reportDatetime": "2026-09-03T09:05:00+09:00",
+    "warning": {
+      "class10Items": [
+        {
+          "areaCode": "410010",
+          "kinds": [
+            {"code": "03", "status": "発表"},
+            {"code": "14", "status": "発表"}
+          ]
+        }
+      ]
+    }
+  }
+]""".encode()
+
+AREA_MAP = """{
+  "class10s": {
+    "410010": {"name": "佐賀県南部"}
+  }
+}""".encode()
+
 TYPHOON_END = """<?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://xml.kishou.go.jp/jmaxml1/">
   <Head xmlns="http://xml.kishou.go.jp/jmaxml1/informationBasis1/">
@@ -92,6 +116,13 @@ class RealtimeJmaTests(unittest.TestCase):
         self.assertEqual(1, len(updates))
         self.assertEqual("佐賀県", updates[0]["area"])
         self.assertEqual("大雨警報", updates[0]["kind"])
+
+    def test_warning_json_keeps_only_warning_codes(self):
+        state = parse_warning_json(WARNING_MAP, AREA_MAP)
+        self.assertEqual(1, len(state))
+        item = next(iter(state.values()))
+        self.assertEqual("佐賀県南部", item["area"])
+        self.assertEqual("大雨警報", item["kind"])
 
     def test_warning_cancel_removes_state(self):
         state = {}
