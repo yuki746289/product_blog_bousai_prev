@@ -130,6 +130,21 @@ def rewrite_url(url: str, current_output: str, html_map: dict[str, str]) -> str:
     return urlunsplit(("", "", rewritten, parts.query, parts.fragment))
 
 
+def reduce_listing_commons_width(html: str) -> str:
+    """Request smaller Commons thumbnails on listing pages without local copying."""
+    html = re.sub(
+        r'(https://commons\.wikimedia\.org/wiki/Special:Redirect/file/[^"\']+\?width=)(?:800|960|1280)',
+        r'\g<1>640',
+        html,
+    )
+    html = re.sub(
+        r'(https://upload\.wikimedia\.org/wikipedia/commons/thumb/[^"\']+/)(?:800|960|1280)px-',
+        r'\g<1>640px-',
+        html,
+    )
+    return html
+
+
 def transform_html(
     source_name: str,
     output_path: str,
@@ -148,6 +163,9 @@ def transform_html(
         return f'{attr}="{rewrite_url(url, output_path, html_map)}"'
 
     html = ATTR_RE.sub(replace_attr, html)
+
+    if source_name == "index.html" or source_name.startswith("category_"):
+        html = reduce_listing_commons_width(html)
 
     if "G-XQVLD5HMNG" not in html:
         if "</head>" not in html:
