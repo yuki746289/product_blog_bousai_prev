@@ -113,6 +113,18 @@ class PublicBuildTests(unittest.TestCase):
                 output,
             )
 
+
+    def test_key_product_guides_have_conditional_calculation_examples(self):
+        pages = [
+            PUBLIC / "goods" / "water-food.html",
+            PUBLIC / "goods" / "toilet-hygiene.html",
+            PUBLIC / "goods" / "power-charging.html",
+        ]
+        for page in pages:
+            html = page.read_text(encoding="utf-8")
+            self.assertIn("概算例：", html, page)
+            self.assertRegex(html, r"仮定|目安|個人差|調整", page)
+
     def test_common_assets_exist(self):
         self.assertTrue((PUBLIC / "bousai_common.css").exists())
         self.assertTrue((PUBLIC / "bousai_common.js").exists())
