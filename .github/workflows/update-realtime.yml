@@ -68,20 +68,29 @@ jobs:
           PY
 
       - name: Upload realtime JSON
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
-        with:
-          server: ftp.homepage.shinobi.jp
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./realtime_upload/
-          server-dir: ./realtime/
-          state-name: .ftp-deploy-sync-state-realtime.json
-          dangerous-clean-slate: false
-          log-level: minimal
-          security: strict
-          timeout: 60000
+        env:
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          for attempt in 1 2 3; do
+            if curl --fail --silent --show-error \
+              --ipv4 \
+              --ssl-reqd \
+              --ftp-pasv \
+              --disable-epsv \
+              --connect-timeout 15 \
+              --max-time 45 \
+              --user "${FTP_USERNAME}:${FTP_PASSWORD}" \
+              --upload-file realtime_upload/realtime.json \
+              "ftp://ftp.homepage.shinobi.jp/realtime/realtime.json"; then
+              echo "Realtime JSON uploaded."
+              exit 0
+            fi
+            echo "FTPS upload attempt ${attempt} failed."
+            sleep $((attempt * 3))
+          done
+          echo "Realtime JSON upload failed after 3 attempts."
+          exit 1
 
       - name: Smoke test realtime JSON
         run: |
