@@ -44,7 +44,7 @@ FEEDS = {
 USER_AGENT = "bousai-kurashi-guide-realtime/1.0 (+https://bousaikun.ashigaru.jp/)"
 WARNING_TITLES = ("気象特別警報・警報・注意報", "気象警報・注意報")
 QUAKE_TITLES = ("震源・震度情報", "震度速報", "震源に関する情報")
-TYPHOON_TITLE_WORDS = ("台風", "熱帯低気圧")
+TYPHOON_ANALYSIS_PREFIX = "台風解析・予報情報"
 END_TYPHOON_WORDS = ("熱帯低気圧に変わ", "温帯低気圧に変わ", "消滅")
 INTENSITY_ORDER = {
     "1": 1, "2": 2, "3": 3, "4": 4, "5-": 5, "5弱": 5,
@@ -309,7 +309,7 @@ def should_full_sync(previous: dict, now: datetime) -> bool:
 def process_extra(entries: list[dict], typhoons: dict, fetcher) -> None:
     relevant = [
         entry for entry in entries
-        if any(word in entry.get("title", "") for word in TYPHOON_TITLE_WORDS)
+        if entry.get("title", "").startswith(TYPHOON_ANALYSIS_PREFIX)
     ]
     if not relevant:
         return
