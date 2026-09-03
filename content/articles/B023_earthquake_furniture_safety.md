@@ -123,6 +123,6 @@ affiliate: false
 
 ## 公的情報
 
-- 総務省消防庁「地震による家具の転倒を防ぐには」: https://www.fdma.go.jp/publication/database/kagu/
-- 総務省消防庁「家具・家電製品―家具の転倒を防止」: https://www.fdma.go.jp/relocation/bousai_manual/pre/preparation121.html
-- 東京消防庁「家具類の転倒・落下・移動防止対策」: https://www.tfd.metro.tokyo.lg.jp/lfe/bou_topic/kaguten/
+- [総務省消防庁「地震による家具の転倒を防ぐには」](https://www.fdma.go.jp/publication/database/kagu/)
+- [総務省消防庁「家具・家電製品―家具の転倒を防止」](https://www.fdma.go.jp/relocation/bousai_manual/pre/preparation121.html)
+- [東京消防庁「家具類の転倒・落下・移動防止対策」](https://www.tfd.metro.tokyo.lg.jp/lfe/bou_topic/kaguten/)
