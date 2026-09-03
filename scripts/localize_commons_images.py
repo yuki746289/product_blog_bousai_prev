@@ -131,6 +131,7 @@ def resolve_download_url(source_url: str) -> str:
         "format": "json",
         "formatversion": "2",
         "prop": "imageinfo",
+        "redirects": "1",
         "iiprop": "url",
         "iiurlwidth": str(MAIN_MAX_WIDTH),
         "titles": f"File:{filename}",
@@ -490,6 +491,14 @@ def run(min_localized: int = 0) -> dict:
         "unique_images_localized": unique_localized,
         "unique_images_failed": unique_failed,
         "failure_reasons": dict(failure_reasons),
+        "failure_samples": [
+            {
+                "source_url": item.get("source_url"),
+                "error": item.get("error"),
+            }
+            for item in assets
+            if item["status"] == "failed"
+        ][:10],
         "source_bytes": source_bytes,
         "optimized_bytes": optimized_bytes,
         "responsive_variant_bytes": responsive_variant_bytes,
