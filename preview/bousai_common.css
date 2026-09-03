@@ -1650,3 +1650,19 @@ summary:focus-visible,
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* Product-guide rows inside the goods category: distinct, but not promotional. */
+.category-product-link {
+  border-color: var(--role-product-line);
+  background: #fcfbfd;
+}
+.category-product-link:hover,
+.category-product-link:focus-visible {
+  border-color: var(--role-product-accent);
+  background: var(--role-product-soft);
+}
+.category-product-link small {
+  background: var(--role-product-soft);
+  color: var(--role-product-dark);
+}
