@@ -55,6 +55,8 @@ STATIC_HTML_MAP = {
 RESOURCE_TARGETS = {
     "bousai_common.css": "bousai_common.css",
     "bousai_common.js": "bousai_common.js",
+    "bousai_home.css": "bousai_home.css",
+    "bousai_home.js": "bousai_home.js",
 }
 
 WORKFLOW_LABEL_RE = re.compile(
@@ -297,6 +299,10 @@ def validate_public(
         errors.append("bousai_common.css missing")
     if not (PUBLIC / "bousai_common.js").exists():
         errors.append("bousai_common.js missing")
+    if not (PUBLIC / "bousai_home.css").exists():
+        errors.append("bousai_home.css missing")
+    if not (PUBLIC / "bousai_home.js").exists():
+        errors.append("bousai_home.js missing")
     if not (PUBLIC / "sitemap.xml").exists():
         errors.append("sitemap.xml missing")
     if not (PUBLIC / "robots.txt").exists():
@@ -347,7 +353,12 @@ def build() -> None:
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(transformed, encoding="utf-8")
 
-    for resource in ("bousai_common.css", "bousai_common.js"):
+    for resource in (
+        "bousai_common.css",
+        "bousai_common.js",
+        "bousai_home.css",
+        "bousai_home.js",
+    ):
         shutil.copy2(PREVIEW / resource, PUBLIC / resource)
 
     src_assets = PREVIEW / "assets"
