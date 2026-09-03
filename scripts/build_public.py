@@ -301,6 +301,8 @@ def validate_public(
         errors.append("sitemap.xml missing")
     if not (PUBLIC / "robots.txt").exists():
         errors.append("robots.txt missing")
+    if not (PUBLIC / "realtime" / "realtime.json").exists():
+        errors.append("realtime/realtime.json missing")
 
     if (PUBLIC / "sitemap.xml").exists():
         sitemap = (PUBLIC / "sitemap.xml").read_text(encoding="utf-8")
@@ -351,6 +353,10 @@ def build() -> None:
     src_assets = PREVIEW / "assets"
     if src_assets.exists():
         shutil.copytree(src_assets, PUBLIC / "assets")
+
+    src_realtime = PREVIEW / "realtime"
+    if src_realtime.exists():
+        shutil.copytree(src_realtime, PUBLIC / "realtime")
 
     write_search_engine_files(html_map)
     validate_public(html_map, article_map, site_config)
