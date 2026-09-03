@@ -94,7 +94,7 @@
     {
       "affiliate": false,
       "article_id": "B003",
-      "body_char_count_approx": 2535,
+      "body_char_count_approx": 4573,
       "category": "water-outage",
       "content_depth_checked_at": "2026-09-01",
       "content_depth_status": "PASS",
@@ -119,12 +119,13 @@
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "portable-toilet-stockpile",
-      "source_checked_at": "2026-09-01",
-      "source_count": 3,
+      "source_checked_at": "2026-09-03",
+      "source_count": 4,
       "source_ids": [
         "F-B003-001",
         "F-B003-002",
-        "F-B003-003"
+        "F-B003-003",
+        "F-B003-004"
       ],
       "source_path": "content/articles/B003_portable_toilet_stockpile.md",
       "status": "READY_TO_PUBLISH",
@@ -1500,5 +1501,5 @@
     }
   ],
   "schema_version": "1.0",
-  "updated_at": "2026-09-02T23:45:00+09:00"
+  "updated_at": "2026-09-03T15:35:00+09:00"
 }
