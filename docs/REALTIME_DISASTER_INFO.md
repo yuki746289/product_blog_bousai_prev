@@ -15,13 +15,18 @@
 
 ## 情報源
 
-気象庁「防災情報XMLフォーマット」PULL型配信を使用する。
+地震・台風は気象庁「防災情報XMLフォーマット」PULL型配信を使用する。
 
 - 公式案内: https://xml.kishou.go.jp/xmlpull.html
 - 高頻度/随時: https://www.data.jma.go.jp/developer/xml/feed/extra.xml
 - 高頻度/地震火山: https://www.data.jma.go.jp/developer/xml/feed/eqvol.xml
 - 長期/随時: https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml
 - 長期/地震火山: https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml
+
+警報・特別警報は、継続中の情報がAtomの掲載窓から外れることで「現在発表中なのに取得できない」状態を避けるため、気象庁公式サイトの現在表示用R8警報JSONを使用する。
+
+- 全国警報状態: https://www.jma.go.jp/bosai/warning/data/r8/map.json
+- 地域コード: https://www.jma.go.jp/bosai/common/const/area.json
 
 気象庁の高頻度Atomフィードは毎分更新・直近少なくとも10分の入電を掲載する。長期フィードは毎時更新・数日間の入電を掲載する。
 
@@ -45,16 +50,13 @@ FTPSで /realtime/realtime.json のみ更新
 
 ## 状態再構築
 
-高頻度フィードは直近約10分のため、それだけでは以前から継続している警報等を復元できない。
+高頻度フィードは直近約10分のため、地震・台風の初期状態復元用として次の場合に長期フィードを使う。
 
-そのため:
 - 初回
 - 前回確認から20分以上空いた場合
 - 6時間ごとの定期再同期
 
-では長期フィードを使用して状態を再構築する。
-
-通常の10分更新では高頻度フィードを使い、前回の `realtime.json` の内部状態へ差分を反映する。
+警報は毎回、全国R8警報JSONから現在状態を再構築する。前回JSONの警報状態は、警報JSON取得失敗時のフォールバックとしてのみ使う。
 
 ## 取得失敗
 
