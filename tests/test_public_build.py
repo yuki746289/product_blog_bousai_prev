@@ -134,6 +134,19 @@ class PublicBuildTests(unittest.TestCase):
             self.assertNotRegex(html, r'commons\.wikimedia\.org/[^"\']+\?width=(?:960|1280)', page)
             self.assertNotRegex(html, r'upload\.wikimedia\.org/[^"\']+/960px-', page)
 
+
+    def test_source_boxes_do_not_display_raw_urls(self):
+        raw_url_text = re.compile(r">\s*https?://[^<]+</a>", re.IGNORECASE)
+        for page in sorted(PUBLIC.rglob("*.html")):
+            html = page.read_text(encoding="utf-8")
+            source_boxes = re.findall(
+                r'<section\s+class=["\']source-box["\'][^>]*>(.*?)</section>',
+                html,
+                flags=re.IGNORECASE | re.DOTALL,
+            )
+            for source_box in source_boxes:
+                self.assertIsNone(raw_url_text.search(source_box), page)
+
     def test_common_assets_exist(self):
         self.assertTrue((PUBLIC / "bousai_common.css").exists())
         self.assertTrue((PUBLIC / "bousai_common.js").exists())
