@@ -45,7 +45,7 @@ MOBILE_MAX_WIDTH = 720
 MAX_DOWNLOAD_WORKERS = 6
 
 ALLOWED_SOURCE_HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org"}
-ALLOWED_FINAL_HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org"}
+ALLOWED_FINAL_HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org", "thumb.wikimedia.org"}
 
 FIGURE_RE = re.compile(
     r"(?P<open><figure\b(?P<attrs>[^>]*)>)(?P<body>.*?)(?P<close></figure>)",
