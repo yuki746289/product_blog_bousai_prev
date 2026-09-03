@@ -159,8 +159,27 @@ class PublicBuildTests(unittest.TestCase):
     def test_common_assets_exist(self):
         self.assertTrue((PUBLIC / "bousai_common.css").exists())
         self.assertTrue((PUBLIC / "bousai_common.js").exists())
+        self.assertTrue((PUBLIC / "bousai_home.css").exists())
+        self.assertTrue((PUBLIC / "bousai_home.js").exists())
         self.assertTrue((PUBLIC / "assets" / "images" / "ai_b023_furniture_check_20260902.webp").exists())
         self.assertTrue((PUBLIC / "assets" / "images" / "ai_b024_outage_supplies_20260902.webp").exists())
+
+    def test_homepage_uses_home_specific_assets(self):
+        home = (PUBLIC / "index.html").read_text(encoding="utf-8")
+        article = (PUBLIC / "guide" / "first-disaster-preparedness.html").read_text(encoding="utf-8")
+        common_js = (PUBLIC / "bousai_common.js").read_text(encoding="utf-8")
+        home_js = (PUBLIC / "bousai_home.js").read_text(encoding="utf-8")
+        common_css = (PUBLIC / "bousai_common.css").read_text(encoding="utf-8")
+        home_css = (PUBLIC / "bousai_home.css").read_text(encoding="utf-8")
+
+        self.assertIn('href="bousai_home.css"', home)
+        self.assertIn('src="bousai_home.js"', home)
+        self.assertNotIn("bousai_home.css", article)
+        self.assertNotIn("bousai_home.js", article)
+        self.assertNotIn("initRealtimePanel", common_js)
+        self.assertIn("initRealtimePanel", home_js)
+        self.assertNotIn(".realtime-section", common_css)
+        self.assertIn(".realtime-section", home_css)
 
     def test_sitemap_and_robots_exist_and_cover_public_html(self):
         sitemap_path = PUBLIC / "sitemap.xml"
