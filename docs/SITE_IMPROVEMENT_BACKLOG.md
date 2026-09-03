@@ -43,9 +43,9 @@ Geminiレビュー、現サイト監査、SEO運用上の改善点を統合し�
 | 16 | B | 商品記事へ数量・容量・稼働時間等の概算例を追加 | DONE | ChatGPT | 水・非常食、携帯トイレ、ポータブル電源の商品記事へ条件付き計算式と具体例を追加。仮定値・個人差・変換ロス等を明示し、保証表現を回避 |
 | 17 | B | GA4でAmazonリンククリック計測を実装 | IN_PROGRESS | 共同 | `amazon_click` と `product_guide_click` の共通JS実装・自動テストは完了。GA4 DebugView/リアルタイムでの受信確認が残る |
 | 18 | B | 季節前のリライト・記事公開サイクル | PLANNED | ChatGPT | Google Trends・季節性を基に需要ピークの1〜2か月前に候補を出す |
-| 19 | C | ペット・乳幼児・高齢者等の属性別テーマ調査 | PLANNED | ChatGPT | キーワード需要と既存記事との差を確認し、独立検索意図がある場合だけ記事化 |
-| 20 | C | 困りごと・ネガティブ検索語の調査 | PLANNED | ChatGPT | 「重すぎる」「いらない」「捨てる」等を問題解決型テーマとして評価 |
-| 21 | C | 競合・類似防災サイトのコンテンツギャップ調査 | TODO | ChatGPT | 上位サイトと比較し、未対応テーマ・説明不足・独自性を分析。ただし模倣はしない |
+| 19 | C | ペット・乳幼児・高齢者等の属性別テーマ調査 | DONE | ChatGPT | 公開SERP・公的一次情報・既存B001〜B032を照合。B033ペット、B034乳幼児、B035高齢者を独立候補化。`docs/research/AUDIENCE_NEEDS_RESEARCH_20260903.md` |
+| 20 | C | 困りごと・ネガティブ検索語の調査 | DONE | ChatGPT | 「重すぎる/いらない/期限切れ/捨てる/固まらない/臭い」を評価し、B002/B003/B031の既存強化へ分類。`docs/research/NEGATIVE_INTENT_RESEARCH_20260903.md` |
+| 21 | C | 競合・類似防災サイトのコンテンツギャップ調査 | DONE | ChatGPT | 公的機関・小売/ブランド・防災専門通販と比較し、属性別/困りごと/自宅避難等の不足領域を整理。`docs/research/CONTENT_GAP_RESEARCH_20260903.md` |
 | 22 | 後日 | Search Consoleデータ駆動リライト | WAITING_DATA | 共同 | ユーザーがSearch Consoleデータを取得/共有し、ChatGPTが表示回数・CTR・順位・クエリを分析して改修 |
 | 23 | 後日 | Search Consoleでカニバリ監視 | WAITING_DATA | 共同 | 同一クエリで複数URLが表示されるケースを抽出し、統合・内部リンク・タイトル等を検討 |
 | 24 | 後日 | GA4で記事→商品→Amazonの導線評価 | WAITING_DATA | 共同 | GA4データ蓄積後、記事別クリック率・導線別成果を分析 |
