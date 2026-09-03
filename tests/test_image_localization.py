@@ -3,6 +3,7 @@ import unittest
 
 from scripts.localize_commons_images import (
     add_image_attributes,
+    add_responsive_attributes,
     commons_description_url,
     ensure_source_link,
     is_eligible_figure,
@@ -42,6 +43,18 @@ class CommonsImageLocalizationTests(unittest.TestCase):
         self.assertIn('height="720"', updated)
         self.assertIn('decoding="async"', updated)
         self.assertIn('fetchpriority="high"', updated)
+
+    def test_responsive_srcset_is_added_for_mobile_variant(self):
+        tag = '<img src="../assets/images/commons/full.webp" alt="test" width="960" height="960">'
+        updated = add_responsive_attributes(
+            tag,
+            "../assets/images/commons/mobile.webp",
+            720,
+            "../assets/images/commons/full.webp",
+            960,
+        )
+        self.assertIn('srcset="../assets/images/commons/mobile.webp 720w, ../assets/images/commons/full.webp 960w"', updated)
+        self.assertIn('sizes="(max-width: 760px) calc(100vw - 32px), 900px"', updated)
 
     def test_source_link_is_added_when_missing(self):
         body = (
