@@ -25,12 +25,13 @@ Geminiレビュー、現サイト監査、SEO運用上の改善点を統合し�
 | 順番 | 優先 | 対応事項 | 状態 | 担当 | 実施内容・完了条件 |
 |---:|:---:|---|---|---|---|
 | 1 | A | キーワード調査を記事企画の標準工程へ追加 | DONE | ChatGPT | `docs/KEYWORD_RESEARCH_POLICY.md` を正本化済み |
+| 1A | A | 新規記事作成手順を標準化 | DONE | ChatGPT | `docs/NEW_ARTICLE_WORKFLOW.md` とbriefテンプレートを作成 |
 | 2 | A | ラッコキーワード等による需要・疑問調査 | DONE | 共同 | ユーザーが取得した結果の共有、または公開情報として取得可能な範囲をこちらで調査。検索意図でクラスタリングする |
 | 3 | A | Google Trendsで季節性を確認 | DONE | ChatGPT | 台風・大雨・停電・非常食等の需要時期を確認し、公開・リライト時期へ反映 |
 | 4 | A | 実際のGoogle検索結果（SERP）調査 | DONE | ChatGPT | 候補キーワードごとに上位ページ、検索意図、記事形式、公的機関の有無を確認 |
 | 5 | B | Google Keyword Plannerで検索需要を補足 | PLANNED | 共同 | Google Ads管理画面で検索ボリューム等をユーザーが取得し、こちらで候補評価へ反映。必須ではない |
 | 6 | A | 既存30記事・Q&A・商品記事との重複/カニバリ確認 | DONE | ChatGPT | キーワードクラスタを「既存記事強化 / 新規記事 / Q&A / 商品導線 / 見送り」に分類 |
-| 7 | A | title・meta description横断監査 | TODO | ChatGPT | 全公開ページの重複、内容一致、検索意図との整合、過度な類似を監査・修正 |
+| 7 | A | title・meta description横断監査 | DONE | ChatGPT | 全公開ページの重複、内容一致、検索意図との整合、過度な類似を監査・修正 |
 | 8 | A | 公開日・最終更新日・情報確認日の明示 | TODO | ChatGPT | 日付の役割を分離し、記事表示・台帳・構造化データで整合させる |
 | 9 | A | Article/BlogPosting + BreadcrumbList構造化データ | TODO | ChatGPT | JSON-LDを共通生成し、記事情報・パンくずを明示。FAQリッチリザルト目的にはしない |
 | 10 | A | 構造化データ検証 | TODO | 共同 | こちらでコード検証。Google Rich Results Test等の外部検証が必要な場合は結果確認を共同実施 |

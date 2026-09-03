@@ -61,3 +61,18 @@ GitHub上で、記事の制作状態・レビュー状態・公開可否・鮮�
 
 複数記事で同じ追加確認が必要になった場合は、記事別ルールを増やすのではなく共通ルールへの昇格を検討する。
 
+## 7. キーワード起点の新規記事作成
+
+新規記事を追加する場合は、原則として以下の順で進める。
+
+1. `docs/KEYWORD_RESEARCH_POLICY.md` で需要・検索意図を調査
+2. 既存記事・Q&A・商品ページとの重複を確認
+3. `docs/NEW_ARTICLE_WORKFLOW.md` で記事briefを作成
+4. 出典・画像・商品情報を調査
+5. Markdown / preview HTML / review / registryを同期
+6. 共通チェックリストを実行
+7. 本番ビルド・スモークテスト
+8. 公開後はsitemap / Search Console / GA4で確認
+
+繰り返し作業では `docs/research/NEW_ARTICLE_BRIEF_TEMPLATE.md` を使用する。
+

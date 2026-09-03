@@ -38,6 +38,7 @@
 | 商品記事: `docs/AFFILIATE_POLICY.md` | N/A | |
 | 情報鮮度: `docs/FRESHNESS_POLICY.md` | TODO | |
 | pillar/detail構造: `docs/PICKUP_AND_DEEP_DIVE_POLICY.md` | N/A | |
+| キーワード調査・検索意図: `docs/KEYWORD_RESEARCH_POLICY.md` | N/A | |
 | サイト共通UI変更: `docs/SITE_RELEASE_CHECKLIST.md` | N/A | |
 
 ## 3. 記事固有チェック
@@ -57,6 +58,10 @@
 - contextual_product_links:
 - contextual_qa_links:
 - browser_check:
+- keyword_research:
+- serp_check:
+- cannibalization_check:
+- seo_metadata:
 - production_check:
 
 ## 5. 残課題

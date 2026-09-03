@@ -1,10 +1,10 @@
 # B002 記事別レビュー・チェックリスト
 
 - article_id: `B002`
-- title: 防災バッグには何を入れる？用途別に考える基本の備え
+- title: 防災リュックの中身は何を入れる？最低限の持ち出し品と重さ・置き場所
 - article_status: `REVIEW_REQUIRED`
 - review_status: `IN_PROGRESS`
-- last_checked_at: 2026-09-01
+- last_checked_at: 2026-09-03
 - reviewer: ChatGPT + human review pending
 
 ## 0. 自動確認サマリー
@@ -136,4 +136,13 @@
 | Q&Aリンクを本文説明の代替にしていない | PASS | 本文説明を残した上で章末の補助導線として配置 |
 | Q&A CTAが章見出し・注意・商品CTAと別のUI役割になっている | PASS | `qa-guide-link` を使用。実ブラウザの色味・レスポンシブ目視はサイト公開チェックで別途確認 |
 | 同一Q&Aを短い間隔で過剰に重複していない | PASS | 関連章に限定 |
+
+## 17. キーワード・SEO検索意図レビュー（2026-09-03）
+
+| チェック項目 | 状態 | 備考 |
+|---|---|---|
+| 主検索意図とtitle / H1が一致 | PASS | 「防災リュック 中身 / 最低限 / 重さ / 置き場所」を既存B002へ集約 |
+| meta descriptionが本文内容を固有に要約 | PASS | 2026-09-03横断監査で設定 |
+| 既存記事・Q&A・商品ページとのカニバリ確認 | PASS | キーワード調査レポート `docs/research/KEYWORD_RESEARCH_REPORT_20260903.md` と照合 |
+| title / meta descriptionの本番自動検証 | TODO | GitHub Actionsの本番ビルドで確認 |
 

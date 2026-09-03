@@ -1,7 +1,7 @@
 ---
 article_id: B002
 slug: emergency-bag-basics
-title: 防災バッグには何を入れる？用途別に考える基本の備え
+title: 防災リュックの中身は何を入れる？最低限の持ち出し品と重さ・置き場所
 category: guide
 content_role: practical
 risk_level: elevated
@@ -11,7 +11,7 @@ next_review_at: 2027-03-01
 affiliate: false
 ---
 
-# 防災バッグには何を入れる？用途別に考える基本の備え
+# 防災リュックの中身は何を入れる？最低限の持ち出し品と重さ・置き場所
 
 防災バッグを準備しようとすると、「とにかく全部入れた方が安心」と考えがちです。しかし、避難時に持ち出すバッグは、自宅で数日過ごすための備蓄とは役割が違います。
 

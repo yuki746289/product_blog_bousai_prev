@@ -1,7 +1,7 @@
 ---
 article_id: B026
 slug: emergency-food-stockpile
-title: 非常食は何を備える？普段使いを含めた考え方
+title: 非常食は何日分必要？3日〜1週間の備蓄とローリングストック
 category: guide
 content_role: detail
 risk_level: standard
@@ -11,7 +11,7 @@ next_review_at: 2027-03-02
 affiliate: true
 ---
 
-# 非常食は何を備える？普段使いを含めた考え方
+# 非常食は何日分必要？3日〜1週間の備蓄とローリングストック
 
 非常食は「長期保存できる食品を大量に買う」だけでは続きにくく、災害時の食事も偏りやすくなります。**主食・主菜・副菜・すぐ食べられる物**を分け、普段食べる食品も含めて備える方が実用的です。
 

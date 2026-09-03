@@ -87,6 +87,16 @@
 - [ ] サイトマップ成功とページのインデックス登録完了を混同していない
 - [ ] 必要に応じてトップ・主要pillar記事をURL検査した
 
+## 6.3 SEOメタデータ
+
+- [ ] 全公開HTMLに固有の `<title>` がある
+- [ ] 全公開HTMLに `meta name="description"` がある
+- [ ] titleの完全重複がない
+- [ ] meta descriptionの完全重複がない
+- [ ] title / H1 / meta descriptionが各ページの主検索意図と整合している
+- [ ] 情報記事と商品記事が同一検索意図で競合していない
+- [ ] 本番ビルドのSEOメタデータ自動検証がPASSしている
+
 ## 7. 最終判定
 
 - READY_TO_UPLOAD: `YES / 完了`

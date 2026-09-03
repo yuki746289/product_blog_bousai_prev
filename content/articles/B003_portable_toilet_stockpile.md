@@ -1,7 +1,7 @@
 ---
 article_id: B003
 slug: portable-toilet-stockpile
-title: 断水に備える携帯トイレ｜必要数を考える前に確認したいこと
+title: 断水時の携帯トイレ｜使い方・処分・衛生と必要数の考え方
 category: water-outage
 content_role: detail
 risk_level: elevated
@@ -11,7 +11,7 @@ next_review_at: 2027-03-01
 affiliate: false
 ---
 
-# 断水に備える携帯トイレ｜必要数を考える前に確認したいこと
+# 断水時の携帯トイレ｜使い方・処分・衛生と必要数の考え方
 
 断水時に困るのは飲み水だけではありません。水洗トイレが使えない状況を想定し、**人数×回数×日数**で必要数を考え、保管・使い方・処分まで平常時に確認します。
 

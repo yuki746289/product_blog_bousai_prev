@@ -1,4 +1,5 @@
 # Created: 2026-09-02
+import re
 import subprocess
 import sys
 import unittest
@@ -33,6 +34,35 @@ class PublicBuildTests(unittest.TestCase):
             self.assertNotIn("noindex", html.lower(), path)
             self.assertNotIn('href="#"', html, path)
             self.assertNotIn("準備中", html, path)
+
+    def test_all_html_has_unique_title_and_description(self):
+        titles = {}
+        descriptions = {}
+        html_files = sorted(PUBLIC.rglob("*.html"))
+
+        for path in html_files:
+            html = path.read_text(encoding="utf-8")
+            title_match = re.search(r"<title>(.*?)</title>", html, flags=re.IGNORECASE | re.DOTALL)
+            self.assertIsNotNone(title_match, path)
+            title = " ".join(title_match.group(1).split())
+            self.assertTrue(title, path)
+            self.assertNotIn(title, titles, f"{path} duplicates {titles.get(title)}")
+            titles[title] = path
+
+            description_match = re.search(
+                r'<meta\s+name=["\']description["\']\s+content=["\']([^"\']+)["\']',
+                html,
+                flags=re.IGNORECASE,
+            )
+            self.assertIsNotNone(description_match, path)
+            description = " ".join(description_match.group(1).split())
+            self.assertTrue(description, path)
+            self.assertNotIn(
+                description,
+                descriptions,
+                f"{path} duplicates {descriptions.get(description)}",
+            )
+            descriptions[description] = path
 
     def test_common_assets_exist(self):
         self.assertTrue((PUBLIC / "bousai_common.css").exists())

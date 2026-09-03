@@ -176,9 +176,36 @@ def validate_public(html_map: dict[str, str]) -> None:
         raise ValueError(f"Too few production HTML files: {len(html_files)}")
 
     errors: list[str] = []
+    seen_titles: dict[str, str] = {}
+    seen_descriptions: dict[str, str] = {}
+
     for path in html_files:
         text = path.read_text(encoding="utf-8")
         rel = path.relative_to(PUBLIC).as_posix()
+
+        title_match = re.search(r"<title>(.*?)</title>", text, flags=re.IGNORECASE | re.DOTALL)
+        if not title_match or not title_match.group(1).strip():
+            errors.append(f"{rel}: title missing")
+        else:
+            title = " ".join(title_match.group(1).split())
+            if title in seen_titles:
+                errors.append(f"{rel}: duplicate title with {seen_titles[title]}")
+            else:
+                seen_titles[title] = rel
+
+        description_match = re.search(
+            r'<meta\s+name=["\']description["\']\s+content=["\']([^"\']+)["\']',
+            text,
+            flags=re.IGNORECASE,
+        )
+        if not description_match or not description_match.group(1).strip():
+            errors.append(f"{rel}: meta description missing")
+        else:
+            description = " ".join(description_match.group(1).split())
+            if description in seen_descriptions:
+                errors.append(f"{rel}: duplicate meta description with {seen_descriptions[description]}")
+            else:
+                seen_descriptions[description] = rel
 
         if "noindex" in text.lower():
             errors.append(f"{rel}: noindex remains")
