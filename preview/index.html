@@ -50,13 +50,18 @@
     </aside>
   </section>
 
-  <section class="section realtime-section" id="realtime-info" data-realtime-root>
-    <div class="section-heading realtime-heading">
+  <section class="realtime-section" id="realtime-info" data-realtime-root>
+    <div class="realtime-dashboard__top">
       <div>
-        <h2>現在の防災情報</h2>
-        <p>気象庁の公開データから、最新の地震・警報・台風情報を自動取得しています。</p>
+        <div class="realtime-dashboard__kicker"><span class="realtime-pulse" aria-hidden="true"></span>防災モニター</div>
+        <h2>いま確認できる防災情報</h2>
+        <p>気象庁の公開データを自動取得して、全国の主な状況を簡潔に表示します。</p>
       </div>
-      <div class="realtime-updated" data-realtime-updated>情報を確認中</div>
+      <div class="realtime-refresh">
+        <span class="realtime-refresh__label">自動更新</span>
+        <strong>約10分間隔</strong>
+        <small data-realtime-updated>最終取得を確認中</small>
+      </div>
     </div>
     <div class="realtime-grid" aria-live="polite">
       <article class="realtime-card">
