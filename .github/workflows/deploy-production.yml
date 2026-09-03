@@ -44,7 +44,7 @@ jobs:
       - name: Build production files
         run: python scripts/build_public.py
 
-      - name: Localize Commons article images
+      - name: Localize Commons site images
         run: python scripts/localize_commons_images.py --min-localized 1
 
       - name: Show production manifest
@@ -122,6 +122,17 @@ jobs:
           check_asset "sitemap.xml"
           check_asset "robots.txt"
           check_asset "assets/images/commons/manifest.json"
+
+          tmp_home="$(mktemp)"
+          curl --fail --silent --show-error --location \
+            --retry 4 --retry-delay 5 --retry-all-errors \
+            "${BASE_URL}" -o "${tmp_home}"
+          if grep -Eq 'src="https://(commons|upload)\.wikimedia\.org/' "${tmp_home}"; then
+            echo "Homepage Commons images must be local, but external Wikimedia src remains."
+            exit 1
+          fi
+          grep -q 'assets/images/commons/' "${tmp_home}"
+          rm -f "${tmp_home}"
 
           tmp_js="$(mktemp)"
           curl --fail --silent --show-error --location \
