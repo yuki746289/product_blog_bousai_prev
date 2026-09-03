@@ -40,7 +40,9 @@
       "image_dedup_status": "PASS",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -89,7 +91,9 @@
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
       "product_guide_status": "IMPLEMENTED",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-03"
     },
     {
       "affiliate": false,
@@ -134,7 +138,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-03"
     },
     {
       "affiliate": false,
@@ -178,7 +184,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -225,7 +233,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -271,7 +281,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -317,7 +329,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -365,7 +379,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -410,7 +426,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -456,7 +474,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -499,7 +519,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -544,7 +566,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -591,7 +615,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -637,7 +663,9 @@
       "image_context_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -682,7 +710,9 @@
       "image_context_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -729,7 +759,9 @@
       "image_context_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -776,7 +808,9 @@
       "image_context_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -823,7 +857,9 @@
       "image_context_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -871,7 +907,9 @@
       "image_context_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -918,7 +956,9 @@
       "image_context_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -965,7 +1005,9 @@
       "image_context_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1012,7 +1054,9 @@
       "image_context_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1056,7 +1100,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1101,7 +1147,9 @@
       "readability_reviewed_at": "2026-09-02",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1145,7 +1193,9 @@
       "readability_reviewed_at": "2026-09-01",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": true,
@@ -1197,7 +1247,9 @@
       "amazon_affiliate_status": "IMPLEMENTED",
       "amazon_affiliate_tag": "yukitaka83-22",
       "amazon_links_checked_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-03"
     },
     {
       "affiliate": true,
@@ -1250,7 +1302,9 @@
       "amazon_affiliate_status": "IMPLEMENTED",
       "amazon_affiliate_tag": "yukitaka83-22",
       "amazon_links_checked_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": true,
@@ -1304,7 +1358,9 @@
       "amazon_affiliate_status": "IMPLEMENTED",
       "amazon_affiliate_tag": "yukitaka83-22",
       "amazon_links_checked_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": true,
@@ -1356,7 +1412,9 @@
       "amazon_affiliate_status": "IMPLEMENTED",
       "amazon_affiliate_tag": "yukitaka83-22",
       "amazon_links_checked_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1402,7 +1460,9 @@
       "readability_reviewed_at": "2026-09-01",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-02",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-02",
+      "modified_at": "2026-09-02"
     },
     {
       "affiliate": false,
@@ -1451,7 +1511,9 @@
       "readability_reviewed_at": "2026-09-03",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-03",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-03",
+      "modified_at": "2026-09-03"
     },
     {
       "affiliate": false,
@@ -1497,9 +1559,17 @@
       "readability_reviewed_at": "2026-09-03",
       "image_relevance_review_status": "PASS",
       "image_relevance_reviewed_at": "2026-09-03",
-      "production_build_status": "READY_FOR_DEPLOY"
+      "production_build_status": "READY_FOR_DEPLOY",
+      "published_at": "2026-09-03",
+      "modified_at": "2026-09-03"
     }
   ],
-  "schema_version": "1.0",
-  "updated_at": "2026-09-03T15:35:00+09:00"
+  "schema_version": "1.1",
+  "updated_at": "2026-09-03T15:52:00+09:00",
+  "date_semantics": {
+    "published_at": "本番で初めて公開された日",
+    "modified_at": "公開後を含む記事内容の最終更新日。公開前の最終編集しかない場合は公開日を下限とする",
+    "source_checked_at": "公的・一次情報など本文根拠を最後に確認した日",
+    "last_reviewed_at": "内部レビューを最後に実施した日（公開表示の最終更新日には流用しない）"
+  }
 }
