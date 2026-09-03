@@ -147,6 +147,15 @@ class PublicBuildTests(unittest.TestCase):
             for source_box in source_boxes:
                 self.assertIsNone(raw_url_text.search(source_box), page)
 
+
+    def test_category_pages_do_not_render_literal_newline_tokens(self):
+        for page in sorted(PUBLIC.glob("*/index.html")):
+            html = page.read_text(encoding="utf-8")
+            self.assertNotIn(r"</a>\n<a", html, page)
+        for page in sorted(PUBLIC.glob("category_*.html")):
+            html = page.read_text(encoding="utf-8")
+            self.assertNotIn(r"</a>\n<a", html, page)
+
     def test_common_assets_exist(self):
         self.assertTrue((PUBLIC / "bousai_common.css").exists())
         self.assertTrue((PUBLIC / "bousai_common.js").exists())
