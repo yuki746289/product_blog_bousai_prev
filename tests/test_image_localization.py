@@ -6,6 +6,7 @@ from scripts.localize_commons_images import (
     add_responsive_attributes,
     commons_description_url,
     ensure_source_link,
+    is_commons_source,
     is_eligible_figure,
     stable_asset_name,
 )
@@ -20,6 +21,21 @@ class CommonsImageLocalizationTests(unittest.TestCase):
         self.assertEqual(
             "https://commons.wikimedia.org/wiki/File:Earthquake%20Kit%20in%20Japan%202008.jpg",
             commons_description_url(source),
+        )
+
+    def test_commons_source_detection_for_card_images(self):
+        self.assertTrue(
+            is_commons_source(
+                "https://commons.wikimedia.org/wiki/Special:Redirect/file/Test.jpg?width=640"
+            )
+        )
+        self.assertTrue(
+            is_commons_source(
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Test.jpg/640px-Test.jpg"
+            )
+        )
+        self.assertFalse(
+            is_commons_source("https://example.com/product.jpg")
         )
 
     def test_only_attributed_article_figures_are_eligible(self):
