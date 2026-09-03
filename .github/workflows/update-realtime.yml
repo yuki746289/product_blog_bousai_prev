@@ -27,15 +27,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
       - name: Fetch previous realtime state
         run: |
           mkdir -p .cache realtime_upload
-          BASE_URL="$(python - <<'PY'
+          BASE_URL="$(python3 - <<'PY'
           import json
           with open("config/site.json", encoding="utf-8") as f:
               print(json.load(f)["public_base_url"].rstrip("/") + "/")
@@ -47,11 +42,11 @@ jobs:
 
       - name: Fetch JMA XML and build JSON
         run: |
-          python scripts/update_realtime.py             --previous .cache/realtime.json             --output realtime_upload/realtime.json
+          python3 scripts/update_realtime.py             --previous .cache/realtime.json             --output realtime_upload/realtime.json
 
       - name: Validate realtime JSON
         run: |
-          python - <<'PY'
+          python3 - <<'PY'
           import json
           from pathlib import Path
 
@@ -90,7 +85,7 @@ jobs:
 
       - name: Smoke test realtime JSON
         run: |
-          BASE_URL="$(python - <<'PY'
+          BASE_URL="$(python3 - <<'PY'
           import json
           with open("config/site.json", encoding="utf-8") as f:
               print(json.load(f)["public_base_url"].rstrip("/") + "/")
