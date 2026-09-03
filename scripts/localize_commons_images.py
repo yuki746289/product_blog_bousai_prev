@@ -41,13 +41,13 @@ MANIFEST = ASSET_DIR / "manifest.json"
 ALLOWED_SOURCE_HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org"}
 ALLOWED_FINAL_HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org"}
 FIGURE_RE = re.compile(
-    r"(?P<open><figure\\b(?P<attrs>[^>]*)>)(?P<body>.*?)(?P<close></figure>)",
+    r"(?P<open><figure\b(?P<attrs>[^>]*)>)(?P<body>.*?)(?P<close></figure>)",
     re.IGNORECASE | re.DOTALL,
 )
-IMG_RE = re.compile(r"<img\\b[^>]*>", re.IGNORECASE | re.DOTALL)
-SRC_RE = re.compile(r'\\bsrc="(?P<src>[^"]+)"', re.IGNORECASE | re.DOTALL)
+IMG_RE = re.compile(r"<img\b[^>]*>", re.IGNORECASE | re.DOTALL)
+SRC_RE = re.compile(r'\bsrc="(?P<src>[^"]+)"', re.IGNORECASE | re.DOTALL)
 FIGCAPTION_RE = re.compile(
-    r"(?P<open><figcaption\\b[^>]*>)(?P<body>.*?)(?P<close></figcaption>)",
+    r"(?P<open><figcaption\b[^>]*>)(?P<body>.*?)(?P<close></figcaption>)",
     re.IGNORECASE | re.DOTALL,
 )
 
@@ -134,13 +134,13 @@ def optimize_webp(data: bytes, destination: Path) -> tuple[int, int, int]:
 
 
 def add_image_attributes(tag: str, width: int, height: int, feature: bool) -> str:
-    if not re.search(r"\\bwidth=", tag, re.IGNORECASE):
+    if not re.search(r"\bwidth=", tag, re.IGNORECASE):
         tag = tag[:-1] + f' width="{width}">'
-    if not re.search(r"\\bheight=", tag, re.IGNORECASE):
+    if not re.search(r"\bheight=", tag, re.IGNORECASE):
         tag = tag[:-1] + f' height="{height}">'
-    if not re.search(r"\\bdecoding=", tag, re.IGNORECASE):
+    if not re.search(r"\bdecoding=", tag, re.IGNORECASE):
         tag = tag[:-1] + ' decoding="async">'
-    if feature and 'loading="eager"' in tag and not re.search(r"\\bfetchpriority=", tag, re.IGNORECASE):
+    if feature and 'loading="eager"' in tag and not re.search(r"\bfetchpriority=", tag, re.IGNORECASE):
         tag = tag[:-1] + ' fetchpriority="high">'
     return tag
 
@@ -149,7 +149,7 @@ def ensure_source_link(body: str, source_url: str) -> str:
     caption_match = FIGCAPTION_RE.search(body)
     if not caption_match:
         return body
-    if re.search(r'href="https://commons\\.wikimedia\\.org/', caption_match.group(0), re.IGNORECASE):
+    if re.search(r'href="https://commons\.wikimedia\.org/', caption_match.group(0), re.IGNORECASE):
         return body
 
     description_url = commons_description_url(source_url)
