@@ -27,6 +27,15 @@ class AnalyticsConfigurationTests(unittest.TestCase):
         )
         self.assertIn(f"gtag('config', '{MEASUREMENT_ID}');", html)
         self.assertEqual(1, html.count("googletagmanager.com/gtag/js"))
+        self.assertIn('rel="preconnect" href="https://www.googletagmanager.com"', html)
+        self.assertIn('rel="preconnect" href="https://www.google-analytics.com"', html)
+
+    def test_click_tracking_is_in_common_js(self):
+        js = (ROOT / "preview" / "bousai_common.js").read_text(encoding="utf-8")
+        self.assertIn('"amazon_click"', js)
+        self.assertIn('"product_guide_click"', js)
+        self.assertIn('transport_type: "beacon"', js)
+        self.assertIn('host.endsWith(".amazon.co.jp")', js)
 
 
 if __name__ == "__main__":
