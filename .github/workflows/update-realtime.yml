@@ -12,7 +12,7 @@ on:
       - "preview/realtime/realtime.json"
       - ".github/workflows/update-realtime.yml"
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "3,13,23,33,43,53 * * * *"
 
 concurrency:
   group: realtime-disaster-data
