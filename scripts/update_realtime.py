@@ -17,6 +17,24 @@ JMA_PULL_PAGE = "https://xml.kishou.go.jp/xmlpull.html"
 JMA_QUAKE_PAGE = "https://www.jma.go.jp/bosai/map.html#contents=earthquake_map"
 JMA_WARNING_PAGE = "https://www.jma.go.jp/bosai/map.html#contents=warning"
 JMA_TYPHOON_PAGE = "https://www.jma.go.jp/bosai/map.html#contents=typhoon"
+JMA_WARNING_MAP = "https://www.jma.go.jp/bosai/warning/data/r8/map.json"
+JMA_AREA_MAP = "https://www.jma.go.jp/bosai/common/const/area.json"
+WARNING_CODE_NAMES = {
+    "02": "暴風雪警報",
+    "03": "大雨警報",
+    "04": "洪水警報",
+    "05": "暴風警報",
+    "06": "大雪警報",
+    "07": "波浪警報",
+    "08": "高潮警報",
+    "32": "暴風雪特別警報",
+    "33": "大雨特別警報",
+    "35": "暴風特別警報",
+    "36": "大雪特別警報",
+    "37": "波浪特別警報",
+    "38": "高潮特別警報",
+    "43": "大雨危険警報",
+}
 FEEDS = {
     "extra_high": "https://www.data.jma.go.jp/developer/xml/feed/extra.xml",
     "eqvol_high": "https://www.data.jma.go.jp/developer/xml/feed/eqvol.xml",
@@ -170,6 +188,45 @@ def warning_information_nodes(root: ET.Element) -> list[ET.Element]:
     return preferred or fallback
 
 
+def parse_warning_json(map_bytes: bytes, area_bytes: bytes) -> dict:
+    documents = json.loads(map_bytes.decode("utf-8"))
+    area_data = json.loads(area_bytes.decode("utf-8"))
+    class10s = area_data.get("class10s", {})
+    state = {}
+
+    if not isinstance(documents, list):
+        raise ValueError("JMA warning map root is not a list")
+
+    documents = sorted(
+        documents,
+        key=lambda item: item.get("reportDatetime") or item.get("controlDatetime") or "",
+    )
+    for document in documents:
+        warning = document.get("warning") or {}
+        items = warning.get("class10Items") or []
+        report_time = document.get("reportDatetime") or document.get("controlDatetime")
+        for item in items:
+            area_code = str(item.get("areaCode") or "")
+            area_name = (class10s.get(area_code) or {}).get("name") or area_code
+            for kind in item.get("kinds") or []:
+                code = str(kind.get("code") or "")
+                if code not in WARNING_CODE_NAMES:
+                    continue
+                status = str(kind.get("status") or "")
+                key = (area_name, code)
+                if "解除" in status or "なし" in status or "取消" in status:
+                    state.pop(key, None)
+                else:
+                    state[key] = {
+                        "area": area_name,
+                        "kind": WARNING_CODE_NAMES[code],
+                        "code": code,
+                        "status": status,
+                        "updated_at": report_time,
+                    }
+    return state
+
+
 def parse_warning_updates(xml_bytes: bytes) -> list[dict]:
     root = ET.fromstring(xml_bytes)
     head = common_head(root)
@@ -249,11 +306,10 @@ def should_full_sync(previous: dict, now: datetime) -> bool:
     return now - last_full.astimezone(JST) > timedelta(hours=6)
 
 
-def process_extra(entries: list[dict], warnings: dict, typhoons: dict, fetcher) -> None:
+def process_extra(entries: list[dict], typhoons: dict, fetcher) -> None:
     relevant = [
         entry for entry in entries
-        if any(word in entry.get("title", "") for word in WARNING_TITLES)
-        or any(word in entry.get("title", "") for word in TYPHOON_TITLE_WORDS)
+        if any(word in entry.get("title", "") for word in TYPHOON_TITLE_WORDS)
     ]
     if not relevant:
         return
@@ -264,22 +320,18 @@ def process_extra(entries: list[dict], warnings: dict, typhoons: dict, fetcher) 
         except Exception:
             return None
 
-    workers = min(8, len(relevant))
+    workers = min(6, len(relevant))
     with ThreadPoolExecutor(max_workers=workers) as executor:
         payloads = list(executor.map(fetch_entry, relevant))
 
     for entry, payload in zip(relevant, payloads):
         if payload is None:
             continue
-        title = entry.get("title", "")
-        if any(word in title for word in WARNING_TITLES):
-            apply_warning_updates(warnings, parse_warning_updates(payload))
-        if any(word in title for word in TYPHOON_TITLE_WORDS):
-            update = parse_typhoon_update(payload, entry["link"])
-            if update["active"]:
-                typhoons[update["event_id"]] = update
-            else:
-                typhoons.pop(update["event_id"], None)
+        update = parse_typhoon_update(payload, entry["link"])
+        if update["active"]:
+            typhoons[update["event_id"]] = update
+        else:
+            typhoons.pop(update["event_id"], None)
 
 
 def process_quake(entries: list[dict], previous: dict | None, fetcher) -> dict | None:
@@ -329,7 +381,7 @@ def load_json(path: Path | None) -> dict:
 def build_realtime(previous: dict, fetcher: Callable[[str], bytes] = fetch_bytes) -> dict:
     now = datetime.now(JST).replace(microsecond=0)
     full_sync = should_full_sync(previous, now)
-    warnings = {} if full_sync else previous_warning_state(previous)
+    warnings = previous_warning_state(previous)
     typhoons = {} if full_sync else previous_typhoon_state(previous)
     quake = None if full_sync else previous.get("earthquake")
     errors, successes = [], 0
@@ -338,12 +390,20 @@ def build_realtime(previous: dict, fetcher: Callable[[str], bytes] = fetch_bytes
     quake_feed = FEEDS["eqvol_long" if full_sync else "eqvol_high"]
 
     try:
-        process_extra(parse_atom(fetcher(extra_feed)), warnings, typhoons, fetcher)
+        warnings = parse_warning_json(
+            fetcher(JMA_WARNING_MAP),
+            fetcher(JMA_AREA_MAP),
+        )
+        successes += 1
+    except Exception as exc:
+        errors.append(f"warning: {type(exc).__name__}: {exc}")
+
+    try:
+        process_extra(parse_atom(fetcher(extra_feed)), typhoons, fetcher)
         successes += 1
     except Exception as exc:
         errors.append(f"extra: {type(exc).__name__}: {exc}")
         if full_sync:
-            warnings = previous_warning_state(previous)
             typhoons = previous_typhoon_state(previous)
 
     try:
