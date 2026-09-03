@@ -45,7 +45,7 @@ FIGURE_RE = re.compile(
     re.IGNORECASE | re.DOTALL,
 )
 IMG_RE = re.compile(r"<img\\b[^>]*>", re.IGNORECASE | re.DOTALL)
-SRC_RE = re.compile(r'\\bsrc=(?P<q>["\\\'])(?P<src>.*?)(?P=q)', re.IGNORECASE | re.DOTALL)
+SRC_RE = re.compile(r'\\bsrc="(?P<src>[^"]+)"', re.IGNORECASE | re.DOTALL)
 FIGCAPTION_RE = re.compile(
     r"(?P<open><figcaption\\b[^>]*>)(?P<body>.*?)(?P<close></figcaption>)",
     re.IGNORECASE | re.DOTALL,
@@ -53,7 +53,7 @@ FIGCAPTION_RE = re.compile(
 
 
 def is_eligible_figure(attrs: str, body: str) -> bool:
-    class_match = re.search(r'class=["\\\']([^"\\\']+)["\\\']', attrs, re.IGNORECASE)
+    class_match = re.search(r'class="([^"]+)"', attrs, re.IGNORECASE)
     classes = set(class_match.group(1).split()) if class_match else set()
     if not ({"article-feature-image", "article-inline-image"} & classes):
         return False
@@ -149,7 +149,7 @@ def ensure_source_link(body: str, source_url: str) -> str:
     caption_match = FIGCAPTION_RE.search(body)
     if not caption_match:
         return body
-    if re.search(r'href=["\\\']https://commons\\.wikimedia\\.org/', caption_match.group(0), re.IGNORECASE):
+    if re.search(r'href="https://commons\\.wikimedia\\.org/', caption_match.group(0), re.IGNORECASE):
         return body
 
     description_url = commons_description_url(source_url)
