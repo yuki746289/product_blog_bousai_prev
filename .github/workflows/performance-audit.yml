@@ -7,6 +7,14 @@ on:
       - main
     paths:
       - ".github/workflows/performance-audit.yml"
+      - "preview/index.html"
+      - "preview/article_sample.html"
+      - "preview/article_b028.html"
+      - "preview/bousai_common.css"
+      - "preview/bousai_common.js"
+      - "templates/partials/google_analytics.html"
+      - "scripts/build_public.py"
+      - "scripts/localize_commons_images.py"
 
 jobs:
   lighthouse:
