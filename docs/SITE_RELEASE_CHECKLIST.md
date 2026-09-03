@@ -116,3 +116,10 @@
 - [ ] JSON-LDがJSONとして解釈できる
 - [ ] パンくずがトップ → カテゴリ → 記事の3階層である
 - [ ] Google Rich Results Test等の外部検証が必要なリリースでは結果を記録する
+
+
+## 本番配信内容の自動確認
+
+- [ ] 本番HTTPスモークでBlogPosting / BreadcrumbListの生成済みJSON-LDを確認する
+- [ ] 本番 `bousai_common.js` に `amazon_click` / `product_guide_click` が配信されていることを確認する
+- [ ] Wikimedia Commonsローカル画像manifestが本番HTTP 200で取得できることを確認する
