@@ -41,6 +41,30 @@
       }
     }
 
+    document.querySelectorAll(".breadcrumb").forEach(function (breadcrumb) {
+      if (!breadcrumb.hasAttribute("aria-label")) {
+        breadcrumb.setAttribute("aria-label", "パンくず");
+      }
+    });
+
+    document.querySelectorAll(".table-wrap").forEach(function (wrapper) {
+      if (!wrapper.hasAttribute("tabindex")) wrapper.setAttribute("tabindex", "0");
+      if (!wrapper.hasAttribute("role")) wrapper.setAttribute("role", "region");
+
+      if (!wrapper.hasAttribute("aria-label")) {
+        var label = "表";
+        var node = wrapper.previousElementSibling;
+        while (node) {
+          if (/^H[23]$/.test(node.tagName)) {
+            label = (node.textContent || "").trim() + "の表";
+            break;
+          }
+          node = node.previousElementSibling;
+        }
+        wrapper.setAttribute("aria-label", label);
+      }
+    });
+
     var currentFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
     document.querySelectorAll(".site-nav a[href]").forEach(function (link) {
       var href = (link.getAttribute("href") || "").split("#")[0].split("?")[0].toLowerCase();
