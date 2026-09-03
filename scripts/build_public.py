@@ -147,6 +147,32 @@ def reduce_listing_commons_width(html: str) -> str:
     return html
 
 
+def add_accessibility_scaffolding(html: str) -> str:
+    """Add production-safe skip navigation without depending on JavaScript."""
+    if not re.search(r"<main\\b", html, flags=re.IGNORECASE):
+        return html
+
+    if not re.search(r'<main\\b[^>]*\\bid=["\\\']main-content["\\\']', html, flags=re.IGNORECASE):
+        html = re.sub(
+            r"<main\\b",
+            '<main id="main-content"',
+            html,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+
+    if "skip-link" not in html:
+        html = re.sub(
+            r"(<body\\b[^>]*>)",
+            r'\\1\\n<a class="skip-link" href="#main-content">本文へ移動</a>',
+            html,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+
+    return html
+
+
 def transform_html(
     source_name: str,
     output_path: str,
@@ -168,6 +194,8 @@ def transform_html(
 
     if source_name == "index.html" or source_name.startswith("category_"):
         html = reduce_listing_commons_width(html)
+
+    html = add_accessibility_scaffolding(html)
 
     if "G-XQVLD5HMNG" not in html:
         if "</head>" not in html:
