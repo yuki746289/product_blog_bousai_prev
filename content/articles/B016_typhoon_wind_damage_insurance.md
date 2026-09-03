@@ -145,7 +145,7 @@ affiliate: false
 
 ## 公的・業界情報
 
-- 日本損害保険協会「風水雪災等による損害を補償する損害保険」: https://www.sonpo.or.jp/insurance/shizen/index.html
-- 日本損害保険協会「問51 火災保険」: https://soudanguide.sonpo.or.jp/home/q051.html
-- 福岡管区気象台「台風への備え」: https://www.data.jma.go.jp/fukuoka/yoho/kisyousaigai_sonae_typhoon.html
-- 国民生活センター「保険金で住宅修理ができると勧誘する事業者に注意」: https://www.kokusen.go.jp/news/data/n-20210610_1.html
+- [日本損害保険協会「風水雪災等による損害を補償する損害保険」](https://www.sonpo.or.jp/insurance/shizen/index.html)
+- [日本損害保険協会「問51 火災保険」](https://soudanguide.sonpo.or.jp/home/q051.html)
+- [福岡管区気象台「台風への備え」](https://www.data.jma.go.jp/fukuoka/yoho/kisyousaigai_sonae_typhoon.html)
+- [国民生活センター「保険金で住宅修理ができると勧誘する事業者に注意」](https://www.kokusen.go.jp/news/data/n-20210610_1.html)
