@@ -36,14 +36,14 @@ Geminiレビュー、現サイト監査、SEO運用上の改善点を統合し�
 | 9 | A | Article/BlogPosting + BreadcrumbList構造化データ | DONE | ChatGPT | 本番ビルドでBlogPosting + BreadcrumbListを台帳からJSON-LD共通生成 |
 | 10 | A | 構造化データ検証 | IN_PROGRESS | 共同 | Python/CIのJSON-LD構文・型・日付・パンくず検証に加え、本番配信HTMLでBlogPosting/BreadcrumbListをデプロイ後に自動確認。Google Rich Results Test等の外部Google検証のみ残る |
 | 11 | A | PageSpeed / Core Web Vitals監査 | IN_PROGRESS | 共同 | Lighthouse mobileでトップ/B001/B028を実測。Baseline score 70/56/68、CLSは全て0。LCP遅延・過大画像・GA接続・ホスティング注入広告JSを切り分け、コード側追加改善を反映中。実ユーザーINP等はSearch Console/CrUX待ち |
-| 12 | A | 外部画像依存の縮小・WebP等の画像最適化 | DONE | ChatGPT | Wikimedia Commonsの帰属確認済み記事画像を本番ビルドでローカルWebP化し、width/height・feature imageのfetchpriorityも付与。商品/メーカー画像は外部参照を維持 |
+| 12 | A | 外部画像依存の縮小・WebP等の画像最適化 | DONE | ChatGPT | Commons記事画像75出現/74ユニークを本番ビルドでローカルWebP化、失敗0。960px本体＋720px responsive variant、width/height・fetchpriorityを付与。商品/メーカー画像は外部参照維持 |
 | 13 | A | モバイル実機レビュー | TODO | ユーザー | 実スマホで横スクロールナビ、Q&A、表、商品CTA、文字サイズ、タップ領域を確認。指摘後の修正はChatGPT |
-| 14 | B | 出典リンク表示名の統一 | DONE | ChatGPT | 全32記事・商品/固定ページを監査し、生URL表示が残っていたB016/B017/B021/B023/B024を「機関名『資料名』」リンクへ統一 |
-| 15 | B | 実用チェックリストの横断強化 | DONE | ChatGPT | practical 7記事を横断監査し、全記事に保存しやすい行動チェックが存在することを確認。今後の欠落防止ルールと自動テストを追加 |
+| 14 | B | 出典リンク表示名の統一 | DONE | ChatGPT | 全35記事・商品/固定ページを監査。生URL表示を「機関名『資料名』」へ統一し、source-box内の生URL表示をCIで禁止 |
+| 15 | B | 実用チェックリストの横断強化 | DONE | ChatGPT | practical記事を横断監査。B033〜B035を含む全practical記事に保存用行動チェックを持たせ、欠落防止ルールと自動テストを追加 |
 | 16 | B | 商品記事へ数量・容量・稼働時間等の概算例を追加 | DONE | ChatGPT | 水・非常食、携帯トイレ、ポータブル電源の商品記事へ条件付き計算式と具体例を追加。仮定値・個人差・変換ロス等を明示し、保証表現を回避 |
 | 17 | B | GA4でAmazonリンククリック計測を実装 | IN_PROGRESS | 共同 | `amazon_click` と `product_guide_click` の共通JS実装・自動テストは完了。GA4 DebugView/リアルタイムでの受信確認が残る |
 | 18 | B | 季節前のリライト・記事公開サイクル | PLANNED | ChatGPT | Google Trends・季節性を基に需要ピークの1〜2か月前に候補を出す |
-| 19 | C | ペット・乳幼児・高齢者等の属性別テーマ調査 | DONE | ChatGPT | 公開SERP・公的一次情報・既存B001〜B032を照合。B033ペット、B034乳幼児、B035高齢者を独立候補化。`docs/research/AUDIENCE_NEEDS_RESEARCH_20260903.md` |
+| 19 | C | ペット・乳幼児・高齢者等の属性別テーマ調査 | DONE | ChatGPT | 調査後、B033ペット/B034乳幼児/B035高齢者をbrief→本文→一次情報→レビュー→内部リンク→本番公開まで実装 |
 | 20 | C | 困りごと・ネガティブ検索語の調査 | DONE | ChatGPT | 「重すぎる/いらない/期限切れ/捨てる/固まらない/臭い」を評価し、B002/B003/B031の既存強化へ分類。`docs/research/NEGATIVE_INTENT_RESEARCH_20260903.md` |
 | 21 | C | 競合・類似防災サイトのコンテンツギャップ調査 | DONE | ChatGPT | 公的機関・小売/ブランド・防災専門通販と比較し、属性別/困りごと/自宅避難等の不足領域を整理。`docs/research/CONTENT_GAP_RESEARCH_20260903.md` |
 | 22 | 後日 | Search Consoleデータ駆動リライト | WAITING_DATA | 共同 | ユーザーがSearch Consoleデータを取得/共有し、ChatGPTが表示回数・CTR・順位・クエリを分析して改修 |
@@ -147,10 +147,34 @@ JSON-LDを記事HTMLへ個別に手書きしない。構文、記事タイトル
 ## 画像最適化実装（2026-09-03）
 
 - 対象: 記事本文内でWikimedia Commons帰属が明示されている画像
-- 本番ビルド後に取得し、最大幅1280px・WebPへ変換して `assets/images/commons/` からローカル配信
+- 本番ビルド後にMediaWiki API等で取得し、960px WebP＋720px responsive variantへ変換して `assets/images/commons/` からローカル配信
 - 画像へ `width` / `height` / `decoding="async"` を付与
 - `loading="eager"` の記事メイン画像には `fetchpriority="high"` を付与
 - 元画像ページへのWikimedia Commonsリンクをfigcaptionへ補完
 - Amazon・メーカーの商品画像は権利・更新性を考慮しローカルコピーしない
 - 取得失敗時は元の外部画像URLを残してページ公開を継続
 - GitHub Actionsのproduction deployとHTTP smoke testで検証済み
+
+
+## 属性別3記事の実装（2026-09-03）
+
+公開SERP・公的一次情報・既存記事とのカニバリ確認を行い、次の3記事を標準新規記事フローで実装した。
+
+| 記事 | 役割 | リスク | 本番パス |
+|---|---|---|---|
+| B033 ペット防災 | practical | standard | `guide/pet-disaster-preparedness.html` |
+| B034 赤ちゃんの防災備蓄 | practical | elevated | `guide/baby-disaster-stockpile.html` |
+| B035 高齢者の防災 | practical | elevated | `guide/senior-disaster-preparedness.html` |
+
+共通実施:
+- brief作成
+- 一次情報確認
+- Markdown / preview HTML
+- SOURCES / IMAGES / CHECKLIST
+- B001からの属性別内部リンク
+- 防災入門カテゴリ掲載
+- content registry登録
+- BlogPosting / BreadcrumbList自動生成
+- 本番HTTP/構造化データスモーク対象化
+
+B034は厚労省・農水省・内閣府、B035は内閣府・農水省・厚労省等を根拠にし、医療・栄養・福祉の一律断定を避けた。
