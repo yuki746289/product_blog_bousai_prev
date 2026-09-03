@@ -78,9 +78,11 @@ class PublicBuildTests(unittest.TestCase):
 
         sitemap = sitemap_path.read_text(encoding="utf-8")
         robots = robots_path.read_text(encoding="utf-8")
-        self.assertEqual(50, sitemap.count("<url>"))
+        self.assertEqual(len(list(PUBLIC.rglob("*.html"))), sitemap.count("<url>"))
         self.assertIn("https://bousaikun.ashigaru.jp/", sitemap)
         self.assertIn("https://bousaikun.ashigaru.jp/goods/portable-power-station-disaster.html", sitemap)
+        self.assertIn("https://bousaikun.ashigaru.jp/guide/emergency-food-expiration.html", sitemap)
+        self.assertIn("https://bousaikun.ashigaru.jp/guide/emergency-bag-capacity.html", sitemap)
         self.assertNotIn("contact.html", sitemap)
         self.assertIn("User-agent: *", robots)
         self.assertIn("Allow: /", robots)

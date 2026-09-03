@@ -2,7 +2,8 @@
 
 - provisional_article_id: B031
 - created_at: 2026-09-03
-- status: `DRAFT`
+- implemented_at: 2026-09-03
+- status: `APPROVED`
 
 ## 1. 記事基本情報
 
