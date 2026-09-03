@@ -129,3 +129,16 @@ Q&Aを作成・更新する場合:
 | C08 同期・公開前 | PASS | HTML/Markdown/registry同期 |
 
 **共通項目の全文を記事別ファイルへ再掲しない。**
+
+
+## C09 日付・構造化データ
+
+| チェック項目 | 判定 |
+|---|---|
+| `published_at` が初回公開日として台帳に記録されている | PASS / FAIL / N/A |
+| `modified_at` が本文の最終更新日と一致し、レビュー日を機械的に流用していない | PASS / FAIL / N/A |
+| `source_checked_at` が本文根拠の最終確認日と一致する | PASS / FAIL / N/A |
+| 本番表示で「公開日 / 最終更新日 / 情報確認日」が分離されている | PASS / FAIL / N/A |
+| BlogPostingのheadline / datePublished / dateModifiedが台帳と一致する | PASS / FAIL / N/A |
+| BreadcrumbListがトップ → カテゴリ → 記事の順で生成される | PASS / FAIL / N/A |
+| JSON-LDを記事HTMLへ個別に重複実装していない | PASS / FAIL / N/A |
