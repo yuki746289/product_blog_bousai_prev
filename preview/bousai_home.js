@@ -345,7 +345,7 @@
     loadRealtimePanel(root);
     window.setInterval(function () {
       loadRealtimePanel(root);
-    }, 5 * 60 * 1000);
+    }, 10 * 60 * 1000);
   }
 
   function init() {
