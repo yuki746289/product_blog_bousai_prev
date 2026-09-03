@@ -11,7 +11,8 @@ on:
       - "data/content_registry.json"
       - "config/site.json"
       - "templates/**"
-      - "scripts/build_public.py"
+      - "scripts/**"
+      - "pyproject.toml"
       - "tests/**"
       - ".github/workflows/deploy-production.yml"
 
@@ -42,6 +43,9 @@ jobs:
 
       - name: Build production files
         run: python scripts/build_public.py
+
+      - name: Localize Commons article images
+        run: python scripts/localize_commons_images.py --min-localized 1
 
       - name: Show production manifest
         run: |
@@ -100,6 +104,7 @@ jobs:
           check_asset "bousai_common.js"
           check_asset "sitemap.xml"
           check_asset "robots.txt"
+          check_asset "assets/images/commons/manifest.json"
 
           tmp_sitemap="$(mktemp)"
           curl --fail --silent --show-error --location \
