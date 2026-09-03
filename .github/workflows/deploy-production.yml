@@ -44,6 +44,11 @@ jobs:
       - name: Build production files
         run: python scripts/build_public.py
 
+      - name: Check JavaScript syntax
+        run: |
+          node --check public/bousai_common.js
+          node --check public/bousai_home.js
+
       - name: Localize Commons site images
         run: python scripts/localize_commons_images.py --min-localized 1
 
@@ -158,6 +163,9 @@ jobs:
             "${BASE_URL}bousai_home.js" -o "${tmp_home_js}"
           grep -q 'initRealtimePanel' "${tmp_home_js}"
           grep -q '台風等' "${tmp_home_js}"
+          grep -q 'bosai/quake/data/list.json' "${tmp_home_js}"
+          grep -q 'bosai/warning/data/r8/map.json' "${tmp_home_js}"
+          grep -q 'bosai/typhoon/data/targetTc.json' "${tmp_home_js}"
           rm -f "${tmp_home_js}"
 
           tmp_sitemap="$(mktemp)"
