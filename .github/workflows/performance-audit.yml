@@ -1,0 +1,80 @@
+name: Production Lighthouse audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/performance-audit.yml"
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run Lighthouse mobile audits
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p lighthouse
+          URLS=(
+            "https://bousaikun.ashigaru.jp/"
+            "https://bousaikun.ashigaru.jp/guide/first-disaster-preparedness.html"
+            "https://bousaikun.ashigaru.jp/goods/portable-power-station-disaster.html"
+          )
+          i=0
+          for url in "${URLS[@]}"; do
+            i=$((i+1))
+            echo "Auditing $url"
+            npx --yes lighthouse@12.8.2 "$url"               --quiet               --chrome-flags="--headless --no-sandbox"               --form-factor=mobile               --only-categories=performance               --output=json               --output-path="lighthouse/report_${i}.json"
+          done
+
+      - name: Summarize Lighthouse results
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          print("| URL | Score | FCP | LCP | CLS | TBT | Speed Index |")
+          print("|---|---:|---:|---:|---:|---:|---:|")
+          for path in sorted(Path("lighthouse").glob("report_*.json")):
+              data = json.loads(path.read_text(encoding="utf-8"))
+              audits = data["audits"]
+              score = round(data["categories"]["performance"]["score"] * 100)
+              print(
+                  f'| {data["finalDisplayedUrl"]} | {score} | '
+                  f'{audits["first-contentful-paint"]["displayValue"]} | '
+                  f'{audits["largest-contentful-paint"]["displayValue"]} | '
+                  f'{audits["cumulative-layout-shift"]["displayValue"]} | '
+                  f'{audits["total-blocking-time"]["displayValue"]} | '
+                  f'{audits["speed-index"]["displayValue"]} |'
+              )
+
+              print("\nTop opportunities for", data["finalDisplayedUrl"])
+              opportunities = []
+              for audit in audits.values():
+                  details = audit.get("details") or {}
+                  savings = details.get("overallSavingsMs", 0) or 0
+                  if savings > 0:
+                      opportunities.append((savings, audit.get("title"), audit.get("displayValue")))
+              for savings, title, value in sorted(opportunities, reverse=True)[:8]:
+                  print(f"- {title}: {value or ''} (estimated savings {round(savings)} ms)")
+          PY
+
+      - name: Upload Lighthouse reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-production-mobile
+          path: lighthouse/*.json
+          retention-days: 30
