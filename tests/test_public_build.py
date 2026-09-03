@@ -1,4 +1,5 @@
 # Created: 2026-09-02
+import json
 import re
 import subprocess
 import sys
@@ -63,6 +64,40 @@ class PublicBuildTests(unittest.TestCase):
                 f"{path} duplicates {descriptions.get(description)}",
             )
             descriptions[description] = path
+
+
+    def test_article_dates_and_structured_data(self):
+        registry = json.loads((ROOT / "data" / "content_registry.json").read_text(encoding="utf-8"))
+        articles = registry["articles"]
+        self.assertEqual(32, len([a for a in articles if a.get("article_id", "").startswith("B")]))
+
+        for article in articles:
+            output = PUBLIC / article["planned_public_path"]
+            html = output.read_text(encoding="utf-8")
+
+            published = article["published_at"]
+            modified = article["modified_at"]
+            checked = article["source_checked_at"]
+            self.assertIn(f'公開日: <time datetime="{published}">', html, output)
+            self.assertIn(f'最終更新日: <time datetime="{modified}">', html, output)
+            self.assertIn(f'情報確認日: <time datetime="{checked}">', html, output)
+
+            scripts = re.findall(
+                r'<script\\s+type=["\\\']application/ld\\+json["\\\']\\s+'
+                r'data-generated=["\\\']article-structured-data["\\\']>(.*?)</script>',
+                html,
+                flags=re.IGNORECASE | re.DOTALL,
+            )
+            self.assertEqual(1, len(scripts), output)
+            payload = json.loads(scripts[0])
+            graph = payload["@graph"]
+            posting = next(node for node in graph if node["@type"] == "BlogPosting")
+            breadcrumb = next(node for node in graph if node["@type"] == "BreadcrumbList")
+            self.assertEqual(article["title"], posting["headline"], output)
+            self.assertEqual(published, posting["datePublished"], output)
+            self.assertEqual(modified, posting["dateModified"], output)
+            self.assertEqual(3, len(breadcrumb["itemListElement"]), output)
+            self.assertEqual(article["title"], breadcrumb["itemListElement"][-1]["name"], output)
 
     def test_common_assets_exist(self):
         self.assertTrue((PUBLIC / "bousai_common.css").exists())
