@@ -1360,7 +1360,7 @@
       "amazon_links_checked_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-02"
+      "modified_at": "2026-09-03"
     },
     {
       "affiliate": true,
@@ -1565,7 +1565,7 @@
     }
   ],
   "schema_version": "1.1",
-  "updated_at": "2026-09-03T16:30:00+09:00",
+  "updated_at": "2026-09-03T16:45:00+09:00",
   "date_semantics": {
     "published_at": "本番で初めて公開された日",
     "modified_at": "公開後を含む記事内容の最終更新日。公開前の最終編集しかない場合は公開日を下限とする",
