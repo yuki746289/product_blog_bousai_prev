@@ -269,6 +269,19 @@ Amazon
 記事別チェックリストには、本ファイルのルール本文をコピーしない。
 共通チェック結果は `docs/ARTICLE_REVIEW_CHECKLIST.md` のIDを参照し、記事固有の例外・追加確認だけを記録する。
 
+
+### CR-08A 公開日・最終更新日・情報確認日
+
+記事台帳では次の日付を混同しない。
+
+- `published_at`: 本番で初めて公開された日。後日のリライトで変更しない。
+- `modified_at`: 読者が見る記事内容を最後に更新した日。レビューしただけでは更新しない。
+- `source_checked_at`: 公的・一次情報、制度、商品仕様等の本文根拠を最後に確認した日。
+- `last_reviewed_at`: 内部レビュー日。公開表示の「最終更新日」とは別管理。
+
+本番記事の日付表示は `data/content_registry.json` を正本としてビルド時に生成する。
+記事ごとのHTMLへ公開日・更新日を独自ルールで増やさない。
+
 ---
 
 ## CR-09 公開前・共通UI変更
@@ -278,6 +291,16 @@ Amazon
 - 本番ではGA、noindex、内部リンク、画像、CSS/JSの取得を確認する。
 - 公開後は主要ページをHTTPスモークテストする。
 - 新規サイト公開、URL構造変更、sitemap/robots変更時は `docs/SEARCH_CONSOLE_INDEXING.md` も実行する。
+
+
+### CR-09A Article / BreadcrumbList構造化データ
+
+- 公開記事には `BlogPosting` と `BreadcrumbList` を本番ビルドで共通生成する。
+- headline、description、公開日、更新日、URL、パンくずは記事台帳・公開HTMLと一致させる。
+- JSON-LDを記事ごとに手書きして二重管理しない。
+- `datePublished` に `published_at`、`dateModified` に `modified_at` を使用する。
+- FAQPageリッチリザルト獲得を目的としたFAQ構造化データは追加しない。
+- JSONとして解釈可能であることと、BlogPosting / BreadcrumbListの必須運用項目を自動テストする。
 
 ---
 
