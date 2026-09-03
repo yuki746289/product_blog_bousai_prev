@@ -49,3 +49,15 @@ GitHub上で、記事の制作状態・レビュー状態・公開可否・鮮�
 
 正式な記事状態は `data/content_registry.json` を正とする。
 記事本文の変更と状態変更は同じPRで確認できる形を原則とする。
+
+## 6. ルール・チェックリストの正本
+
+- 共通記事作成ルール: `docs/CONTENT_CREATION_RULES.md`
+- 共通レビュー項目: `docs/ARTICLE_REVIEW_CHECKLIST.md`
+- 記事別レビュー記録: `docs/reviews/Bxxx_CHECKLIST.md`
+- 記事別テンプレート: `docs/reviews/ARTICLE_CHECKLIST_TEMPLATE.md`
+
+記事別レビュー記録には共通ルール本文をコピーせず、共通チェックIDの判定・根拠と記事固有事項だけを記録する。
+
+複数記事で同じ追加確認が必要になった場合は、記事別ルールを増やすのではなく共通ルールへの昇格を検討する。
+
