@@ -104,3 +104,15 @@
 - DEPLOYMENT_STATUS: `PUBLISHED`
 - PUBLIC_URL: `https://bousaikun.ashigaru.jp/`
 - 本番HTTPスモークテスト: PASS
+
+
+## 構造化データ・記事日付
+
+- [ ] 全公開記事で「公開日」「最終更新日」「情報確認日」が表示される
+- [ ] `published_at` / `modified_at` / `source_checked_at` が台帳と一致する
+- [ ] 全公開記事に生成済みBlogPostingが1件ある
+- [ ] 全公開記事に生成済みBreadcrumbListが1件ある
+- [ ] datePublished / dateModifiedが公開表示と一致する
+- [ ] JSON-LDがJSONとして解釈できる
+- [ ] パンくずがトップ → カテゴリ → 記事の3階層である
+- [ ] Google Rich Results Test等の外部検証が必要なリリースでは結果を記録する
