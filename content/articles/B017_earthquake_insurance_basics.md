@@ -150,7 +150,7 @@ affiliate: false
 
 ## 公的・業界情報
 
-- 財務省「地震保険制度の概要」: https://www.mof.go.jp/policy/financial_system/earthquake_insurance/jisin.htm
-- 日本損害保険協会「地震保険」: https://www.sonpo.or.jp/insurance/jishin/index.html
-- 日本損害保険協会「問67 地震保険」: https://soudanguide.sonpo.or.jp/home/q067.html
-- 日本損害保険協会「地震保険Q&A」: https://soudanguide.sonpo.or.jp/home/q062.html
+- [財務省「地震保険制度の概要」](https://www.mof.go.jp/policy/financial_system/earthquake_insurance/jisin.htm)
+- [日本損害保険協会「地震保険」](https://www.sonpo.or.jp/insurance/jishin/index.html)
+- [日本損害保険協会「問67 地震保険」](https://soudanguide.sonpo.or.jp/home/q067.html)
+- [日本損害保険協会「地震保険Q&A」](https://soudanguide.sonpo.or.jp/home/q062.html)
