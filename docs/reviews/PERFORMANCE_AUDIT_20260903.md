@@ -63,3 +63,33 @@ GoogleのCore Web Vitals基準:
 - preconnect追加後のLighthouse再計測
 - B001のLCP要素・画像サイズの追加分析
 - Search Console / CrUXに十分なデータが出た後、実ユーザーLCP / INP / CLSを確認
+
+
+## LCP要素の詳細
+
+### トップ
+LCPは画像ではなくhero内の説明文。LCP 4.59sのうち約81%がrender delay。
+Lighthouseでunused JavaScriptとして以下が確認された。
+
+- Google gtag
+- `cnobi.jp/v1/asumi/prebid/...`
+- `j.amoad.com/js/n.js`
+
+`cnobi.jp` と `amoad.com` はリポジトリ内に参照がなく、本番ホスティング側で挿入されている第三者広告スクリプトと判断できる。サイトコードからは削除しない。
+
+### B001
+LCPは記事メイン画像 `commons_c6700ec800ec2e86.webp`。
+表示380pxに対して960px画像を取得しており、Lighthouseは約67KiBの削減余地を指摘。
+対応として720pxのresponsive WebP variantと`srcset` / `sizes`を本番画像生成へ追加した。
+
+### B028
+LCPはH1テキストで、LCP 4.87sの約87%がrender delay。
+一方、Anker商品画像が約1.2MB取得され、responsive image auditで約1.18MBの削減余地が出ていたため、メーカーCDNへ480px幅を要求するURLへ変更した。
+
+## 追加対応（再計測前）
+
+- GAオリジンへのpreconnect
+- Commons記事画像の720px responsive variant
+- トップ・カテゴリのCommonsサムネイルを640px要求へ縮小
+- Anker / Jackeryの商品画像を480px要求へ縮小
+- ホスティング注入広告JSはサイトリポジトリでは制御不能として切り分け
