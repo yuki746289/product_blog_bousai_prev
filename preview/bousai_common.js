@@ -66,12 +66,29 @@
     });
 
     var currentFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
-    document.querySelectorAll(".site-nav a[href]").forEach(function (link) {
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll(".site-nav a[href]"));
+    var currentMarked = false;
+
+    navLinks.forEach(function (link) {
       var href = (link.getAttribute("href") || "").split("#")[0].split("?")[0].toLowerCase();
       if (href === currentFile) {
         link.setAttribute("aria-current", "page");
+        currentMarked = true;
       }
     });
+
+    if (!currentMarked) {
+      var categoryCrumb = document.querySelector('.breadcrumb a[href^="category_"]');
+      if (categoryCrumb) {
+        var categoryHref = (categoryCrumb.getAttribute("href") || "").split("#")[0].split("?")[0].toLowerCase();
+        navLinks.forEach(function (link) {
+          var href = (link.getAttribute("href") || "").split("#")[0].split("?")[0].toLowerCase();
+          if (href === categoryHref) {
+            link.setAttribute("aria-current", "location");
+          }
+        });
+      }
+    }
   }
 
   function bindImageFallbacks() {
