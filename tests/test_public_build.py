@@ -216,7 +216,7 @@ class PublicBuildTests(unittest.TestCase):
         self.assertIn('href="goods/toilet-hygiene.html">携帯トイレ</a>', home)
         self.assertIn('href="goods/light-information.html">ライト・ラジオ</a>', home)
         self.assertIn('href="goods/power-charging.html">ポータブル電源</a>', home)
-        self.assertIn('href="guide/portable-toilet-stockpile.html">携帯トイレの備え方を読む', home)
+        self.assertIn('href="water-outage/portable-toilet-stockpile.html">携帯トイレの備え方を読む', home)
 
         goods_index = (PUBLIC / "goods" / "index.html").read_text(encoding="utf-8")
         self.assertEqual(4, goods_index.count("category-product-link"))
