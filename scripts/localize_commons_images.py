@@ -6,15 +6,14 @@ article figure blocks that explicitly attribute Wikimedia Commons. Product and
 manufacturer images are intentionally excluded.
 
 Behavior:
-- downloads allow-listed Commons image URLs;
+- discovers unique eligible Commons image URLs before rewriting pages;
+- downloads unique images in parallel to keep deployment time bounded;
 - follows only Commons -> upload.wikimedia.org redirects;
-- converts to WebP and caps width at 1280 px;
-- generates a 720 px responsive variant for mobile article images;
+- converts to WebP, with a 960 px main asset and 720 px responsive variant;
 - writes stable hashed assets under public/assets/images/commons/;
 - adds intrinsic width/height to reduce layout shift;
 - gives eager feature images high fetch priority;
-- preserves the visible attribution and adds a Commons source-page link when
-  the caption did not already contain one;
+- preserves visible attribution and adds a Commons source-page link when needed;
 - leaves the original external URL unchanged if an individual download fails.
 """
 
@@ -28,6 +27,7 @@ import json
 import posixpath
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.parse import quote, unquote, urlparse
 from urllib.request import Request, urlopen
@@ -39,8 +39,13 @@ PUBLIC = ROOT / "public"
 ASSET_DIR = PUBLIC / "assets" / "images" / "commons"
 MANIFEST = ASSET_DIR / "manifest.json"
 
+MAIN_MAX_WIDTH = 960
+MOBILE_MAX_WIDTH = 720
+MAX_DOWNLOAD_WORKERS = 6
+
 ALLOWED_SOURCE_HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org"}
 ALLOWED_FINAL_HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org"}
+
 FIGURE_RE = re.compile(
     r"(?P<open><figure\b(?P<attrs>[^>]*)>)(?P<body>.*?)(?P<close></figure>)",
     re.IGNORECASE | re.DOTALL,
@@ -60,14 +65,26 @@ def is_eligible_figure(attrs: str, body: str) -> bool:
         return False
     if "Wikimedia Commons" not in body:
         return False
+
     img_match = IMG_RE.search(body)
     if not img_match:
         return False
     src_match = SRC_RE.search(img_match.group(0))
     if not src_match:
         return False
+
     host = (urlparse(html.unescape(src_match.group("src"))).hostname or "").lower()
     return host in ALLOWED_SOURCE_HOSTS
+
+
+def extract_eligible_source(attrs: str, body: str) -> str | None:
+    if not is_eligible_figure(attrs, body):
+        return None
+    img_match = IMG_RE.search(body)
+    assert img_match is not None
+    src_match = SRC_RE.search(img_match.group(0))
+    assert src_match is not None
+    return src_match.group("src")
 
 
 def commons_description_url(source_url: str) -> str | None:
@@ -77,18 +94,24 @@ def commons_description_url(source_url: str) -> str | None:
     marker = "/wiki/Special:Redirect/file/"
     if marker in path:
         filename = path.split(marker, 1)[1]
-        return "https://commons.wikimedia.org/wiki/File:" + quote(filename, safe="()_,-.%")
+        return "https://commons.wikimedia.org/wiki/File:" + quote(
+            filename, safe="()_,-.%"
+        )
 
     if parsed.hostname == "upload.wikimedia.org":
         parts = [part for part in path.split("/") if part]
         if len(parts) >= 2:
             candidate = parts[-2] if "/thumb/" in path else parts[-1]
-            return "https://commons.wikimedia.org/wiki/File:" + quote(candidate, safe="()_,-.%")
+            return "https://commons.wikimedia.org/wiki/File:" + quote(
+                candidate, safe="()_,-.%"
+            )
     return None
 
 
 def stable_asset_name(source_url: str) -> str:
-    digest = hashlib.sha256(html.unescape(source_url).encode("utf-8")).hexdigest()[:16]
+    digest = hashlib.sha256(
+        html.unescape(source_url).encode("utf-8")
+    ).hexdigest()[:16]
     return f"commons_{digest}.webp"
 
 
@@ -100,7 +123,7 @@ def download_image(source_url: str, retries: int = 3) -> tuple[bytes, str]:
                 html.unescape(source_url),
                 headers={
                     "User-Agent": (
-                        "bousai-kurashi-guide-image-localizer/1.0 "
+                        "bousai-kurashi-guide-image-localizer/1.1 "
                         "(+https://bousaikun.ashigaru.jp/)"
                     )
                 },
@@ -111,15 +134,20 @@ def download_image(source_url: str, retries: int = 3) -> tuple[bytes, str]:
                 if host not in ALLOWED_FINAL_HOSTS:
                     raise ValueError(f"unexpected redirect host: {host}")
                 return response.read(), final_url
-        except Exception as exc:  # network failures should not block the whole deploy
+        except Exception as exc:
             last_error = exc
             if attempt + 1 < retries:
-                time.sleep(1.5 * (attempt + 1))
+                time.sleep(1.25 * (attempt + 1))
+
     assert last_error is not None
     raise last_error
 
 
-def optimize_webp(data: bytes, destination: Path, max_width: int = 1280) -> tuple[int, int, int]:
+def optimize_webp(
+    data: bytes,
+    destination: Path,
+    max_width: int = MAIN_MAX_WIDTH,
+) -> tuple[int, int, int]:
     destination.parent.mkdir(parents=True, exist_ok=True)
     with Image.open(io.BytesIO(data)) as original:
         image = ImageOps.exif_transpose(original)
@@ -128,20 +156,99 @@ def optimize_webp(data: bytes, destination: Path, max_width: int = 1280) -> tupl
             image = image.resize((max_width, height), Image.Resampling.LANCZOS)
 
         if image.mode not in ("RGB", "RGBA"):
-            image = image.convert("RGBA" if "transparency" in image.info else "RGB")
+            image = image.convert(
+                "RGBA" if "transparency" in image.info else "RGB"
+            )
 
-        image.save(destination, format="WEBP", quality=82, method=6)
+        image.save(destination, format="WEBP", quality=80, method=6)
         return image.width, image.height, destination.stat().st_size
 
 
-def add_image_attributes(tag: str, width: int, height: int, feature: bool) -> str:
+def prepare_entry(source_url: str) -> dict:
+    asset_name = stable_asset_name(source_url)
+    destination = ASSET_DIR / asset_name
+
+    try:
+        raw, final_url = download_image(source_url)
+        width, height, optimized_bytes = optimize_webp(raw, destination)
+
+        mobile_path = None
+        mobile_width = None
+        mobile_height = None
+        mobile_bytes = 0
+        if width > MOBILE_MAX_WIDTH:
+            mobile_name = asset_name.replace(".webp", "_720.webp")
+            mobile_destination = ASSET_DIR / mobile_name
+            mobile_width, mobile_height, mobile_bytes = optimize_webp(
+                raw,
+                mobile_destination,
+                max_width=MOBILE_MAX_WIDTH,
+            )
+            mobile_path = f"assets/images/commons/{mobile_name}"
+
+        return {
+            "source_url": html.unescape(source_url),
+            "final_url": final_url,
+            "local_path": f"assets/images/commons/{asset_name}",
+            "width": width,
+            "height": height,
+            "mobile_path": mobile_path,
+            "mobile_width": mobile_width,
+            "mobile_height": mobile_height,
+            "source_bytes": len(raw),
+            "optimized_bytes": optimized_bytes,
+            "mobile_bytes": mobile_bytes,
+            "status": "localized",
+        }
+    except Exception as exc:
+        return {
+            "source_url": html.unescape(source_url),
+            "status": "failed",
+            "error": f"{type(exc).__name__}: {exc}",
+        }
+
+
+def discover_sources() -> list[str]:
+    sources: set[str] = set()
+    for page in sorted(PUBLIC.rglob("*.html")):
+        text = page.read_text(encoding="utf-8")
+        for match in FIGURE_RE.finditer(text):
+            source = extract_eligible_source(
+                match.group("attrs"),
+                match.group("body"),
+            )
+            if source:
+                sources.add(source)
+    return sorted(sources)
+
+
+def prepare_cache(sources: list[str]) -> dict[str, dict]:
+    if not sources:
+        return {}
+
+    worker_count = min(MAX_DOWNLOAD_WORKERS, len(sources))
+    with ThreadPoolExecutor(max_workers=worker_count) as executor:
+        entries = list(executor.map(prepare_entry, sources))
+    return dict(zip(sources, entries, strict=True))
+
+
+def add_image_attributes(
+    tag: str,
+    width: int,
+    height: int,
+    feature: bool,
+) -> str:
     if not re.search(r"\bwidth=", tag, re.IGNORECASE):
         tag = tag[:-1] + f' width="{width}">'
     if not re.search(r"\bheight=", tag, re.IGNORECASE):
         tag = tag[:-1] + f' height="{height}">'
     if not re.search(r"\bdecoding=", tag, re.IGNORECASE):
         tag = tag[:-1] + ' decoding="async">'
-    if feature and 'loading="eager"' in tag and not re.search(r"\bfetchpriority=", tag, re.IGNORECASE):
+    if (
+        feature
+        and 'loading="eager"' in tag
+        and not re.search(r"\bfetchpriority=", tag, re.IGNORECASE)
+    ):
         tag = tag[:-1] + ' fetchpriority="high">'
     return tag
 
@@ -157,9 +264,11 @@ def add_responsive_attributes(
         return tag
     if re.search(r"\bsrcset=", tag, re.IGNORECASE):
         return tag
+
     return (
         tag[:-1]
-        + f' srcset="{mobile_url} {mobile_width}w, {full_url} {full_width}w"'
+        + f' srcset="{mobile_url} {mobile_width}w, '
+        + f'{full_url} {full_width}w"'
         + ' sizes="(max-width: 760px) calc(100vw - 32px), 900px">'
     )
 
@@ -168,7 +277,11 @@ def ensure_source_link(body: str, source_url: str) -> str:
     caption_match = FIGCAPTION_RE.search(body)
     if not caption_match:
         return body
-    if re.search(r'href="https://commons\.wikimedia\.org/', caption_match.group(0), re.IGNORECASE):
+    if re.search(
+        r'href="https://commons\.wikimedia\.org/',
+        caption_match.group(0),
+        re.IGNORECASE,
+    ):
         return body
 
     description_url = commons_description_url(source_url)
@@ -176,8 +289,10 @@ def ensure_source_link(body: str, source_url: str) -> str:
         return body
 
     appendix = (
-        ' <a href="' + description_url + '" target="_blank" '
-        'rel="noopener noreferrer">Wikimedia Commonsの元画像</a>'
+        ' <a href="'
+        + description_url
+        + '" target="_blank" '
+        + 'rel="noopener noreferrer">Wikimedia Commonsの元画像</a>'
     )
     replacement = (
         caption_match.group("open")
@@ -185,10 +300,17 @@ def ensure_source_link(body: str, source_url: str) -> str:
         + appendix
         + caption_match.group("close")
     )
-    return body[: caption_match.start()] + replacement + body[caption_match.end() :]
+    return (
+        body[: caption_match.start()]
+        + replacement
+        + body[caption_match.end() :]
+    )
 
 
-def localize_html_file(path: Path, cache: dict[str, dict]) -> tuple[int, int]:
+def localize_html_file(
+    path: Path,
+    cache: dict[str, dict],
+) -> tuple[int, int]:
     original_html = path.read_text(encoding="utf-8")
     localized_count = 0
     failed_count = 0
@@ -197,56 +319,17 @@ def localize_html_file(path: Path, cache: dict[str, dict]) -> tuple[int, int]:
         nonlocal localized_count, failed_count
         attrs = match.group("attrs")
         body = match.group("body")
-        if not is_eligible_figure(attrs, body):
+        source_url = extract_eligible_source(attrs, body)
+        if not source_url:
             return match.group(0)
 
         img_match = IMG_RE.search(body)
         assert img_match is not None
         tag = img_match.group(0)
-        src_match = SRC_RE.search(tag)
-        assert src_match is not None
-        source_url = src_match.group("src")
 
         entry = cache.get(source_url)
         if entry is None:
-            asset_name = stable_asset_name(source_url)
-            destination = ASSET_DIR / asset_name
-            try:
-                raw, final_url = download_image(source_url)
-                width, height, optimized_bytes = optimize_webp(raw, destination)
-
-                mobile_path = None
-                mobile_width = None
-                mobile_height = None
-                mobile_bytes = 0
-                if width > 720:
-                    mobile_name = asset_name.replace(".webp", "_720.webp")
-                    mobile_destination = ASSET_DIR / mobile_name
-                    mobile_width, mobile_height, mobile_bytes = optimize_webp(
-                        raw, mobile_destination, max_width=720
-                    )
-                    mobile_path = f"assets/images/commons/{mobile_name}"
-
-                entry = {
-                    "source_url": html.unescape(source_url),
-                    "final_url": final_url,
-                    "local_path": f"assets/images/commons/{asset_name}",
-                    "width": width,
-                    "height": height,
-                    "mobile_path": mobile_path,
-                    "mobile_width": mobile_width,
-                    "mobile_height": mobile_height,
-                    "source_bytes": len(raw),
-                    "optimized_bytes": optimized_bytes,
-                    "mobile_bytes": mobile_bytes,
-                    "status": "localized",
-                }
-            except Exception as exc:
-                entry = {
-                    "source_url": html.unescape(source_url),
-                    "status": "failed",
-                    "error": f"{type(exc).__name__}: {exc}",
-                }
+            entry = prepare_entry(source_url)
             cache[source_url] = entry
 
         if entry["status"] != "localized":
@@ -254,19 +337,26 @@ def localize_html_file(path: Path, cache: dict[str, dict]) -> tuple[int, int]:
             return match.group(0)
 
         page_rel = path.relative_to(PUBLIC).as_posix()
-        local_url = posixpath.relpath(entry["local_path"], posixpath.dirname(page_rel) or ".")
+        page_dir = posixpath.dirname(page_rel) or "."
+        local_url = posixpath.relpath(entry["local_path"], page_dir)
+
         new_tag = SRC_RE.sub(
-            lambda m: f'src="{local_url}"',
+            lambda _m: f'src="{local_url}"',
             tag,
             count=1,
         )
+
         feature = "article-feature-image" in attrs
-        new_tag = add_image_attributes(new_tag, entry["width"], entry["height"], feature)
+        new_tag = add_image_attributes(
+            new_tag,
+            entry["width"],
+            entry["height"],
+            feature,
+        )
+
         mobile_url = None
         if entry.get("mobile_path"):
-            mobile_url = posixpath.relpath(
-                entry["mobile_path"], posixpath.dirname(page_rel) or "."
-            )
+            mobile_url = posixpath.relpath(entry["mobile_path"], page_dir)
         new_tag = add_responsive_attributes(
             new_tag,
             mobile_url,
@@ -274,23 +364,35 @@ def localize_html_file(path: Path, cache: dict[str, dict]) -> tuple[int, int]:
             local_url,
             entry["width"],
         )
-        new_body = body[: img_match.start()] + new_tag + body[img_match.end() :]
+
+        new_body = (
+            body[: img_match.start()]
+            + new_tag
+            + body[img_match.end() :]
+        )
         new_body = ensure_source_link(new_body, source_url)
+
         localized_count += 1
         return match.group("open") + new_body + match.group("close")
 
     rewritten = FIGURE_RE.sub(replace_figure, original_html)
     if rewritten != original_html:
         path.write_text(rewritten, encoding="utf-8")
+
     return localized_count, failed_count
 
 
 def run(min_localized: int = 0) -> dict:
     if not PUBLIC.exists():
-        raise FileNotFoundError("public directory does not exist; run build_public.py first")
+        raise FileNotFoundError(
+            "public directory does not exist; run build_public.py first"
+        )
 
     ASSET_DIR.mkdir(parents=True, exist_ok=True)
-    cache: dict[str, dict] = {}
+
+    sources = discover_sources()
+    cache = prepare_cache(sources)
+
     page_results: list[dict] = []
     total_localized = 0
     total_failed = 0
@@ -308,15 +410,31 @@ def run(min_localized: int = 0) -> dict:
         total_localized += localized
         total_failed += failed
 
-    assets = sorted(cache.values(), key=lambda item: item["source_url"])
-    unique_localized = sum(1 for item in assets if item["status"] == "localized")
-    unique_failed = sum(1 for item in assets if item["status"] == "failed")
-    source_bytes = sum(item.get("source_bytes", 0) for item in assets)
-    optimized_bytes = sum(item.get("optimized_bytes", 0) for item in assets)
-    responsive_variant_bytes = sum(item.get("mobile_bytes", 0) for item in assets)
+    assets = sorted(
+        cache.values(),
+        key=lambda item: item["source_url"],
+    )
+    unique_localized = sum(
+        1 for item in assets if item["status"] == "localized"
+    )
+    unique_failed = sum(
+        1 for item in assets if item["status"] == "failed"
+    )
+    source_bytes = sum(
+        item.get("source_bytes", 0) for item in assets
+    )
+    optimized_bytes = sum(
+        item.get("optimized_bytes", 0) for item in assets
+    )
+    responsive_variant_bytes = sum(
+        item.get("mobile_bytes", 0) for item in assets
+    )
 
     manifest = {
         "generated_by": "scripts/localize_commons_images.py",
+        "download_workers": min(MAX_DOWNLOAD_WORKERS, len(sources))
+        if sources
+        else 0,
         "pages_with_eligible_images": len(page_results),
         "image_occurrences_localized": total_localized,
         "image_occurrences_failed": total_failed,
@@ -329,12 +447,22 @@ def run(min_localized: int = 0) -> dict:
         "pages": page_results,
         "assets": assets,
     }
-    MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    MANIFEST.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
-    print(json.dumps({k: v for k, v in manifest.items() if k not in {"pages", "assets"}}, ensure_ascii=False))
+    summary = {
+        key: value
+        for key, value in manifest.items()
+        if key not in {"pages", "assets"}
+    }
+    print(json.dumps(summary, ensure_ascii=False))
+
     if total_localized < min_localized:
         raise SystemExit(
-            f"localized image occurrences {total_localized} < required minimum {min_localized}"
+            f"localized image occurrences {total_localized} "
+            f"< required minimum {min_localized}"
         )
     return manifest
 
