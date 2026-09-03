@@ -7,6 +7,7 @@ import json
 import time
 import urllib.request
 import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Callable, Iterable
@@ -249,19 +250,31 @@ def should_full_sync(previous: dict, now: datetime) -> bool:
 
 
 def process_extra(entries: list[dict], warnings: dict, typhoons: dict, fetcher) -> None:
-    for entry in entries:
-        title = entry.get("title", "")
-        is_warning = any(word in title for word in WARNING_TITLES)
-        is_typhoon = any(word in title for word in TYPHOON_TITLE_WORDS)
-        if not (is_warning or is_typhoon):
-            continue
+    relevant = [
+        entry for entry in entries
+        if any(word in entry.get("title", "") for word in WARNING_TITLES)
+        or any(word in entry.get("title", "") for word in TYPHOON_TITLE_WORDS)
+    ]
+    if not relevant:
+        return
+
+    def fetch_entry(entry: dict):
         try:
-            payload = fetcher(entry["link"])
+            return fetcher(entry["link"])
         except Exception:
+            return None
+
+    workers = min(8, len(relevant))
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        payloads = list(executor.map(fetch_entry, relevant))
+
+    for entry, payload in zip(relevant, payloads):
+        if payload is None:
             continue
-        if is_warning:
+        title = entry.get("title", "")
+        if any(word in title for word in WARNING_TITLES):
             apply_warning_updates(warnings, parse_warning_updates(payload))
-        if is_typhoon:
+        if any(word in title for word in TYPHOON_TITLE_WORDS):
             update = parse_typhoon_update(payload, entry["link"])
             if update["active"]:
                 typhoons[update["event_id"]] = update
