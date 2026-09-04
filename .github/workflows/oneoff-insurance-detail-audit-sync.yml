@@ -22,6 +22,18 @@ jobs:
           python-version: '3.11'
       - name: Apply insurance detail expert audit
         run: python .github/scripts/oneoff_insurance_detail_audit.py
+      - name: Preserve registry timestamp monotonicity
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          path = Path('data/content_registry.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          prior_max = '2026-09-04T14:35:00+09:00'
+          if data.get('updated_at', '') < prior_max:
+              data['updated_at'] = prior_max
+              path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
       - name: Install package
         run: pip install -e .
       - name: Run tests
@@ -35,5 +47,5 @@ jobs:
             echo 'No changes to commit.'
             exit 0
           fi
-          git commit -m 'Finalize insurance detail expert audit'
+          git commit -m 'Restore registry audit timestamp'
           git push
