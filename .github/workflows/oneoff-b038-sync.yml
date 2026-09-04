@@ -2,7 +2,8 @@ name: One-off B038 sync
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
       - ".github/workflows/oneoff-b038-sync.yml"
 
@@ -77,11 +78,13 @@ jobs:
           category_path = Path("preview/category_earthquake.html")
           category = category_path.read_text(encoding="utf-8")
           if 'data-article-id="B038"' not in category:
-              block = '''<section class="category-section">
-    <div class="section-heading"><div><h2>外出先で被災したとき</h2><p>電車やバスが止まり、自宅へ戻れない場合の行動です。</p></div></div>
-    <div class="category-article-list"><a class="category-article-link" href="article_b038.html" data-article-id="B038"><span>大地震で電車が止まったら帰宅する？帰宅困難者がまず取る行動と備え</span></a></div>
-  </section>
-'''
+              block = "\n".join([
+                  '<section class="category-section">',
+                  '    <div class="section-heading"><div><h2>外出先で被災したとき</h2><p>電車やバスが止まり、自宅へ戻れない場合の行動です。</p></div></div>',
+                  '    <div class="category-article-list"><a class="category-article-link" href="article_b038.html" data-article-id="B038"><span>大地震で電車が止まったら帰宅する？帰宅困難者がまず取る行動と備え</span></a></div>',
+                  '  </section>',
+                  ''
+              ])
               marker = '<section class="category-section">\n    <div class="section-heading"><div><h2>保険を確認する</h2>'
               if marker not in category:
                   raise SystemExit("B038 category insertion marker not found")
