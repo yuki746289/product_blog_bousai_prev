@@ -1,0 +1,49 @@
+name: One-off add remaining smoke checks
+
+on:
+  push:
+    paths:
+      - '.github/workflows/oneoff-add-remaining-smoke.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add B025-B030 production smoke coverage
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('.github/workflows/deploy-production.yml')
+          t = p.read_text(encoding='utf-8')
+          if 'check_page "guide/drinking-water-stockpile.html"' not in t:
+              anchor = '          check_page "home/apartment-typhoon-flood.html"\n'
+              add = '''          check_page "guide/drinking-water-stockpile.html"\n          check_page "guide/emergency-food-stockpile.html"\n          check_page "goods/emergency-radio-guide.html"\n          check_page "vehicle/car-emergency-kit.html"\n          check_page "guide/family-disaster-contact-plan.html"\n'''
+              assert anchor in t
+              t = t.replace(anchor, anchor + add, 1)
+          if 'check_structured_page "guide/drinking-water-stockpile.html"' not in t:
+              anchor = '          check_structured_page "home/apartment-typhoon-flood.html"\n'
+              add = '''          check_structured_page "guide/drinking-water-stockpile.html"\n          check_structured_page "guide/emergency-food-stockpile.html"\n          check_structured_page "goods/emergency-radio-guide.html"\n          check_structured_page "goods/portable-power-station-disaster.html"\n          check_structured_page "vehicle/car-emergency-kit.html"\n          check_structured_page "guide/family-disaster-contact-plan.html"\n'''
+              assert anchor in t
+              t = t.replace(anchor, anchor + add, 1)
+          if 'NITE「リコール対象のポータブル電源に関する注意喚起」' not in t:
+              anchor = '          check_page_contains "home/apartment-typhoon-flood.html" \'建築物における電気設備の浸水対策ガイドライン\'\n'
+              add = '''          check_page_contains "guide/drinking-water-stockpile.html" '飲料水はどう備蓄する'\n          check_page_contains "guide/emergency-food-stockpile.html" 'ローリングストック'\n          check_page_contains "goods/emergency-radio-guide.html" '防災ラジオは必要'\n          check_page_contains "goods/portable-power-station-disaster.html" 'リコール対象品は異常が見られなくても使用を中止'\n          check_page_contains "goods/portable-power-station-disaster.html" 'NITE「リコール対象のポータブル電源に関する注意喚起」'\n          check_page_contains "vehicle/car-emergency-kit.html" '車に積んでおきたい防災用品'\n          check_page_contains "guide/family-disaster-contact-plan.html" '災害用伝言ダイヤル'\n'''
+              assert anchor in t
+              t = t.replace(anchor, anchor + add, 1)
+          p.write_text(t, encoding='utf-8')
+          PY
+      - name: Commit smoke checks
+        run: |
+          if git diff --quiet; then
+            echo "No smoke changes."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .github/workflows/deploy-production.yml
+          git commit -m 'Add B025-B030 production smoke coverage'
+          git push
