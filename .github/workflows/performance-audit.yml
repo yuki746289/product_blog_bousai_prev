@@ -31,6 +31,21 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Wait for analytics exclusion on production
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 30); do
+            if curl -fsS "https://bousaikun.ashigaru.jp/?ci_audit=1" | grep -q "__BOUSAI_ANALYTICS_DISABLED__"; then
+              echo "Analytics exclusion marker is live."
+              exit 0
+            fi
+            echo "Waiting for production deploy... attempt ${attempt}/30"
+            sleep 10
+          done
+          echo "Analytics exclusion marker did not reach production in time." >&2
+          exit 1
+
       - name: Run Lighthouse mobile audits
         shell: bash
         run: |
@@ -53,6 +68,40 @@ jobs:
               --output=json \
               --output-path="lighthouse/report_${i}.json"
           done
+
+      - name: Verify Lighthouse did not contact GA4
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          forbidden = (
+              "googletagmanager.com/gtag/js",
+              "google-analytics.com/g/collect",
+              "google-analytics.com/j/collect",
+          )
+
+          failures = []
+          for path in sorted(Path("lighthouse").glob("report_*.json")):
+              data = json.loads(path.read_text(encoding="utf-8"))
+              requests = (((data.get("audits") or {}).get("network-requests") or {}).get("details") or {}).get("items") or []
+              bad = []
+              for request in requests:
+                  url = str(request.get("url") or "")
+                  if any(token in url for token in forbidden):
+                      bad.append(url)
+              if bad:
+                  failures.append((data.get("finalDisplayedUrl"), bad))
+
+          if failures:
+              for page, urls in failures:
+                  print(f"GA4 request detected during CI audit: {page}")
+                  for url in urls:
+                      print(f"- {url}")
+              raise SystemExit(1)
+
+          print("PASS: Lighthouse CI audits made no GA4 gtag/collect requests.")
+          PY
 
       - name: Summarize Lighthouse results
         run: |
