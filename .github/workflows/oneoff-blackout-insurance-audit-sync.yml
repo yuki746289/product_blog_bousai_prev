@@ -19,42 +19,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Sync audited article metadata
+      - name: Sync B004 preview audit data
         run: |
           python - <<'PY'
           from pathlib import Path
-          import json
 
-          path = Path('data/content_registry.json')
-          data = json.loads(path.read_text(encoding='utf-8'))
-          by_id = {a['article_id']: a for a in data['articles']}
-
-          by_id['B004'].update({
-              'source_checked_at': '2026-09-04',
-              'source_count': 4,
-              'source_ids': [f'F-B004-{i:03d}' for i in range(1, 5)],
-              'last_reviewed_at': '2026-09-04',
-              'modified_at': '2026-09-04',
-          })
-          by_id['B019'].update({
-              'source_checked_at': '2026-09-04',
-              'last_reviewed_at': '2026-09-04',
-          })
-          data['updated_at'] = '2026-09-04T14:35:00+09:00'
-          path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          path = Path('preview/article_b004.html')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace('公的情報確認: 2026年9月1日', '公的情報確認: 2026年9月4日')
+          old = '<li><a href="https://www.bousai.go.jp/kyoiku/hokenkyousai/check.html" target="_blank" rel="noopener noreferrer">内閣府「自然災害への備えは万全ですか？」</a></li></ul></section>'
+          new = '<li><a href="https://www.bousai.go.jp/kyoiku/hokenkyousai/check.html" target="_blank" rel="noopener noreferrer">内閣府「自然災害への備えは万全ですか？」</a></li><li><a href="https://www.caa.go.jp/policies/policy/consumer_safety/caution/caution_078/" target="_blank" rel="noopener noreferrer">消費者庁「携帯発電機・ポータブル電源の事故と通電火災に注意」</a></li></ul></section>'
+          if old not in text:
+              raise SystemExit('B004 source list anchor not found')
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
           PY
       - name: Install package
         run: pip install -e .
       - name: Run tests
         run: python -m unittest discover -s tests -v
-      - name: Commit synchronized metadata
+      - name: Commit preview synchronization
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/content_registry.json
+          git add preview/article_b004.html
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
             exit 0
           fi
-          git commit -m 'Finalize blackout audit metadata'
+          git commit -m 'Sync B004 preview audit sources'
           git push
