@@ -155,7 +155,7 @@
       "image_source_count": 4,
       "image_source_path": "docs/research/B004_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -170,12 +170,13 @@
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "blackout-preparedness",
-      "source_checked_at": "2026-09-01",
-      "source_count": 3,
+      "source_checked_at": "2026-09-04",
+      "source_count": 4,
       "source_ids": [
         "F-B004-001",
         "F-B004-002",
-        "F-B004-003"
+        "F-B004-003",
+        "F-B004-004"
       ],
       "source_path": "content/articles/B004_blackout_preparedness.md",
       "status": "READY_TO_PUBLISH",
@@ -876,7 +877,7 @@
       "image_source_count": 2,
       "image_source_path": "docs/research/B019_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -891,7 +892,7 @@
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "disaster-insurance-overview",
-      "source_checked_at": "2026-09-01",
+      "source_checked_at": "2026-09-04",
       "source_count": 5,
       "source_ids": [
         "F-B019-001",
@@ -1814,7 +1815,7 @@
     }
   ],
   "schema_version": "1.1",
-  "updated_at": "2026-09-04T14:00:00+09:00",
+  "updated_at": "2026-09-04T14:30:00+09:00",
   "date_semantics": {
     "published_at": "本番で初めて公開された日",
     "modified_at": "公開後を含む記事内容の最終更新日。公開前の最終編集しかない場合は公開日を下限とする",
