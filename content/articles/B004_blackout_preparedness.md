@@ -5,8 +5,8 @@ title: 停電に備えて準備しておきたいもの｜照明・電源・情�
 category: blackout
 content_role: pillar
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
@@ -28,7 +28,6 @@ affiliate: false
 - **生活維持**：水、食品、トイレ、季節対策、医療機器等。
 
 「電源容量が何Wh必要か」を先に考えるより、**停電時も動かしたい機器を列挙する**方が、過不足を把握しやすくなります。
-
 
 > **Q&A:** [停電対策は何から準備すればいいですか？](qa.html#qa-blackout-first)
 
@@ -158,3 +157,4 @@ affiliate: false
 - 内閣府「感震ブレーカーの普及促進」: https://www.bousai.go.jp/jishin/kanshin_breaker.html
 - 内閣府「令和8年版 防災白書」: https://www.bousai.go.jp/kaigirep/hakusho/r08/honbun/t1_3s_04_02.html
 - 内閣府「自然災害への備えは万全ですか？」: https://www.bousai.go.jp/kyoiku/hokenkyousai/check.html
+- 消費者庁「災害時にも活躍する携帯発電機やポータブル電源の事故と停電復旧後の通電火災に注意！」: https://www.caa.go.jp/policies/policy/consumer_safety/caution/caution_078/
