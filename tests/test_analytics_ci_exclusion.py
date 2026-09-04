@@ -18,7 +18,7 @@ class AnalyticsCiExclusionTest(unittest.TestCase):
         self.assertLess(guard_pos, loader_pos)
         self.assertLess(guard_pos, config_pos)
 
-    def test_lighthouse_urls_are_marked_as_ci_audits(self):
+    def test_lighthouse_urls_are_marked_and_network_verified(self):
         workflow = (ROOT / ".github" / "workflows" / "performance-audit.yml").read_text(encoding="utf-8")
         expected = [
             "https://bousaikun.ashigaru.jp/?ci_audit=1",
@@ -28,6 +28,12 @@ class AnalyticsCiExclusionTest(unittest.TestCase):
         for url in expected:
             with self.subTest(url=url):
                 self.assertIn(url, workflow)
+
+        self.assertIn("Wait for analytics exclusion on production", workflow)
+        self.assertIn("Verify Lighthouse did not contact GA4", workflow)
+        self.assertIn("googletagmanager.com/gtag/js", workflow)
+        self.assertIn("google-analytics.com/g/collect", workflow)
+        self.assertIn("PASS: Lighthouse CI audits made no GA4 gtag/collect requests.", workflow)
 
         self.assertNotIn('"https://bousaikun.ashigaru.jp/"\n', workflow)
         self.assertNotIn('"https://bousaikun.ashigaru.jp/guide/first-disaster-preparedness.html"', workflow)
