@@ -47,6 +47,13 @@ class B040SensitiveBreakerTests(unittest.TestCase):
         self.assertIn("article_b040.html", b007)
         self.assertIn("article_b040.html", b024)
 
+    def test_b040_preview_preserves_safety_and_official_context(self):
+        preview = (ROOT / "preview" / "article_b040.html").read_text(encoding="utf-8")
+        self.assertIn("感震ブレーカーやブレーカー操作のために、津波・火災・倒壊等からの避難を遅らせない", preview)
+        self.assertIn("医療機器の遮断可否を当サイトだけで判断しない", preview)
+        self.assertIn("内閣府「感震ブレーカーの普及促進」", preview)
+        self.assertIn("総務省消防庁「感震ブレーカー」", preview)
+
 
 if __name__ == "__main__":
     unittest.main()
