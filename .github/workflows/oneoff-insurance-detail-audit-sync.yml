@@ -5,7 +5,6 @@ on:
   push:
     paths:
       - '.github/workflows/oneoff-insurance-detail-audit-sync.yml'
-      - '.github/scripts/oneoff_insurance_detail_audit.py'
 
 permissions:
   contents: write
@@ -20,9 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Apply insurance detail expert audit
-        run: python .github/scripts/oneoff_insurance_detail_audit.py
-      - name: Preserve registry timestamp monotonicity
+      - name: Restore registry timestamp monotonicity
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -38,11 +35,11 @@ jobs:
         run: pip install -e .
       - name: Run tests
         run: python -m unittest discover -s tests -v
-      - name: Commit synchronized audit
+      - name: Commit timestamp repair
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add content/articles/B011_flooded_car_insurance.md content/articles/B013_fire_insurance_water_damage.md content/articles/B014_household_goods_flood_insurance.md content/articles/B016_typhoon_wind_damage_insurance.md docs/research/B011_SOURCES.md docs/research/B013_SOURCES.md docs/research/B014_SOURCES.md docs/research/B016_SOURCES.md docs/reviews/B011_CHECKLIST.md docs/reviews/B013_CHECKLIST.md docs/reviews/B014_CHECKLIST.md docs/reviews/B016_CHECKLIST.md preview/article_b011.html preview/article_b013.html preview/article_b014.html preview/article_b016.html data/content_registry.json
+          git add data/content_registry.json
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
             exit 0
