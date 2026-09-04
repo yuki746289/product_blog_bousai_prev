@@ -541,7 +541,7 @@
       "image_source_count": 5,
       "image_source_path": "docs/research/B012_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -552,12 +552,12 @@
       "priority": "highest",
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [],
-      "review_checklist_last_checked_at": "2026-09-02",
+      "review_checklist_last_checked_at": "2026-09-04",
       "review_checklist_path": "docs/reviews/B012_CHECKLIST.md",
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "home-flood-preparedness",
-      "source_checked_at": "2026-09-01",
+      "source_checked_at": "2026-09-04",
       "source_count": 3,
       "source_ids": [
         "F-B012-001",
@@ -573,7 +573,7 @@
       "image_relevance_reviewed_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-02"
+      "modified_at": "2026-09-04"
     },
     {
       "affiliate": false,
@@ -686,7 +686,7 @@
       "image_source_count": 0,
       "image_source_path": "docs/research/B015_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -696,16 +696,18 @@
       "preview_path": "preview/article_b015.html",
       "priority": "high",
       "publish_blockers": [],
-      "review_checklist_last_checked_at": "2026-09-02",
+      "review_checklist_last_checked_at": "2026-09-04",
       "review_checklist_path": "docs/reviews/B015_CHECKLIST.md",
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "after-flood-record-evidence",
-      "source_checked_at": "2026-09-01",
-      "source_count": 2,
+      "source_checked_at": "2026-09-04",
+      "source_count": 4,
       "source_ids": [
         "F-B015-001",
-        "F-B015-002"
+        "F-B015-002",
+        "F-B015-003",
+        "F-B015-004"
       ],
       "source_path": "content/articles/B015_after_flood_record_evidence.md",
       "status": "READY_TO_PUBLISH",
@@ -718,7 +720,7 @@
       "image_relevance_reviewed_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-02"
+      "modified_at": "2026-09-04"
     },
     {
       "affiliate": false,
@@ -931,7 +933,7 @@
       "image_source_count": 2,
       "image_source_path": "docs/research/B020_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -942,12 +944,12 @@
       "priority": "high",
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [],
-      "review_checklist_last_checked_at": "2026-09-02",
+      "review_checklist_last_checked_at": "2026-09-04",
       "review_checklist_path": "docs/reviews/B020_CHECKLIST.md",
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "home-heavy-rain-checklist",
-      "source_checked_at": "2026-09-01",
+      "source_checked_at": "2026-09-04",
       "source_count": 3,
       "source_ids": [
         "F-B020-001",
@@ -965,7 +967,7 @@
       "image_relevance_reviewed_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-02"
+      "modified_at": "2026-09-04"
     },
     {
       "affiliate": false,
@@ -980,7 +982,7 @@
       "image_source_count": 4,
       "image_source_path": "docs/research/B021_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-02",
@@ -991,12 +993,12 @@
       "priority": "high",
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [],
-      "review_checklist_last_checked_at": "2026-09-02",
+      "review_checklist_last_checked_at": "2026-09-04",
       "review_checklist_path": "docs/reviews/B021_CHECKLIST.md",
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "typhoon-day-before-checklist",
-      "source_checked_at": "2026-09-02",
+      "source_checked_at": "2026-09-04",
       "source_count": 3,
       "source_ids": [
         "F-B021-001",
@@ -1014,7 +1016,7 @@
       "image_relevance_reviewed_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-03"
+      "modified_at": "2026-09-04"
     },
     {
       "affiliate": false,
@@ -1029,7 +1031,7 @@
       "image_source_count": 5,
       "image_source_path": "docs/research/B022_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -1040,17 +1042,18 @@
       "priority": "medium",
       "product_link_policy": "internal_product_guide_when_relevant",
       "publish_blockers": [],
-      "review_checklist_last_checked_at": "2026-09-02",
+      "review_checklist_last_checked_at": "2026-09-04",
       "review_checklist_path": "docs/reviews/B022_CHECKLIST.md",
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "apartment-typhoon-flood",
-      "source_checked_at": "2026-09-01",
-      "source_count": 3,
+      "source_checked_at": "2026-09-04",
+      "source_count": 4,
       "source_ids": [
         "F-B022-001",
         "F-B022-002",
-        "F-B022-003"
+        "F-B022-003",
+        "F-B022-004"
       ],
       "source_path": "content/articles/B022_apartment_typhoon_flood.md",
       "status": "READY_TO_PUBLISH",
@@ -1063,7 +1066,7 @@
       "image_relevance_reviewed_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-02"
+      "modified_at": "2026-09-04"
     },
     {
       "affiliate": false,
@@ -1819,7 +1822,7 @@
     }
   ],
   "schema_version": "1.1",
-  "updated_at": "2026-09-04T14:35:00+09:00",
+  "updated_at": "2026-09-04T14:38:00+09:00",
   "date_semantics": {
     "published_at": "本番で初めて公開された日",
     "modified_at": "公開後を含む記事内容の最終更新日。公開前の最終編集しかない場合は公開日を下限とする",

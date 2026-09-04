@@ -5,8 +5,8 @@ title: 台風前日に確認したいこと｜屋外・窓・停電への備え
 category: typhoon
 content_role: practical
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-02
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---

@@ -5,8 +5,8 @@ title: 自宅が浸水した後、片付ける前に記録したいもの
 category: post-disaster
 content_role: practical
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
@@ -75,6 +75,8 @@ affiliate: false
 ## 罹災証明と保険請求は同じ手続きではない
 
 **自治体の罹災証明**は公的支援等で使われる制度で、損害保険の請求手続きとは別です。保険会社が求める資料は契約・事故内容で異なります。
+
+日本損害保険協会は2026年8月31日更新の大雨災害案内で、**損害保険の保険金等の請求では地方自治体の罹災証明書の提出は原則不要**と案内しています。ただし、個別契約で必要な書類は契約先へ確認します。
 
 必要書類を自己判断せず、**自治体手続きと保険手続きを別々に整理**すると混乱を減らせます。
 
@@ -163,5 +165,7 @@ affiliate: false
 
 ## 公的・業界情報
 
-- 日本損害保険協会「平成30年台風21号による災害に伴う補償内容等」: https://www.sonpo.or.jp/news/notice/2018/1809_05.html
+- 日本損害保険協会「令和8年8月27日からの大雨に伴う災害」: https://www.sonpo.or.jp/news/notice/2026/2608_003.html
+- 日本損害保険協会「平成30年7月豪雨・被害写真の撮影案内」: https://www.sonpo.or.jp/news/notice/2018/1807_01.html
 - 日本損害保険協会「風水雪災等による損害を補償する損害保険」: https://www.sonpo.or.jp/insurance/shizen/index.html
+- 日本損害保険協会「住宅の修理などに関するトラブルにご注意」: https://www.sonpo.or.jp/news/caution/syuri.html

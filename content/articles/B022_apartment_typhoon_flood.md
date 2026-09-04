@@ -5,8 +5,8 @@ title: マンションの台風・水害対策｜戸建てとの違い
 category: home
 content_role: detail
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
@@ -198,3 +198,4 @@ affiliate: false
 - ハザードマップポータルサイト: https://disaportal.gsi.go.jp/
 - 気象庁「自分で行う災害への備え」: https://www.jma.go.jp/jma/kishou/know/ame_chuui/ame_chuui_p10.html
 - 内閣府「自然災害への備えは万全ですか？」: https://www.bousai.go.jp/kyoiku/hokenkyousai/check.html
+- 国土交通省・経済産業省「建築物における電気設備の浸水対策ガイドライン」: https://www.mlit.go.jp/jutakukentiku/build/content/001349327.pdf

@@ -5,8 +5,8 @@ title: 自宅の浸水にどう備える？住宅の水害対策入門
 category: home
 content_role: pillar
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
@@ -177,5 +177,5 @@ affiliate: false
 ## 公的・業界情報
 
 - ハザードマップポータルサイト: https://disaportal.gsi.go.jp/
-- 国土交通省「簡易な浸水対策の例」: https://www.mlit.go.jp/jutakukentiku/build/content/001348131.pdf
+- 国土交通省「簡易な浸水対策の例」: https://www.mlit.go.jp/jutakukentiku/build/content/001349327.pdf
 - 気象庁「自分で行う災害への備え」: https://www.jma.go.jp/jma/kishou/know/ame_chuui/ame_chuui_p10.html
