@@ -1,0 +1,187 @@
+name: One-off B041 sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/oneoff-b041-sync.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync B041 registry navigation and tests
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          # Fix front matter typo and make the no-custom-threshold rule explicit in the article.
+          article_path = Path("content/articles/B041_tsunami_evacuation.md")
+          text = article_path.read_text(encoding="utf-8")
+          text = text.replace("\n title: 津波からどう避難する？", "\ntitle: 津波からどう避難する？", 1)
+          if "当サイト独自の標高・距離・時間閾値を作らない" not in text:
+              marker = "そのため、避難中に「色の付いていない区域へ出たから、ここで止まればよい」と固定せず、**時間と経路が許す範囲で、より高く安全な場所を目指す**考え方を持ちます。"
+              addition = marker + "\n\n当サイト独自の標高・距離・時間閾値を作らないことも重要です。安全な避難先は自治体の津波避難計画・ハザードマップ・現地の地形と最新情報で確認します。"
+              if marker not in text:
+                  raise SystemExit("B041 threshold insertion marker not found")
+              text = text.replace(marker, addition, 1)
+          article_path.write_text(text, encoding="utf-8")
+
+          record = {
+              "affiliate": False,
+              "article_id": "B041",
+              "body_char_count_approx": 7200,
+              "category": "earthquake",
+              "content_depth_checked_at": "2026-09-05",
+              "content_depth_status": "PASS",
+              "content_role": "practical",
+              "image_dedup_checked_at": "2026-09-05",
+              "image_dedup_status": "PASS",
+              "image_source_count": 1,
+              "image_source_path": "docs/research/B041_IMAGES.md",
+              "image_status": "APPROVED",
+              "last_reviewed_at": "2026-09-05",
+              "manual_review_required": True,
+              "manual_review_status": "APPROVED",
+              "next_review_at": "2027-03-05",
+              "parent_article_id": "B007",
+              "pickup_candidate": True,
+              "planned_public_path": "earthquake/tsunami-evacuation.html",
+              "preview_path": "preview/article_b041.html",
+              "priority": "high",
+              "publish_blockers": [],
+              "review_checklist_last_checked_at": "2026-09-05",
+              "review_checklist_path": "docs/reviews/B041_CHECKLIST.md",
+              "review_checklist_status": "PASS",
+              "risk_level": "high",
+              "slug": "tsunami-evacuation",
+              "source_checked_at": "2026-09-05",
+              "source_count": 6,
+              "source_ids": ["F-B041-001", "F-B041-002", "F-B041-003", "F-B041-004", "F-B041-005", "F-B041-006"],
+              "source_path": "content/articles/B041_tsunami_evacuation.md",
+              "status": "READY_TO_PUBLISH",
+              "title": "津波からどう避難する？警報を待たない判断・徒歩避難・避難先の考え方",
+              "readability_review_status": "PASS",
+              "readability_reviewed_at": "2026-09-05",
+              "image_relevance_review_status": "PASS",
+              "image_relevance_reviewed_at": "2026-09-05",
+              "production_build_status": "READY_FOR_DEPLOY",
+              "published_at": "2026-09-05",
+              "modified_at": "2026-09-05"
+          }
+          registry_path = Path("data/content_registry.json")
+          registry = json.loads(registry_path.read_text(encoding="utf-8"))
+          existing = next((a for a in registry["articles"] if a.get("article_id") == "B041"), None)
+          if existing:
+              existing.update(record)
+          else:
+              registry["articles"].append(record)
+          registry["updated_at"] = max(registry.get("updated_at", ""), "2026-09-05T08:30:00+09:00")
+          registry_path.write_text(json.dumps(registry, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+          # Earthquake category: create a dedicated tsunami section.
+          category_path = Path("preview/category_earthquake.html")
+          category = category_path.read_text(encoding="utf-8")
+          if 'data-article-id="B041"' not in category:
+              marker = '<section class="category-section">\n    <div class="section-heading"><div><h2>地震後の生活に備える</h2>'
+              section = '<section class="category-section">\n    <div class="section-heading"><div><h2>津波から避難する</h2><p>沿岸部・川沿いでの避難開始、避難先、徒歩と車の考え方です。</p></div></div>\n    <div class="category-article-list"><a class="category-article-link" href="article_b041.html" data-article-id="B041"><span>津波からどう避難する？警報を待たない判断・徒歩避難・避難先の考え方</span></a></div>\n  </section>\n'
+              if marker not in category:
+                  raise SystemExit("B041 category marker not found")
+              category = category.replace(marker, section + marker, 1)
+              category = category.replace("家具の転倒、停電・断水、在宅避難、外出先での帰宅困難、地震保険など", "家具の転倒、津波避難、停電・断水、在宅避難、外出先での帰宅困難、地震保険など", 1)
+              category = category.replace("家具の転倒、停電・断水、在宅避難、外出先での帰宅困難、保険まで", "家具の転倒、津波避難、停電・断水、在宅避難、外出先での帰宅困難、保険まで", 1)
+              category_path.write_text(category, encoding="utf-8")
+
+          # B007 pillar -> B041.
+          b007_path = Path("content/articles/B007_earthquake_preparedness_basics.md")
+          b007 = b007_path.read_text(encoding="utf-8")
+          if "article_b041.html" not in b007:
+              marker = "> 強い揺れや長くゆっくりした揺れを感じた地域では、津波警報を待たず高い場所へ避難する必要がある場合があります。本記事は家庭内の一般的な地震対策を扱い、津波行動は公的情報を優先します。"
+              addition = marker + "\n>\n> 避難開始の合図、津波警報・注意報の違い、徒歩と車、避難先は[津波からどう避難する？](article_b041.html)で詳しく整理しています。"
+              if marker not in b007:
+                  raise SystemExit("B007 B041 marker not found")
+              b007 = b007.replace(marker, addition, 1)
+              b007_path.write_text(b007, encoding="utf-8")
+
+          b007_preview_path = Path("preview/article_b007.html")
+          b007p = b007_preview_path.read_text(encoding="utf-8")
+          if "article_b041.html" not in b007p:
+              marker = '<section class="notice"><h2>海岸付近では津波を別に考える</h2><p>強い揺れや長くゆっくりした揺れを感じた地域では、津波警報を待たず高い場所へ避難する必要がある場合があります。本記事は家庭内の一般的な地震対策を扱い、津波行動は公的情報を優先します。</p></section>'
+              addition = '<section class="notice"><h2>海岸付近では津波を別に考える</h2><p>強い揺れや長くゆっくりした揺れを感じた地域では、津波警報を待たず高い場所へ避難する必要がある場合があります。本記事は家庭内の一般的な地震対策を扱い、津波行動は公的情報を優先します。</p><p>避難開始の合図、津波警報・注意報の違い、徒歩と車、避難先は<a href="article_b041.html">津波からどう避難する？</a>で詳しく整理しています。</p></section>'
+              if marker not in b007p:
+                  raise SystemExit("B007 preview B041 marker not found")
+              b007p = b007p.replace(marker, addition, 1)
+              b007_preview_path.write_text(b007p, encoding="utf-8")
+
+          # B039 high-risk article -> B041 for the tsunami emergency branch.
+          b039_path = Path("content/articles/B039_earthquake_stay_home_or_shelter.md")
+          b039 = b039_path.read_text(encoding="utf-8")
+          if "article_b041.html" not in b039:
+              marker = "- 自治体から避難情報や退避の案内が出ている\n\nこうした場合は、**自宅の備蓄量よりも安全な場所への避難を優先**します。"
+              addition = "- 自治体から避難情報や退避の案内が出ている\n\n津波の避難開始・避難先・徒歩と車の判断は、[津波からどう避難する？](article_b041.html)で確認できます。\n\nこうした場合は、**自宅の備蓄量よりも安全な場所への避難を優先**します。"
+              if marker not in b039:
+                  raise SystemExit("B039 B041 marker not found")
+              b039 = b039.replace(marker, addition, 1)
+              b039_path.write_text(b039, encoding="utf-8")
+
+          b039_preview_path = Path("preview/article_b039.html")
+          b039p = b039_preview_path.read_text(encoding="utf-8")
+          if "article_b041.html" not in b039p:
+              marker = '<ul><li>津波の危険がある</li><li>周辺で火災が拡大している</li><li>建物が大きく傾く、柱・壁等に深刻な損傷がある</li><li>落下物や倒壊物で室内・出入口が危険</li><li>崖・斜面周辺で土砂災害の危険がある</li><li>自治体から避難・退避の案内が出ている</li></ul>'
+              addition = marker + '\n<p>津波の避難開始・避難先・徒歩と車の判断は、<a href="article_b041.html">津波からどう避難する？</a>で確認できます。</p>'
+              if marker not in b039p:
+                  raise SystemExit("B039 preview B041 marker not found")
+              b039p = b039p.replace(marker, addition, 1)
+              b039_preview_path.write_text(b039p, encoding="utf-8")
+
+          # Public build expectations.
+          test_path = Path("tests/test_public_build.py")
+          test = test_path.read_text(encoding="utf-8")
+          test = test.replace('self.assertEqual(40, len([a for a in articles if a.get("article_id", "").startswith("B")]))', 'self.assertEqual(41, len([a for a in articles if a.get("article_id", "").startswith("B")]))', 1)
+          page_marker = '        self.assertTrue((PUBLIC / "earthquake" / "earthquake-sensitive-breaker.html").exists())'
+          page_b041 = '        self.assertTrue((PUBLIC / "earthquake" / "tsunami-evacuation.html").exists())'
+          if page_b041 not in test:
+              if page_marker not in test:
+                  raise SystemExit("B041 public page marker not found")
+              test = test.replace(page_marker, page_marker + "\n" + page_b041, 1)
+          # sitemap assertion may be later in the file; add it next to B040 if available.
+          sm_b040 = '        self.assertIn("https://bousaikun.ashigaru.jp/earthquake/earthquake-sensitive-breaker.html", sitemap)'
+          sm_b041 = '        self.assertIn("https://bousaikun.ashigaru.jp/earthquake/tsunami-evacuation.html", sitemap)'
+          if sm_b041 not in test and sm_b040 in test:
+              test = test.replace(sm_b040, sm_b040 + "\n" + sm_b041, 1)
+          test_path.write_text(test, encoding="utf-8")
+
+          gap_path = Path("docs/research/EARTHQUAKE_CONTENT_GAP_REVIEW_20260904.md")
+          gap = gap_path.read_text(encoding="utf-8")
+          if "## B041採用" not in gap:
+              gap += "\n\n## B041採用\n\n- title: `津波からどう避難する？警報を待たない判断・徒歩避難・避難先の考え方`\n- slug: `tsunami-evacuation`\n- category: `earthquake`\n- content_role: `practical`\n- parent: `B007`\n- risk_level: `high`\n\n地震クラスターで残っていた独立検索意図。2026年版防災白書の徒歩避難原則と自動車避難の地域差、気象庁の警報待ち禁止・警報/注意報区分・解除まで避難継続を一次情報で整理する。独自の安全標高・距離・時間は設定しない。\n"
+              gap_path.write_text(gap, encoding="utf-8")
+          PY
+
+      - name: Run tests before commit
+        run: |
+          pip install -e .
+          python -m unittest discover -s tests -v
+
+      - name: Commit sync
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/articles/B041_tsunami_evacuation.md data/content_registry.json preview/category_earthquake.html content/articles/B007_earthquake_preparedness_basics.md preview/article_b007.html content/articles/B039_earthquake_stay_home_or_shelter.md preview/article_b039.html tests/test_public_build.py docs/research/EARTHQUAKE_CONTENT_GAP_REVIEW_20260904.md
+          git commit -m "Register B041 and add tsunami evacuation navigation"
+          git push origin HEAD:main
