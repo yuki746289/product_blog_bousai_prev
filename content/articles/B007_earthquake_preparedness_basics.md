@@ -5,8 +5,8 @@ title: 地震に備えて最初に確認したいこと
 category: earthquake
 content_role: pillar
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
@@ -145,6 +145,8 @@ affiliate: false
 
 - 気象庁「地震から身を守る行動」: https://www.jma.go.jp/jma/kishou/know/jishin/jishin_bosai/
 - 気象庁「緊急地震速報を見聞きしたときは」: https://www.jma.go.jp/jma/kishou/know/jishin/eew/koudou/koudou.html
+- 気象庁「津波から身を守るために」: https://www.jma.go.jp/jma/kishou/know/jishin/tsunami_bosai/index.html
+- 気象庁「大地震後の地震活動（余震等）について」: https://www.jma.go.jp/jma/kishou/know/jishin/aftershocks/mitoshi_aftershock.html
 - 総務省消防庁「地震による家具の転倒を防ぐには」: https://www.fdma.go.jp/publication/database/kagu/
 - 内閣府「令和8年版 防災白書」: https://www.bousai.go.jp/kaigirep/hakusho/r08/honbun/t1_3s_04_02.html
 - 内閣府「感震ブレーカーの普及促進」: https://www.bousai.go.jp/jishin/kanshin_breaker.html
