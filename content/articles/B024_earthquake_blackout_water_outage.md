@@ -5,8 +5,8 @@ title: 地震後の停電・断水にどう備える？
 category: earthquake
 content_role: detail
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-02
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-02
 affiliate: false
 ---
@@ -33,7 +33,6 @@ affiliate: false
 
 **一か所へ積み上げず、重さと取り出しやすさ**を考えて分散します。市販水は表示された保存条件と期限に従い、普段から使って補充するローリングストックが現実的です。
 
-
 > **Q&A:** [飲料水は何日分くらい備蓄すればいいですか？](qa.html#qa-water-days)
 
 ## 断水時はトイレを安易に流さない
@@ -57,7 +56,6 @@ affiliate: false
 
 必要回数や防臭・保管方法まで比較する場合は、[携帯トイレ・衛生用品を比較する](goods_toilet_hygiene.html)も確認できます。
 
-
 > **Q&A:** [携帯トイレは何回分あればいいですか？](qa.html#qa-toilet-count)
 
 ## 停電時の照明は火を使わない
@@ -67,7 +65,6 @@ affiliate: false
 **枕元にはライトと靴**を置きます。スマートフォンのライトだけに頼ると、連絡用の電池を消耗します。
 
 停電時の照明や情報手段を選ぶ場合は、[停電用ライト・ラジオを比較する](goods_light_information.html)へ進めます。
-
 
 > **Q&A:** [停電対策は何から準備すればいいですか？](qa.html#qa-blackout-first)
 
@@ -79,11 +76,13 @@ affiliate: false
 
 家庭用の予備電源を比較する場合は、[モバイルバッテリー・電源を比較する](goods_power_charging.html)へ進めます。
 
-## 発電機は屋内・車庫・ベランダで使わない
+## 発電機は屋内・車庫で使わない。屋外でも場所を選ぶ
 
-携帯発電機は一酸化炭素を含む排気ガスを出します。屋内、物置、車庫、換気しにくい場所では使用せず、窓・換気口の近くも避けます。ベランダは排気が室内や近隣住戸へ入る可能性があり、適切な使用場所とは限りません。
+携帯発電機は一酸化炭素を含む排気ガスを出します。**屋内、物置、車庫など換気の悪い場所では使用しません。** 屋外でも、窓・換気口など建物の開口部から離し、風通しのよい場所で使用します。
 
-**「窓を開ければ屋内で使える」と考えて**はいけません。メーカーの取扱説明書と公的注意喚起に従います。
+集合住宅のベランダは、窓・換気口や近隣住戸との距離を十分に確保しにくく、排気が自宅や周囲へ入る可能性があります。管理規約や製品の使用条件もあるため、**「屋外だからベランダなら安全」とは考えません。**
+
+「窓を開ければ屋内で使える」と考えてはいけません。メーカーの取扱説明書と公的注意喚起に従います。
 
 ## 復電時の火災を防ぐ
 
@@ -139,7 +138,8 @@ affiliate: false
 
 - 排水設備の安全確認前にトイレを大量の水で流す
 - ろうそくを主照明として使う
-- 発電機を屋内、車庫、ベランダで使う
+- 発電機を屋内・車庫など換気の悪い場所で使う
+- 屋外でも発電機を窓・換気口の近くで使う
 - 浸水・破損した家電へ通電する
 - 冷蔵食品を臭いだけで安全と判断する
 - 備蓄のため危険な屋外へ買い物に出る
@@ -162,5 +162,8 @@ affiliate: false
 
 - [内閣府「知って・備えて・行動する」](https://www.bousai.go.jp/kyoiku/kyouzai/pdf/otona.pdf)
 - [総務省消防庁「備蓄品を備える」](https://www.fdma.go.jp/relocation/bousai_manual/pre/preparation081.html)
+- [農林水産省「知って備える 家庭備蓄のイロハ」](https://www.maff.go.jp/j/pr/aff/2603/spe1_01.html)
+- [経済産業省「トイレ備蓄、忘れていませんか？」](https://www.meti.go.jp/policy/mono_info_service/mono/jyutaku/toirebichiku.pdf)
+- [東京都下水道局「災害時のトイレ対策について」](https://www.gesui.metro.tokyo.lg.jp/living/takuchi/toilet_disaster)
 - [経済産業省「災害時における電気の安全」](https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/detail/saigai.html)
-- [消費者庁「携帯発電機やポータブル電源等の事故に注意」](https://www.caa.go.jp/policies/policy/consumer_safety/caution/caution_067/)
+- [消費者庁「停電時の発電機によるCO中毒や、復旧後の通電火災に注意」](https://www.caa.go.jp/policies/policy/consumer_safety/caution/caution_070/)
