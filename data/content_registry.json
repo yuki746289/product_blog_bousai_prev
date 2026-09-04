@@ -298,7 +298,7 @@
       "image_source_count": 3,
       "image_source_path": "docs/research/B007_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -313,14 +313,16 @@
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "earthquake-preparedness-basics",
-      "source_checked_at": "2026-09-01",
-      "source_count": 5,
+      "source_checked_at": "2026-09-04",
+      "source_count": 7,
       "source_ids": [
         "F-B007-001",
         "F-B007-002",
         "F-B007-003",
         "F-B007-004",
-        "F-B007-005"
+        "F-B007-005",
+        "F-B007-006",
+        "F-B007-007"
       ],
       "source_path": "content/articles/B007_earthquake_preparedness_basics.md",
       "status": "READY_TO_PUBLISH",
@@ -776,7 +778,7 @@
       "image_source_count": 1,
       "image_source_path": "docs/research/B017_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-02",
@@ -791,7 +793,7 @@
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "earthquake-insurance-basics",
-      "source_checked_at": "2026-09-02",
+      "source_checked_at": "2026-09-04",
       "source_count": 4,
       "source_ids": [
         "F-B017-001",
@@ -825,7 +827,7 @@
       "image_source_count": 4,
       "image_source_path": "docs/research/B018_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -840,7 +842,7 @@
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "earthquake-car-insurance",
-      "source_checked_at": "2026-09-01",
+      "source_checked_at": "2026-09-04",
       "source_count": 4,
       "source_ids": [
         "F-B018-001",
@@ -1071,7 +1073,7 @@
       "image_source_count": 3,
       "image_source_path": "docs/research/B023_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-02",
@@ -1086,7 +1088,7 @@
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "earthquake-furniture-safety",
-      "source_checked_at": "2026-09-02",
+      "source_checked_at": "2026-09-04",
       "source_count": 3,
       "source_ids": [
         "F-B023-001",
@@ -1117,7 +1119,7 @@
       "image_source_count": 3,
       "image_source_path": "docs/research/B024_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-02",
@@ -1132,13 +1134,16 @@
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "earthquake-blackout-water-outage",
-      "source_checked_at": "2026-09-02",
-      "source_count": 4,
+      "source_checked_at": "2026-09-04",
+      "source_count": 7,
       "source_ids": [
         "F-B024-001",
         "F-B024-002",
         "F-B024-003",
-        "F-B024-004"
+        "F-B024-004",
+        "F-B024-005",
+        "F-B024-006",
+        "F-B024-007"
       ],
       "source_path": "content/articles/B024_earthquake_blackout_water_outage.md",
       "status": "READY_TO_PUBLISH",
@@ -1149,7 +1154,7 @@
       "image_relevance_reviewed_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-03"
+      "modified_at": "2026-09-04"
     },
     {
       "affiliate": false,
@@ -1809,7 +1814,7 @@
     }
   ],
   "schema_version": "1.1",
-  "updated_at": "2026-09-04T13:35:00+09:00",
+  "updated_at": "2026-09-04T14:00:00+09:00",
   "date_semantics": {
     "published_at": "本番で初めて公開された日",
     "modified_at": "公開後を含む記事内容の最終更新日。公開前の最終編集しかない場合は公開日を下限とする",

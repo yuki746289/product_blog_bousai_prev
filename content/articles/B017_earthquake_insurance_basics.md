@@ -5,8 +5,8 @@ title: 地震保険の基本｜火災保険との違いを整理
 category: insurance
 content_role: pillar
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-02
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
