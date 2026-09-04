@@ -99,7 +99,7 @@ class NonArticlePageReviewTest(unittest.TestCase):
         advertising = read("advertising.html")
         self.assertIn("公式の警報・避難情報配信を代替するものではありません", about)
         self.assertIn("リンク先URLやリンク文言", privacy)
-        self.assertIn("最新の公的情報", disclaimer)
+        self.assertIn("最新情報を優先", disclaimer)
         self.assertIn("Amazonのアソシエイトとして", advertising)
         self.assertIn("安全情報を商品リンクより優先", advertising)
 
