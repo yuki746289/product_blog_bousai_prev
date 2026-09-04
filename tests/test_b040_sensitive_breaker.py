@@ -18,7 +18,7 @@ class B040SensitiveBreakerTests(unittest.TestCase):
     def test_b040_keeps_core_safety_boundaries(self):
         article = (ROOT / "content" / "articles" / "B040_earthquake_sensitive_breaker.md").read_text(encoding="utf-8")
         required = [
-            "作動すると停電する設備",
+            "停電させる設備",
             "電気工事が必要な製品を自己施工しない",
             "夜間用の足元灯・懐中電灯・ランタン",
             "医療機器",
