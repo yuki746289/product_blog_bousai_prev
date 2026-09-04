@@ -128,6 +128,32 @@ class NonArticlePageReviewTest(unittest.TestCase):
         self.assertIn("window.localStorage.setItem", js)
         self.assertIn('headerTop.appendChild(group)', js)
 
+    def test_mobile_navigation_is_accessible_hamburger_on_small_screens(self):
+        js = read("bousai_common.js")
+        home = read("index.html")
+        self.assertIn('MOBILE_NAV_MEDIA_QUERY = "(max-width: 720px)"', js)
+        self.assertIn('button.className = "mobile-nav-toggle"', js)
+        self.assertIn('button.setAttribute("aria-controls", nav.id)', js)
+        self.assertIn('button.setAttribute("aria-expanded", "false")', js)
+        self.assertIn('button.setAttribute("aria-label", "メニューを開く")', js)
+        self.assertIn('nav.classList.add("mobile-nav-enhanced")', js)
+        self.assertIn('nav.classList.toggle("is-open", isExpanded)', js)
+        self.assertIn('event.key !== "Escape"', js)
+        self.assertIn('min-width: 44px', js)
+        self.assertIn('.site-nav.mobile-nav-enhanced.is-open', js)
+        for label in [
+            "防災入門",
+            "台風",
+            "大雨・水害",
+            "地震",
+            "車と災害",
+            "住宅と災害",
+            "保険・お金",
+            "防災グッズ",
+            "Q&amp;A",
+        ]:
+            self.assertIn(label, home)
+
 
 if __name__ == "__main__":
     unittest.main()
