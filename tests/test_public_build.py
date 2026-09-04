@@ -26,6 +26,7 @@ class PublicBuildTests(unittest.TestCase):
         self.assertTrue((PUBLIC / "post-disaster" / "flood-cleanup-dry-disinfect.html").exists())
         self.assertTrue((PUBLIC / "earthquake" / "earthquake-stranded-commuter.html").exists())
         self.assertTrue((PUBLIC / "earthquake" / "earthquake-stay-home-or-shelter.html").exists())
+        self.assertTrue((PUBLIC / "earthquake" / "earthquake-sensitive-breaker.html").exists())
 
     def test_contact_is_not_published(self):
         self.assertFalse((PUBLIC / "contact.html").exists())
@@ -72,7 +73,7 @@ class PublicBuildTests(unittest.TestCase):
     def test_article_dates_and_structured_data(self):
         registry = json.loads((ROOT / "data" / "content_registry.json").read_text(encoding="utf-8"))
         articles = registry["articles"]
-        self.assertEqual(39, len([a for a in articles if a.get("article_id", "").startswith("B")]))
+        self.assertEqual(40, len([a for a in articles if a.get("article_id", "").startswith("B")]))
 
         for article in articles:
             output = PUBLIC / article["planned_public_path"]
@@ -283,6 +284,7 @@ class PublicBuildTests(unittest.TestCase):
         self.assertIn("https://bousaikun.ashigaru.jp/post-disaster/flood-cleanup-dry-disinfect.html", sitemap)
         self.assertIn("https://bousaikun.ashigaru.jp/earthquake/earthquake-stranded-commuter.html", sitemap)
         self.assertIn("https://bousaikun.ashigaru.jp/earthquake/earthquake-stay-home-or-shelter.html", sitemap)
+        self.assertIn("https://bousaikun.ashigaru.jp/earthquake/earthquake-sensitive-breaker.html", sitemap)
         self.assertNotIn("contact.html", sitemap)
         self.assertIn("User-agent: *", robots)
         self.assertIn("Allow: /", robots)
