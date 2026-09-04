@@ -42,6 +42,16 @@ class B041TsunamiEvacuationTests(unittest.TestCase):
         self.assertIn("海の中にいる人はただちに海から上がり、海岸から離れる", article)
         self.assertIn("注意報・警報の発表内容を待たず", article)
 
+    def test_b041_preview_keeps_emergency_copy_and_japanese_image(self):
+        preview = (ROOT / "preview" / "article_b041.html").read_text(encoding="utf-8")
+        self.assertIn("津波警報等を待たず高い安全な場所へ避難", preview)
+        self.assertIn("徒歩が原則", preview)
+        self.assertIn("津波警報・注意報が解除されるまでは", preview)
+        self.assertIn("Sign%20of%20Route%20for%20Tsunami%20Evacuation%20Building%20in%20Japan.jpg", preview)
+        self.assertIn("CC BY-SA 4.0", preview)
+        self.assertNotIn("海から1km", preview)
+        self.assertNotIn("標高10m以上なら安全", preview)
+
     def test_b041_has_evidence_and_navigation(self):
         for path in [
             ROOT / "docs" / "research" / "B041_TSUNAMI_EVACUATION_BRIEF.md",
