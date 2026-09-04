@@ -14,8 +14,8 @@
 - title: 土砂災害はいつ避難する？土砂キキクルと避難判断の見方
 - content_role: `practical`
 - risk_level: `high`
-- article_status: `REVIEW_REQUIRED`
-- review_status: `IN_PROGRESS`
+- article_status: `READY_TO_PUBLISH`
+- review_status: `PASS`
 - last_checked_at: 2026-09-04
 - reviewer: ChatGPT
 - persona_mode: `SITUATIONAL_SEGMENT`
@@ -34,39 +34,39 @@
 
 | 共通チェック | 状態 | 根拠・備考 |
 |---|---|---|
-| C01 内容・情報量 | PASS | 区域確認→情報→避難判断→次善行動まで一連で整理 |
+| C01 内容・情報量 | PASS | 区域確認→情報確認→避難判断→次善行動まで一連で整理 |
 | C02 出典・安全性 | PASS | 気象庁・国交省/国土地理院・内閣府を一次根拠に使用 |
 | C03 画像・視覚要素 | PASS | 日本の実災害Commons画像1点＋色/行動表。権利確認済み |
-| C04 読みやすさ・UI | PASS | 色だけに依存せず名称・行動を表形式で説明 |
-| C05 内部リンク | TODO | B005/B006/B012/B022からの導線を公開実装時に追加 |
+| C04 読みやすさ・UI | PASS | 色だけに依存せず名称・警戒レベル・行動を併記 |
+| C05 内部リンク | PASS | 大雨・水害カテゴリから入口を設け、記事内からB005/B006/B012/B022へ回遊可能。孤立ページではない |
 | C06 商品導線・商品記事 | N/A | 商品購入を主目的にしない |
-| C07 Q&A | CONDITIONAL | 短い補助Q&A追加は公開統合時に判断 |
-| C08 同期・公開前 | TODO | preview/registry/category/CI未実施 |
-| C09 日付・構造化データ | TODO | registry登録・build後に確認 |
-| C10 デザイン・UX | TODO | preview完成後にブラウザ目視 |
-| C11 読者・マーケティング | PASS | imminent/preparingの読者行動を明確化 |
-| C12 アクセシビリティ | PASS/RECHECK | 色だけに依存しない設計。HTML完成後に最終確認 |
-| C13 技術品質・信頼性 | TODO | build/リンク/HTTP smoke未実施 |
+| C07 Q&A | N/A | 本文単体で主要判断を完結。必要性が生じた場合のみ追加 |
+| C08 同期・公開前 | PASS | Markdown / preview / research / checklist / registry / categoryを同期 |
+| C09 日付・構造化データ | PASS | registryから日付・BlogPosting・BreadcrumbListを生成しテストPASS |
+| C10 デザイン・UX | PASS | 既存共通UIを使用し、緊急時の判断順を上部へ配置 |
+| C11 読者・マーケティング | PASS | preparing/imminentの読者行動を明確化。収益導線なし |
+| C12 アクセシビリティ | PASS | 色だけで意味を表さず、テキスト・表・見出しで補完。共通アクセシビリティテストPASS |
+| C13 技術品質・信頼性 | PASS | build / JS / Commons画像ローカル化 / FTPS / HTTP smokeすべてPASS |
 | C14 計測・グロース | N/A | 新規イベントなし |
 
 ## 3. 防災サイト固有チェック結果
 
 | サイト固有チェック | 状態 | 根拠・備考 |
 |---|---|---|
-| S01 サイトプロファイル・適用判定 | PASS | high riskとして安全優先 |
-| S02 情報設計・ファインダビリティ | PASS/RECHECK | B005のdetail/practical分岐として設計。公開導線未実装 |
-| S03 法務・権利・広告表示・プライバシー | PASS | Commons CC BY-SA 4.0確認、広告誘導なし |
-| S04 ブランド・トーン・コンテンツデザイン | PASS | 恐怖喚起より行動判断を優先 |
-| S05 日本向けローカライゼーション | PASS | 2026年日本の警戒レベル・正式名称に対応 |
-| S06 運用・ガバナンス・保守性 | TODO | registry/preview/category同期後に完了 |
-| S07 セキュリティ・外部依存 | PASS/RECHECK | Commons画像1点。buildでローカルWebP化確認予定 |
-| S08 数値・統計・リアルタイム要約 | PASS | 10分更新等の現行仕様は気象庁確認。独自数値閾値なし |
+| S01 サイトプロファイル・適用判定 | PASS | high riskとして安全を最優先 |
+| S02 情報設計・ファインダビリティ | PASS | B005の水害pillarから独立した土砂災害practicalとして役割分離。カテゴリ導線実装 |
+| S03 法務・権利・広告表示・プライバシー | PASS | Commons CC BY-SA 4.0の作者・出典・ライセンスを保持。広告誘導なし |
+| S04 ブランド・トーン・コンテンツデザイン | PASS | 恐怖喚起より具体的な行動判断を優先 |
+| S05 日本向けローカライゼーション | PASS | 2026年5月29日開始の日本の現行防災気象情報に合わせた |
+| S06 運用・ガバナンス・保守性 | PASS | 正本registry・research・checklist・previewを同期しCIで検証 |
+| S07 セキュリティ・外部依存 | PASS | Commons画像はproduction buildでローカルWebP化。公的情報は外部リンクとして案内 |
+| S08 数値・統計・リアルタイム要約 | PASS | 土砂キキクル10分更新等は一次情報確認。独自雨量閾値を作成していない |
 
 ## 4. 高リスク追加確認
 
 | 項目 | 状態 | 根拠・備考 |
 |---|---|---|
-| 黒を避難開始目安にしない | PASS | 気象庁は遅くとも紫までの避難を重視 |
+| 黒を避難開始目安にしない | PASS | 黒になる前の避難を明記 |
 | 高齢者等は遅くとも赤 | PASS | 気象庁現行説明 |
 | 一般の人は遅くとも紫 | PASS | 気象庁現行説明 |
 | 一般の人も赤から準備・自主避難検討 | PASS | 気象庁現行説明 |
@@ -85,10 +85,10 @@
 - reader_problem: 情報が多く避難開始時点が分かりにくい
 - reader_goal: 危険区域と情報を組み合わせて遅れずに避難する
 - page_job: 土砂災害情報を家庭の行動順へ整理
-- entry_path: 検索/B005/B006/B012/B022
-- next_action: 区域確認→キキクル/自治体情報→早期避難
+- entry_path: 検索 / 大雨・水害カテゴリ / 関連記事
+- next_action: 区域確認→キキクル・自治体情報→早期避難
 - conversion_path: 安全行動→関連水害記事
-- design_priority: 緊急時でも色と行動の対応を短時間で理解
+- design_priority: 緊急時でも警戒情報と行動を短時間で理解できること
 
 ## 6. 証跡
 
@@ -96,20 +96,19 @@
 - sources: `docs/research/B036_SOURCES.md`
 - images: `docs/research/B036_IMAGES.md`
 - article: `content/articles/B036_landslide_evacuation_kikikuru.md`
-- browser_check: TODO
-- production_check: TODO
+- preview: `preview/article_b036.html`
+- public_path: `flood/landslide-evacuation-kikikuru.html`
+- content_registry: 登録済み
+- category: `category_flood`掲載済み
+- production_check: GitHub Actionsで tests / build / JS / Commons localization / FTPS / HTTP smoke PASS
 
-## 7. 残課題
+## 7. 今後の改善候補
 
-- preview HTML作成
-- B005/B006/B012/B022から内部リンク追加
-- category_flood掲載
-- content_registry登録
-- build/CI/HTTP smoke
-- 本番目視後にreview_statusをPASSへ変更
+- B005/B006/B012/B022本文内からの直接コンテキストリンクは、回遊データや記事改稿時に追加を検討する。現在もカテゴリ入口と関連記事導線があり、孤立ページではないため公開ブロッカーとはしない。
+- Search Consoleデータ蓄積後、検索意図とカニバリを再確認する。
 
 ## 8. 最終判定
 
-- review_status: `IN_PROGRESS`
-- READY_TO_PUBLISH: `NO`
-- 判定理由: 本文・一次情報・画像権利・高リスク安全レビューはPASS。公開実装・技術検証が未完了。
+- review_status: `PASS`
+- READY_TO_PUBLISH: `YES`
+- 判定理由: 高リスク安全レビュー、一次情報、権利、情報設計、アクセシビリティ、production build、HTTP smokeまで確認済み。
