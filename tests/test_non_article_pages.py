@@ -114,6 +114,20 @@ class NonArticlePageReviewTest(unittest.TestCase):
         self.assertIn(".skip-link", css)
         self.assertIn("prefers-reduced-motion", css)
 
+    def test_font_size_controls_are_accessible_persistent_and_sitewide(self):
+        js = read("bousai_common.js")
+        self.assertIn('FONT_SIZE_STORAGE_KEY = "bousai-font-size"', js)
+        self.assertIn('label: "普通"', js)
+        self.assertIn('label: "大"', js)
+        self.assertIn('label: "特大"', js)
+        self.assertIn('scale: "112.5%"', js)
+        self.assertIn('scale: "125%"', js)
+        self.assertIn('group.setAttribute("role", "group")', js)
+        self.assertIn('group.setAttribute("aria-label", "文字サイズ")', js)
+        self.assertIn('button.setAttribute("aria-pressed"', js)
+        self.assertIn("window.localStorage.setItem", js)
+        self.assertIn('headerTop.appendChild(group)', js)
+
 
 if __name__ == "__main__":
     unittest.main()
