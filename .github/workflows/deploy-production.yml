@@ -137,6 +137,11 @@ jobs:
           check_page "insurance/fire-insurance-water-damage.html"
           check_page "insurance/household-goods-flood-insurance.html"
           check_page "insurance/typhoon-wind-damage-insurance.html"
+          check_page "home/home-flood-preparedness.html"
+          check_page "post-disaster/after-flood-record-evidence.html"
+          check_page "home/home-heavy-rain-checklist.html"
+          check_page "typhoon/typhoon-day-before-checklist.html"
+          check_page "home/apartment-typhoon-flood.html"
           check_structured_page "guide/first-disaster-preparedness.html"
           check_structured_page "guide/emergency-food-expiration.html"
           check_structured_page "guide/pet-disaster-preparedness.html"
@@ -146,6 +151,11 @@ jobs:
           check_structured_page "insurance/fire-insurance-water-damage.html"
           check_structured_page "insurance/household-goods-flood-insurance.html"
           check_structured_page "insurance/typhoon-wind-damage-insurance.html"
+          check_structured_page "home/home-flood-preparedness.html"
+          check_structured_page "post-disaster/after-flood-record-evidence.html"
+          check_structured_page "home/home-heavy-rain-checklist.html"
+          check_structured_page "typhoon/typhoon-day-before-checklist.html"
+          check_structured_page "home/apartment-typhoon-flood.html"
           check_asset "bousai_common.css"
           check_asset "bousai_common.js"
           check_asset "bousai_home.css"
@@ -175,6 +185,12 @@ jobs:
           check_page_contains "insurance/household-goods-flood-insurance.html" '令和8年8月27日からの大雨に伴う災害'
           check_page_contains "insurance/typhoon-wind-damage-insurance.html" '古くなった自宅の修理に保険金を使えるか'
           check_page_contains "insurance/typhoon-wind-damage-insurance.html" '住宅の修理などに関するトラブルにご注意'
+          check_page_contains "home/home-flood-preparedness.html" '001349327.pdf'
+          check_page_contains "post-disaster/after-flood-record-evidence.html" '罹災証明書の提出は原則不要'
+          check_page_contains "post-disaster/after-flood-record-evidence.html" '住宅の修理などに関するトラブルにご注意'
+          check_page_contains "home/home-heavy-rain-checklist.html" '001349327.pdf'
+          check_page_contains "typhoon/typhoon-day-before-checklist.html" '家の対策を完成させるまで避難を待たない'
+          check_page_contains "home/apartment-typhoon-flood.html" '建築物における電気設備の浸水対策ガイドライン'
 
           tmp_home="$(mktemp)"
           curl --fail --silent --show-error --location \
