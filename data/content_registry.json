@@ -494,7 +494,7 @@
       "image_source_count": 4,
       "image_source_path": "docs/research/B011_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -504,16 +504,18 @@
       "preview_path": "preview/article_b011.html",
       "priority": "highest",
       "publish_blockers": [],
-      "review_checklist_last_checked_at": "2026-09-02",
+      "review_checklist_last_checked_at": "2026-09-04",
       "review_checklist_path": "docs/reviews/B011_CHECKLIST.md",
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "flooded-car-insurance",
-      "source_checked_at": "2026-09-01",
-      "source_count": 2,
+      "source_checked_at": "2026-09-04",
+      "source_count": 4,
       "source_ids": [
         "F-B011-001",
-        "F-B011-002"
+        "F-B011-002",
+        "F-B011-003",
+        "F-B011-004"
       ],
       "source_path": "content/articles/B011_flooded_car_insurance.md",
       "status": "READY_TO_PUBLISH",
@@ -524,7 +526,7 @@
       "image_relevance_reviewed_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-02"
+      "modified_at": "2026-09-04"
     },
     {
       "affiliate": false,
@@ -586,7 +588,7 @@
       "image_source_count": 2,
       "image_source_path": "docs/research/B013_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -596,12 +598,12 @@
       "preview_path": "preview/article_b013.html",
       "priority": "highest",
       "publish_blockers": [],
-      "review_checklist_last_checked_at": "2026-09-02",
+      "review_checklist_last_checked_at": "2026-09-04",
       "review_checklist_path": "docs/reviews/B013_CHECKLIST.md",
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "fire-insurance-water-damage",
-      "source_checked_at": "2026-09-01",
+      "source_checked_at": "2026-09-04",
       "source_count": 6,
       "source_ids": [
         "F-B013-001",
@@ -620,7 +622,7 @@
       "image_relevance_reviewed_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-02"
+      "modified_at": "2026-09-04"
     },
     {
       "affiliate": false,
@@ -635,7 +637,7 @@
       "image_source_count": 0,
       "image_source_path": "docs/research/B014_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-01",
@@ -645,17 +647,18 @@
       "preview_path": "preview/article_b014.html",
       "priority": "high",
       "publish_blockers": [],
-      "review_checklist_last_checked_at": "2026-09-02",
+      "review_checklist_last_checked_at": "2026-09-04",
       "review_checklist_path": "docs/reviews/B014_CHECKLIST.md",
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "household-goods-flood-insurance",
-      "source_checked_at": "2026-09-01",
-      "source_count": 3,
+      "source_checked_at": "2026-09-04",
+      "source_count": 4,
       "source_ids": [
         "F-B014-001",
         "F-B014-002",
-        "F-B014-003"
+        "F-B014-003",
+        "F-B014-004"
       ],
       "source_path": "content/articles/B014_household_goods_flood_insurance.md",
       "status": "READY_TO_PUBLISH",
@@ -668,7 +671,7 @@
       "image_relevance_reviewed_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-02"
+      "modified_at": "2026-09-04"
     },
     {
       "affiliate": false,
@@ -730,7 +733,7 @@
       "image_source_count": 4,
       "image_source_path": "docs/research/B016_IMAGES.md",
       "image_status": "APPROVED",
-      "last_reviewed_at": "2026-09-02",
+      "last_reviewed_at": "2026-09-04",
       "manual_review_required": true,
       "manual_review_status": "APPROVED",
       "next_review_at": "2027-03-02",
@@ -740,18 +743,19 @@
       "preview_path": "preview/article_b016.html",
       "priority": "high",
       "publish_blockers": [],
-      "review_checklist_last_checked_at": "2026-09-02",
+      "review_checklist_last_checked_at": "2026-09-04",
       "review_checklist_path": "docs/reviews/B016_CHECKLIST.md",
       "review_checklist_status": "PASS",
       "risk_level": "elevated",
       "slug": "typhoon-wind-damage-insurance",
-      "source_checked_at": "2026-09-02",
-      "source_count": 4,
+      "source_checked_at": "2026-09-04",
+      "source_count": 5,
       "source_ids": [
         "F-B016-001",
         "F-B016-002",
         "F-B016-003",
-        "F-B016-004"
+        "F-B016-004",
+        "F-B016-005"
       ],
       "source_path": "content/articles/B016_typhoon_wind_damage_insurance.md",
       "status": "READY_TO_PUBLISH",
@@ -764,7 +768,7 @@
       "image_relevance_reviewed_at": "2026-09-02",
       "production_build_status": "READY_FOR_DEPLOY",
       "published_at": "2026-09-02",
-      "modified_at": "2026-09-03"
+      "modified_at": "2026-09-04"
     },
     {
       "affiliate": false,
@@ -1815,7 +1819,7 @@
     }
   ],
   "schema_version": "1.1",
-  "updated_at": "2026-09-04T14:35:00+09:00",
+  "updated_at": "2026-09-04T14:17:00+09:00",
   "date_semantics": {
     "published_at": "本番で初めて公開された日",
     "modified_at": "公開後を含む記事内容の最終更新日。公開前の最終編集しかない場合は公開日を下限とする",

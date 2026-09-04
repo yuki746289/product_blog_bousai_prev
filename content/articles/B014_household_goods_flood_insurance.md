@@ -5,8 +5,8 @@ title: 浸水した家財は保険の対象になる？確認ポイント
 category: insurance
 content_role: detail
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
@@ -154,6 +154,7 @@ affiliate: false
 
 ## 公的・業界情報
 
-- 日本損害保険協会「平成30年台風21号による災害に伴う補償内容等」: https://www.sonpo.or.jp/news/notice/2018/1809_05.html
+- 日本損害保険協会「令和8年8月27日からの大雨に伴う災害」: https://www.sonpo.or.jp/news/notice/2026/2608_003.html
+- 日本損害保険協会「平成30年7月豪雨・被害写真の撮影案内」: https://www.sonpo.or.jp/news/notice/2018/1807_01.html
 - 日本損害保険協会「火災保険」: https://www.sonpo.or.jp/insurance/kasai/index.html
 - 日本損害保険協会「問51 火災保険」: https://soudanguide.sonpo.or.jp/home/q051.html

@@ -5,8 +5,8 @@ title: 台風・洪水で水没した車は車両保険の対象になる？
 category: insurance
 content_role: detail
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
@@ -138,3 +138,5 @@ affiliate: false
 
 - 日本損害保険協会「自動車保険」: https://www.sonpo.or.jp/insurance/car/index.html
 - 日本損害保険協会「風水雪災等による損害を補償する損害保険」: https://www.sonpo.or.jp/insurance/shizen/index.html
+- 日本損害保険協会「問15 車両保険」: https://soudanguide.sonpo.or.jp/car/q015.html
+- 日本損害保険協会「令和8年8月27日からの大雨に伴う災害」: https://www.sonpo.or.jp/news/notice/2026/2608_003.html

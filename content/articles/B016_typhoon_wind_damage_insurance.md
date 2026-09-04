@@ -5,8 +5,8 @@ title: 台風の風災は火災保険でどう扱われる？
 category: insurance
 content_role: detail
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-02
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
@@ -148,4 +148,5 @@ affiliate: false
 - [日本損害保険協会「風水雪災等による損害を補償する損害保険」](https://www.sonpo.or.jp/insurance/shizen/index.html)
 - [日本損害保険協会「問51 火災保険」](https://soudanguide.sonpo.or.jp/home/q051.html)
 - [福岡管区気象台「台風への備え」](https://www.data.jma.go.jp/fukuoka/yoho/kisyousaigai_sonae_typhoon.html)
-- [国民生活センター「保険金で住宅修理ができると勧誘する事業者に注意」](https://www.kokusen.go.jp/news/data/n-20210610_1.html)
+- [国民生活センター「古くなった自宅の修理に保険金を使えるか」](https://www.faq.kokusen.go.jp/faq/show/1597?site_domain=default)
+- [日本損害保険協会「住宅の修理などに関するトラブルにご注意」](https://www.sonpo.or.jp/news/caution/syuri.html)

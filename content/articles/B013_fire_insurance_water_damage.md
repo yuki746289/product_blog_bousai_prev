@@ -5,8 +5,8 @@ title: 火災保険の水災補償とは？住宅浸水との関係を整理
 category: insurance
 content_role: detail
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
