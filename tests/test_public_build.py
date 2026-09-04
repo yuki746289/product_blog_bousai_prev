@@ -22,6 +22,8 @@ class PublicBuildTests(unittest.TestCase):
         self.assertTrue((PUBLIC / "vehicle" / "car-flood-submersion.html").exists())
         self.assertTrue((PUBLIC / "goods" / "portable-power-station-disaster.html").exists())
         self.assertTrue((PUBLIC / "goods" / "water-food.html").exists())
+        self.assertTrue((PUBLIC / "flood" / "landslide-evacuation-kikikuru.html").exists())
+        self.assertTrue((PUBLIC / "post-disaster" / "flood-cleanup-dry-disinfect.html").exists())
 
     def test_contact_is_not_published(self):
         self.assertFalse((PUBLIC / "contact.html").exists())
@@ -65,11 +67,10 @@ class PublicBuildTests(unittest.TestCase):
             )
             descriptions[description] = path
 
-
     def test_article_dates_and_structured_data(self):
         registry = json.loads((ROOT / "data" / "content_registry.json").read_text(encoding="utf-8"))
         articles = registry["articles"]
-        self.assertEqual(35, len([a for a in articles if a.get("article_id", "").startswith("B")]))
+        self.assertEqual(37, len([a for a in articles if a.get("article_id", "").startswith("B")]))
 
         for article in articles:
             output = PUBLIC / article["planned_public_path"]
@@ -96,7 +97,6 @@ class PublicBuildTests(unittest.TestCase):
             self.assertEqual(3, len(breadcrumb["itemListElement"]), output)
             self.assertEqual(article["title"], breadcrumb["itemListElement"][-1]["name"], output)
 
-
     def test_practical_articles_have_saveable_action_check(self):
         registry = json.loads((ROOT / "data" / "content_registry.json").read_text(encoding="utf-8"))
         practical = [a for a in registry["articles"] if a.get("content_role") == "practical"]
@@ -112,7 +112,6 @@ class PublicBuildTests(unittest.TestCase):
                 'class="checklist"' in html or "<table>" in html or "<ol>" in html,
                 output,
             )
-
 
     def test_key_product_guides_have_conditional_calculation_examples(self):
         pages = [
@@ -134,7 +133,6 @@ class PublicBuildTests(unittest.TestCase):
             self.assertNotRegex(html, r'commons\.wikimedia\.org/[^"\']+\?width=(?:960|1280)', page)
             self.assertNotRegex(html, r'upload\.wikimedia\.org/[^"\']+/960px-', page)
 
-
     def test_source_boxes_do_not_display_raw_urls(self):
         raw_url_text = re.compile(r">\s*https?://[^<]+</a>", re.IGNORECASE)
         for page in sorted(PUBLIC.rglob("*.html")):
@@ -146,7 +144,6 @@ class PublicBuildTests(unittest.TestCase):
             )
             for source_box in source_boxes:
                 self.assertIsNone(raw_url_text.search(source_box), page)
-
 
     def test_category_pages_do_not_render_literal_newline_tokens(self):
         for page in sorted(PUBLIC.glob("*/index.html")):
@@ -187,7 +184,6 @@ class PublicBuildTests(unittest.TestCase):
         self.assertNotIn("約10分間隔", home)
         self.assertIn("data-realtime-updated", home)
         self.assertIn('class="realtime-item"', home)
-
 
     def test_expert_review_accessibility_and_navigation_guards(self):
         common_js = (PUBLIC / "bousai_common.js").read_text(encoding="utf-8")
@@ -281,6 +277,8 @@ class PublicBuildTests(unittest.TestCase):
         self.assertIn("https://bousaikun.ashigaru.jp/goods/portable-power-station-disaster.html", sitemap)
         self.assertIn("https://bousaikun.ashigaru.jp/guide/emergency-food-expiration.html", sitemap)
         self.assertIn("https://bousaikun.ashigaru.jp/guide/emergency-bag-capacity.html", sitemap)
+        self.assertIn("https://bousaikun.ashigaru.jp/flood/landslide-evacuation-kikikuru.html", sitemap)
+        self.assertIn("https://bousaikun.ashigaru.jp/post-disaster/flood-cleanup-dry-disinfect.html", sitemap)
         self.assertNotIn("contact.html", sitemap)
         self.assertIn("User-agent: *", robots)
         self.assertIn("Allow: /", robots)
