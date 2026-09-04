@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Normalize B028 source marker in helper
+      - name: Normalize B028 markers in helper
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -27,6 +27,14 @@ jobs:
           t = t.replace(
               "source_marker = '- 消費者庁「2026年度 公表資料」: https://www.caa.go.jp/policies/policy/consumer_safety/release/2026/'",
               "source_marker = '- 消費者庁「2026年度 重大製品事故等の公表資料」: https://www.caa.go.jp/policies/policy/consumer_safety/release/2026/'"
+          )
+          t = t.replace(
+              "plain_marker = '購入時と定期点検時に、<strong>型番を経済産業省・メーカーのリコール情報で照合</strong>します。'",
+              "plain_marker = 'ポータブル電源はリチウムイオン電池を含む電気製品です。異常・リコール情報はメーカーと公的情報を確認してください。'"
+          )
+          t = t.replace(
+              "plain_add = '<p>NITE（製品評価技術基盤機構）も、リコール対象のポータブル電源は、異常が見られなくても使用を中止し、事業者の案内に従うよう注意喚起しています。<strong>「今まで問題なく使えた」ことを安全確認の代わりにしません。</strong></p>'",
+              "plain_add = ' リコール対象品は異常が見られなくても使用を中止し、事業者の案内に従ってください。'"
           )
           p.write_text(t, encoding='utf-8')
           PY
