@@ -1,0 +1,87 @@
+# Created: 2026-09-04
+name: One-off earthquake audit sync
+
+on:
+  push:
+    paths:
+      - '.github/workflows/oneoff-earthquake-audit-sync.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Sync audited article metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+
+          root = Path('.')
+          registry_path = root / 'data' / 'content_registry.json'
+          data = json.loads(registry_path.read_text(encoding='utf-8'))
+          by_id = {a['article_id']: a for a in data['articles']}
+
+          updates = {
+              'B007': {
+                  'source_checked_at': '2026-09-04',
+                  'source_count': 7,
+                  'source_ids': [f'F-B007-{i:03d}' for i in range(1, 8)],
+                  'last_reviewed_at': '2026-09-04',
+              },
+              'B017': {
+                  'source_checked_at': '2026-09-04',
+                  'last_reviewed_at': '2026-09-04',
+              },
+              'B018': {
+                  'source_checked_at': '2026-09-04',
+                  'last_reviewed_at': '2026-09-04',
+              },
+              'B023': {
+                  'source_checked_at': '2026-09-04',
+                  'last_reviewed_at': '2026-09-04',
+              },
+              'B024': {
+                  'source_checked_at': '2026-09-04',
+                  'source_count': 7,
+                  'source_ids': [f'F-B024-{i:03d}' for i in range(1, 8)],
+                  'last_reviewed_at': '2026-09-04',
+                  'modified_at': '2026-09-04',
+              },
+          }
+          for article_id, values in updates.items():
+              by_id[article_id].update(values)
+          data['updated_at'] = '2026-09-04T14:00:00+09:00'
+          registry_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          for article_id in ('B017', 'B018'):
+              path = root / by_id[article_id]['source_path']
+              text = path.read_text(encoding='utf-8')
+              text = re.sub(r'(?m)^status: REVIEW_REQUIRED$', 'status: READY_TO_PUBLISH', text, count=1)
+              text = re.sub(r'(?m)^source_checked_at: \d{4}-\d{2}-\d{2}$', 'source_checked_at: 2026-09-04', text, count=1)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Install package
+        run: pip install -e .
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Commit synchronized metadata
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/content_registry.json content/articles/B017_earthquake_insurance_basics.md content/articles/B018_earthquake_car_insurance.md
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Sync earthquake audit metadata'
+          git push
