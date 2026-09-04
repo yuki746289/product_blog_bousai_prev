@@ -37,6 +37,15 @@ jobs:
               "plain_add = ' リコール対象品は異常が見られなくても使用を中止し、事業者の案内に従ってください。'"
           )
           p.write_text(t, encoding='utf-8')
+
+          preview = Path('preview/article_b028.html')
+          h = preview.read_text(encoding='utf-8')
+          nite_url = 'https://www.nite.go.jp/jiko/chuikanki/press/2024fy/prs240627.html'
+          if nite_url not in h:
+              block = '<p class="source-note">追加の公的安全情報：<a href="' + nite_url + '" target="_blank" rel="noopener noreferrer">NITE「リコール対象のポータブル電源に関する注意喚起」</a></p>'
+              assert '</article>' in h
+              h = h.replace('</article>', block + '</article>', 1)
+              preview.write_text(h, encoding='utf-8')
           PY
       - name: Apply remaining article audit
         run: python .github/tmp/oneoff_remaining_article_audit.py
