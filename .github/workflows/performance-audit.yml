@@ -37,15 +37,21 @@ jobs:
           set -euo pipefail
           mkdir -p lighthouse
           URLS=(
-            "https://bousaikun.ashigaru.jp/"
-            "https://bousaikun.ashigaru.jp/guide/first-disaster-preparedness.html"
-            "https://bousaikun.ashigaru.jp/goods/portable-power-station-disaster.html"
+            "https://bousaikun.ashigaru.jp/?ci_audit=1"
+            "https://bousaikun.ashigaru.jp/guide/first-disaster-preparedness.html?ci_audit=1"
+            "https://bousaikun.ashigaru.jp/goods/portable-power-station-disaster.html?ci_audit=1"
           )
           i=0
           for url in "${URLS[@]}"; do
             i=$((i+1))
             echo "Auditing $url"
-            npx --yes lighthouse@12.8.2 "$url"               --quiet               --chrome-flags="--headless --no-sandbox"               --form-factor=mobile               --only-categories=performance               --output=json               --output-path="lighthouse/report_${i}.json"
+            npx --yes lighthouse@12.8.2 "$url" \
+              --quiet \
+              --chrome-flags="--headless --no-sandbox" \
+              --form-factor=mobile \
+              --only-categories=performance \
+              --output=json \
+              --output-path="lighthouse/report_${i}.json"
           done
 
       - name: Summarize Lighthouse results
