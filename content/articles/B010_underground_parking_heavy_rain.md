@@ -5,7 +5,7 @@ title: 地下駐車場・低い場所に車を置いている場合の大雨対�
 category: vehicle
 content_role: practical
 risk_level: elevated
-status: REVIEW_REQUIRED
+status: READY_TO_PUBLISH
 source_checked_at: 2026-09-01
 next_review_at: 2027-03-01
 affiliate: false

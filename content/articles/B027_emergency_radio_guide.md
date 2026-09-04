@@ -5,8 +5,8 @@ title: 防災ラジオは必要？情報収集手段を比較する
 category: goods
 content_role: product
 risk_level: standard
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-02
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-02
 affiliate: true
 ---

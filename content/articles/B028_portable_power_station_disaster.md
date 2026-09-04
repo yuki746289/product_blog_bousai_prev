@@ -5,8 +5,8 @@ title: ポータブル電源は防災に必要？用途と注意点
 category: goods
 content_role: product
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: true
 ---
@@ -170,6 +170,8 @@ affiliate: true
 
 購入時と定期点検時に、**型番を経済産業省・メーカーのリコール情報で照合**します。
 
+NITE（製品評価技術基盤機構）も、リコール対象のポータブル電源は、異常が見られなくても使用を中止し、事業者の案内に従うよう注意喚起しています。**「今まで問題なく使えた」ことを安全確認の代わりにしません。**
+
 ## 12. 保管場所は高温・水濡れ・避難経路を避ける
 
 リチウムイオン電池を搭載する製品は、メーカー指定の温度・保管条件に従います。
@@ -245,6 +247,7 @@ affiliate: true
 - 経済産業省「ポータブル電源の安全性要求事項（中間とりまとめ）」: https://www.meti.go.jp/product_safety/consumer/system/potaburu-denngenn-youkyuu.html
 - 経済産業省「リコール情報（電気製品）」: https://www.meti.go.jp/product_safety/recall/denki.html
 - 消費者庁「2026年度 重大製品事故等の公表資料」: https://www.caa.go.jp/policies/policy/consumer_safety/release/2026/
+- NITE「リコール対象のポータブル電源に関する注意喚起」: https://www.nite.go.jp/jiko/chuikanki/press/2024fy/prs240627.html
 - Anker Japan「Anker Solix C300 Portable Power Station」: https://www.ankerjapan.com/products/a1722
 - Jackery Japan「ポータブル電源 600 New」: https://www.jackery.jp/products/explorer-600-new-offline
 - Jackery Japan「ポータブル電源 1000 New V3」: https://www.jackery.jp/products/explorer-1000-new-v3

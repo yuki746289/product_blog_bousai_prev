@@ -5,8 +5,8 @@ title: 飲料水はどう備蓄する？家庭での考え方
 category: guide
 content_role: detail
 risk_level: standard
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-02
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-02
 affiliate: false
 ---

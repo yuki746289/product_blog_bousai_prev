@@ -5,7 +5,7 @@ title: 防災リュックの中身は何を入れる？最低限の持ち出し�
 category: guide
 content_role: practical
 risk_level: elevated
-status: REVIEW_REQUIRED
+status: READY_TO_PUBLISH
 source_checked_at: 2026-09-01
 next_review_at: 2027-03-01
 affiliate: false

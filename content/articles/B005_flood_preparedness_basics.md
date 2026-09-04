@@ -5,7 +5,7 @@ title: 大雨・水害にどう備える？まず知っておきたい基本
 category: flood
 content_role: pillar
 risk_level: elevated
-status: REVIEW_REQUIRED
+status: READY_TO_PUBLISH
 source_checked_at: 2026-09-01
 next_review_at: 2027-03-01
 affiliate: false

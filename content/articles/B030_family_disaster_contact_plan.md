@@ -5,8 +5,8 @@ title: 家族で決めておきたい災害時の連絡・集合ルール
 category: guide
 content_role: practical
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-02
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-02
 affiliate: false
 ---

@@ -5,7 +5,7 @@ title: 車が冠水・水没しそうなときに知っておきたいこと
 category: vehicle
 content_role: detail
 risk_level: high
-status: REVIEW_REQUIRED
+status: READY_TO_PUBLISH
 source_checked_at: 2026-09-01
 next_review_at: 2027-03-01
 affiliate: false

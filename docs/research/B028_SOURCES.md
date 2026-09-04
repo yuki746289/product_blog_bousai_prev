@@ -1,6 +1,6 @@
 # B028 出典メモ
 
-確認日: 2026-09-01
+確認日: 2026-09-04
 
 | source_id | 出典 | 採用内容 |
 |---|---|---|
@@ -11,9 +11,12 @@
 | F-B028-005 | Jackery Japan「Jackery ポータブル電源 600 New」 https://www.jackery.jp/products/explorer-600-new-offline | 640Wh、500W、約6.4kg等の製品仕様 |
 | F-B028-006 | Jackery Japan「Jackery ポータブル電源 1000 New V3」 https://www.jackery.jp/products/explorer-1000-new-v3 | 1024Wh、1500W、約10.6kg等の製品仕様 |
 
+| F-B028-007 | NITE「リコール対象のポータブル電源に関する注意喚起」 https://www.nite.go.jp/jiko/chuikanki/press/2024fy/prs240627.html | リコール対象品は異常が見られなくても使用を中止し、事業者案内に従うこと |
+
 ## 安全上の扱い
 
 - 使用可能時間は容量÷消費電力の単純計算を保証値にしない。
 - 医療機器は機器メーカー・医療機関等の条件を優先する。
 - リコールはブランド単位でなく製品型番単位で確認する。
 - 商品性能の記述はメーカー公式仕様を優先する。
+- リコール対象品は異常がなくても使用を継続しない。

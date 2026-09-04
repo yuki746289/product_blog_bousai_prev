@@ -5,8 +5,8 @@ title: 車に積んでおきたい防災用品｜車載用に考える
 category: vehicle
 content_role: product
 risk_level: standard
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-02
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-02
 affiliate: true
 ---

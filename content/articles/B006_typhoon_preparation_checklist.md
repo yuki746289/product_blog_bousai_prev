@@ -5,7 +5,7 @@ title: 台風が来る前に何をする？家庭の事前チェック
 category: typhoon
 content_role: pillar
 risk_level: elevated
-status: REVIEW_REQUIRED
+status: READY_TO_PUBLISH
 source_checked_at: 2026-09-01
 next_review_at: 2027-03-01
 affiliate: false

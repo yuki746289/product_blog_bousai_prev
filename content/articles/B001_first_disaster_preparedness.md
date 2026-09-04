@@ -5,7 +5,7 @@ title: 防災は何から始める？家庭で最初に確認したい基本項�
 category: guide
 content_role: pillar
 risk_level: elevated
-status: REVIEW_REQUIRED
+status: READY_TO_PUBLISH
 source_checked_at: 2026-09-01
 next_review_at: 2027-03-01
 affiliate: false

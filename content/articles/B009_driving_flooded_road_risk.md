@@ -5,7 +5,7 @@ title: 冠水した道路を車で走る危険｜避けるべき理由を整理
 category: vehicle
 content_role: detail
 risk_level: high
-status: REVIEW_REQUIRED
+status: READY_TO_PUBLISH
 source_checked_at: 2026-09-01
 next_review_at: 2027-03-01
 affiliate: false
