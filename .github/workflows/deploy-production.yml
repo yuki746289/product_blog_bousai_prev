@@ -142,6 +142,11 @@ jobs:
           check_page "home/home-heavy-rain-checklist.html"
           check_page "typhoon/typhoon-day-before-checklist.html"
           check_page "home/apartment-typhoon-flood.html"
+          check_page "guide/drinking-water-stockpile.html"
+          check_page "guide/emergency-food-stockpile.html"
+          check_page "goods/emergency-radio-guide.html"
+          check_page "vehicle/car-emergency-kit.html"
+          check_page "guide/family-disaster-contact-plan.html"
           check_structured_page "guide/first-disaster-preparedness.html"
           check_structured_page "guide/emergency-food-expiration.html"
           check_structured_page "guide/pet-disaster-preparedness.html"
@@ -156,6 +161,12 @@ jobs:
           check_structured_page "home/home-heavy-rain-checklist.html"
           check_structured_page "typhoon/typhoon-day-before-checklist.html"
           check_structured_page "home/apartment-typhoon-flood.html"
+          check_structured_page "guide/drinking-water-stockpile.html"
+          check_structured_page "guide/emergency-food-stockpile.html"
+          check_structured_page "goods/emergency-radio-guide.html"
+          check_structured_page "goods/portable-power-station-disaster.html"
+          check_structured_page "vehicle/car-emergency-kit.html"
+          check_structured_page "guide/family-disaster-contact-plan.html"
           check_asset "bousai_common.css"
           check_asset "bousai_common.js"
           check_asset "bousai_home.css"
@@ -191,6 +202,13 @@ jobs:
           check_page_contains "home/home-heavy-rain-checklist.html" '001349327.pdf'
           check_page_contains "typhoon/typhoon-day-before-checklist.html" '家の対策を完成させるまで避難を待たない'
           check_page_contains "home/apartment-typhoon-flood.html" '建築物における電気設備の浸水対策ガイドライン'
+          check_page_contains "guide/drinking-water-stockpile.html" '飲料水はどう備蓄する'
+          check_page_contains "guide/emergency-food-stockpile.html" 'ローリングストック'
+          check_page_contains "goods/emergency-radio-guide.html" '防災ラジオは必要'
+          check_page_contains "goods/portable-power-station-disaster.html" 'リコール対象品は異常が見られなくても使用を中止'
+          check_page_contains "goods/portable-power-station-disaster.html" 'NITE「リコール対象のポータブル電源に関する注意喚起」'
+          check_page_contains "vehicle/car-emergency-kit.html" '車に積んでおきたい防災用品'
+          check_page_contains "guide/family-disaster-contact-plan.html" '災害用伝言ダイヤル'
 
           tmp_home="$(mktemp)"
           curl --fail --silent --show-error --location \
