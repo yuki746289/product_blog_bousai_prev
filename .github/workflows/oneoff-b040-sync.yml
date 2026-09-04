@@ -1,3 +1,4 @@
+# rerun after B040 regression-test wording fix
 name: One-off B040 sync
 
 on:
