@@ -5,8 +5,8 @@ title: 水害・台風・地震で保険の扱いはどう違う？
 category: insurance
 content_role: pillar
 risk_level: elevated
-status: REVIEW_REQUIRED
-source_checked_at: 2026-09-01
+status: READY_TO_PUBLISH
+source_checked_at: 2026-09-04
 next_review_at: 2027-03-01
 affiliate: false
 ---
@@ -113,8 +113,8 @@ affiliate: false
 
 ## 公的・業界情報
 
-- 日本損害保険協会「自然災害と損害保険」: https://www.sonpo.or.jp/insurance/shizen/index.html
+- 日本損害保険協会「風水雪災等による損害を補償する損害保険」: https://www.sonpo.or.jp/insurance/shizen/index.html
 - 日本損害保険協会「火災保険」: https://www.sonpo.or.jp/insurance/kasai/index.html
 - 日本損害保険協会「地震保険」: https://www.sonpo.or.jp/insurance/jishin/index.html
 - 日本損害保険協会「自動車保険」: https://www.sonpo.or.jp/insurance/car/index.html
-- 日本損害保険協会「住宅修理サービスのトラブル」: https://www.sonpo.or.jp/news/caution/syuri.html
+- 日本損害保険協会「住宅の修理などに関するトラブルにご注意」: https://www.sonpo.or.jp/news/caution/syuri.html
