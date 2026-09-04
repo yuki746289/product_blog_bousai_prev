@@ -133,11 +133,19 @@ jobs:
           check_page "goods/index.html"
           check_page "goods/toilet-hygiene.html"
           check_page "water-outage/portable-toilet-stockpile.html"
+          check_page "insurance/flooded-car-insurance.html"
+          check_page "insurance/fire-insurance-water-damage.html"
+          check_page "insurance/household-goods-flood-insurance.html"
+          check_page "insurance/typhoon-wind-damage-insurance.html"
           check_structured_page "guide/first-disaster-preparedness.html"
           check_structured_page "guide/emergency-food-expiration.html"
           check_structured_page "guide/pet-disaster-preparedness.html"
           check_structured_page "guide/baby-disaster-stockpile.html"
           check_structured_page "guide/senior-disaster-preparedness.html"
+          check_structured_page "insurance/flooded-car-insurance.html"
+          check_structured_page "insurance/fire-insurance-water-damage.html"
+          check_structured_page "insurance/household-goods-flood-insurance.html"
+          check_structured_page "insurance/typhoon-wind-damage-insurance.html"
           check_asset "bousai_common.css"
           check_asset "bousai_common.js"
           check_asset "bousai_home.css"
@@ -162,6 +170,11 @@ jobs:
           check_page_contains "water-outage/portable-toilet-stockpile.html" '断水時の携帯トイレ'
           check_page_contains "guide/first-disaster-preparedness.html" 'class="skip-link"'
           check_page_contains "guide/first-disaster-preparedness.html" 'id="main-content"'
+          check_page_contains "insurance/flooded-car-insurance.html" '令和8年8月27日からの大雨に伴う災害'
+          check_page_contains "insurance/fire-insurance-water-damage.html" '令和8年8月27日からの大雨に伴う災害'
+          check_page_contains "insurance/household-goods-flood-insurance.html" '令和8年8月27日からの大雨に伴う災害'
+          check_page_contains "insurance/typhoon-wind-damage-insurance.html" '古くなった自宅の修理に保険金を使えるか'
+          check_page_contains "insurance/typhoon-wind-damage-insurance.html" '住宅の修理などに関するトラブルにご注意'
 
           tmp_home="$(mktemp)"
           curl --fail --silent --show-error --location \
