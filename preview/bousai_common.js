@@ -1,6 +1,7 @@
 /* Created: 2026-09-02 / Updated: 2026-09-04 / common preview behavior */
 (function () {
   var FONT_SIZE_STORAGE_KEY = "bousai-font-size";
+  var MOBILE_NAV_MEDIA_QUERY = "(max-width: 720px)";
   var FONT_SIZE_LEVELS = {
     normal: { label: "普通", scale: "100%" },
     large: { label: "大", scale: "112.5%" },
@@ -50,6 +51,32 @@
       '.font-size-control__button[aria-pressed="true"] { border-color: #176b68; background: #e3f1f0; color: #104c4a; box-shadow: inset 0 0 0 1px #176b68; }',
       '.font-size-control__button:focus-visible { outline: 3px solid rgba(23, 107, 104, .28); outline-offset: 2px; }',
       '@media (max-width: 720px) { .header-top { flex-wrap: wrap; gap: 8px 14px; padding: 8px 0; } .font-size-control { margin-left: auto; } .font-size-control__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; } }'
+    ].join("\n");
+    document.head.appendChild(style);
+  }
+
+  function ensureMobileNavStyles() {
+    if (document.getElementById("bousai-mobile-nav-styles")) return;
+
+    var style = document.createElement("style");
+    style.id = "bousai-mobile-nav-styles";
+    style.textContent = [
+      '.mobile-nav-toggle { display: none; }',
+      '@media (max-width: 720px) {',
+      '  .header-top { display: grid !important; grid-template-columns: minmax(0, 1fr) auto; align-items: center !important; gap: 8px 12px !important; padding: 8px 0 !important; }',
+      '  .site-brand { min-width: 0; }',
+      '  .font-size-control { grid-column: 1 / -1; grid-row: 2; justify-self: end; margin-left: 0 !important; }',
+      '  .mobile-nav-toggle { grid-column: 2; grid-row: 1; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 44px; min-height: 44px; padding: 8px 10px; border: 1px solid #c8d2d7; border-radius: 9px; background: #fff; color: #243b53; font: inherit; font-weight: 750; cursor: pointer; }',
+      '  .mobile-nav-toggle:hover { background: #f1f7f6; }',
+      '  .mobile-nav-toggle:focus-visible { outline: 3px solid rgba(23, 107, 104, .28); outline-offset: 2px; }',
+      '  .mobile-nav-toggle[aria-expanded="true"] { border-color: #176b68; background: #e3f1f0; color: #104c4a; }',
+      '  .mobile-nav-toggle__icon { display: inline-block; width: 1.2em; font-size: 1.35rem; line-height: 1; text-align: center; }',
+      '  .mobile-nav-toggle__label { font-size: .82rem; line-height: 1.2; }',
+      '  .site-nav.mobile-nav-enhanced { display: none; flex-direction: column; gap: 0; overflow: visible; padding: 4px 0 12px; border-top: 1px solid var(--line); white-space: normal; font-size: .96rem; }',
+      '  .site-nav.mobile-nav-enhanced.is-open { display: flex; }',
+      '  .site-nav.mobile-nav-enhanced a { display: block; padding: 12px 10px; border-bottom: 1px solid var(--line); }',
+      '  .site-nav.mobile-nav-enhanced a[aria-current] { background: var(--primary-soft); color: var(--primary-dark); }',
+      '}'
     ].join("\n");
     document.head.appendChild(style);
   }
@@ -121,6 +148,88 @@
     headerTop.appendChild(group);
   }
 
+  function setMobileNavState(nav, button, expanded) {
+    var isExpanded = Boolean(expanded);
+    nav.classList.toggle("is-open", isExpanded);
+    button.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+    button.setAttribute("aria-label", isExpanded ? "メニューを閉じる" : "メニューを開く");
+
+    var icon = button.querySelector(".mobile-nav-toggle__icon");
+    var label = button.querySelector(".mobile-nav-toggle__label");
+    if (icon) icon.textContent = isExpanded ? "×" : "☰";
+    if (label) label.textContent = isExpanded ? "閉じる" : "メニュー";
+  }
+
+  function enhanceMobileNavigation() {
+    var nav = document.querySelector(".site-nav");
+    var headerTop = document.querySelector(".header-top");
+    if (!nav || !headerTop || headerTop.querySelector(".mobile-nav-toggle")) return;
+
+    ensureMobileNavStyles();
+
+    if (!nav.id) nav.id = "site-main-nav";
+
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "mobile-nav-toggle";
+    button.setAttribute("aria-controls", nav.id);
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-label", "メニューを開く");
+
+    var icon = document.createElement("span");
+    icon.className = "mobile-nav-toggle__icon";
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = "☰";
+
+    var label = document.createElement("span");
+    label.className = "mobile-nav-toggle__label";
+    label.textContent = "メニュー";
+
+    button.appendChild(icon);
+    button.appendChild(label);
+    headerTop.appendChild(button);
+
+    nav.classList.add("mobile-nav-enhanced");
+    setMobileNavState(nav, button, false);
+
+    var media = window.matchMedia(MOBILE_NAV_MEDIA_QUERY);
+
+    button.addEventListener("click", function () {
+      var expanded = button.getAttribute("aria-expanded") === "true";
+      setMobileNavState(nav, button, !expanded);
+    });
+
+    nav.querySelectorAll("a[href]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (media.matches) setMobileNavState(nav, button, false);
+      });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape" || button.getAttribute("aria-expanded") !== "true") return;
+      setMobileNavState(nav, button, false);
+      button.focus();
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!media.matches || button.getAttribute("aria-expanded") !== "true") return;
+      var header = button.closest(".site-header");
+      if (header && !header.contains(event.target)) {
+        setMobileNavState(nav, button, false);
+      }
+    });
+
+    function handleViewportChange(event) {
+      if (!event.matches) setMobileNavState(nav, button, false);
+    }
+
+    if (typeof media.addEventListener === "function") {
+      media.addEventListener("change", handleViewportChange);
+    } else if (typeof media.addListener === "function") {
+      media.addListener(handleViewportChange);
+    }
+  }
+
   function enhanceAccessibility() {
     var main = document.querySelector("main");
     if (main) {
@@ -145,16 +254,16 @@
       if (!wrapper.hasAttribute("role")) wrapper.setAttribute("role", "region");
 
       if (!wrapper.hasAttribute("aria-label")) {
-        var label = "表";
+        var tableLabel = "表";
         var node = wrapper.previousElementSibling;
         while (node) {
           if (/^H[23]$/.test(node.tagName)) {
-            label = (node.textContent || "").trim() + "の表";
+            tableLabel = (node.textContent || "").trim() + "の表";
             break;
           }
           node = node.previousElementSibling;
         }
-        wrapper.setAttribute("aria-label", label);
+        wrapper.setAttribute("aria-label", tableLabel);
       }
     });
 
@@ -250,6 +359,7 @@
 
   function init() {
     enhanceFontSizeControl();
+    enhanceMobileNavigation();
     enhanceAccessibility();
     bindImageFallbacks();
     bindTrackedLinks();
