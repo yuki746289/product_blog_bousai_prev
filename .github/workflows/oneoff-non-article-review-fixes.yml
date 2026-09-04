@@ -18,104 +18,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Apply non-article review fixes
+      - name: Apply fixes
+        run: python .github/tmp/patch_non_article_review.py
+      - name: Verify JavaScript
+        run: node --check preview/bousai_home.js
+      - name: Run tests
         run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          # 1) Realtime: a fetch failure must never render as "no warning / no typhoon".
-          p = Path('preview/bousai_home.js')
-          t = p.read_text(encoding='utf-8')
-          old = '''    var warnings = data.warnings || {};
-    var groups = Array.isArray(warnings.groups) ? warnings.groups : [];
-    if (!warnings.active_count || groups.length === 0) {'''
-          new = '''    var warnings = data.warnings;
-    if (!warnings || typeof warnings !== "object") {
-      var unavailable = document.createElement("p");
-      unavailable.className = "realtime-none";
-      unavailable.textContent = "警報・特別警報の情報を取得できていません。気象庁の公式情報を直接確認してください。";
-      holder.appendChild(unavailable);
-      return;
-    }
-    var groups = Array.isArray(warnings.groups) ? warnings.groups : [];
-    if (!warnings.active_count || groups.length === 0) {'''
-          assert old in t
-          t = t.replace(old, new, 1)
-
-          old = '''    var typhoons = Array.isArray(data.typhoons) ? data.typhoons : [];
-    var message = document.createElement("p");
-    if (typhoons.length === 0) {'''
-          new = '''    var message = document.createElement("p");
-    if (!Array.isArray(data.typhoons)) {
-      message.className = "realtime-none";
-      message.textContent = "台風情報を取得できていません。気象庁の公式情報を直接確認してください。";
-      holder.appendChild(message);
-      return;
-    }
-    var typhoons = data.typhoons;
-    if (typhoons.length === 0) {'''
-          assert old in t
-          t = t.replace(old, new, 1)
-
-          old = '''      if (successCount === 0) return cached;
-
-      data.checked_at = new Date().toISOString();
-      data.status = successCount === 3 ? "ok" : "partial";'''
-          new = '''      if (successCount === 0) return cached;
-
-      // Do not make stale cached sections look freshly checked when only part of JMA refresh succeeds.
-      if (successCount === 3) {
-        data.checked_at = new Date().toISOString();
-      }
-      data.status = successCount === 3 ? "ok" : "partial";'''
-          assert old in t
-          t = t.replace(old, new, 1)
-
-          old = '''          earthquake: null,
-          warnings: { active_count: 0, groups: [] },
-          typhoons: []'''
-          new = '''          earthquake: null,
-          warnings: null,
-          typhoons: null'''
-          assert old in t
-          t = t.replace(old, new, 1)
-          p.write_text(t, encoding='utf-8')
-
-          # 2) Operations page: align description with the homepage JMA summary feature.
-          p = Path('preview/about.html')
-          t = p.read_text(encoding='utf-8')
-          old = '本サイトはリアルタイムの警報・避難情報を配信するサイトではありません。'
-          new = 'トップページでは気象庁の公開データを参考表示する場合がありますが、公式の警報・避難情報配信を代替するものではありません。取得失敗・遅延・表示差があり得るため、避難判断は気象庁・自治体等の最新情報を直接確認してください。'
-          assert old in t
-          t = t.replace(old, new, 1)
-          p.write_text(t, encoding='utf-8')
-
-          # 3) Privacy: disclose the analytics events actually sent by common JS.
-          p = Path('preview/privacy.html')
-          t = p.read_text(encoding='utf-8')
-          old = 'Google AnalyticsではCookie等の技術を利用して、ページ閲覧や利用環境に関する情報がGoogleへ送信される場合があります。'
-          new = 'Google AnalyticsではCookie等の技術を利用して、ページ閲覧、閲覧ページ、商品ガイドやAmazonリンク等のクリック、利用環境に関する情報がGoogleへ送信される場合があります。クリック計測ではリンク先URLやリンク文言等をイベント情報として送信する場合があります。'
-          assert old in t
-          t = t.replace(old, new, 1)
-          p.write_text(t, encoding='utf-8')
-
-          # 4) Q&A: clarify that short answers are entry points, not a substitute for current official/detail information.
-          p = Path('preview/qa.html')
-          t = p.read_text(encoding='utf-8')
-          old = '<p>よくある疑問に先に短く答えます。質問をクリックすると同じページ内で回答が開き、回答の最後から詳しい記事へ進めます。</p>'
-          new = '<p>よくある疑問に先に短く答えます。質問をクリックすると同じページ内で回答が開き、回答の最後から詳しい記事へ進めます。</p><p class="source-note">Q&amp;Aは概要を素早く確認するための入口です。避難・安全・保険・制度など重要な判断では、リンク先の詳しい記事と気象庁・自治体・契約先等の最新情報も確認してください。</p>'
-          assert old in t
-          t = t.replace(old, new, 1)
-          p.write_text(t, encoding='utf-8')
-          PY
-      - name: Verify patched files
-        run: |
-          node --check preview/bousai_home.js
-          grep -Fq '警報・特別警報の情報を取得できていません' preview/bousai_home.js
-          grep -Fq 'warnings: null' preview/bousai_home.js
-          grep -Fq '公式の警報・避難情報配信を代替するものではありません' preview/about.html
-          grep -Fq 'リンク先URLやリンク文言' preview/privacy.html
-          grep -Fq 'Q&Aは概要を素早く確認するための入口' preview/qa.html
+          pip install -e .
+          python -m unittest discover -s tests -v
       - name: Commit fixes
         run: |
           git config user.name 'github-actions[bot]'
