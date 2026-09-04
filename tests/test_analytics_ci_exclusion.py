@@ -30,6 +30,10 @@ class AnalyticsCiExclusionTest(unittest.TestCase):
                 self.assertIn(url, workflow)
 
         self.assertIn("Wait for analytics exclusion on production", workflow)
+        self.assertIn('marker_file="${RUNNER_TEMP}/bousai-ci-audit-home.html"', workflow)
+        self.assertIn('curl -fsS "https://bousaikun.ashigaru.jp/?ci_audit=1" -o "$marker_file"', workflow)
+        self.assertIn('grep -q "__BOUSAI_ANALYTICS_DISABLED__" "$marker_file"', workflow)
+        self.assertNotIn('| grep -q "__BOUSAI_ANALYTICS_DISABLED__"', workflow)
         self.assertIn("Verify Lighthouse did not contact GA4", workflow)
         self.assertIn("googletagmanager.com/gtag/js", workflow)
         self.assertIn("google-analytics.com/g/collect", workflow)
