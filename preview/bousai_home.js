@@ -190,7 +190,14 @@
     if (!holder) return;
     holder.textContent = "";
 
-    var warnings = data.warnings || {};
+    var warnings = data.warnings;
+    if (!warnings || typeof warnings !== "object") {
+      var unavailable = document.createElement("p");
+      unavailable.className = "realtime-none";
+      unavailable.textContent = "警報・特別警報の情報を取得できていません。気象庁の公式情報を直接確認してください。";
+      holder.appendChild(unavailable);
+      return;
+    }
     var groups = Array.isArray(warnings.groups) ? warnings.groups : [];
     if (!warnings.active_count || groups.length === 0) {
       var none = document.createElement("p");
@@ -218,8 +225,14 @@
     if (!holder) return;
     holder.textContent = "";
 
-    var typhoons = Array.isArray(data.typhoons) ? data.typhoons : [];
     var message = document.createElement("p");
+    if (!Array.isArray(data.typhoons)) {
+      message.className = "realtime-none";
+      message.textContent = "台風情報を取得できていません。気象庁の公式情報を直接確認してください。";
+      holder.appendChild(message);
+      return;
+    }
+    var typhoons = data.typhoons;
     if (typhoons.length === 0) {
       message.className = "realtime-none";
       message.textContent = "現在、表示対象の台風・発達する熱帯低気圧は確認されていません。";
@@ -299,7 +312,10 @@
 
       if (successCount === 0) return cached;
 
-      data.checked_at = new Date().toISOString();
+      // Do not make stale cached sections look freshly checked when only part of JMA refresh succeeds.
+      if (successCount === 3) {
+        data.checked_at = new Date().toISOString();
+      }
       data.status = successCount === 3 ? "ok" : "partial";
       data.note = "気象庁の公開データを直接確認しています。表示には遅延する場合があるため、避難判断には気象庁・自治体などの最新情報を確認してください。";
       return data;
@@ -317,8 +333,8 @@
           status: "degraded",
           checked_at: null,
           earthquake: null,
-          warnings: { active_count: 0, groups: [] },
-          typhoons: []
+          warnings: null,
+          typhoons: null
         };
       })
       .then(function (cached) {
