@@ -34,12 +34,13 @@ jobs:
               'source_count': 4,
               'source_ids': [f'F-B004-{i:03d}' for i in range(1, 5)],
               'last_reviewed_at': '2026-09-04',
+              'modified_at': '2026-09-04',
           })
           by_id['B019'].update({
               'source_checked_at': '2026-09-04',
               'last_reviewed_at': '2026-09-04',
           })
-          data['updated_at'] = '2026-09-04T14:30:00+09:00'
+          data['updated_at'] = '2026-09-04T14:35:00+09:00'
           path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
           PY
       - name: Install package
@@ -55,5 +56,5 @@ jobs:
             echo 'No changes to commit.'
             exit 0
           fi
-          git commit -m 'Sync blackout and insurance audit metadata'
+          git commit -m 'Finalize blackout audit metadata'
           git push
