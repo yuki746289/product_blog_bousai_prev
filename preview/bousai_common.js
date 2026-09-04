@@ -1,5 +1,12 @@
-/* Created: 2026-09-02 / Updated: 2026-09-03 / common preview behavior */
+/* Created: 2026-09-02 / Updated: 2026-09-04 / common preview behavior */
 (function () {
+  var FONT_SIZE_STORAGE_KEY = "bousai-font-size";
+  var FONT_SIZE_LEVELS = {
+    normal: { label: "普通", scale: "100%" },
+    large: { label: "大", scale: "112.5%" },
+    xlarge: { label: "特大", scale: "125%" }
+  };
+
   function markImageError(img) {
     if (!img || img.dataset.fallbackHandled === "1") return;
     img.dataset.fallbackHandled = "1";
@@ -27,6 +34,92 @@
     }
   }
 
+  function ensureFontSizeStyles() {
+    if (document.getElementById("bousai-font-size-styles")) return;
+
+    var style = document.createElement("style");
+    style.id = "bousai-font-size-styles";
+    style.textContent = [
+      'html[data-font-size="normal"] { font-size: 100%; }',
+      'html[data-font-size="large"] { font-size: 112.5%; }',
+      'html[data-font-size="xlarge"] { font-size: 125%; }',
+      '.font-size-control { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; font-size: 14px; line-height: 1.2; }',
+      '.font-size-control__label { color: #52616a; font-size: 12px; font-weight: 700; white-space: nowrap; }',
+      '.font-size-control__button { min-width: 42px; min-height: 36px; padding: 7px 9px; border: 1px solid #c8d2d7; border-radius: 8px; background: #fff; color: #243b53; font: inherit; font-weight: 700; cursor: pointer; }',
+      '.font-size-control__button:hover { background: #f1f7f6; }',
+      '.font-size-control__button[aria-pressed="true"] { border-color: #176b68; background: #e3f1f0; color: #104c4a; box-shadow: inset 0 0 0 1px #176b68; }',
+      '.font-size-control__button:focus-visible { outline: 3px solid rgba(23, 107, 104, .28); outline-offset: 2px; }',
+      '@media (max-width: 720px) { .header-top { flex-wrap: wrap; gap: 8px 14px; padding: 8px 0; } .font-size-control { margin-left: auto; } .font-size-control__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; } }'
+    ].join("\n");
+    document.head.appendChild(style);
+  }
+
+  function normalizeFontSizeLevel(level) {
+    return Object.prototype.hasOwnProperty.call(FONT_SIZE_LEVELS, level) ? level : "normal";
+  }
+
+  function readSavedFontSizeLevel() {
+    try {
+      return normalizeFontSizeLevel(window.localStorage.getItem(FONT_SIZE_STORAGE_KEY));
+    } catch (error) {
+      return "normal";
+    }
+  }
+
+  function saveFontSizeLevel(level) {
+    try {
+      window.localStorage.setItem(FONT_SIZE_STORAGE_KEY, level);
+    } catch (error) {
+      /* Storage can be unavailable in privacy-restricted environments. */
+    }
+  }
+
+  function applyFontSizeLevel(level) {
+    var normalized = normalizeFontSizeLevel(level);
+    document.documentElement.setAttribute("data-font-size", normalized);
+
+    document.querySelectorAll(".font-size-control__button[data-font-size]").forEach(function (button) {
+      var selected = button.getAttribute("data-font-size") === normalized;
+      button.setAttribute("aria-pressed", selected ? "true" : "false");
+    });
+
+    return normalized;
+  }
+
+  function enhanceFontSizeControl() {
+    ensureFontSizeStyles();
+    var currentLevel = applyFontSizeLevel(readSavedFontSizeLevel());
+    var headerTop = document.querySelector(".header-top");
+    if (!headerTop || headerTop.querySelector(".font-size-control")) return;
+
+    var group = document.createElement("div");
+    group.className = "font-size-control";
+    group.setAttribute("role", "group");
+    group.setAttribute("aria-label", "文字サイズ");
+
+    var label = document.createElement("span");
+    label.className = "font-size-control__label";
+    label.textContent = "文字サイズ";
+    group.appendChild(label);
+
+    Object.keys(FONT_SIZE_LEVELS).forEach(function (level) {
+      var option = FONT_SIZE_LEVELS[level];
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "font-size-control__button";
+      button.setAttribute("data-font-size", level);
+      button.setAttribute("aria-pressed", level === currentLevel ? "true" : "false");
+      button.setAttribute("title", "文字サイズを" + option.label + "にする");
+      button.textContent = option.label;
+      button.addEventListener("click", function () {
+        var applied = applyFontSizeLevel(level);
+        saveFontSizeLevel(applied);
+      });
+      group.appendChild(button);
+    });
+
+    headerTop.appendChild(group);
+  }
 
   function enhanceAccessibility() {
     var main = document.querySelector("main");
@@ -155,8 +248,8 @@
     }, { passive: true });
   }
 
-
   function init() {
+    enhanceFontSizeControl();
     enhanceAccessibility();
     bindImageFallbacks();
     bindTrackedLinks();
