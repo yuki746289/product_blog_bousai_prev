@@ -2,12 +2,17 @@ name: Content freshness check
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
   pull_request:
+    paths:
+      - "content/**"
+      - "data/content_registry.json"
+      - "config/site.json"
+      - "scripts/**"
+      - "tests/**"
+      - "pyproject.toml"
+      - ".github/workflows/content-freshness.yml"
   schedule:
-    - cron: "0 21 * * *"
+    - cron: "0 21 * * 0"
 
 jobs:
   freshness:
