@@ -1,3 +1,4 @@
+# rerun after semantic safety-test fix
 name: One-off B042 B043 sync
 
 on:
@@ -120,7 +121,6 @@ jobs:
           registry["updated_at"] = "2026-09-05T10:20:00+09:00"
           registry_path.write_text(json.dumps(registry, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-          # Flood category: add B042 near pillar/B036.
           path = Path("preview/category_flood.html")
           text = path.read_text(encoding="utf-8")
           if 'data-article-id="B042"' not in text:
@@ -130,7 +130,6 @@ jobs:
               text = text.replace(marker, add, 1)
               path.write_text(text, encoding="utf-8")
 
-          # Typhoon category: add B043 to practical section.
           path = Path("preview/category_typhoon.html")
           text = path.read_text(encoding="utf-8")
           if 'data-article-id="B043"' not in text:
@@ -140,7 +139,6 @@ jobs:
               text = text.replace(marker, add, 1)
               path.write_text(text, encoding="utf-8")
 
-          # Parent source links.
           path = Path("content/articles/B005_flood_preparedness_basics.md")
           text = path.read_text(encoding="utf-8")
           if "article_b042.html" not in text:
@@ -159,7 +157,6 @@ jobs:
               text = text.replace(marker, add, 1)
               path.write_text(text, encoding="utf-8")
 
-          # Parent preview links.
           path = Path("preview/article_b005.html")
           text = path.read_text(encoding="utf-8")
           if "article_b042.html" not in text:
@@ -178,7 +175,6 @@ jobs:
               text = text.replace(marker, add, 1)
               path.write_text(text, encoding="utf-8")
 
-          # Public build regression count/pages/sitemap.
           path = Path("tests/test_public_build.py")
           text = path.read_text(encoding="utf-8")
           text = text.replace('self.assertEqual(41, len([a for a in articles if a.get("article_id", "").startswith("B")]))', 'self.assertEqual(43, len([a for a in articles if a.get("article_id", "").startswith("B")]))', 1)
@@ -194,7 +190,6 @@ jobs:
               text = text.replace(sitemap_marker, sitemap_marker + sitemap_add, 1)
           path.write_text(text, encoding="utf-8")
 
-          # Record adoption in gap review.
           path = Path("docs/research/SITEWIDE_CONTENT_GAP_REVIEW_20260905.md")
           text = path.read_text(encoding="utf-8")
           if "## B042・B043採用" not in text:
