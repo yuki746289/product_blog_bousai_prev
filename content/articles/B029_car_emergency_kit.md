@@ -142,6 +142,7 @@ affiliate: true
 
 ## 関連記事
 
+- [災害時の車中泊は安全？車内避難の注意点](article_b044.html)
 - [車が冠水・水没しそうなとき](article_b008.html)
 - [冠水した道路を車で走る危険](article_b009.html)
 - [地下駐車場の大雨対策](article_b010.html)
