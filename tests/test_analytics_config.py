@@ -35,7 +35,9 @@ class AnalyticsConfigurationTests(unittest.TestCase):
             encoding="utf-8"
         )
         self.assertIn("https://accaii.com/bousaikun/analyze.js", html)
+        self.assertEqual(1, html.count("https://accaii.com/bousaikun/analyze.js"))
         self.assertIn("var accaiiScript = document.createElement('script');", html)
+        self.assertIn("accaiiScript.async = true", html)
         self.assertIn("Remove this loader when U11", html)
 
     def test_click_tracking_is_in_common_js(self):
