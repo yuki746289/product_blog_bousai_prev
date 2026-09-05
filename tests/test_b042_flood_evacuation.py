@@ -19,9 +19,9 @@ class B042FloodEvacuationTests(unittest.TestCase):
     def test_b042_keeps_core_safety_boundaries(self):
         article = (ROOT / "content" / "articles" / "B042_flood_river_evacuation.md").read_text(encoding="utf-8")
         required = [
-            "警戒レベル4までに危険な場所から避難",
+            "レベル4までに避難を完了",
             "黒・レベル5を避難開始の合図にしない",
-            "大河川の外水氾濫を洪水キキクルだけで判断",
+            "すべての川を洪水キキクルだけで判断するわけではありません",
             "川の水位を見に行かない",
             "屋内安全確保",
             "夜間・暴風になる前",
