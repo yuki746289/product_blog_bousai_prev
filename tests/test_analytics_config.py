@@ -30,6 +30,14 @@ class AnalyticsConfigurationTests(unittest.TestCase):
         self.assertIn('rel="preconnect" href="https://www.googletagmanager.com"', html)
         self.assertIn('rel="preconnect" href="https://www.google-analytics.com"', html)
 
+    def test_temporary_accaii_loader_is_in_common_analytics_partial(self):
+        html = (ROOT / "templates" / "partials" / "google_analytics.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("https://accaii.com/bousaikun/analyze.js", html)
+        self.assertIn("var accaiiScript = document.createElement('script');", html)
+        self.assertIn("Remove this loader when U11", html)
+
     def test_click_tracking_is_in_common_js(self):
         js = (ROOT / "preview" / "bousai_common.js").read_text(encoding="utf-8")
         self.assertIn('"amazon_click"', js)
