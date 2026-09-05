@@ -1,6 +1,9 @@
 name: Update realtime disaster data
 
 # Realtime data is deployed independently from the static site.
+# During the September 2026 Actions-budget conservation period, the server-side
+# fallback refresh is throttled to every 6 hours. The browser still fetches JMA
+# directly and polls every 10 minutes while the page is open.
 
 on:
   workflow_dispatch:
@@ -12,7 +15,7 @@ on:
       - "preview/realtime/realtime.json"
       - ".github/workflows/update-realtime.yml"
   schedule:
-    - cron: "3,13,23,33,43,53 * * * *"
+    - cron: "3 */6 * * *"
 
 concurrency:
   group: realtime-disaster-data
