@@ -1,4 +1,4 @@
-<!-- Google tag (gtag.js) -->
+<!-- Analytics: GA4 + temporary Accaii -->
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
 <script>
@@ -19,5 +19,12 @@
 
     window.gtag('js', new Date());
     window.gtag('config', 'G-XQVLD5HMNG');
+
+    // Temporary access analysis during the low-traffic launch period.
+    // Remove this loader when U11 in docs/USER_ACTION_ITEMS.md is completed.
+    var accaiiScript = document.createElement('script');
+    accaiiScript.async = true;
+    accaiiScript.src = 'https://accaii.com/bousaikun/analyze.js';
+    document.head.appendChild(accaiiScript);
   }());
 </script>
