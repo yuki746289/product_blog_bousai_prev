@@ -19,7 +19,7 @@ class B043StormSurgeEvacuationTests(unittest.TestCase):
     def test_b043_keeps_core_safety_boundaries(self):
         article = (ROOT / "content" / "articles" / "B043_storm_surge_evacuation.md").read_text(encoding="utf-8")
         required = [
-            "暴風が吹き始める前に避難を完了",
+            "暴風が吹き始める前に危険な場所からの避難を完了する",
             "高潮は津波とは別の現象",
             "満潮時刻だけを見て判断しない",
             "レベル5は避難開始を待つ段階ではない",
