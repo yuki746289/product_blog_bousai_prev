@@ -41,6 +41,11 @@ class B042FloodEvacuationTests(unittest.TestCase):
         ]:
             self.assertTrue(path.exists(), path)
 
+        preview = (ROOT / "preview" / "article_b042.html").read_text(encoding="utf-8")
+        self.assertIn("川の様子を直接見に行かない", preview)
+        self.assertIn("警戒レベル4までに危険な場所から避難", preview)
+        self.assertIn("article_b036.html", preview)
+
 
 if __name__ == "__main__":
     unittest.main()
