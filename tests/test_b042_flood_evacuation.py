@@ -25,11 +25,12 @@ class B042FloodEvacuationTests(unittest.TestCase):
             "川の水位を見に行かない",
             "屋内安全確保",
             "夜間・暴風になる前",
+            "一律判断はしません",
         ]
         for phrase in required:
             self.assertIn(phrase, article)
-        self.assertNotIn("2階なら安全", article.split("当サイトだけで", 1)[-1])
         self.assertNotIn("川から1km", article)
+        self.assertNotIn("浸水深1m以下なら安全", article)
 
     def test_b042_has_evidence_and_preview(self):
         for path in [
