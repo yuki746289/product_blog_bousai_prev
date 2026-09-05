@@ -1,0 +1,44 @@
+name: One-off finalize B044-B047 batch v2
+
+on:
+  push:
+    branches:
+      - work/b044-vehicle-overnight-20260905
+    paths:
+      - ".github/workflows/oneoff-b044-b047-finalize-v2.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout work branch
+        uses: actions/checkout@v4
+        with:
+          ref: work/b044-vehicle-overnight-20260905
+          fetch-depth: 0
+
+      - name: Merge current main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git merge --no-edit origin/main
+
+      - name: Apply finalization patch
+        run: python scripts/oneoff_finalize_b044_b047.py
+
+      - name: Run full unit test suite
+        run: python -m unittest discover -s tests -v
+
+      - name: Commit finalized batch
+        run: |
+          git add data/content_registry.json content preview docs/research docs/reviews tests
+          if git diff --cached --quiet; then
+            echo "No batch changes to commit."
+          else
+            git commit -m "Finalize B044-B047 keyword research batch"
+          fi
+          git push origin HEAD:work/b044-vehicle-overnight-20260905
