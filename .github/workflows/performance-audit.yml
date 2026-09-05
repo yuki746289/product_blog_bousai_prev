@@ -72,7 +72,7 @@ jobs:
               --output-path="lighthouse/report_${i}.json"
           done
 
-      - name: Verify Lighthouse did not contact GA4
+      - name: Verify Lighthouse did not contact analytics
         run: |
           python - <<'PY'
           import json
@@ -82,6 +82,7 @@ jobs:
               "googletagmanager.com/gtag/js",
               "google-analytics.com/g/collect",
               "google-analytics.com/j/collect",
+              "accaii.com/bousaikun/analyze",
           )
 
           failures = []
@@ -98,12 +99,12 @@ jobs:
 
           if failures:
               for page, urls in failures:
-                  print(f"GA4 request detected during CI audit: {page}")
+                  print(f"Analytics request detected during CI audit: {page}")
                   for url in urls:
                       print(f"- {url}")
               raise SystemExit(1)
 
-          print("PASS: Lighthouse CI audits made no GA4 gtag/collect requests.")
+          print("PASS: Lighthouse CI audits made no GA4 or Accaii requests.")
           PY
 
       - name: Summarize Lighthouse results
