@@ -27,6 +27,9 @@ jobs:
           git fetch origin main
           git merge --no-edit origin/main
 
+      - name: Install package
+        run: pip install -e .
+
       - name: Apply finalization patch
         run: python scripts/oneoff_finalize_b044_b047.py
 
