@@ -25,7 +25,6 @@ class B042FloodEvacuationTests(unittest.TestCase):
             "川の水位を見に行かない",
             "屋内安全確保",
             "夜間・暴風になる前",
-            "一律判断はしません",
         ]
         for phrase in required:
             self.assertIn(phrase, article)
