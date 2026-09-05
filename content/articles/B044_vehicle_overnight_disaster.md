@@ -5,7 +5,7 @@ title: 災害時の車中泊は安全？エコノミークラス症候群・一�
 category: vehicle
 content_role: practical
 risk_level: high
-status: REVIEW_REQUIRED
+status: READY_TO_PUBLISH
 source_checked_at: 2026-09-05
 next_review_at: 2027-03-05
 affiliate: false

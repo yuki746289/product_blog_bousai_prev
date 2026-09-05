@@ -30,6 +30,10 @@ class PublicBuildTests(unittest.TestCase):
         self.assertTrue((PUBLIC / "earthquake" / "tsunami-evacuation.html").exists())
         self.assertTrue((PUBLIC / "flood" / "flood-river-evacuation.html").exists())
         self.assertTrue((PUBLIC / "typhoon" / "storm-surge-evacuation.html").exists())
+        self.assertTrue((PUBLIC / "vehicle" / "vehicle-overnight-disaster.html").exists())
+        self.assertTrue((PUBLIC / "blackout" / "blackout-refrigerator-food-safety.html").exists())
+        self.assertTrue((PUBLIC / "typhoon" / "typhoon-window-glass.html").exists())
+        self.assertTrue((PUBLIC / "blackout" / "blackout-heatstroke.html").exists())
 
     def test_contact_is_not_published(self):
         self.assertFalse((PUBLIC / "contact.html").exists())
@@ -76,7 +80,7 @@ class PublicBuildTests(unittest.TestCase):
     def test_article_dates_and_structured_data(self):
         registry = json.loads((ROOT / "data" / "content_registry.json").read_text(encoding="utf-8"))
         articles = registry["articles"]
-        self.assertEqual(43, len([a for a in articles if a.get("article_id", "").startswith("B")]))
+        self.assertEqual(47, len([a for a in articles if a.get("article_id", "").startswith("B")]))
 
         for article in articles:
             output = PUBLIC / article["planned_public_path"]
