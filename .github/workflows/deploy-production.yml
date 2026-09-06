@@ -2,19 +2,6 @@ name: Deploy production site
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - "preview/**"
-      - "content/**"
-      - "data/content_registry.json"
-      - "config/site.json"
-      - "templates/**"
-      - "scripts/**"
-      - "pyproject.toml"
-      - "tests/**"
-      - ".github/workflows/deploy-production.yml"
 
 concurrency:
   group: production-ftp-deploy
