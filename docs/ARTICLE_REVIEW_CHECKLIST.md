@@ -2,7 +2,7 @@
 
 更新日: 2026-09-03
 
-本ファイルは `docs/CONTENT_CREATION_RULES.md` を検証する**共通チェックリストの正本**。
+本ファイルは `docs/CONTENT_CREATION_RULES.md` を検証する**public側作業コピー**。正本はprivateリポジトリ `yuki746289/product_blog_rules` の `sites/bousai/rules/ARTICLE_REVIEW_CHECKLIST.md`。
 
 個別記事の `docs/reviews/Bxxx_CHECKLIST.md` へ以下の行をコピーしない。
 記事別ファイルには、各セクションの判定、根拠、記事固有の追加確認だけを記録する。
