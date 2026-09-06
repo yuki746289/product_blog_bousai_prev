@@ -2,11 +2,14 @@
 
 更新日: 2026-09-03
 
-## 1. 正本
+## 1. 参照先と正本
 
-- 共通記事作成ルール: `../CONTENT_CREATION_RULES.md`
-- 共通チェックリスト: `../ARTICLE_REVIEW_CHECKLIST.md`
-- 記事別テンプレート: `ARTICLE_CHECKLIST_TEMPLATE.md`
+ルール自体の正本はprivateリポジトリ `yuki746289/product_blog_rules` で管理する。以下のルール文書はpublic側作業コピーとして参照する。
+
+- 共通記事作成ルール作業コピー: `../CONTENT_CREATION_RULES.md`
+- 共通チェックリスト作業コピー: `../ARTICLE_REVIEW_CHECKLIST.md`
+- 記事別テンプレート作業コピー: `ARTICLE_CHECKLIST_TEMPLATE.md`
+- 記事別レビュー記録と正式な記事状態: 本リポジトリで管理
 - 正式な記事状態: `../../data/content_registry.json`
 
 判定値: `PASS / FAIL / TODO / N/A`
