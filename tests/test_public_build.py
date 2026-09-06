@@ -35,6 +35,22 @@ class PublicBuildTests(unittest.TestCase):
         self.assertTrue((PUBLIC / "typhoon" / "typhoon-window-glass.html").exists())
         self.assertTrue((PUBLIC / "blackout" / "blackout-heatstroke.html").exists())
 
+    def test_b047_public_output_keeps_safety_and_preparation_content(self):
+        page = PUBLIC / "blackout" / "blackout-heatstroke.html"
+        html = page.read_text(encoding="utf-8")
+        required_content = (
+            "自力で水が飲めない、意識がない場合",
+            "屋内、車庫、換気が不十分な場所で発電機を使わない",
+            "モバイル扇風機や保冷剤があるから長時間自宅で大丈夫",
+            "停電前に準備しておくこと",
+            "高齢者・乳幼児・持病のある人を優先して確認した",
+            'href="blackout-preparedness.html"',
+            'href="../goods/portable-power-station-disaster.html"',
+            'href="../vehicle/vehicle-overnight-disaster.html"',
+        )
+        for phrase in required_content:
+            self.assertIn(phrase, html, page)
+
     def test_contact_is_not_published(self):
         self.assertFalse((PUBLIC / "contact.html").exists())
 
