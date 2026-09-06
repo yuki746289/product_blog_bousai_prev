@@ -47,3 +47,10 @@ FTPユーザー名・パスワードはGitHub Secretsまたはローカル環境
 - `docs/PICKUP_AND_DEEP_DIVE_POLICY.md`: ピックアップ記事・深掘り記事の運用
 - `config/navigation.json`: グローバルナビ・トップページセクション
 - `data/homepage_features.json`: ピックアップ候補と有効枠
+
+
+## ルールの正本
+
+開発・記事制作・レビューに関するルール正本は、privateリポジトリ `yuki746289/product_blog_rules` で管理します。
+このリポジトリの `docs/` にあるルール文書は、実装・レビュー・テスト用の一時作業コピーです。
+運用詳細は `docs/RULES_GOVERNANCE.md` を参照してください。
